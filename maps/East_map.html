@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<head>    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_e9beff4e6bd24469ade24b04b6d9b8d8 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+            </style>
+        
+</head>
+<body>    
+    
+            <div class="folium-map" id="map_e9beff4e6bd24469ade24b04b6d9b8d8" ></div>
+        
+</body>
+<script>    
+    
+            var map_e9beff4e6bd24469ade24b04b6d9b8d8 = L.map(
+                "map_e9beff4e6bd24469ade24b04b6d9b8d8",
+                {
+                    center: [-36.89887827, 174.9065699],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 11,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_fd2392643a29448aa4ecea5454de046e = L.tileLayer(
+                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "Data by \u0026copy; \u003ca href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_e9beff4e6bd24469ade24b04b6d9b8d8);
+        
+    
+            var marker_c459efc2103b41afb03178eeaf40ea7e = L.marker(
+                [-36.89887827, 174.9065699],
+                {}
+            ).addTo(map_e9beff4e6bd24469ade24b04b6d9b8d8);
+        
+    
+            var icon_95ff485e8cc2441d9d65103bd8caf238 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_c459efc2103b41afb03178eeaf40ea7e.setIcon(icon_95ff485e8cc2441d9d65103bd8caf238);
+        
+    
+        var popup_d66abea3cd654bb98d0c6dcac2a3f3f7 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_cf3ccaed456f4b3da1cd65acc742fd10 = $(`<div id="html_cf3ccaed456f4b3da1cd65acc742fd10" style="width: 100.0%; height: 100.0%;">Countdown Aviemore Drive</div>`)[0];
+            popup_d66abea3cd654bb98d0c6dcac2a3f3f7.setContent(html_cf3ccaed456f4b3da1cd65acc742fd10);
+        
+
+        marker_c459efc2103b41afb03178eeaf40ea7e.bindPopup(popup_d66abea3cd654bb98d0c6dcac2a3f3f7)
+        ;
+
+        
+    
+    
+            var marker_22a35d8cdfdc4110b846d2e335137dab = L.marker(
+                [-36.92972626, 174.9110718],
+                {}
+            ).addTo(map_e9beff4e6bd24469ade24b04b6d9b8d8);
+        
+    
+            var icon_e2c78fbfdff849699f777ff0c3cf5d28 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_22a35d8cdfdc4110b846d2e335137dab.setIcon(icon_e2c78fbfdff849699f777ff0c3cf5d28);
+        
+    
+        var popup_f54476e3cee240128a325e96a9cf3ace = L.popup({"maxWidth": "100%"});
+
+        
+            var html_ca35a5812289478d8b712699d1eea30c = $(`<div id="html_ca35a5812289478d8b712699d1eea30c" style="width: 100.0%; height: 100.0%;">Countdown Botany Downs</div>`)[0];
+            popup_f54476e3cee240128a325e96a9cf3ace.setContent(html_ca35a5812289478d8b712699d1eea30c);
+        
+
+        marker_22a35d8cdfdc4110b846d2e335137dab.bindPopup(popup_f54476e3cee240128a325e96a9cf3ace)
+        ;
+
+        
+    
+    
+            var marker_f900732dcb9d4c1e8109b7c59047b3f4 = L.marker(
+                [-36.89933061, 174.9084309],
+                {}
+            ).addTo(map_e9beff4e6bd24469ade24b04b6d9b8d8);
+        
+    
+            var icon_51e8b705a1494d309a23df08251bde83 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_f900732dcb9d4c1e8109b7c59047b3f4.setIcon(icon_51e8b705a1494d309a23df08251bde83);
+        
+    
+        var popup_513d0fe6891348e5ae073585f49f9c52 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_98ea6a64bca34ab2affadfd54c8c3c8c = $(`<div id="html_98ea6a64bca34ab2affadfd54c8c3c8c" style="width: 100.0%; height: 100.0%;">Countdown Highland Park</div>`)[0];
+            popup_513d0fe6891348e5ae073585f49f9c52.setContent(html_98ea6a64bca34ab2affadfd54c8c3c8c);
+        
+
+        marker_f900732dcb9d4c1e8109b7c59047b3f4.bindPopup(popup_513d0fe6891348e5ae073585f49f9c52)
+        ;
+
+        
+    
+    
+            var marker_d1905670b4394ebf914f4a476bf64882 = L.marker(
+                [-36.89585201, 174.9335377],
+                {}
+            ).addTo(map_e9beff4e6bd24469ade24b04b6d9b8d8);
+        
+    
+            var icon_ce9fbb10e967427c9ff2bf41fb5a3330 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_d1905670b4394ebf914f4a476bf64882.setIcon(icon_ce9fbb10e967427c9ff2bf41fb5a3330);
+        
+    
+        var popup_8f25835c0cc64dfcb9e0c2f6ff650dbe = L.popup({"maxWidth": "100%"});
+
+        
+            var html_dca682fb59644c2dbdb4bc1f649cd6db = $(`<div id="html_dca682fb59644c2dbdb4bc1f649cd6db" style="width: 100.0%; height: 100.0%;">Countdown Howick</div>`)[0];
+            popup_8f25835c0cc64dfcb9e0c2f6ff650dbe.setContent(html_dca682fb59644c2dbdb4bc1f649cd6db);
+        
+
+        marker_d1905670b4394ebf914f4a476bf64882.bindPopup(popup_8f25835c0cc64dfcb9e0c2f6ff650dbe)
+        ;
+
+        
+    
+    
+            var marker_983135ce5b9e46dfb836abefd71e7ea0 = L.marker(
+                [-36.87610706, 174.8289359],
+                {}
+            ).addTo(map_e9beff4e6bd24469ade24b04b6d9b8d8);
+        
+    
+            var icon_ea022123dbc843fabd156e3bf3e96bb9 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_983135ce5b9e46dfb836abefd71e7ea0.setIcon(icon_ea022123dbc843fabd156e3bf3e96bb9);
+        
+    
+        var popup_c41040370564464cbe2a4feab4884f8a = L.popup({"maxWidth": "100%"});
+
+        
+            var html_b53a5bbaad574cd0b19a7cb33f79c0a1 = $(`<div id="html_b53a5bbaad574cd0b19a7cb33f79c0a1" style="width: 100.0%; height: 100.0%;">Countdown Meadowbank</div>`)[0];
+            popup_c41040370564464cbe2a4feab4884f8a.setContent(html_b53a5bbaad574cd0b19a7cb33f79c0a1);
+        
+
+        marker_983135ce5b9e46dfb836abefd71e7ea0.bindPopup(popup_c41040370564464cbe2a4feab4884f8a)
+        ;
+
+        
+    
+    
+            var marker_80719a670f76456396e19638eff5b2f2 = L.marker(
+                [-36.9132518, 174.929465],
+                {}
+            ).addTo(map_e9beff4e6bd24469ade24b04b6d9b8d8);
+        
+    
+            var icon_5b2ab03555d74e90839579bbfdeef1a5 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_80719a670f76456396e19638eff5b2f2.setIcon(icon_5b2ab03555d74e90839579bbfdeef1a5);
+        
+    
+        var popup_c86b455598344ada92ad0869b97a438c = L.popup({"maxWidth": "100%"});
+
+        
+            var html_c6545b0d6b6f44929b1979a6b53f80a2 = $(`<div id="html_c6545b0d6b6f44929b1979a6b53f80a2" style="width: 100.0%; height: 100.0%;">Countdown Meadowlands</div>`)[0];
+            popup_c86b455598344ada92ad0869b97a438c.setContent(html_c6545b0d6b6f44929b1979a6b53f80a2);
+        
+
+        marker_80719a670f76456396e19638eff5b2f2.bindPopup(popup_c86b455598344ada92ad0869b97a438c)
+        ;
+
+        
+    
+    
+            var marker_9cd382725a7f49ddb1fc88e173e7d572 = L.marker(
+                [-36.9093147, 174.837989],
+                {}
+            ).addTo(map_e9beff4e6bd24469ade24b04b6d9b8d8);
+        
+    
+            var icon_57683a025b8e47c6b1e96c8dedbd4367 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_9cd382725a7f49ddb1fc88e173e7d572.setIcon(icon_57683a025b8e47c6b1e96c8dedbd4367);
+        
+    
+        var popup_08a892cfb3bd4fdc8a72ed981418e30b = L.popup({"maxWidth": "100%"});
+
+        
+            var html_8f77f3ad8fd8440a89f886d4aa4b4595 = $(`<div id="html_8f77f3ad8fd8440a89f886d4aa4b4595" style="width: 100.0%; height: 100.0%;">Countdown Mt Wellington</div>`)[0];
+            popup_08a892cfb3bd4fdc8a72ed981418e30b.setContent(html_8f77f3ad8fd8440a89f886d4aa4b4595);
+        
+
+        marker_9cd382725a7f49ddb1fc88e173e7d572.bindPopup(popup_08a892cfb3bd4fdc8a72ed981418e30b)
+        ;
+
+        
+    
+    
+            var marker_b72f453312774d9cac36be6d3ee0d9be = L.marker(
+                [-36.91284146, 174.8714299],
+                {}
+            ).addTo(map_e9beff4e6bd24469ade24b04b6d9b8d8);
+        
+    
+            var icon_51575289ad5348feb4af6e2bca447448 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_b72f453312774d9cac36be6d3ee0d9be.setIcon(icon_51575289ad5348feb4af6e2bca447448);
+        
+    
+        var popup_d7c0019583bf4c20950a41af881097e2 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_bea2952f796f43888a925fca73d4bc41 = $(`<div id="html_bea2952f796f43888a925fca73d4bc41" style="width: 100.0%; height: 100.0%;">Countdown Pakuranga</div>`)[0];
+            popup_d7c0019583bf4c20950a41af881097e2.setContent(html_bea2952f796f43888a925fca73d4bc41);
+        
+
+        marker_b72f453312774d9cac36be6d3ee0d9be.bindPopup(popup_d7c0019583bf4c20950a41af881097e2)
+        ;
+
+        
+    
+    
+            var marker_aaf172f1937a4cacac4045cd1ec4f78d = L.marker(
+                [-36.87888192, 174.8548393],
+                {}
+            ).addTo(map_e9beff4e6bd24469ade24b04b6d9b8d8);
+        
+    
+            var icon_cafe04c1913e49b9bc5c155f0c6a85de = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_aaf172f1937a4cacac4045cd1ec4f78d.setIcon(icon_cafe04c1913e49b9bc5c155f0c6a85de);
+        
+    
+        var popup_dc8f2a8fadda4ffa96b1571f7e4b254b = L.popup({"maxWidth": "100%"});
+
+        
+            var html_c8264e7c64254c1fa0e0c67eaae77602 = $(`<div id="html_c8264e7c64254c1fa0e0c67eaae77602" style="width: 100.0%; height: 100.0%;">Countdown St Johns</div>`)[0];
+            popup_dc8f2a8fadda4ffa96b1571f7e4b254b.setContent(html_c8264e7c64254c1fa0e0c67eaae77602);
+        
+
+        marker_aaf172f1937a4cacac4045cd1ec4f78d.bindPopup(popup_dc8f2a8fadda4ffa96b1571f7e4b254b)
+        ;
+
+        
+    
+    
+            var marker_c6d28e115a3b43a1bb9a0a3ad40101cc = L.marker(
+                [-36.91713855, 174.84182019999997],
+                {}
+            ).addTo(map_e9beff4e6bd24469ade24b04b6d9b8d8);
+        
+    
+            var icon_fa10b9af51dc4f3091194b1d16bbc0bf = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_c6d28e115a3b43a1bb9a0a3ad40101cc.setIcon(icon_fa10b9af51dc4f3091194b1d16bbc0bf);
+        
+    
+        var popup_1b9b3b0853d04d338e9431cc288b8f67 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_f98ce7d679c94c60a8c845d88d31f141 = $(`<div id="html_f98ce7d679c94c60a8c845d88d31f141" style="width: 100.0%; height: 100.0%;">Countdown Sylvia Park</div>`)[0];
+            popup_1b9b3b0853d04d338e9431cc288b8f67.setContent(html_f98ce7d679c94c60a8c845d88d31f141);
+        
+
+        marker_c6d28e115a3b43a1bb9a0a3ad40101cc.bindPopup(popup_1b9b3b0853d04d338e9431cc288b8f67)
+        ;
+
+        
+    
+    
+            var marker_6194d802d1964d7ca9522b2631689483 = L.marker(
+                [-36.94480584, 174.8431184],
+                {}
+            ).addTo(map_e9beff4e6bd24469ade24b04b6d9b8d8);
+        
+    
+            var icon_55819fd988ff4e4aa428a6529a292217 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_6194d802d1964d7ca9522b2631689483.setIcon(icon_55819fd988ff4e4aa428a6529a292217);
+        
+    
+        var popup_3b5ddd6ae7634410b1b6418275cfd024 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_ad0893a730064064906bd124cfd66c59 = $(`<div id="html_ad0893a730064064906bd124cfd66c59" style="width: 100.0%; height: 100.0%;">FreshChoice Otahuhu</div>`)[0];
+            popup_3b5ddd6ae7634410b1b6418275cfd024.setContent(html_ad0893a730064064906bd124cfd66c59);
+        
+
+        marker_6194d802d1964d7ca9522b2631689483.bindPopup(popup_3b5ddd6ae7634410b1b6418275cfd024)
+        ;
+
+        
+    
+</script>

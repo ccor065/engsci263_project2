@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<head>    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_0975d12a3103413eae891e2b7a8d8a2a {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+            </style>
+        
+</head>
+<body>    
+    
+            <div class="folium-map" id="map_0975d12a3103413eae891e2b7a8d8a2a" ></div>
+        
+</body>
+<script>    
+    
+            var map_0975d12a3103413eae891e2b7a8d8a2a = L.map(
+                "map_0975d12a3103413eae891e2b7a8d8a2a",
+                {
+                    center: [-36.89887827, 174.9065699],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 11,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_1352377f280e408d982c1ebc27aebc27 = L.tileLayer(
+                "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "Data by \u0026copy; \u003ca href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca href=\"http://www.openstreetmap.org/copyright\"\u003eODbL\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_0975d12a3103413eae891e2b7a8d8a2a);
+        
+    
+            var marker_dd5c7b1f176942cb8639a67b5d3e2722 = L.marker(
+                [-36.99736985, 174.7888823],
+                {}
+            ).addTo(map_0975d12a3103413eae891e2b7a8d8a2a);
+        
+    
+            var icon_2b5d9dd7ee1547cb9925e4c49bdd6bee = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_dd5c7b1f176942cb8639a67b5d3e2722.setIcon(icon_2b5d9dd7ee1547cb9925e4c49bdd6bee);
+        
+    
+        var popup_265e8569ba7c4639815ebe22cfd16471 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_ba541c6d4ce642be8206a52c3e334d57 = $(`<div id="html_ba541c6d4ce642be8206a52c3e334d57" style="width: 100.0%; height: 100.0%;">Countdown Airport</div>`)[0];
+            popup_265e8569ba7c4639815ebe22cfd16471.setContent(html_ba541c6d4ce642be8206a52c3e334d57);
+        
+
+        marker_dd5c7b1f176942cb8639a67b5d3e2722.bindPopup(popup_265e8569ba7c4639815ebe22cfd16471)
+        ;
+
+        
+    
+    
+            var marker_f34d366637f74fab9be0b862867675ef = L.marker(
+                [-36.9657908, 174.825346],
+                {}
+            ).addTo(map_0975d12a3103413eae891e2b7a8d8a2a);
+        
+    
+            var icon_61f25986a57648919b1b91517f0cbb06 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_f34d366637f74fab9be0b862867675ef.setIcon(icon_61f25986a57648919b1b91517f0cbb06);
+        
+    
+        var popup_ed9df0c9fc4e4a9f8d04499c98a2ac0e = L.popup({"maxWidth": "100%"});
+
+        
+            var html_e92bbd338e334d108a08faf547511ef1 = $(`<div id="html_e92bbd338e334d108a08faf547511ef1" style="width: 100.0%; height: 100.0%;">Countdown Mangere East</div>`)[0];
+            popup_ed9df0c9fc4e4a9f8d04499c98a2ac0e.setContent(html_e92bbd338e334d108a08faf547511ef1);
+        
+
+        marker_f34d366637f74fab9be0b862867675ef.bindPopup(popup_ed9df0c9fc4e4a9f8d04499c98a2ac0e)
+        ;
+
+        
+    
+    
+            var marker_9afbcdf7519241cfbca9acc2c6718d33 = L.marker(
+                [-36.96987802, 174.8011202],
+                {}
+            ).addTo(map_0975d12a3103413eae891e2b7a8d8a2a);
+        
+    
+            var icon_7b74b5179f4e4bfb8a1501951f0a93e5 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_9afbcdf7519241cfbca9acc2c6718d33.setIcon(icon_7b74b5179f4e4bfb8a1501951f0a93e5);
+        
+    
+        var popup_6e7fd5281d26466dbe4ab91166a58ce5 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_380e912c5ba14504a5225e447f75d56a = $(`<div id="html_380e912c5ba14504a5225e447f75d56a" style="width: 100.0%; height: 100.0%;">Countdown Mangere Mall</div>`)[0];
+            popup_6e7fd5281d26466dbe4ab91166a58ce5.setContent(html_380e912c5ba14504a5225e447f75d56a);
+        
+
+        marker_9afbcdf7519241cfbca9acc2c6718d33.bindPopup(popup_6e7fd5281d26466dbe4ab91166a58ce5)
+        ;
+
+        
+    
+    
+            var marker_5a760b275bee445198ea918a1c9b4ae0 = L.marker(
+                [-36.98676855, 174.88481480000004],
+                {}
+            ).addTo(map_0975d12a3103413eae891e2b7a8d8a2a);
+        
+    
+            var icon_b379ee0a7e02484c9cbf6464cbf91535 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_5a760b275bee445198ea918a1c9b4ae0.setIcon(icon_b379ee0a7e02484c9cbf6464cbf91535);
+        
+    
+        var popup_d60f4ca07dbd47c6ad3e00acf313f51e = L.popup({"maxWidth": "100%"});
+
+        
+            var html_3f46db911b114d51975e14961581cae6 = $(`<div id="html_3f46db911b114d51975e14961581cae6" style="width: 100.0%; height: 100.0%;">Countdown Manukau</div>`)[0];
+            popup_d60f4ca07dbd47c6ad3e00acf313f51e.setContent(html_3f46db911b114d51975e14961581cae6);
+        
+
+        marker_5a760b275bee445198ea918a1c9b4ae0.bindPopup(popup_d60f4ca07dbd47c6ad3e00acf313f51e)
+        ;
+
+        
+    
+    
+            var marker_8bc00bd31f7949e39f1c1f5ec552144a = L.marker(
+                [-36.99174967, 174.8831931],
+                {}
+            ).addTo(map_0975d12a3103413eae891e2b7a8d8a2a);
+        
+    
+            var icon_bac1f0d7daa94ccb8991bdfa0a62254c = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_8bc00bd31f7949e39f1c1f5ec552144a.setIcon(icon_bac1f0d7daa94ccb8991bdfa0a62254c);
+        
+    
+        var popup_56e54665cce9403782688609d478df1c = L.popup({"maxWidth": "100%"});
+
+        
+            var html_5df982ee715842f1add476840d6b55ad = $(`<div id="html_5df982ee715842f1add476840d6b55ad" style="width: 100.0%; height: 100.0%;">Countdown Manukau Mall</div>`)[0];
+            popup_56e54665cce9403782688609d478df1c.setContent(html_5df982ee715842f1add476840d6b55ad);
+        
+
+        marker_8bc00bd31f7949e39f1c1f5ec552144a.bindPopup(popup_56e54665cce9403782688609d478df1c)
+        ;
+
+        
+    
+    
+            var marker_3256bd82e379435e8edb38050e249833 = L.marker(
+                [-37.01734442, 174.86510969999995],
+                {}
+            ).addTo(map_0975d12a3103413eae891e2b7a8d8a2a);
+        
+    
+            var icon_e6bf3b153be64303b61b69c1247bdee3 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_3256bd82e379435e8edb38050e249833.setIcon(icon_e6bf3b153be64303b61b69c1247bdee3);
+        
+    
+        var popup_4de841f612cb4054825746dbd5567daa = L.popup({"maxWidth": "100%"});
+
+        
+            var html_ed44ba2733b8414da8ff01c2f48f155b = $(`<div id="html_ed44ba2733b8414da8ff01c2f48f155b" style="width: 100.0%; height: 100.0%;">Countdown Manurewa</div>`)[0];
+            popup_4de841f612cb4054825746dbd5567daa.setContent(html_ed44ba2733b8414da8ff01c2f48f155b);
+        
+
+        marker_3256bd82e379435e8edb38050e249833.bindPopup(popup_4de841f612cb4054825746dbd5567daa)
+        ;
+
+        
+    
+    
+            var marker_d6de498583a44e26b69ca2c04ad9ecc5 = L.marker(
+                [-36.97039494, 174.862111],
+                {}
+            ).addTo(map_0975d12a3103413eae891e2b7a8d8a2a);
+        
+    
+            var icon_7341f64769f342bfb79bb92157c11466 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_d6de498583a44e26b69ca2c04ad9ecc5.setIcon(icon_7341f64769f342bfb79bb92157c11466);
+        
+    
+        var popup_18c68f72defa4e6581e3de41eb877edf = L.popup({"maxWidth": "100%"});
+
+        
+            var html_141e9dc49a304a84a503ba64ef0cc972 = $(`<div id="html_141e9dc49a304a84a503ba64ef0cc972" style="width: 100.0%; height: 100.0%;">Countdown Papatoetoe</div>`)[0];
+            popup_18c68f72defa4e6581e3de41eb877edf.setContent(html_141e9dc49a304a84a503ba64ef0cc972);
+        
+
+        marker_d6de498583a44e26b69ca2c04ad9ecc5.bindPopup(popup_18c68f72defa4e6581e3de41eb877edf)
+        ;
+
+        
+    
+    
+            var marker_629320e059654748abe0186698858041 = L.marker(
+                [-36.94250829, 174.7869875],
+                {}
+            ).addTo(map_0975d12a3103413eae891e2b7a8d8a2a);
+        
+    
+            var icon_7b449798b643417198e39002e8ad2018 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_629320e059654748abe0186698858041.setIcon(icon_7b449798b643417198e39002e8ad2018);
+        
+    
+        var popup_9e91c04bdb41474e98a7e814127bbe5b = L.popup({"maxWidth": "100%"});
+
+        
+            var html_2aba56ab64df4e848648ddb481c17e5e = $(`<div id="html_2aba56ab64df4e848648ddb481c17e5e" style="width: 100.0%; height: 100.0%;">FreshChoice Mangere Bridge</div>`)[0];
+            popup_9e91c04bdb41474e98a7e814127bbe5b.setContent(html_2aba56ab64df4e848648ddb481c17e5e);
+        
+
+        marker_629320e059654748abe0186698858041.bindPopup(popup_9e91c04bdb41474e98a7e814127bbe5b)
+        ;
+
+        
+    
+    
+            var marker_ad7e94adcd8c4ddabbaf31078eacdcbd = L.marker(
+                [-36.97676671, 174.8972267],
+                {}
+            ).addTo(map_0975d12a3103413eae891e2b7a8d8a2a);
+        
+    
+            var icon_5f5bb3135b5e4ff7b489d18b7da9d6b1 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_ad7e94adcd8c4ddabbaf31078eacdcbd.setIcon(icon_5f5bb3135b5e4ff7b489d18b7da9d6b1);
+        
+    
+        var popup_f6821c212bf9428dabf2b3465baf08fd = L.popup({"maxWidth": "100%"});
+
+        
+            var html_aa4ddef8670c4b5f975ae099be3014ec = $(`<div id="html_aa4ddef8670c4b5f975ae099be3014ec" style="width: 100.0%; height: 100.0%;">SuperValue Flatbush</div>`)[0];
+            popup_f6821c212bf9428dabf2b3465baf08fd.setContent(html_aa4ddef8670c4b5f975ae099be3014ec);
+        
+
+        marker_ad7e94adcd8c4ddabbaf31078eacdcbd.bindPopup(popup_f6821c212bf9428dabf2b3465baf08fd)
+        ;
+
+        
+    
+</script>
