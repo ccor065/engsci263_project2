@@ -4,7 +4,7 @@ import folium
 
 ORSkey = '88'
 
-locations = pd.read_csv('assignment_resources/WoolworthsLocations.csv')
+locations = pd.read_csv('stores_df.csv')
 coords = locations[['Long', 'Lat']]
 coords = coords.to_numpy().tolist()
 
@@ -25,4 +25,4 @@ for i in range(0, len(coords)):
     folium.Marker(list(reversed(coords[i])), popup = locations.Store[i], icon = folium.Icon(color = iconCol)).add_to(map)
 
 #display map
-map.save("index.html") ##Open html file to see output
+map.save("map_locations.html") ##Open html file to see output
