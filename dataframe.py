@@ -76,8 +76,10 @@ col_list = ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"]
 totals = pd.DataFrame()
 for i in range(len(region_names)):
     totals[region_names[i]] = ((stores_df[[*col_list, "Region"]])[stores_df.loc[:]["Region"] == region_names[i]])[col_list].sum(axis=0)
+totals = totals.T
+
 
 print(totals.head())
-totals.to_csv("totals.csv", index=False)
+#totals.to_csv("totals.csv")
 
 
