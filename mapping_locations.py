@@ -25,7 +25,9 @@ for i in range(0, len(coords)):
         iconCol= "black"
     elif locations.Region[i]==region_names[5]:
         iconCol= "pink"
-    folium.Marker(list(reversed(coords[i])), popup = locations.Store[i], icon = folium.Icon(color = iconCol)).add_to(map)
+    elif locations.Region[i]=='invalid':
+        iconCol= "white"
+    folium.Marker(list(reversed(coords[i])), popup ="%s\n lng %s\n lat%s" % (locations.Store[i],locations.Long[i], locations.Lat[i]), icon = folium.Icon(color = iconCol)).add_to(map)
 
 #display map
 map.save("maps/map_locations.html") ##Open html file to see output
@@ -45,7 +47,7 @@ for name in region_names:
                 iconCol="orange"
             elif locations.Type[i] == "Distribution Centre":
                 iconCol= "black"
-            folium.Marker(list(reversed(coords[i])), popup = locations.Store[i], icon = folium.Icon(color = iconCol)).add_to(map)
+            folium.Marker(list(reversed(coords[i])), popup ="%s\n lng %s\n lat%s" % (locations.Store[i],locations.Long[i], locations.Lat[i]), icon = folium.Icon(color = iconCol)).add_to(map)
     map.save("maps/%s_map.html"%name.split()[0])
     
 
