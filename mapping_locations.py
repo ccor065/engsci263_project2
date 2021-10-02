@@ -27,6 +27,8 @@ for i in range(0, len(coords)):
         iconCol= "pink"
     elif locations.Region[i]=='invalid':
         iconCol= "white"
+    if locations.Type[i]=='Distribution Centre':
+        iconCol= "white"
     folium.Marker(list(reversed(coords[i])), popup ="%s\n lng %s\n lat%s" % (locations.Store[i],locations.Long[i], locations.Lat[i]), icon = folium.Icon(color = iconCol)).add_to(map)
 
 #display map

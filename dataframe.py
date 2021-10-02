@@ -24,9 +24,9 @@ demand = pd.read_csv("assignment_resources/MeanDemandperWeek.csv")
 
 
 ## Merge data
-merged = pd.merge(locations, demand, how = 'inner', on ='Store')
+stores_df = pd.merge(locations, demand, how = 'inner', on ='Store')
 
-#merged = pd.merge(merged, region, how = 'inner', on ='Store')
+#stores_df = pd.merge(stores_df, region, how = 'inner', on ='Store')
 
 '''
 Regional Partitioning
@@ -49,23 +49,35 @@ region_boundaires = pd.DataFrame({'lng':lng, 'lat':lat,'region':region_names})
 ''' uncomment to look at head'''
 #print(region_boundaires.head())
 
-region_add = ["invalid"]*len(merged.Store) #initalise list
+region_add = ["invalid"]*len(stores_df.Store) #initalise list
 # Loop through all stores and partition
-for i in range(len(merged.Store)):
+for i in range(len(stores_df.Store)):
     for j in range(len(region_boundaires.lng)):
         lng = region_boundaires.lng[j]
         lat = region_boundaires.lat[j]
-        if merged.Long[i] >= lng[0] and merged.Long[i] <= lng[1] and merged.Lat[i] <= lat[0] and merged.Lat[i] >= lat[1]:
+        if stores_df.Long[i] >= lng[0] and stores_df.Long[i] <= lng[1] and stores_df.Lat[i] <= lat[0] and stores_df.Lat[i] >= lat[1]:
             region_add[i] = ( region_boundaires.region[j])
 
 
-merged["Region"] = region_add
+stores_df["Region"] = region_add
 '''Uncomment to see head'''
-#print(merged.head())
+#print(stores_df.head())
 '''Uncomment to check for null values'''
-# merged.isnull().any()
+# stores_df.isnull().any()
 # Save to csv file.
 
 # Save to file
-merged.to_csv("stores_df.csv", index=False)
+stores_df.to_csv("stores_df.csv", index=False)
+## region names
+region_names = np.array(["Central Region","South Region","North Region","East Region","West Region","Southern Most Region"])
+col_list = ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"]
+## Construct Data frame for each region.
+
+totals = pd.DataFrame()
+for i in range(len(region_names)):
+    totals[region_names[i]] = ((stores_df[[*col_list, "Region"]])[stores_df.loc[:]["Region"] == region_names[i]])[col_list].sum(axis=0)
+
+print(totals.head())
+totals.to_csv("totals.csv", index=False)
+
 
