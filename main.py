@@ -8,7 +8,17 @@ from generate_routes import *
 
 ## Forulate and solve linear prog
 def solve(day_df, stores, day):
-
+    """
+    This function generates an optimal soltion for agiven day
+    -----------------------------
+    Inputs: 
+        day_df: pandas data frame
+                Stores the routes and the costs associated with each route
+        stores: array-like (or pd series)
+                Every store that must be visted on a given day
+        day:    String
+                name of the day that is being solved
+    """
     # Create the 'prob' varibale to store all of the equations
     prob = LpProblem("%s Routing"%day, LpMinimize)
     # Create dictonary from the df

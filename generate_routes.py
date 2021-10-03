@@ -12,24 +12,21 @@ def generate_routes(stores_df, region_names):
     of truck capacities based on the mean daily demands of each store in the sub-route.
     ------------------------------------------------------------
     INPUTS:
-        Region: pandas df
-                Dataframe containing onfromation on all the stores in a given region.
-        min:     int
-                Minimum number of stores per route for generation
-        max:     int 
-                Maximum number of stores per sub-route.
+        stores_df: pandas df
+                Dataframe containing onfromation on all the stores.
+        region_names:    array of strings
+               contains the names of each region
     -------------------------------------------------------------
     RETURNS:
-        [mc, tuc, wc, thc, fc, sc]: list of lists
-        Where: mc, tuc, wc, thc, fc, sc 
+        Monday, Tuesday, Wednesday, Thursday, Friday and Saturday: list 
                 are lists containing feasible routes on Monday, Tuesday, Wednesday, Thursday
                 Friday and Saturday respectively.
     -------------------------------------------------------------
-    NOTE: Max should be actual max not actual max+1 as this is accounted for in the looping.
-            
+    NOTE: Region names should be exactly the same as the names in the 'region' column of df  
     """
+    # Number of stores visited per route min / max
     min = 2
-    max = 5
+    max = 4+1 #actually 4
     # intialise lists that store valid sub-routes per day
     monday_routes = []         #monday
     tuesday_routes = []        #tuesday .. etc
@@ -105,25 +102,53 @@ def generate_routes(stores_df, region_names):
     return  monday_routes, tuesday_routes, wednesday_routes,thursday_routes, friday_routes,saturday_routes
 
 
-def getCosts(route_set):
+def getCosts(stores_df, route_set, day):
     """
-    This function calculates the duration of a specfic route
+    This function calculates the asocciated costs of a set of valid routes
+    -------------------------------------------------------
+    Inputs :
+            stores_df: pandas df
+            Dataframe containing onfromation on all the stores.
 
+            route_set: list of tuples
+            List of all the vild routes for a given day
+
+            day: str
+            corresponding day to set of routes 
+    --------------------------------------------------------
+    Returns: 
+        cost_set: list
+        Correspoding list of the cost of each route in routes sets
+    ----------------------------------------------------
+    NOTE: Indexes will match in the return so no further manipulation should be nesissary,
+        Each route should start and finish at the disrubtion centre.
+        day should be indentical to the row name i.e Monday = valid, monday = invalid.
     """
+
+    # initalise
     cost_set =[]
+    # Loop through every route in the set
     for route in route_set:
-        nStore = len(route)
-        duration=450*nStore
-        cost =0
+    
+        duration=0  # Initalise duration 
+        cost =0     # Initalise cost to append to set
+        # Loop through to get total duration of route
         for i in range(len(route)-1):
             currentStore = route[i]
             nextStore = route[i+1]
             row = durations.loc[durations['Store'] == currentStore]
             duration += row[nextStore].values[0]
+            # add unpacking time for each pallet at each store (EXCLD. distribtion centre)
+            if i >0:
+                row = stores_df.loc[stores_df['Store'] == currentStore]
+                nPallets = row[day].values[0]
+                duration += 450* nPallets
 
-        #less than four hours
+
+        # less than four hours normal rates apply
         if duration <= 14400:
             cost = duration*0.0625
+        # greater than 4 hour trip then costs are extra
         if duration > 14400:
             cost = 14400*0.0625
             extraTime = duration - 14400
@@ -142,22 +167,22 @@ if __name__ == "__main__":
     monday, tuesday, wednesday, thursday, friday,saturday = generate_routes(stores_df, region_names)
 
     # Create data frame and save to file
-    monday_df = pd.DataFrame({'Route': monday, 'Cost': getCosts(monday)})
+    monday_df = pd.DataFrame({'Route': monday, 'Cost': getCosts(stores_df, monday, 'Monday')})
     monday_df.to_csv("generated_routes/monday_routes.csv", index=False)
 
-    tuesday_df = pd.DataFrame({'Route': tuesday, 'Cost':getCosts(tuesday)})
+    tuesday_df = pd.DataFrame({'Route': tuesday, 'Cost':getCosts(stores_df, tuesday, "Tuesday")})
     tuesday_df.to_csv("generated_routes/tuesday_routes.csv", index=False)
 
-    wednesday_df = pd.DataFrame({'Route': wednesday, 'Cost':getCosts(wednesday)})
+    wednesday_df = pd.DataFrame({'Route': wednesday, 'Cost':getCosts(stores_df, wednesday, "Wednesday")})
     wednesday_df.to_csv("generated_routes/wednesday_routes.csv", index=False)
 
-    thursday_df = pd.DataFrame({'Route': thursday, 'Cost':getCosts(thursday)})
+    thursday_df = pd.DataFrame({'Route': thursday, 'Cost':getCosts(stores_df, thursday, "Thursday")})
     thursday_df.to_csv("generated_routes/thursday_routes.csv", index=False)
 
-    friday_df = pd.DataFrame({'Route': friday, 'Cost': getCosts(friday)})
+    friday_df = pd.DataFrame({'Route': friday, 'Cost': getCosts(stores_df, friday, "Friday")})
     friday_df.to_csv("generated_routes/friday_routes.csv", index=False)
     
-    sat_df = pd.DataFrame({'Route': saturday, 'Cost':getCosts(saturday)})
+    sat_df = pd.DataFrame({'Route': saturday, 'Cost':getCosts(stores_df, saturday, "Saturday")})
     sat_df.to_csv("generated_routes/saturday_routes.csv", index=False)
 
 
