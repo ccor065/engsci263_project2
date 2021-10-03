@@ -1,9 +1,11 @@
 import numpy as np
 import pandas as pd
-import folium
 import itertools
-
-ORSkey = '88'
+"""
+This file generates feasible sub-routes per region.
+"""
+durations = pd.read_csv('assignment_resources/WoolworthsTravelDurations.csv')
+print(durations.head())
 ## Read in store data
 stores_df = pd.read_csv('stores_df.csv')
 ## region names
@@ -57,6 +59,8 @@ def generate_routes(region, min, max):
         # get every possible combintaion of stores based on how many are in each route.
         for subset in itertools.combinations(region_stores, i):
             # initalise counters, these count demands for routes.
+            
+            list(subset)
             dm = 0
             dtu = 0
             dw = 0
@@ -71,6 +75,9 @@ def generate_routes(region, min, max):
                 dw += z.Wednesday.values[0]
                 dth += z.Thursday.values[0]
                 df += z.Friday.values[0]
+            
+            # Add duration to end of sub-route
+            subset += (getDuration(subset),)
             # Check freasblity of specfic route
             if dm <= 26:
                 mc.append(subset)
@@ -100,11 +107,24 @@ def generate_routes(region, min, max):
                 ds += z.Saturday.values[0]
             #Check feaislblity
             if ds <= 26:
+                # ad duration to end of subset
+                subset += (getDuration(subset),)
                 sc.append(subset)
     # return fealisble sub-routes for each day.
     return [mc, tuc, wc,thc,fc,sc]
 
 
+def getDuration(route):
+    """
+    This function calculates the duration of a specfic route
+    """
+    duration=0
+    for i in range(len(route)-1):
+        currentStore = route[i]
+        nextStore = route[i+1]
+        row = durations.loc[durations['Store'] == currentStore]
+        duration += row[nextStore].values[0]
+    return duration
 
 ''' get number of sotes in each region
 print(len(north.index))
@@ -114,8 +134,11 @@ print(len(west.index))
 print(len(southernMost.index))
 '''
 
-'''
+
 central_routes = generate_routes(central, 2, 4) #number of stores 17
+
+print(central_routes[0][0])
+'''
 northern_routes = generate_routes(north, 2, 4) #9 stores
 southern_routes = generate_routes(south, 2, 4) #9 stores
 eastern_routes = generate_routes(east, 2, 4) #12 stores

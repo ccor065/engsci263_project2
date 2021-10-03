@@ -4,3 +4,5 @@
              Partition stores into different regions.
              creates a csv file containing the individual attributes per store.
              generates csv file containing the total daily demands per region.
+- route_generation.py:
+            Generates sets of feaibsle routes per day per region.
