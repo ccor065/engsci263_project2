@@ -2,6 +2,7 @@ from pulp import *
 import pandas as pd
 import numpy as np
 from pulp.constants import LpMinimize
+from collections import Counter
 
 
 # This file generates an optimal solition based on routes generated
@@ -230,7 +231,6 @@ def construct_matrix(day_df,storeSeries):
 
     for i in range(len(stores)):
         store = stores[i]
-        print(store)
         for j in range(len(routes)):
             route = routes[j]
             if store in route:
@@ -252,7 +252,8 @@ if __name__ == "__main__":
     region_names = np.array(["Central Region","South Region","North Region","East Region","West Region","Southern Most Region"])
     monday, tuesday, wednesday, thursday, friday,saturday = generate_routes(stores_df, region_names)
     days = [monday, tuesday, wednesday, thursday, friday]
-
+    for day in days:
+        print(len(day))
     #Check if routes generated are different, therefore solve seperately
     ele = days[0]
     chk = True
@@ -282,5 +283,34 @@ if __name__ == "__main__":
     friCost, friRoutes  = solve(friday_df, weekday_stores, "Friday")
 
     satCost, satRoutes = solve(sat_df, saturday_stores, "Saturday")
+    print(monCost, tueCost, wedCost, thursCost, friCost,satCost)
+
+
+    days = [monRoutes, tueRoutes, wedRoutes, thursRoutes, friRoutes] 
+    ele = days[0]
+    for item in days:
+        if ele != item:
+            chk = False
+            break
+                
+    if (chk == True): 
+        print("Equal")
+    else: 
+        print("Not equal")  
+    stores_visited = []
+    all_stores = []
+    count = 0
+    for route in monRoutes:
+        for store in route:
+            count+=1
+            if store not in stores_visited:
+                stores_visited.append(store)
+            all_stores.append(store)
+            
+    print(count)
+    print(stores_visited)
+    print(stores_visited == all_stores)
+
+  
 
 
