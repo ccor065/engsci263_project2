@@ -326,10 +326,13 @@ if __name__ == "__main__":
     solutions = pd.DataFrame({'Optimal Route':daylyRoutes, 'Optimal Costs':daylyCosts})
     solutions.to_csv("solutions.csv")
 
-    mapSolutions(solutions, stores_df, 0)
-    # mapSolutions(solutions, stores_df, 1)
+## uncomment to generate maps if soltutions have chnaged
+    # mapSolutions(solutions, stores_df, 0)  
+        # mapSolutions(solutions, stores_df, 1)  
 
-    mapSolutions(solutions, stores_df,5)
+    # mapSolutions(solutions, stores_df,2)
+    # mapSolutions(solutions, stores_df, 3)
+    # mapSolutions(solutions, stores_df,5)
 
 
     
