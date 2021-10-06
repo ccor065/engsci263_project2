@@ -325,6 +325,13 @@ if __name__ == "__main__":
     daylyRoutes = pd.Series([monRoutes, tueRoutes, wedRoutes, thursRoutes, friRoutes, satRoutes], index = days)
     solutions = pd.DataFrame({'Optimal Route':daylyRoutes, 'Optimal Costs':daylyCosts})
     solutions.to_csv("solutions.csv")
+    for i in range(len(days)):
+        print("Analysis for %s"%days[i])
+        for route in daylyRoutes[i]:
+            print(route)
+
+    for i in range(len(days)):
+        print("%s Trucking cost: %.3f "%(days[i], daylyCosts[i]))
 
 ## uncomment to generate maps if soltutions have chnaged
     # mapSolutions(solutions, stores_df, 0)  
