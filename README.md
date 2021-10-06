@@ -1,19 +1,21 @@
 # engsci263_project2
 
-Project 2: Trent Wong, Charlotte Cordwell, Ashley Myrelle & Jacob Kim.
-- index.html 
-            - displays maps, run file in browser to see maps (code for this in mapping_locations).
+Project 2: Trent Wong, Charlotte Cordwell, Ashley Tolentino  & Jacob Kim.
+- main.py
+            - Generates sest of feasible routes
+            - getCosts() Generates correspoding cost of each route.
+            - solves for optimal solution and saves the linear program.
+
+- /lin_progs
+            - Linear program for each day of the week.
 - dataframe.py:
              Partition stores into different regions.
              creates a csv file containing the individual attributes per store.
              generates csv file containing the total daily demands per region.
-- route_generation.py:
-            generate_routesGenerates sets of feaibsle routes per day.
-            getCosts() Generates correspoding cost of each route.
 - mapping_locations.py
-            generates html maps.
-- main.py
-            solves for optimal costs
+            generates html maps files.
+- index.html 
+            - displays maps, run file in browser to see maps (code for this in mapping_locations).
 - stores_df.csv & totals.csv
             - csv file contining the tody data set generated in dataframe.py
             - csv file containing the total daily demands of each store
@@ -21,4 +23,5 @@ Project 2: Trent Wong, Charlotte Cordwell, Ashley Myrelle & Jacob Kim.
             constains data files (csv)
 - /maps
             contains mapping files for each region (HTML)
+
 

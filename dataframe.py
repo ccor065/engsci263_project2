@@ -21,7 +21,8 @@ demand = pd.read_csv("assignment_resources/MeanDemandperWeek.csv")
 # region data REDACTED, now using alogrithm to sort
 # #region = pd.read_csv("assignment_resources/supermarket_regions.csv")
 
-
+dc = locations[locations["Store"] == "Distribution Centre Auckland"]
+dc.to_csv("dc.csv")
 
 ## Merge data
 stores_df = pd.merge(locations, demand, how = 'inner', on ='Store')

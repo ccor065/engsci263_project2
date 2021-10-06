@@ -3,6 +3,10 @@ import pandas as pd
 import numpy as np
 from pulp.constants import LpMinimize
 from collections import Counter
+import openrouteservice as ors
+import folium
+
+ORSkey = '5b3ce3597851110001cf6248324acec39fa94080ac19d056286d0ccb'
 
 
 # This file generates an optimal solition based on routes generated
@@ -190,7 +194,7 @@ def solve(day_df, stores, day):
 
 
     # Solving routines 
-    prob.writeLP('lin_progs/%s.lp'%day)
+    #prob.writeLP('lin_progs/%s.lp'%day)
     prob.solve()
     # The status of the solution is printed to the screen
     print("Status:", LpStatus[prob.status])
@@ -231,12 +235,42 @@ def construct_matrix(day_df,storeSeries):
 
     for i in range(len(stores)):
         store = stores[i]
+        if store == 'Distribution Centre Auckland':
+            continue
         for j in range(len(routes)):
             route = routes[j]
             if store in route:
                 matrix[i][j] = 1
 
     return matrix
+def mapSolutions(solutions, stores_df, index):
+    """ Maps solutions routes"""
+    durations = pd.read_csv('assignment_resources/WoolworthsTravelDurations.csv')
+    distances = pd.read_csv('assignment_resources/WoolworthsDistances.csv')
+    dc = pd.read_csv('dc.csv')
+    dc_coords = (dc[['Long', 'Lat']]).to_numpy().tolist()
+    client = ors.Client(key=ORSkey)
+    optimalRoutes = solutions['Optimal Route']
+
+    day = solutions.index[index]
+    routes = optimalRoutes[index]
+    i = 0
+    for route in routes:
+        route = (dc,) + route + (dc,)
+        locations = stores_df[stores_df['Store'].isin(route)]
+        coords = dc_coords + (locations[['Long', 'Lat']]).to_numpy().tolist() + dc_coords
+        map = folium.Map(location = list(reversed(coords[0])), zoom_start=12)
+        line = client.directions(coordinates = [coord for coord in coords], profile ='driving-hgv', format ='geojson', validate = False)
+        folium.PolyLine(locations = [list(reversed(coord)) for coord in line['features'][0]['geometry']['coordinates']]).add_to(map)
+        for i in range(0, len(coords)):
+            iconCol = "black"
+            print(coords[i])
+            folium.Marker(location = list(reversed(coords[i])), popup= "eeee", icon = folium.Icon(color = iconCol)).add_to(map)
+        map.save("route_maps/%s/%s_map.html"%(str(day), str(i)))
+        i+=1
+                
+
+    return
 
 
 
@@ -251,14 +285,13 @@ if __name__ == "__main__":
     # region names
     region_names = np.array(["Central Region","South Region","North Region","East Region","West Region","Southern Most Region"])
     monday, tuesday, wednesday, thursday, friday,saturday = generate_routes(stores_df, region_names)
-    days = [monday, tuesday, wednesday, thursday, friday]
-    for day in days:
-        print(len(day))
+    day_routeSets = [monday, tuesday, wednesday, thursday, friday]
+
     #Check if routes generated are different, therefore solve seperately
-    ele = days[0]
+    ele = day_routeSets[0]
     chk = True
     # Comparing each element with first item 
-    for item in days:
+    for item in day_routeSets:
         if ele != item:
             chk = False
             break
@@ -267,13 +300,15 @@ if __name__ == "__main__":
         print("Equal")
     else: 
         print("Not equal")  
+
+    days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
     # # Generate dataframes
-    monday_df = pd.DataFrame({'Route': monday, 'Cost': getCosts(stores_df, monday, 'Monday')})
-    tuesday_df = pd.DataFrame({'Route': tuesday, 'Cost':getCosts(stores_df, tuesday, "Tuesday")})
-    wednesday_df = pd.DataFrame({'Route': wednesday, 'Cost':getCosts(stores_df, wednesday, "Wednesday")})
-    thursday_df = pd.DataFrame({'Route': thursday, 'Cost':getCosts(stores_df, thursday, "Thursday")})
-    friday_df = pd.DataFrame({'Route': friday, 'Cost': getCosts(stores_df, friday, "Friday")})
-    sat_df = pd.DataFrame({'Route': saturday, 'Cost':getCosts(stores_df, saturday, "Saturday")})
+    monday_df = pd.DataFrame({'Route': monday, 'Cost': getCosts(stores_df, monday, days[0])})
+    tuesday_df = pd.DataFrame({'Route': tuesday, 'Cost':getCosts(stores_df, tuesday, days[1])})
+    wednesday_df = pd.DataFrame({'Route': wednesday, 'Cost':getCosts(stores_df, wednesday, days[2])})
+    thursday_df = pd.DataFrame({'Route': thursday, 'Cost':getCosts(stores_df, thursday, days[3])})
+    friday_df = pd.DataFrame({'Route': friday, 'Cost': getCosts(stores_df, friday, days[4])})
+    sat_df = pd.DataFrame({'Route': saturday, 'Cost':getCosts(stores_df, saturday, days[5])})
     
     # Solve each day!
     monCost, monRoutes = solve(monday_df, weekday_stores, "Monday")
@@ -281,35 +316,49 @@ if __name__ == "__main__":
     wedCost, wedRoutes = solve(wednesday_df, weekday_stores, "Wednesday")
     thursCost, thursRoutes = solve(thursday_df, weekday_stores, "Thursday")
     friCost, friRoutes  = solve(friday_df, weekday_stores, "Friday")
-
     satCost, satRoutes = solve(sat_df, saturday_stores, "Saturday")
+
     print(monCost, tueCost, wedCost, thursCost, friCost,satCost)
 
+ 
+    daylyCosts = pd.Series([monCost, tueCost, wedCost, thursCost, friCost,satCost], index = days)
+    daylyRoutes = pd.Series([monRoutes, tueRoutes, wedRoutes, thursRoutes, friRoutes, satRoutes], index = days)
+    solutions = pd.DataFrame({'Optimal Route':daylyRoutes, 'Optimal Costs':daylyCosts})
+    solutions.to_csv("solutions.csv")
 
-    days = [monRoutes, tueRoutes, wedRoutes, thursRoutes, friRoutes] 
-    ele = days[0]
-    for item in days:
-        if ele != item:
-            chk = False
-            break
+    mapSolutions(solutions, stores_df, 0)
+    # mapSolutions(solutions, stores_df, 1)
+
+    mapSolutions(solutions, stores_df,5)
+
+
+    
+
+    # # Test cases
+    # days = [monRoutes, tueRoutes, wedRoutes, thursRoutes, friRoutes] 
+    # ele = days[0]
+    # for item in days:
+    #     if ele != item:
+    #         chk = False
+    #         break
                 
-    if (chk == True): 
-        print("Equal")
-    else: 
-        print("Not equal")  
-    stores_visited = []
-    all_stores = []
-    count = 0
-    for route in monRoutes:
-        for store in route:
-            count+=1
-            if store not in stores_visited:
-                stores_visited.append(store)
-            all_stores.append(store)
+    # if (chk == True): 
+    #     print("Equal")
+    # else: 
+    #     print("Not equal")  
+    # stores_visited = []
+    # all_stores = []
+    # count = 0
+    # for route in monRoutes:
+    #     for store in route:
+    #         count+=1
+    #         if store not in stores_visited:
+    #             stores_visited.append(store)
+    #         all_stores.append(store)
             
-    print(count)
-    print(stores_visited)
-    print(stores_visited == all_stores)
+    # print(count)
+    # print(stores_visited)
+    # print(stores_visited == all_stores)
 
   
 

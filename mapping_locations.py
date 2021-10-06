@@ -2,7 +2,7 @@ import numpy as np
 import pandas as pd
 import folium
 
-ORSkey = '88'
+ORSkey = '5b3ce3597851110001cf6248324acec39fa94080ac19d056286d0ccb'
 
 locations = pd.read_csv('stores_df.csv')
 coords = locations[['Long', 'Lat']]
@@ -29,7 +29,7 @@ for i in range(0, len(coords)):
         iconCol= "white"
     if locations.Type[i]=='Distribution Centre':
         iconCol= "white"
-    folium.Marker(list(reversed(coords[i])), popup ="%s\n lng %s\n lat%s" % (locations.Store[i],locations.Long[i], locations.Lat[i]), icon = folium.Icon(color = iconCol)).add_to(map)
+    folium.Marker(list(reversed(coords[i])), popup ="%s \n lg %.3f\n lat: %.3f" % (locations.Store[i],locations.Long[i], locations.Lat[i]), icon = folium.Icon(color = iconCol)).add_to(map)
 
 #display map
 map.save("maps/map_locations.html") ##Open html file to see output
@@ -49,7 +49,7 @@ for name in region_names:
                 iconCol="orange"
             elif locations.Type[i] == "Distribution Centre":
                 iconCol= "black"
-            folium.Marker(list(reversed(coords[i])), popup ="%s\n lng %s\n lat%s" % (locations.Store[i],locations.Long[i], locations.Lat[i]), icon = folium.Icon(color = iconCol)).add_to(map)
+            folium.Marker(list(reversed(coords[i])), popup ="%s\n lg %.3f\n lat%.3f" % (locations.Store[i],locations.Long[i], locations.Lat[i]), icon = folium.Icon(color = iconCol)).add_to(map)
     map.save("maps/%s_map.html"%name.split()[0])
     
 
