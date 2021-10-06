@@ -251,7 +251,7 @@ def mapSolutions(solutions, stores_df, index):
     dc_coords = (dc[['Long', 'Lat']]).to_numpy().tolist()
     client = ors.Client(key=ORSkey)
     optimalRoutes = solutions['Optimal Route']
-
+    iconCol = "blue"
     day = solutions.index[index]
     routes = optimalRoutes[index]
     i = 0
@@ -260,12 +260,12 @@ def mapSolutions(solutions, stores_df, index):
         locations = stores_df[stores_df['Store'].isin(route)]
         coords = dc_coords + (locations[['Long', 'Lat']]).to_numpy().tolist() + dc_coords
         map = folium.Map(location = list(reversed(coords[0])), zoom_start=12)
+        folium.Marker(list(reversed(coords[0])), popup= "DC", icon = folium.Icon(color = 'black')).add_to(map)
+        for i in range(1, len(route)-1):
+            folium.Marker(list(reversed(coords[i])), popup= str(route[i]), icon = folium.Icon(color = iconCol)).add_to(map)
         line = client.directions(coordinates = [coord for coord in coords], profile ='driving-hgv', format ='geojson', validate = False)
         folium.PolyLine(locations = [list(reversed(coord)) for coord in line['features'][0]['geometry']['coordinates']]).add_to(map)
-        for i in range(0, len(coords)):
-            iconCol = "black"
-            print(coords[i])
-            folium.Marker(location = list(reversed(coords[i])), popup= "eeee", icon = folium.Icon(color = iconCol)).add_to(map)
+
         map.save("route_maps/%s/%s_map.html"%(str(day), str(i)))
         i+=1
                 
