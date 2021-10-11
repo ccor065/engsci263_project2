@@ -33,52 +33,30 @@ def generate_routes(stores_df, region_names):
     min = 1
     max = 4+1 #actually 4
     # intialise lists that store valid sub-routes per day
-    monday_routes = []         #monday
-    tuesday_routes = []        #tuesday .. etc
-    wednesday_routes = []
-    thursday_routes = []
-    friday_routes = []
+    weekday_routes = []
     saturday_routes = []
-    # all routes must begin at disrubtion centre
-    dc = 'Distribution Centre Auckland'
+
     # generates sub-routes per day
-    """ WEEK DAY ROUTES"""
+    
     for regionType in region_names:
         region = stores_df[stores_df.loc[:]["Region"] == regionType]
         region_stores = np.array(region.Store) 
         ## Loop through number of stores per sub-route
+        """ WEEK DAY ROUTES"""
         for i in range (min, max):
             # get every possible combintaion of stores based on how many are in each route.
             for subset in itertools.combinations(region_stores, i):
                 # initalise counters, these count demands for routes.
-                dm = 0
-                dtu = 0
-                dw = 0
-                dth = 0
-                df = 0
+                demandOfRoute =0
                 # cycle through each store in the sub-route and sum their demands.
                 for node in subset:
-                    # add to counter based on day/
-                    z = region[region.Store == node]
-                    dm += z.Monday.values[0]
-                    dtu += z.Tuesday.values[0]
-                    dw += z.Wednesday.values[0]
-                    dth += z.Thursday.values[0]
-                    df += z.Friday.values[0]
-                
-                # Add duration to end of sub-route
-                # subset = (dc,) + subset + (dc,) 
+                    # add to counter based on day
+                    store = region[region.Store == node]
+                    demandOfRoute += store.Weekday.values[0] 
                 # Check freasblity of specfic route
-                if dm <= 26:
-                    monday_routes.append(subset)
-                if dtu <= 26:
-                    tuesday_routes.append(subset)
-                if dw <= 26:
-                    wednesday_routes.append(subset)
-                if dth <= 26:
-                    thursday_routes.append(subset)
-                if df <= 26:
-                    friday_routes.append(subset)
+                if demandOfRoute <= 26:
+                    weekday_routes.append(subset)
+
         #Generate saturdays
         satC_stores = []
         # Add stores to list
@@ -89,20 +67,16 @@ def generate_routes(stores_df, region_names):
         #Generate sub-routes say way as week-day
         for i in range (min,max):
             for subset in itertools.combinations(satC_stores, i):
-                ds = 0 #Initalse demand counter
+                demandOfSatRoute = 0 #Initalse demand counter
                 for node in subset:
-                    z = region[region.Store == node]
-                    ds += z.Saturday.values[0]
+                    store = region[region.Store == node]
+                    demandOfSatRoute += store.Saturday.values[0]
                 #Check feaislblity
-                if ds <= 26:
-                    # add duration to end of subset
-                    # subset = (dc,) + subset + (dc,) 
+                if demandOfSatRoute <= 26:
                     saturday_routes.append(subset)
 
     # return fealisble sub-routes for each day.
-
-
-    return  monday_routes, tuesday_routes, wednesday_routes,thursday_routes, friday_routes,saturday_routes
+    return  saturday_routes, weekday_routes
 
 
 def getCosts(stores_df, route_set, day):
@@ -130,9 +104,11 @@ def getCosts(stores_df, route_set, day):
     durations = pd.read_csv('assignment_resources/WoolworthsTravelDurations.csv')
     # initalise
     cost_set =[]
+    # All routes start and end here
+    dc = 'Distribution Centre Auckland'
     # Loop through every route in the set
     for route in route_set:
-        dc = 'Distribution Centre Auckland'
+        
         route = (dc,) + route + (dc,) 
         duration= 0  # Initalise duration 
         cost =0     # Initalise cost to append to set
@@ -161,7 +137,7 @@ def getCosts(stores_df, route_set, day):
 
 def solve(day_df, stores, day):
     """
-    This function generates an optimal soltion for agiven day
+    This function generates an optimal soltion for a given day
     -----------------------------
     Inputs: 
         day_df: pandas data frame
@@ -199,14 +175,18 @@ def solve(day_df, stores, day):
     # The status of the solution is printed to the screen
     print("Status:", LpStatus[prob.status])
 
-    # Get the optimal routes
+    # Create df that stores th optimal routes, their costs and the region theyre in.
     optimalRoutes = []
+    corRegion = []
+    corCosts= []
     for v in prob.variables():
         if v.varValue == 1:
             index = (v.name).replace("Route_","")
             optimalRoutes.append(day_df['Route'][int(index)])
+            corRegion.append(day_df["Region"][int(index)])
+            corCosts.append(day_df["Cost"][int(index)])
 
-  
+    optimalRoutes = pd.DataFrame({"Route":optimalRoutes, "Region":corRegion, "Cost":corCosts})
     # The optimised objective function valof Ingredients pue is printed to the screen    
     print("Total Cost = ", value(prob.objective))
     # return objective value and the optimal routes
@@ -245,16 +225,28 @@ def construct_matrix(day_df,storeSeries):
     return matrix
 def mapSolutions(solutions, stores_df, index):
     """ Maps solutions routes"""
+
+    # Set up open route client
+    client = ors.Client(key=ORSkey)
+
+    # read in files
     durations = pd.read_csv('assignment_resources/WoolworthsTravelDurations.csv')
     distances = pd.read_csv('assignment_resources/WoolworthsDistances.csv')
+
+    # Distrubtion centre attributes
     dc = pd.read_csv('dc.csv')
     dc_coords = (dc[['Long', 'Lat']]).to_numpy().tolist()
-    client = ors.Client(key=ORSkey)
+
+    # region names
+    region_names = np.array(["Central Region","South Region","North Region","East Region","West Region","Southern Most Region"])
+
     optimalRoutes = solutions['Optimal Route']
     iconCol = "blue"
     day = solutions.index[index]
     routes = optimalRoutes[index]
     i = 0
+
+
     for route in routes:
         route = (dc,) + route + (dc,)
         locations = stores_df[stores_df['Store'].isin(route)]
@@ -271,105 +263,94 @@ def mapSolutions(solutions, stores_df, index):
                 
 
     return
+def mapByRegion(solutions, stores_df, day):
+    """ Maps solutions routes"""
+
+    # Set up open route client
+    client = ors.Client(key=ORSkey)
+
+    # read in files
+    durations = pd.read_csv('assignment_resources/WoolworthsTravelDurations.csv')
+    distances = pd.read_csv('assignment_resources/WoolworthsDistances.csv')
+
+    # Distrubtion centre attributes
+    dc = pd.read_csv('dc.csv')
+    dc_coords = (dc[['Long', 'Lat']]).to_numpy().tolist()
+    iconCol = "blue"
+    # region names
+    region_names = np.array(["Central Region","South Region","North Region","East Region","West Region","Southern Most Region"])
+    for region in region_names:
+        region_routes =(solutions.loc[solutions["Region"] == region, ["Route"]])
+        region_routes = region_routes["Route"]
+        line = []
+        print(region_routes)
+        for route in region_routes:
+            route = (dc,) + route + (dc,)
+            locations = stores_df[stores_df['Store'].isin(route)]
+            coords = dc_coords + (locations[['Long', 'Lat']]).to_numpy().tolist() + dc_coords
+            map = folium.Map(location = list(reversed(coords[0])), zoom_start=12)
+            folium.Marker(list(reversed(coords[0])), popup= "DC", icon = folium.Icon(color = 'black')).add_to(map)
+            for i in range(1, len(route)-1):
+                folium.Marker(list(reversed(coords[i])), popup= str(route[i]), icon = folium.Icon(color = iconCol)).add_to(map)
+            line.append(client.directions(coordinates = [coord for coord in coords], profile ='driving-hgv', format ='geojson', validate = False))
+            folium.PolyLine(locations = [list(reversed(coord)) for coord in coords for coords in line['features'][0]['geometry']['coordinates']]).add_to(map)
+
+        map.save("route_maps/%s/%s_map.html"%(str(day), region))
+
+
+    return
 
 
 
-if __name__ == "__main__":
+
+if __name__ == "__main__    ":
     ## Read in store data
     stores_df = pd.read_csv('stores_df.csv')
+
+    # Generate lists of stores for week-day deliveries
     weekday_stores = stores_df['Store']
+    # List of stores that recive deliveries on saturdays
     satTemp = stores_df.loc[stores_df["Saturday"] != 0, ["Store"]]
     saturday_stores = satTemp['Store']
  
-    #print(saturday_stores)
-    # region names
+
+    # Intiallise region names array
     region_names = np.array(["Central Region","South Region","North Region","East Region","West Region","Southern Most Region"])
-    monday, tuesday, wednesday, thursday, friday,saturday = generate_routes(stores_df, region_names)
-    day_routeSets = [monday, tuesday, wednesday, thursday, friday]
-
-    #Check if routes generated are different, therefore solve seperately
-    ele = day_routeSets[0]
-    chk = True
-    # Comparing each element with first item 
-    for item in day_routeSets:
-        if ele != item:
-            chk = False
-            break
-              
-    if (chk == True): 
-        print("Equal")
-    else: 
-        print("Not equal")  
-
-    days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
-    # # Generate dataframes
-    monday_df = pd.DataFrame({'Route': monday, 'Cost': getCosts(stores_df, monday, days[0])})
-    tuesday_df = pd.DataFrame({'Route': tuesday, 'Cost':getCosts(stores_df, tuesday, days[1])})
-    wednesday_df = pd.DataFrame({'Route': wednesday, 'Cost':getCosts(stores_df, wednesday, days[2])})
-    thursday_df = pd.DataFrame({'Route': thursday, 'Cost':getCosts(stores_df, thursday, days[3])})
-    friday_df = pd.DataFrame({'Route': friday, 'Cost': getCosts(stores_df, friday, days[4])})
-    sat_df = pd.DataFrame({'Route': saturday, 'Cost':getCosts(stores_df, saturday, days[5])})
     
+    # Generate sets of feaisble routes for saturday and weekdays
+    saturday, weekdays = generate_routes(stores_df, region_names)
+
+
+    
+    orderedRegionSat = []
+    orderedRegionWeek = []
+    
+    for route in saturday:
+        store = route[0]
+        orderedRegionSat.append((stores_df.loc[stores_df["Store"] == store, ["Region"]]).values[0])
+    
+    for route in weekdays:
+        store = route[0]
+        orderedRegionWeek.append((stores_df.loc[stores_df["Store"] == store, ["Region"]]).values[0])
+    # Construct dataframes to store feasible routes and their corresponsing costs for sat and weekday
+    sat_df = pd.DataFrame({'Route': saturday, 'Cost':getCosts(stores_df, saturday, "Saturday"), 'Region':orderedRegionSat})
+    week_df = pd.DataFrame({'Route': weekdays, 'Cost':getCosts(stores_df, weekdays, "Weekday"), 'Region':orderedRegionWeek})
+
     # Solve each day!
-    monCost, monRoutes = solve(monday_df, weekday_stores, "Monday")
-    tueCost, tueRoutes = solve(tuesday_df, weekday_stores, "Tuesday")
-    wedCost, wedRoutes = solve(wednesday_df, weekday_stores, "Wednesday")
-    thursCost, thursRoutes = solve(thursday_df, weekday_stores, "Thursday")
-    friCost, friRoutes  = solve(friday_df, weekday_stores, "Friday")
     satCost, satRoutes = solve(sat_df, saturday_stores, "Saturday")
+    weekCost, weekRoutes = solve(week_df, weekday_stores, "Weekdays")
 
-    print(monCost, tueCost, wedCost, thursCost, friCost,satCost)
+    satRoutes.to_csv("sat_soln.csv")
+    weekRoutes.to_csv("weekday_soln.csv")
 
- 
-    daylyCosts = pd.Series([monCost, tueCost, wedCost, thursCost, friCost,satCost], index = days)
-    daylyRoutes = pd.Series([monRoutes, tueRoutes, wedRoutes, thursRoutes, friRoutes, satRoutes], index = days)
-    solutions = pd.DataFrame({'Optimal Route':daylyRoutes, 'Optimal Costs':daylyCosts})
-    solutions.to_csv("solutions.csv")
-    for i in range(len(days)):
-        print("Analysis for %s"%days[i])
-        for route in daylyRoutes[i]:
-            print(route)
 
-    for i in range(len(days)):
-        print("%s Trucking cost: %.3f "%(days[i], daylyCosts[i]))
+    # Map the optimal routes per region per day :)
+    mapByRegion(satRoutes, stores_df, "Saturday")
+    mapByRegion(weekRoutes, stores_df, "Weekday")
 
-## uncomment to generate maps if soltutions have chnaged
-    # mapSolutions(solutions, stores_df, 0)  
-        # mapSolutions(solutions, stores_df, 1)  
-
-    # mapSolutions(solutions, stores_df,2)
-    # mapSolutions(solutions, stores_df, 3)
-    # mapSolutions(solutions, stores_df,5)
 
 
     
 
-    # # Test cases
-    # days = [monRoutes, tueRoutes, wedRoutes, thursRoutes, friRoutes] 
-    # ele = days[0]
-    # for item in days:
-    #     if ele != item:
-    #         chk = False
-    #         break
-                
-    # if (chk == True): 
-    #     print("Equal")
-    # else: 
-    #     print("Not equal")  
-    # stores_visited = []
-    # all_stores = []
-    # count = 0
-    # for route in monRoutes:
-    #     for store in route:
-    #         count+=1
-    #         if store not in stores_visited:
-    #             stores_visited.append(store)
-    #         all_stores.append(store)
-            
-    # print(count)
-    # print(stores_visited)
-    # print(stores_visited == all_stores)
-
-  
 
 

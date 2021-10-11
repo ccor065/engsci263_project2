@@ -17,7 +17,9 @@ NOTE: Daily demands do not include sunday as no deliverys are done on sundays.
 # Load location data from csv file
 locations  = pd.read_csv("assignment_resources/WoolworthsLocations.csv")
 # Load average demnd per day for store 
-demand = pd.read_csv("assignment_resources/MeanDemandperWeek.csv")
+demand = pd.read_csv("assignment_resources/MeanDemandperDayCombined.csv")
+print(demand.head())
+demand = demand[["Weekday","Saturday", "Store"]]
 # region data REDACTED, now using alogrithm to sort
 # #region = pd.read_csv("assignment_resources/supermarket_regions.csv")
 
@@ -62,25 +64,11 @@ for i in range(len(stores_df.Store)):
 
 stores_df["Region"] = region_add
 '''Uncomment to see head'''
-#print(stores_df.head())
+print(stores_df)
 '''Uncomment to check for null values'''
-# stores_df.isnull().any()
+stores_df.isnull().any()
 # Save to csv file.
 
 # Save to file
 stores_df.to_csv("stores_df.csv", index=False)
-## region names
-region_names = np.array(["Central Region","South Region","North Region","East Region","West Region","Southern Most Region"])
-col_list = ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"]
-## Construct Data frame for each region.
-
-totals = pd.DataFrame()
-for i in range(len(region_names)):
-    totals[region_names[i]] = ((stores_df[[*col_list, "Region"]])[stores_df.loc[:]["Region"] == region_names[i]])[col_list].sum(axis=0)
-totals = totals.T
-
-
-print(totals.head())
-#totals.to_csv("totals.csv")
-
 
