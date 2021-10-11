@@ -5,6 +5,7 @@ from pulp.constants import LpMinimize
 from collections import Counter
 import openrouteservice as ors
 import folium
+from random import randint
 
 ORSkey = '5b3ce3597851110001cf6248324acec39fa94080ac19d056286d0ccb'
 
@@ -223,46 +224,46 @@ def construct_matrix(day_df,storeSeries):
                 matrix[i][j] = 1
 
     return matrix
-def mapSolutions(solutions, stores_df, index):
-    """ Maps solutions routes"""
+# def mapSolutions(solutions, stores_df, index):
+#     """ Maps solutions routes"""
 
-    # Set up open route client
-    client = ors.Client(key=ORSkey)
+#     # Set up open route client
+#     client = ors.Client(key=ORSkey)
 
-    # read in files
-    durations = pd.read_csv('assignment_resources/WoolworthsTravelDurations.csv')
-    distances = pd.read_csv('assignment_resources/WoolworthsDistances.csv')
+#     # read in files
+#     durations = pd.read_csv('assignment_resources/WoolworthsTravelDurations.csv')
+#     distances = pd.read_csv('assignment_resources/WoolworthsDistances.csv')
 
-    # Distrubtion centre attributes
-    dc = pd.read_csv('dc.csv')
-    dc_coords = (dc[['Long', 'Lat']]).to_numpy().tolist()
+#     # Distrubtion centre attributes
+#     dc = pd.read_csv('dc.csv')
+#     dc_coords = (dc[['Long', 'Lat']]).to_numpy().tolist()
 
-    # region names
-    region_names = np.array(["Central Region","South Region","North Region","East Region","West Region","Southern Most Region"])
+#     # region names
+#     region_names = np.array(["Central Region","South Region","North Region","East Region","West Region","Southern Most Region"])
 
-    optimalRoutes = solutions['Optimal Route']
-    iconCol = "blue"
-    day = solutions.index[index]
-    routes = optimalRoutes[index]
-    i = 0
+#     optimalRoutes = solutions['Optimal Route']
+#     iconCol = "blue"
+#     day = solutions.index[index]
+#     routes = optimalRoutes[index]
+#     i = 0
 
 
-    for route in routes:
-        route = (dc,) + route + (dc,)
-        locations = stores_df[stores_df['Store'].isin(route)]
-        coords = dc_coords + (locations[['Long', 'Lat']]).to_numpy().tolist() + dc_coords
-        map = folium.Map(location = list(reversed(coords[0])), zoom_start=12)
-        folium.Marker(list(reversed(coords[0])), popup= "DC", icon = folium.Icon(color = 'black')).add_to(map)
-        for i in range(1, len(route)-1):
-            folium.Marker(list(reversed(coords[i])), popup= str(route[i]), icon = folium.Icon(color = iconCol)).add_to(map)
-        line = client.directions(coordinates = [coord for coord in coords], profile ='driving-hgv', format ='geojson', validate = False)
-        folium.PolyLine(locations = [list(reversed(coord)) for coord in line['features'][0]['geometry']['coordinates']]).add_to(map)
+#     for route in routes:
+#         route = (dc,) + route + (dc,)
+#         locations = stores_df[stores_df['Store'].isin(route)]
+#         coords = dc_coords + (locations[['Long', 'Lat']]).to_numpy().tolist() + dc_coords
+#         map = folium.Map(location = list(reversed(coords[0])), zoom_start=12)
+#         folium.Marker(list(reversed(coords[0])), popup= "DC", icon = folium.Icon(color = 'black')).add_to(map)
+#         for i in range(1, len(route)-1):
+#             folium.Marker(list(reversed(coords[i])), popup= str(route[i]), icon = folium.Icon(color = iconCol)).add_to(map)
+#         line = client.directions(coordinates = [coord for coord in coords], profile ='driving-hgv', format ='geojson', validate = False)
+#         folium.PolyLine(locations = [list(reversed(coord)) for coord in line['features'][0]['geometry']['coordinates']]).add_to(map)
 
-        map.save("route_maps/%s/%s_map.html"%(str(day), str(i)))
-        i+=1
+#         map.save("route_maps/%s/%s_map.html"%(str(day), str(i)))
+#         i+=1
                 
 
-    return
+#     return
 def mapByRegion(solutions, stores_df, day):
     """ Maps solutions routes"""
 
@@ -272,38 +273,40 @@ def mapByRegion(solutions, stores_df, day):
     # read in files
     durations = pd.read_csv('assignment_resources/WoolworthsTravelDurations.csv')
     distances = pd.read_csv('assignment_resources/WoolworthsDistances.csv')
-
+    # list_colors = 
     # Distrubtion centre attributes
     dc = pd.read_csv('dc.csv')
     dc_coords = (dc[['Long', 'Lat']]).to_numpy().tolist()
-    iconCol = "blue"
+    iconCol = "blue" #'beige', 'darkred', 'pink', 'white', 'cadetblue', 'darkblue', 'black', 'purple', 'green', 'red', 'darkpurple', 'lightred', 'gray', 'darkgreen', 'lightgray', 'blue', 'orange', 'lightgreen', 'lightblue'
     # region names
+
     region_names = np.array(["Central Region","South Region","North Region","East Region","West Region","Southern Most Region"])
+    k=0
     for region in region_names:
         region_routes =(solutions.loc[solutions["Region"] == region, ["Route"]])
         region_routes = region_routes["Route"]
-        line = []
-        print(region_routes)
+        map = folium.Map(location = list(reversed(dc_coords[0])), zoom_start=12)
+        folium.Marker(list(reversed(dc_coords[0])), popup= "DC", icon = folium.Icon(color = 'black')).add_to(map)
+        
         for route in region_routes:
             route = (dc,) + route + (dc,)
             locations = stores_df[stores_df['Store'].isin(route)]
             coords = dc_coords + (locations[['Long', 'Lat']]).to_numpy().tolist() + dc_coords
-            map = folium.Map(location = list(reversed(coords[0])), zoom_start=12)
-            folium.Marker(list(reversed(coords[0])), popup= "DC", icon = folium.Icon(color = 'black')).add_to(map)
+            colorA = ('#%06X' % randint(0, 0xFFFFFF))
             for i in range(1, len(route)-1):
                 folium.Marker(list(reversed(coords[i])), popup= str(route[i]), icon = folium.Icon(color = iconCol)).add_to(map)
-            line.append(client.directions(coordinates = [coord for coord in coords], profile ='driving-hgv', format ='geojson', validate = False))
-            folium.PolyLine(locations = [list(reversed(coord)) for coord in coords for coords in line['features'][0]['geometry']['coordinates']]).add_to(map)
-
-        map.save("route_maps/%s/%s_map.html"%(str(day), region))
-
+            line = client.directions(coordinates = [coord for coord in coords], profile ='driving-hgv', format ='geojson', validate = False)
+            folium.PolyLine(locations = [list(reversed(coord)) for coord in line['features'][0]['geometry']['coordinates']], color =colorA).add_to(map)
+            
+            k+=1
+            map.save("route_maps/%s/%s_map.html"%(str(day), region))
 
     return
 
 
 
 
-if __name__ == "__main__    ":
+if __name__ == "__main__":
     ## Read in store data
     stores_df = pd.read_csv('stores_df.csv')
 
