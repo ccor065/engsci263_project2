@@ -13,9 +13,9 @@ ORSkey = '5b3ce3597851110001cf6248324acec39fa94080ac19d056286d0ccb'
 
 
 # Map generation functions
-def mapByRegion(solutions, day):
+def mapByRegion(solutions,stores_df,  day):
     """ Maps solutions routes"""
-
+    print("generating maps...")
     # Set up open route client
     client = ors.Client(key=ORSkey)
 
@@ -26,41 +26,36 @@ def mapByRegion(solutions, day):
     # Distrubtion centre attributes
     dc = pd.read_csv('dc.csv')
     dc_coords = (dc[['Long', 'Lat']]).to_numpy().tolist()
-    iconCol = [['darkred','red', 'lightred', 'orange', 'pink', 'beige'],
-    ['blue', 'pruple', "darkpurple", 'lightblue' ], ["green", "lightgreen", "darkgreen"], ['gray', 'black', 'lightgray', 'darkred'], 
-     ['gray', 'black', 'lightgray', 'darkred', 'white'] ,['orange', 'beige']
-    ]
-    # iconCol = [ 'darkred',  'blue', 
-    #  'green', 'purple', 'orange',  'lightblue']
+    iconCol = 'blue'
 
-    x = ['#a03336','#37a7d9','#6fab25','#cd50b5','#f59630','#83d9ff']
+    
     # region names
 
     region_names = np.array(["Central Region","South Region","North Region","East Region","West Region","Southern Most Region"])
     
-    map = folium.Map(location = list(reversed(dc_coords[0])), zoom_start=12)
-    folium.Marker(list(reversed(dc_coords[0])), popup= "DC", icon = folium.Icon(color = 'black')).add_to(map)
+   
     j = 0
     for region in region_names:
         region_routes =(solutions.loc[solutions["Region"] == region, ["Route"]])
         region_routes = region_routes["Route"]
- 
+        map = folium.Map(location = list(reversed(dc_coords[0])), zoom_start=12)
+        folium.Marker(list(reversed(dc_coords[0])), popup= "DC", icon = folium.Icon(color = 'black', icon = "glyphicon-asterisk")).add_to(map)
         k =0
         for route in region_routes:
             route = (dc,) + route + (dc,)
             locations = stores_df[stores_df['Store'].isin(route)]
             coords = dc_coords + (locations[['Long', 'Lat']]).to_numpy().tolist() + dc_coords
-            colorA =  x[k]#('#%06X' % randint(0, 0xFFFFFF))
+            colorA =  ('#%06X' % randint(0, 0xFFFFFF))
             for i in range(1, len(route)-1):
-                folium.Marker(list(reversed(coords[i])), popup= str(route[i]), icon = folium.Icon(color = iconCol[k])).add_to(map)
+                folium.Marker(list(reversed(coords[i])), popup= str(route[i]), icon = folium.Icon(color = iconCol, icon = "glyphicon-shopping-cart")).add_to(map)
             line = client.directions(coordinates = [coord for coord in coords], profile ='driving-hgv', format ='geojson', validate = False)
-            folium.PolyLine(locations = [list(reversed(coord)) for coord in line['features'][0]['geometry']['coordinates']], color =colorA, weight = 4 , opacity = 1).add_to(map)
-            
+            folium.PolyLine(locations = [list(reversed(coord)) for coord in line['features'][0]['geometry']['coordinates']], color =colorA, weight = 5 , opacity = 1).add_to(map)
+            map.save("route_maps/%s/%s_map.html"%(day, region))
             k+=1
         j+=1
 
-    map.save("route_maps/%s/%s_map.html"%(day, day))
-
+    
+    print("map generation complete")
     return
 def mapStores():
     locations = stores_df
@@ -670,6 +665,11 @@ if __name__ == "__main__":
 
     
     satCost, satRoutes,weekCost, weekRoutes = getOptimal(stores_df,saturday_stores,weekday_stores)
+    
+            
+    # Map the optimal routes per region per day :)
+    mapByRegion(satRoutes, stores_df, "Saturday")
+    mapByRegion(weekRoutes, stores_df, "Weekday")
     n = 1000
     lwr = int(0.025 * n)
     uper = int(0.975 * n)
@@ -735,13 +735,9 @@ if __name__ == "__main__":
     plt.savefig('saturday_sim_distribution ',dpi=300)
     plt.show()
 
-    # satRoutes.to_csv("sat_soln.csv")
-    # weekRoutes.to_csv("weekday_soln.csv")
+    satRoutes.to_csv("sat_soln.csv")
+    weekRoutes.to_csv("weekday_soln.csv")
 
-            
-    # # Map the optimal routes per region per day :)
-    # mapByRegion(satRoutes, stores_df, "Saturday")
-    # mapByRegion(weekRoutes, stores_df, "Weekday")
 
     
 
