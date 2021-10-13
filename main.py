@@ -375,10 +375,11 @@ def generate(a, m, b):
     
     return value
 def generateDemandsSat(stores_df,saturday_stores):
-    sat_demands = stores_df[stores_df["Store"] == [store for store in saturday_stores], ['Saturday']]
+    sat_demands = stores_df[stores_df["Saturday"] != 0]
+
     demands = []
     for i in range(len(saturday_stores)):
-        mu = sat_demands[i]["Saturday"]
+        mu = sat_demands.iloc[i]["Saturday"]
         demands.append(round(generate(mu-2, mu, mu+2)))
     sat_stores = pd.DataFrame({'Store':saturday_stores, 'Demand':demands})
     return sat_stores
@@ -508,12 +509,12 @@ def solveExtra(day_df, stores):
         prob+= lpSum([routes[k] * aMatrix[i][k] for k in range(len(routes))]) == 1, "%s"% stores[i]
 
     # Trucks constraint
-    prob += lpSum([routes[i]  for i in range(len(day_df))]- xt) <= 6, "Trucks_constraint"
+    prob += lpSum([routes[i]  for i in range(len(day_df))]- xt) <= 60, "Trucks_constraint"
 
     # Solving routines 
   
     prob.solve(PULP_CBC_CMD(msg=0))
-
+    #print("Status:", LpStatus[prob.status])
     # Create df that stores th optimal routes, their costs and the region theyre in.
     optimalRoutes = []
 
@@ -572,11 +573,13 @@ def getOptimal(stores_df, saturday_stores, weekday_stores):
     return satCost, satRoutes,weekCost, weekRoutes
 def simulateWeek( route_df, stores, n):
     prior_routes = route_df["Route"]
-    optimal_costs = []
+    optimal_costs =np.zeros(n)
+    extraStores_list = []
     for i in range(n):
-        # Generate demand for stores on the pert-beta distrubution
-        week_demands = generateDemandsWeek( stores)
 
+        # Generate emand for stores on the pert-beta distrubution
+        week_demands = generateDemandsWeek(stores)
+        # print(i)
         #Check validity of  routes with the new demands
         extra_stores = []
         extra_storesDemand = []
@@ -594,9 +597,11 @@ def simulateWeek( route_df, stores, n):
                 route = route[0:-1]
                 routes.append(route)
                 extra_stores.append(extra_store)
+                extraStores_list.append(extra_store)
                 extra_storesDemand.append((week_demands[week_demands.Store == extra_store]).Demand.values[0])
         extraStores_cost =0
         if len(extra_stores)>1:
+
             extraStores_df = pd.DataFrame({"Store":extra_stores, "Demand":extra_storesDemand})
             extraStores_cost, extraRoutes = generateRoutesExtra(extraStores_df)
 
@@ -605,18 +610,18 @@ def simulateWeek( route_df, stores, n):
         # generate other routes
         # get costs with the new demands, and incude variances in traffic.
         costs = getCostsVariance(week_demands, routes) 
-        optimal_costs.append(sum(costs) + extraStores_cost)
-    return optimal_costs
+        optimal_costs[i]= (sum(costs) + extraStores_cost)
+        
+    return optimal_costs, extraStores_list
 
 
 def simulateSat(stores_df, route_df, stores, n):
     prior_routes = route_df["Route"]
-   
-    optimal_costs = []
+    extraStores_list = []
+    optimal_costs =np.zeros(n)
     for i in range(n):
         # Generate demand for stores on the pert-beta distrubution
-        sat_demands = generateDemandsSat(stores_df, stores)
-
+        sat_demands = generateDemandsSat(stores_df, stores) 
         #Check validity of  routes with the new demands
         extra_stores = []
         extra_storesDemand = []
@@ -634,6 +639,7 @@ def simulateSat(stores_df, route_df, stores, n):
                 route = route[0:-1]
                 routes.append(route)
                 extra_stores.append(extra_store)
+                extraStores_list.append(extra_store)
                 extra_storesDemand.append((sat_demands[sat_demands.Store == extra_store]).Demand.values[0])
 
             # generate extra routes
@@ -642,13 +648,14 @@ def simulateSat(stores_df, route_df, stores, n):
             extraStores_df = pd.DataFrame({"Store":extra_stores, "Demand":extra_storesDemand})
             extraStores_cost, extraRoutes = generateRoutesExtra(extraStores_df)
 
+
         if len(extra_stores) ==1:
             routes.append((extra_stores[0],))
         # generate other routes
         # get costs with the new demands, and incude variances in traffic.
         costs = getCostsVariance(sat_demands, routes) 
-        optimal_costs.append(sum(costs) + extraStores_cost)
-    return optimal_costs
+        optimal_costs[i] = (sum(costs) + extraStores_cost)
+    return optimal_costs, extraStores_list
 
 
 
@@ -663,12 +670,70 @@ if __name__ == "__main__":
 
     
     satCost, satRoutes,weekCost, weekRoutes = getOptimal(stores_df,saturday_stores,weekday_stores)
+    n = 1000
+    lwr = int(0.025 * n)
+    uper = int(0.975 * n)
     print("Weekday simulation...")
-    # week_costs = simulateWeek( weekRoutes,weekday_stores, 50)
-    costs = simulateSat(stores_df,  satRoutes,saturday_stores, 5)
+    week_costs, extraStoresW = simulateWeek( weekRoutes,weekday_stores, n)
+    week_costs.sort()
+    print("")
+    print("===========================================")
+    print("WEEKDAY RESULTS:")
+    print("Central 95%% Interval: Lwr: %.3f - Upper: %.3f"%(week_costs[lwr],week_costs[uper]))
+    print("Average Cost: $%f"%np.mean(week_costs))
+    extraStoresW = Counter(extraStoresW)
+    print("===========================================")
+    print("STORE                            FREQUENCY")
+    print("===========================================")
+    for store in extraStoresW:
+        print("%s:"%store,+(35- len(store))*" " + "%d"% extraStoresW[store])
+    print("===========================================")
+    print("")
+
+
     print("Saturday simulation...")
-    print(costs)
+    sat_costs, extraStoresS = simulateSat(stores_df, satRoutes,saturday_stores, n)
+    sat_costs.sort()
+    print("")
+    print("===========================================")
+    print("SATURDAY RESULTS:")
+    print("Central 95%% Interval: Lwr: %.3f - Upper: %.3f"%(sat_costs[lwr],sat_costs[uper]))
+    print("Average Cost: $%f" %np.mean(sat_costs))
+
+    if len(extraStoresS) == 0:
+        print("===========================================")
+        print("No extra routes were required in any simulation.")
+        print("===========================================")
+    else:
+        extraStoresW = Counter(extraStoresW)
+        print("===========================================")
+        print("STORE                            FREQUENCY")
+        print("===========================================")
+        for store in extraStoresW:
+            print("%s:"%store,+(35- len(store))*" " + "%d"% extraStoresW[store])
+        print("===========================================")
+
+
+
+    plt.hist(week_costs, density=True, histtype='bar', alpha=0.2)
+    plt.title("Cost distribution for Weekdays for 1000 Simulations")
+    plt.axvline(week_costs[lwr], linestyle='dashed', color='red')
+    plt.axvline( week_costs[uper], linestyle='dashed', color='red')
     
+
+    plt.ylabel("Occurance")
+    plt.xlabel("Cost")
+    plt.savefig('weekday_sim_distribution ',dpi=300)
+    plt.show()
+    plt.hist(sat_costs, density=True, histtype='bar', alpha=0.2)
+    plt.axvline(x = sat_costs[lwr], linestyle='dashed', color='red')
+    plt.axvline(x = sat_costs[uper], linestyle='dashed', color='red')
+
+    plt.title("Cost distubtion for Saturdays for 1000 Simulations")
+    plt.ylabel("Occurance")
+    plt.xlabel("Cost")
+    plt.savefig('saturday_sim_distribution ',dpi=300)
+    plt.show()
 
     # satRoutes.to_csv("sat_soln.csv")
     # weekRoutes.to_csv("weekday_soln.csv")
