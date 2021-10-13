@@ -5,13 +5,113 @@ from pulp.constants import LpMinimize
 from collections import Counter
 import openrouteservice as ors
 import folium
+from scipy import stats
 from random import randint
 
 ORSkey = '5b3ce3597851110001cf6248324acec39fa94080ac19d056286d0ccb'
 
 
-# This file generates an optimal solution based on routes generated
+# Map generation functions
+def mapByRegion(solutions, day):
+    """ Maps solutions routes"""
 
+    # Set up open route client
+    client = ors.Client(key=ORSkey)
+
+    # read in files
+    durations = pd.read_csv('assignment_resources/WoolworthsTravelDurations.csv')
+    distances = pd.read_csv('assignment_resources/WoolworthsDistances.csv')
+    # list_colors = 
+    # Distrubtion centre attributes
+    dc = pd.read_csv('dc.csv')
+    dc_coords = (dc[['Long', 'Lat']]).to_numpy().tolist()
+    iconCol = [['darkred','red', 'lightred', 'orange', 'pink', 'beige'],
+    ['blue', 'pruple', "darkpurple", 'lightblue' ], ["green", "lightgreen", "darkgreen"], ['gray', 'black', 'lightgray', 'darkred'], 
+     ['gray', 'black', 'lightgray', 'darkred', 'white'] ,['orange', 'beige']
+    ]
+    # iconCol = [ 'darkred',  'blue', 
+    #  'green', 'purple', 'orange',  'lightblue']
+
+    x = ['#a03336','#37a7d9','#6fab25','#cd50b5','#f59630','#83d9ff']
+    # region names
+
+    region_names = np.array(["Central Region","South Region","North Region","East Region","West Region","Southern Most Region"])
+    
+    map = folium.Map(location = list(reversed(dc_coords[0])), zoom_start=12)
+    folium.Marker(list(reversed(dc_coords[0])), popup= "DC", icon = folium.Icon(color = 'black')).add_to(map)
+    j = 0
+    for region in region_names:
+        region_routes =(solutions.loc[solutions["Region"] == region, ["Route"]])
+        region_routes = region_routes["Route"]
+ 
+        k =0
+        for route in region_routes:
+            route = (dc,) + route + (dc,)
+            locations = stores_df[stores_df['Store'].isin(route)]
+            coords = dc_coords + (locations[['Long', 'Lat']]).to_numpy().tolist() + dc_coords
+            colorA =  x[k]#('#%06X' % randint(0, 0xFFFFFF))
+            for i in range(1, len(route)-1):
+                folium.Marker(list(reversed(coords[i])), popup= str(route[i]), icon = folium.Icon(color = iconCol[k])).add_to(map)
+            line = client.directions(coordinates = [coord for coord in coords], profile ='driving-hgv', format ='geojson', validate = False)
+            folium.PolyLine(locations = [list(reversed(coord)) for coord in line['features'][0]['geometry']['coordinates']], color =colorA, weight = 4 , opacity = 1).add_to(map)
+            
+            k+=1
+        j+=1
+
+    map.save("route_maps/%s/%s_map.html"%(day, day))
+
+    return
+def mapStores():
+    locations = stores_df
+    coords = locations[['Long', 'Lat']]
+    coords = coords.to_numpy().tolist()
+    region_names = np.array(["Central Region","South Region","North Region","East Region","West Region","Southern Most Region"])
+
+    map = folium.Map(location = list(reversed(coords[2])), zoom_start=10)
+
+    for i in range(0, len(coords)):
+
+        if locations.Region[i]==region_names[0]:
+            iconCol="green"
+        elif locations.Region[i]==region_names[1]:
+            iconCol="blue"
+        elif locations.Region[i]==region_names[2]:
+            iconCol="red"
+        elif locations.Region[i]==region_names[3]:
+            iconCol="orange"
+        elif locations.Region[i]==region_names[4]:
+            iconCol= "black"
+        elif locations.Region[i]==region_names[5]:
+            iconCol= "pink"
+        elif locations.Region[i]=='invalid':
+            iconCol= "white"
+        if locations.Type[i]=='Distribution Centre':
+            iconCol= "white"
+        folium.Marker(list(reversed(coords[i])), popup ="%s \n lg %.3f\n lat: %.3f" % (locations.Store[i],locations.Long[i], locations.Lat[i]), icon = folium.Icon(color = iconCol)).add_to(map)
+
+    #display map
+    map.save("maps/map_locations.html") ##Open html file to see output
+
+    """ Get different maps per region."""
+    for name in region_names:
+        map = folium.Map(location = list(reversed(coords[2])), zoom_start=11)
+        for i in range(0, len(coords)):
+            if locations.Region[i] == name or locations.Type[i] == "Distribution Centre" :
+                if locations.Type[i]=="Countdown":
+                    iconCol="green"
+                elif locations.Type[i]=="FreshChoice":
+                    iconCol="blue"
+                elif locations.Type[i]=="SuperValue":
+                    iconCol="red"
+                elif locations.Type[i]=="Countdown Metro":
+                    iconCol="orange"
+                elif locations.Type[i] == "Distribution Centre":
+                    iconCol= "black"
+                folium.Marker(list(reversed(coords[i])), popup ="%s\n lg %.3f\n lat%.3f" % (locations.Store[i],locations.Long[i], locations.Lat[i]), icon = folium.Icon(color = iconCol)).add_to(map)
+        map.save("maps/%s_map.html"%name.split()[0])
+        
+    return
+# Generate routes, their durations and their costs
 def generate_routes(stores_df, region_names):
     """
     This function generates sub-routes within a given region and checks the feasiblity of a sub-route based
@@ -85,10 +185,8 @@ def getDurations(stores_df, route_set, day):
     Inputs :
             stores_df: pandas df
             Dataframe containing onfromation on all the stores.
-
             route_set: list of tuples
             List of all the vild routes for a given day
-
             day: str
             corresponding day to set of routes 
     --------------------------------------------------------
@@ -99,6 +197,7 @@ def getDurations(stores_df, route_set, day):
     NOTE: Indexes will match in the return so no further manipulation should be nesissary,
         Each route should start and finish at the disrubtion centre.
         day should be indentical to the row name i.e Monday = valid, monday = invalid.
+
     """
     durations = pd.read_csv('assignment_resources/WoolworthsTravelDurations.csv')
     # initalise
@@ -126,7 +225,6 @@ def getDurations(stores_df, route_set, day):
         #return in duration in mins
         duration_set.append(duration/60)
     return duration_set
-
 def getCosts(stores_df, route_set, day):
     """
     This function calculates the asocciated costs of a set of valid routes
@@ -134,10 +232,8 @@ def getCosts(stores_df, route_set, day):
     Inputs :
             stores_df: pandas df
             Dataframe containing onfromation on all the stores.
-
             route_set: list of tuples
             List of all the vild routes for a given day
-
             day: str
             corresponding day to set of routes 
     --------------------------------------------------------
@@ -163,8 +259,7 @@ def getCosts(stores_df, route_set, day):
         cost_set.append(cost)
     return cost_set
 
-## Forulate and solve linear prog
-
+## Formulate and solve linear prog
 def solve(day_df, stores, day):
     """
     This function generates an optimal soltion for a given day
@@ -198,12 +293,11 @@ def solve(day_df, stores, day):
     # Trucks constraint
     prob += lpSum([routes[i]  for i in range(len(day_df))]- xt) <= 60, "Trucks_constraint"
 
-
     # Solving routines 
-    #prob.writeLP('lin_progs/%s.lp'%day)
+    prob.writeLP('lin_progs/%s.lp'%day)
     prob.solve()
     # The status of the solution is printed to the screen
-    print("Status:", LpStatus[prob.status])
+    #print("Status:", LpStatus[prob.status])
 
     # Create df that stores th optimal routes, their costs and the region theyre in.
     optimalRoutes = []
@@ -221,8 +315,8 @@ def solve(day_df, stores, day):
     print("Total Cost = ", value(prob.objective))
     # return objective value and the optimal routes
     return  value(prob.objective), optimalRoutes
+def construct_matrix(day_df,storeSeries): # Consruct adjacency matrix for solver
 
-def construct_matrix(day_df,storeSeries):
     """
     This function constructs a matrix of ones and zeros correlating to whether a store is visted in a specifc route
     ---------------------------------------------------------------
@@ -254,105 +348,216 @@ def construct_matrix(day_df,storeSeries):
 
     return matrix
 
-def mapByRegion(solutions, stores_df, day):
-    """ Maps solutions routes"""
-
-    # Set up open route client
-    client = ors.Client(key=ORSkey)
-
-    # read in files
-    durations = pd.read_csv('assignment_resources/WoolworthsTravelDurations.csv')
-    distances = pd.read_csv('assignment_resources/WoolworthsDistances.csv')
-    # list_colors = 
-    # Distrubtion centre attributes
-    dc = pd.read_csv('dc.csv')
-    dc_coords = (dc[['Long', 'Lat']]).to_numpy().tolist()
-    iconCol = [['darkred','red', 'lightred', 'orange', 'pink', 'beige'],
-    ['blue', 'pruple', "darkpurple", 'lightblue' ], ["green", "lightgreen", "darkgreen"], ['gray', 'black', 'lightgray', 'darkred'], 
-     ['gray', 'black', 'lightgray', 'darkred', 'white'] ,['orange', 'beige']
-    ]
-    # iconCol = [ 'darkred',  'blue', 
-    #  'green', 'purple', 'orange',  'lightblue']
-
-    x = ['#a03336','#37a7d9','#6fab25','#cd50b5','#f59630','#83d9ff']
-    # region names
-
-    region_names = np.array(["Central Region","South Region","North Region","East Region","West Region","Southern Most Region"])
+## Simulate with uncertainty functions
+def alphaBetaFromAmB(a, m, b): 
+    # Taken from code by David L. Mueller
+    #github dlmueller/PERT-Beta-Python
+    first_numer_alpha = 2.0 * (b + 4 * m - 5 * a)
+    first_numer_beta = 2.0 * (5 * b - 4 * m - a)
+    first_denom = 3.0 * (b - a)
+    second_numer = (m - a) * (b - m)
+    second_denom = (b - a) ** 2
+    second = (1 + 4 * (second_numer / second_denom))
+    alpha = (first_numer_alpha / first_denom) * second
+    beta = (first_numer_beta / first_denom) * second
+    return alpha, beta
+def generate(a, m, b):
     
-    map = folium.Map(location = list(reversed(dc_coords[0])), zoom_start=12)
-    folium.Marker(list(reversed(dc_coords[0])), popup= "DC", icon = folium.Icon(color = 'black')).add_to(map)
-    j = 0
-    for region in region_names:
-        region_routes =(solutions.loc[solutions["Region"] == region, ["Route"]])
-        region_routes = region_routes["Route"]
- 
-        k =0
-        for route in region_routes:
-            route = (dc,) + route + (dc,)
-            locations = stores_df[stores_df['Store'].isin(route)]
-            coords = dc_coords + (locations[['Long', 'Lat']]).to_numpy().tolist() + dc_coords
-            colorA =  x[k]#('#%06X' % randint(0, 0xFFFFFF))
-            for i in range(1, len(route)-1):
-                folium.Marker(list(reversed(coords[i])), popup= str(route[i]), icon = folium.Icon(color = iconCol[k])).add_to(map)
-            line = client.directions(coordinates = [coord for coord in coords], profile ='driving-hgv', format ='geojson', validate = False)
-            folium.PolyLine(locations = [list(reversed(coord)) for coord in line['features'][0]['geometry']['coordinates']], color =colorA, weight = 4 , opacity = 1).add_to(map)
+    alpha, beta = alphaBetaFromAmB(a, m, b)
+    location = a
+    scale = b - a
+    
+    value = stats.beta.rvs(alpha, beta) * scale + location
+    
+    return value
+# def generateDemandsSat(stores_df,saturday_stores):
+#     sat_demands = stores_df[stores_df["Store"] == [store for store in saturday_stores], ['Saturday']]
+#     demands = []
+#     for i in range(len(saturday_stores)):
+#         mu = sat_demands[i]["Saturday"]
+#         demands.append(round(generate(mu-2, mu, mu+2)+0.5))
+#     sat_stores = pd.DataFrame({'Store':saturday_stores, 'Demand':demands})
+#     return sat_stores
+
+def generateDemandsWeek(weekday_stores):
+    # generate demand data frames
+    w_vairance = pd.read_csv("assignment_resources/pert_beta.csv")
+
+    demands = []
+    for i in range(65):
+        a = w_vairance.iloc[i]["a"]
+        mu =  w_vairance.iloc[i]["mu"]
+        b =  w_vairance.iloc[i]["b"]
+        demand = generate(a, mu, b)
+        demands.append(round(demand)) 
+    weekday_stores = pd.DataFrame({'Store':weekday_stores, 'Demand':demands})
+
+    return weekday_stores
+def getDurationsVariance(store_demands, route_set):
+    """
+    This function calculates the time taken of a set of valid routes and 
+    accounts for variances in duration length due to traffic
+    -------------------------------------------------------
+    Inputs :
+            store_demands: pandas df
+            Dataframe containing stores and their demands for a given simulation
+
+            route_set: list of tuples
+            List of all the valid routes for a given day
+    --------------------------------------------------------
+    Returns: 
+        duration_set: list
+        Correspoding list of the duration of each route.
+    ----------------------------------------------------
+    NOTE: Indexes will match in the return so no further manipulation should be nesissary,
+        Each route should start and finish at the disrubtion centre.
+
+
+    """
+    durations = pd.read_csv('assignment_resources/WoolworthsTravelDurations.csv')
+    # initalise
+    cost_set =[]
+    # All routes start and end here
+    dc = 'Distribution Centre Auckland'
+    # Loop through every route in the set
+    duration_set = []
+    for route in route_set:
+        route = (dc,) + route + (dc,) 
+        duration= 0  # Initalise duration 
+        cost =0     # Initalise cost to append to set
+        # Loop through to get total duration of route
+        for i in range(len(route)-1):
+            currentStore = route[i]
+            nextStore = route[i+1]
+            row = durations.loc[durations['Store'] == currentStore]
+            duration += row[nextStore].values[0]
+            # add unpacking time for each pallet at each store (EXCLD. distribtion centre)
+            if i >0:
+                row = store_demands.loc[store_demands['Store'] == currentStore]
+                nPallets = row["Demand"].values[0]
+                duration += 450* nPallets
+        # inttroduce vairiance
+        multiplcationFactor = generate(0.85, 1, 1.35)
+        duration = (duration *multiplcationFactor)/60
+        #return in duration in mins
+        duration_set.append(duration)
+    return duration_set
+def getCostsVariance(store_demands, route_set):
+    """
+    This function calculates the asocciated costs of a set of valid routes
+    -------------------------------------------------------
+    Inputs :
+            store_demands: pandas df
+            Dataframe containing stores and their demands for a given simulation
             
-            k+=1
-        j+=1
+            route_set: list of tuples
+            List of all the valid routes for a given day
+    --------------------------------------------------------
+    Returns: 
+        cost_set: list
+        Correspoding list of the cost of each route in routes sets
+    ----------------------------------------------------
+    NOTE: Indexes will match in the return so no further manipulation should be nesissary,
+        Each route should start and finish at the disrubtion centre.
+    """
+    durations = getDurationsVariance( store_demands, route_set)
+    cost_set =[]
+    for duration in durations:
+        # less than four hours normal rates apply
+        if duration <= 240:
+            cost = duration*(225/60) #cost per min
+        # greater than 4 hour trip then costs are extra
+        if duration > 240:
+            cost = 240*(225/60)
+            extraTime = duration - 240
+            cost += extraTime * (275/60)
+        cost_set.append(cost)
+    return cost_set
 
-    map.save("route_maps/%s/%s_map.html"%(day, day))
 
-    return
+def getOptimal(stores_df, saturday_stores, weekday_stores):
 
-if __name__ == "__main__":
-    ## Read in store data
-    stores_df = pd.read_csv('stores_df.csv')
 
-    # Generate lists of stores for week-day deliveries
-    weekday_stores = stores_df['Store']
-    # List of stores that recive deliveries on saturdays
-    satTemp = stores_df.loc[stores_df["Saturday"] != 0, ["Store"]]
-    saturday_stores = satTemp['Store']
- 
     # Intiallise region names array
     region_names = np.array(["Central Region","South Region","North Region","East Region","West Region","Southern Most Region"])
-    
+
     # Generate sets of feaisble routes for saturday and weekdays
-    saturday, weekdays = generate_routes(stores_df, region_names)
+    saturday, weekdays = generate_routes(stores_df,region_names)
 
     orderedRegionSat = []
     orderedRegionWeek = []
-    
+
     for route in saturday:
         store = route[0]
         orderedRegionSat.append((stores_df.loc[stores_df["Store"] == store, ["Region"]]).values[0])
-    
+
     for route in weekdays:
         store = route[0]
         orderedRegionWeek.append((stores_df.loc[stores_df["Store"] == store, ["Region"]]).values[0])
     # Construct dataframes to store feasible routes and their corresponsing costs for sat and weekday
     sat_df = pd.DataFrame({'Route': saturday, 'Cost':getCosts(stores_df, saturday, "Saturday"), 'Region':orderedRegionSat})
     week_df = pd.DataFrame({'Route': weekdays, 'Cost':getCosts(stores_df, weekdays, "Weekday"), 'Region':orderedRegionWeek})
-
-    # Solve each day!
     satCost, satRoutes = solve(sat_df, saturday_stores, "Saturday")
     weekCost, weekRoutes = solve(week_df, weekday_stores, "Weekdays")
+    return satCost, satRoutes,weekCost, weekRoutes
+def simulateWeek(stores_df, route_df, stores, n):
+    prior_routes = route_df["Route"]
+   
+    optimal_costs = []
+    for i in range(n):
+        # Generate demand for stores on the pert-beta distrubution
+        week_demands = generateDemandsWeek( stores)
 
-    satRoutes.to_csv("sat_soln.csv")
-    weekRoutes.to_csv("weekday_soln.csv")
-    s = getDurations(stores_df, satRoutes['Route'], "Saturday")
-    w = getDurations(stores_df, weekRoutes['Route'], "Weekday")
-    s = (np.asarray(s))
-    w = (np.asarray(w))
- 
-    print(np.mean(s), np.max(s), np.min(s))
-    print(np.mean(w), np.max(w), np.min(w))
-        
+        #Check validity of  routes with the new demands
+        numExtraTrucks = 0
+        routes = []
+        for route in prior_routes:
+
+            demandOfRoute =0
+            for node in route:
+                store = week_demands[week_demands.Store == node]
+                demandOfRoute += store.Demand.values[0] 
+            if demandOfRoute <= 26:
+                routes.append(route)
+            else:
+                extra_store = list(route).pop()
+                routes.append(tuple(route))
+                routes.append((extra_store,))
+                numExtraTrucks +=1
+
+        print(numExtraTrucks)
+            # generate other routes
+        # get costs with the new demands, and incude variances in traffic.
+        costs = getCostsVariance(week_demands, routes)
+        optimal_costs.append(sum(costs))
+    return optimal_costs
+
+
+            
+
+    return
+if __name__ == "__main__":
+
+    ## Read in store data
+    stores_df = pd.read_csv('stores_df.csv')
+    # Generate lists of stores for week-day deliveries
+    weekday_stores = stores_df['Store']
+    # List of stores that recive deliveries on saturdays
+    saturday_stores = (stores_df.loc[stores_df["Saturday"] != 0, ["Store"]])["Store"]
+
+
+    satCost, satRoutes,weekCost, weekRoutes = getOptimal(stores_df,saturday_stores,weekday_stores)
+
+    costs = simulateWeek(stores_df,  weekRoutes,weekday_stores, 5)
+    print(costs)
+
+    # satRoutes.to_csv("sat_soln.csv")
+    # weekRoutes.to_csv("weekday_soln.csv")
+
+            
     # # Map the optimal routes per region per day :)
     # mapByRegion(satRoutes, stores_df, "Saturday")
     # mapByRegion(weekRoutes, stores_df, "Weekday")
-
-
 
     
 
