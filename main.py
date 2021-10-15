@@ -3,12 +3,12 @@ import pandas as pd
 import numpy as np
 from pulp.constants import LpMinimize
 from collections import Counter
-import openrouteservice as ors
+#import openrouteservice as ors
 import folium
 from scipy import stats
 import matplotlib.pyplot as plt
 from random import randint
-
+import random
 ORSkey = '5b3ce3597851110001cf6248324acec39fa94080ac19d056286d0ccb'
 
 
@@ -348,51 +348,45 @@ def construct_matrix(day_df,storeSeries): # Consruct adjacency matrix for solver
     return matrix
 
 ## Simulate with uncertainty functions
-def alphaBetaFromAmB(a, m, b): 
-    # Taken from code by David L. Mueller
-    #github dlmueller/PERT-Beta-Python
-    first_numer_alpha = 2.0 * (b + 4 * m - 5 * a)
-    first_numer_beta = 2.0 * (5 * b - 4 * m - a)
-    first_denom = 3.0 * (b - a)
-    second_numer = (m - a) * (b - m)
-    second_denom = (b - a) ** 2
-    second = (1 + 4 * (second_numer / second_denom))
-    alpha = (first_numer_alpha / first_denom) * second
-    beta = (first_numer_beta / first_denom) * second
-    return alpha, beta
-def generate(a, m, b):
-    
-    alpha, beta = alphaBetaFromAmB(a, m, b)
-    location = a
-    scale = b - a
-    
-    value = stats.beta.rvs(alpha, beta) * scale + location
-    
-    return value
+## Bootstrapping distribution for demand
+def bootstrap(mean, sd):
+    # generate normal distribution from the mean and standard deviation for a given day, size of the sample is 100 entries
+    randMeans = np.random.normal(loc = mean, scale = sd, size = 100)
+    # bootstrap 25 samples of size 4 each to estimate the mean
+    sampMean = []
+    for i in range(25):
+        sampleTaken = random.sample(randMeans.tolist(), 4)
+        # calculates mean of sample
+        sampAvg = np.mean(sampleTaken)
+        sampMean.append(sampAvg)
+    # estimate mean from list of sampleMeans
+    m = np.mean(sampMean)
+    return m
+
+
+
 def generateDemandsSat(stores_df,saturday_stores):
     sat_demands = stores_df[stores_df["Saturday"] != 0]
-
     demands = []
     for i in range(len(saturday_stores)):
-        mu = sat_demands.iloc[i]["Saturday"]
-        demands.append(round(generate(mu-2, mu, mu+2)))
+        mu = sat_demands.iloc[i]["WeekendMu"]
+        sigma = sat_demands.iloc[i]["WeekendSd"]
+        demands.append(round(bootstrap(mu,sigma)))
     sat_stores = pd.DataFrame({'Store':saturday_stores, 'Demand':demands})
     return sat_stores
 
 def generateDemandsWeek(weekday_stores):
     # generate demand data frames
-    w_vairance = pd.read_csv("assignment_resources/pert_beta.csv")
-
+    demand_data = pd.read_csv("assignment_resources/DemandMeanSD.csv")
     demands = []
     for i in range(65):
-        a = w_vairance.iloc[i]["a"]
-        mu =  w_vairance.iloc[i]["mu"]
-        b =  w_vairance.iloc[i]["b"]
-        demand = generate(a, mu, b)
+        mu = demand_data.iloc[i]["WeekdayMu"]
+        sigma =  demand_data.iloc[i]["WeekdaySd"]
+        demand = bootstrap(mu, sigma)
         demands.append(round(demand)) 
     weekday_stores = pd.DataFrame({'Store':weekday_stores, 'Demand':demands})
-
     return weekday_stores
+
 def getDurationsVariance(store_demands, route_set):
     """
     This function calculates the time taken of a set of valid routes and 
@@ -670,8 +664,8 @@ if __name__ == "__main__":
     
             
     # Map the optimal routes per region per day :)
-    mapByRegion(satRoutes, stores_df, "Saturday")
-    mapByRegion(weekRoutes, stores_df, "Weekday")
+    # mapByRegion(satRoutes, stores_df, "Saturday")
+    # mapByRegion(weekRoutes, stores_df, "Weekday")
     n = 1000
     lwr = int(0.025 * n)
     uper = int(0.975 * n)
