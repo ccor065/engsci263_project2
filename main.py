@@ -437,7 +437,9 @@ def getDurationsVariance(store_demands, route_set):
                 nPallets = row["Demand"].values[0]
                 duration += 450* nPallets
         # inttroduce vairiance
-        multiplcationFactor = generate(0.85, 1, 1.35)
+        multiplcationFactor = np.random.normal(loc=1, scale= 0.2) # Normal distribution, small deviation
+        if multiplcationFactor < 0.8:
+            multiplcationFactor = 0.8 # Cut off factor values below lower range
         duration = (duration *multiplcationFactor)/60
         #return in duration in mins
         duration_set.append(duration)
@@ -729,7 +731,7 @@ if __name__ == "__main__":
     plt.axvline(x = sat_costs[lwr], linestyle='dashed', color='red')
     plt.axvline(x = sat_costs[uper], linestyle='dashed', color='red')
 
-    plt.title("Cost distubtion for Saturdays for 1000 Simulations")
+    plt.title("Cost distribution for Saturdays for 1000 Simulations")
     plt.ylabel("Occurance")
     plt.xlabel("Cost")
     plt.savefig('saturday_sim_distribution ',dpi=300)
