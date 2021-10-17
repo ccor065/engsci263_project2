@@ -1,0 +1,1692 @@
+Route,Cost,Region
+['Countdown Auckland City'],481.056875,Central Region
+['Countdown Blockhouse Bay'],387.64375,Central Region
+['Countdown Greenlane'],414.98625000000004,Central Region
+['Countdown Grey Lynn'],458.21125,Central Region
+['Countdown Grey Lynn Central'],436.8525,Central Region
+['Countdown Lynfield'],390.891875,Central Region
+['Countdown Mt Eden'],390.65250000000003,Central Region
+['Countdown Mt Roskill'],386.07124999999996,Central Region
+['Countdown Newmarket'],424.13875,Central Region
+['Countdown Onehunga'],314.02437499999996,Central Region
+['Countdown Ponsonby'],478.62,Central Region
+['Countdown Pt Chevalier'],440.520625,Central Region
+['Countdown St Lukes'],386.95687499999997,Central Region
+['Countdown Three Kings'],396.68,Central Region
+['Countdown Victoria Street West'],501.87375,Central Region
+['Countdown Metro Albert Street'],366.5925,Central Region
+['Countdown Metro Halsey Street'],342.55875000000003,Central Region
+"['Countdown Auckland City', 'Countdown Blockhouse Bay']",764.09125,Central Region
+"['Countdown Auckland City', 'Countdown Greenlane']",758.10375,Central Region
+"['Countdown Auckland City', 'Countdown Grey Lynn']",769.18375,Central Region
+"['Countdown Auckland City', 'Countdown Grey Lynn Central']",766.7099999999999,Central Region
+"['Countdown Auckland City', 'Countdown Lynfield']",775.38625,Central Region
+"['Countdown Auckland City', 'Countdown Mt Eden']",727.625625,Central Region
+"['Countdown Auckland City', 'Countdown Mt Roskill']",764.311875,Central Region
+"['Countdown Auckland City', 'Countdown Newmarket']",733.0912500000001,Central Region
+"['Countdown Auckland City', 'Countdown Onehunga']",724.145625,Central Region
+"['Countdown Auckland City', 'Countdown Ponsonby']",783.4024999999999,Central Region
+"['Countdown Auckland City', 'Countdown Pt Chevalier']",762.57875,Central Region
+"['Countdown Auckland City', 'Countdown St Lukes']",726.9031249999999,Central Region
+"['Countdown Auckland City', 'Countdown Three Kings']",770.54375,Central Region
+"['Countdown Auckland City', 'Countdown Victoria Street West']",771.2974999999999,Central Region
+"['Countdown Auckland City', 'Countdown Metro Albert Street']",627.0706250000001,Central Region
+"['Countdown Auckland City', 'Countdown Metro Halsey Street']",615.5550000000001,Central Region
+"['Countdown Blockhouse Bay', 'Countdown Greenlane']",743.7893750000001,Central Region
+"['Countdown Blockhouse Bay', 'Countdown Grey Lynn']",738.516875,Central Region
+"['Countdown Blockhouse Bay', 'Countdown Grey Lynn Central']",717.15875,Central Region
+"['Countdown Blockhouse Bay', 'Countdown Lynfield']",649.9481249999999,Central Region
+"['Countdown Blockhouse Bay', 'Countdown Mt Eden']",681.805625,Central Region
+"['Countdown Blockhouse Bay', 'Countdown Mt Roskill']",668.4224999999999,Central Region
+"['Countdown Blockhouse Bay', 'Countdown Newmarket']",718.776875,Central Region
+"['Countdown Blockhouse Bay', 'Countdown Onehunga']",630.731875,Central Region
+"['Countdown Blockhouse Bay', 'Countdown Ponsonby']",758.925625,Central Region
+"['Countdown Blockhouse Bay', 'Countdown Pt Chevalier']",700.88625,Central Region
+"['Countdown Blockhouse Bay', 'Countdown St Lukes']",661.489375,Central Region
+"['Countdown Blockhouse Bay', 'Countdown Three Kings']",702.748125,Central Region
+"['Countdown Blockhouse Bay', 'Countdown Victoria Street West']",782.1800000000001,Central Region
+"['Countdown Blockhouse Bay', 'Countdown Metro Albert Street']",646.8981249999999,Central Region
+"['Countdown Blockhouse Bay', 'Countdown Metro Halsey Street']",620.268125,Central Region
+"['Countdown Greenlane', 'Countdown Grey Lynn']",739.0575,Central Region
+"['Countdown Greenlane', 'Countdown Grey Lynn Central']",727.3975,Central Region
+"['Countdown Greenlane', 'Countdown Lynfield']",739.06,Central Region
+"['Countdown Greenlane', 'Countdown Mt Eden']",667.9325,Central Region
+"['Countdown Greenlane', 'Countdown Mt Roskill']",703.9412500000001,Central Region
+"['Countdown Greenlane', 'Countdown Newmarket']",681.3125,Central Region
+"['Countdown Greenlane', 'Countdown Onehunga']",632.905,Central Region
+"['Countdown Greenlane', 'Countdown Ponsonby']",754.1512499999999,Central Region
+"['Countdown Greenlane', 'Countdown Pt Chevalier']",726.253125,Central Region
+"['Countdown Greenlane', 'Countdown St Lukes']",690.5775,Central Region
+"['Countdown Greenlane', 'Countdown Three Kings']",705.815625,Central Region
+"['Countdown Greenlane', 'Countdown Victoria Street West']",760.743125,Central Region
+"['Countdown Greenlane', 'Countdown Metro Albert Street']",630.051875,Central Region
+"['Countdown Greenlane', 'Countdown Metro Halsey Street']",610.375,Central Region
+"['Countdown Grey Lynn', 'Countdown Grey Lynn Central']",714.36,Central Region
+"['Countdown Grey Lynn', 'Countdown Lynfield']",752.540625,Central Region
+"['Countdown Grey Lynn', 'Countdown Mt Eden']",701.745,Central Region
+"['Countdown Grey Lynn', 'Countdown Mt Roskill']",731.54125,Central Region
+"['Countdown Grey Lynn', 'Countdown Newmarket']",728.084375,Central Region
+"['Countdown Grey Lynn', 'Countdown Onehunga']",701.3,Central Region
+"['Countdown Grey Lynn', 'Countdown Ponsonby']",749.453125,Central Region
+"['Countdown Grey Lynn', 'Countdown Pt Chevalier']",732.1712500000001,Central Region
+"['Countdown Grey Lynn', 'Countdown St Lukes']",698.008125,Central Region
+"['Countdown Grey Lynn', 'Countdown Three Kings']",773.31625,Central Region
+"['Countdown Grey Lynn', 'Countdown Victoria Street West']",782.57875,Central Region
+"['Countdown Grey Lynn', 'Countdown Metro Albert Street']",644.58125,Central Region
+"['Countdown Grey Lynn', 'Countdown Metro Halsey Street']",610.233125,Central Region
+"['Countdown Grey Lynn Central', 'Countdown Lynfield']",731.181875,Central Region
+"['Countdown Grey Lynn Central', 'Countdown Mt Eden']",677.3625,Central Region
+"['Countdown Grey Lynn Central', 'Countdown Mt Roskill']",707.15875,Central Region
+"['Countdown Grey Lynn Central', 'Countdown Newmarket']",712.798125,Central Region
+"['Countdown Grey Lynn Central', 'Countdown Onehunga']",679.94125,Central Region
+"['Countdown Grey Lynn Central', 'Countdown Ponsonby']",732.9637499999999,Central Region
+"['Countdown Grey Lynn Central', 'Countdown Pt Chevalier']",713.354375,Central Region
+"['Countdown Grey Lynn Central', 'Countdown St Lukes']",673.625,Central Region
+"['Countdown Grey Lynn Central', 'Countdown Three Kings']",751.9575,Central Region
+"['Countdown Grey Lynn Central', 'Countdown Victoria Street West']",776.200625,Central Region
+"['Countdown Grey Lynn Central', 'Countdown Metro Albert Street']",640.919375,Central Region
+"['Countdown Grey Lynn Central', 'Countdown Metro Halsey Street']",614.01875,Central Region
+"['Countdown Lynfield', 'Countdown Mt Eden']",690.5037500000001,Central Region
+"['Countdown Lynfield', 'Countdown Mt Roskill']",676.3356249999999,Central Region
+"['Countdown Lynfield', 'Countdown Newmarket']",731.150625,Central Region
+"['Countdown Lynfield', 'Countdown Onehunga']",633.98,Central Region
+"['Countdown Lynfield', 'Countdown Ponsonby']",771.2987499999999,Central Region
+"['Countdown Lynfield', 'Countdown Pt Chevalier']",719.38,Central Region
+"['Countdown Lynfield', 'Countdown St Lukes']",673.863125,Central Region
+"['Countdown Lynfield', 'Countdown Three Kings']",699.344375,Central Region
+"['Countdown Lynfield', 'Countdown Victoria Street West']",794.553125,Central Region
+"['Countdown Lynfield', 'Countdown Metro Albert Street']",659.27125,Central Region
+"['Countdown Lynfield', 'Countdown Metro Halsey Street']",632.64125,Central Region
+"['Countdown Mt Eden', 'Countdown Mt Roskill']",666.4775,Central Region
+"['Countdown Mt Eden', 'Countdown Newmarket']",666.85375,Central Region
+"['Countdown Mt Eden', 'Countdown Onehunga']",633.74125,Central Region
+"['Countdown Mt Eden', 'Countdown Ponsonby']",718.77125,Central Region
+"['Countdown Mt Eden', 'Countdown Pt Chevalier']",693.3943750000001,Central Region
+"['Countdown Mt Eden', 'Countdown St Lukes']",636.055,Central Region
+"['Countdown Mt Eden', 'Countdown Three Kings']",681.68625,Central Region
+"['Countdown Mt Eden', 'Countdown Victoria Street West']",737.056875,Central Region
+"['Countdown Mt Eden', 'Countdown Metro Albert Street']",617.1875,Central Region
+"['Countdown Mt Eden', 'Countdown Metro Halsey Street']",597.510625,Central Region
+"['Countdown Mt Roskill', 'Countdown Newmarket']",708.24625,Central Region
+"['Countdown Mt Roskill', 'Countdown Onehunga']",629.16,Central Region
+"['Countdown Mt Roskill', 'Countdown Ponsonby']",754.620625,Central Region
+"['Countdown Mt Roskill', 'Countdown Pt Chevalier']",707.211875,Central Region
+"['Countdown Mt Roskill', 'Countdown St Lukes']",649.439375,Central Region
+"['Countdown Mt Roskill', 'Countdown Three Kings']",685.97875,Central Region
+"['Countdown Mt Roskill', 'Countdown Victoria Street West']",789.264375,Central Region
+"['Countdown Mt Roskill', 'Countdown Metro Albert Street']",653.9825000000001,Central Region
+"['Countdown Mt Roskill', 'Countdown Metro Halsey Street']",627.3525,Central Region
+"['Countdown Newmarket', 'Countdown Onehunga']",667.2275,Central Region
+"['Countdown Newmarket', 'Countdown Ponsonby']",733.5587499999999,Central Region
+"['Countdown Newmarket', 'Countdown Pt Chevalier']",705.660625,Central Region
+"['Countdown Newmarket', 'Countdown St Lukes']",669.985,Central Region
+"['Countdown Newmarket', 'Countdown Three Kings']",694.556875,Central Region
+"['Countdown Newmarket', 'Countdown Victoria Street West']",740.15125,Central Region
+"['Countdown Newmarket', 'Countdown Metro Albert Street']",609.46,Central Region
+"['Countdown Newmarket', 'Countdown Metro Halsey Street']",589.783125,Central Region
+"['Countdown Onehunga', 'Countdown Ponsonby']",737.798125,Central Region
+"['Countdown Onehunga', 'Countdown Pt Chevalier']",699.69875,Central Region
+"['Countdown Onehunga', 'Countdown St Lukes']",646.135,Central Region
+"['Countdown Onehunga', 'Countdown Three Kings']",641.2418749999999,Central Region
+"['Countdown Onehunga', 'Countdown Victoria Street West']",761.0525,Central Region
+"['Countdown Onehunga', 'Countdown Metro Albert Street']",607.0699999999999,Central Region
+"['Countdown Onehunga', 'Countdown Metro Halsey Street']",587.393125,Central Region
+"['Countdown Ponsonby', 'Countdown Pt Chevalier']",755.121875,Central Region
+"['Countdown Ponsonby', 'Countdown St Lukes']",715.3924999999999,Central Region
+"['Countdown Ponsonby', 'Countdown Three Kings']",777.225625,Central Region
+"['Countdown Ponsonby', 'Countdown Victoria Street West']",795.440625,Central Region
+"['Countdown Ponsonby', 'Countdown Metro Albert Street']",660.72875,Central Region
+"['Countdown Ponsonby', 'Countdown Metro Halsey Street']",640.774375,Central Region
+"['Countdown Pt Chevalier', 'Countdown St Lukes']",684.1525,Central Region
+"['Countdown Pt Chevalier', 'Countdown Three Kings']",755.625,Central Region
+"['Countdown Pt Chevalier', 'Countdown Victoria Street West']",788.84125,Central Region
+"['Countdown Pt Chevalier', 'Countdown Metro Albert Street']",653.5600000000001,Central Region
+"['Countdown Pt Chevalier', 'Countdown Metro Halsey Street']",626.929375,Central Region
+"['Countdown St Lukes', 'Countdown Three Kings']",678.878125,Central Region
+"['Countdown St Lukes', 'Countdown Victoria Street West']",750.0743749999999,Central Region
+"['Countdown St Lukes', 'Countdown Metro Albert Street']",623.346875,Central Region
+"['Countdown St Lukes', 'Countdown Metro Halsey Street']",596.7168750000001,Central Region
+"['Countdown Three Kings', 'Countdown Victoria Street West']",790.785625,Central Region
+"['Countdown Three Kings', 'Countdown Metro Albert Street']",660.094375,Central Region
+"['Countdown Three Kings', 'Countdown Metro Halsey Street']",640.4175,Central Region
+"['Countdown Victoria Street West', 'Countdown Metro Albert Street']",659.7956250000001,Central Region
+"['Countdown Victoria Street West', 'Countdown Metro Halsey Street']",638.2318750000001,Central Region
+"['Countdown Metro Albert Street', 'Countdown Metro Halsey Street']",495.7018750000001,Central Region
+"['Countdown Auckland City', 'Countdown Blockhouse Bay', 'Countdown Greenlane']",1169.178402777778,Central Region
+"['Countdown Auckland City', 'Countdown Blockhouse Bay', 'Countdown Grey Lynn']",1162.734236111111,Central Region
+"['Countdown Auckland City', 'Countdown Blockhouse Bay', 'Countdown Grey Lynn Central']",1136.6298611111108,Central Region
+"['Countdown Auckland City', 'Countdown Blockhouse Bay', 'Countdown Lynfield']",1054.4835416666667,Central Region
+"['Countdown Auckland City', 'Countdown Blockhouse Bay', 'Countdown Mt Eden']",1093.4204861111111,Central Region
+"['Countdown Auckland City', 'Countdown Blockhouse Bay', 'Countdown Mt Roskill']",1077.063333333333,Central Region
+"['Countdown Auckland City', 'Countdown Blockhouse Bay', 'Countdown Newmarket']",1138.6075694444446,Central Region
+"['Countdown Auckland City', 'Countdown Blockhouse Bay', 'Countdown Onehunga']",1030.997013888889,Central Region
+"['Countdown Auckland City', 'Countdown Blockhouse Bay', 'Countdown Pt Chevalier']",1116.74125,Central Region
+"['Countdown Auckland City', 'Countdown Blockhouse Bay', 'Countdown St Lukes']",1068.5895138888889,Central Region
+"['Countdown Auckland City', 'Countdown Blockhouse Bay', 'Countdown Metro Albert Street']",1050.755763888889,Central Region
+"['Countdown Auckland City', 'Countdown Blockhouse Bay', 'Countdown Metro Halsey Street']",1018.2079861111112,Central Region
+"['Countdown Auckland City', 'Countdown Greenlane', 'Countdown Mt Eden']",1035.7277777777779,Central Region
+"['Countdown Auckland City', 'Countdown Greenlane', 'Countdown Newmarket']",1052.0811111111109,Central Region
+"['Countdown Auckland City', 'Countdown Greenlane', 'Countdown Onehunga']",992.916388888889,Central Region
+"['Countdown Auckland City', 'Countdown Greenlane', 'Countdown St Lukes']",1063.405,Central Region
+"['Countdown Auckland City', 'Countdown Greenlane', 'Countdown Metro Albert Street']",989.4292361111112,Central Region
+"['Countdown Auckland City', 'Countdown Greenlane', 'Countdown Metro Halsey Street']",965.3797222222222,Central Region
+"['Countdown Auckland City', 'Countdown Grey Lynn', 'Countdown Mt Eden']",1037.7658333333334,Central Region
+"['Countdown Auckland City', 'Countdown Grey Lynn', 'Countdown Newmarket']",1069.958402777778,Central Region
+"['Countdown Auckland City', 'Countdown Grey Lynn', 'Countdown Onehunga']",1037.2219444444445,Central Region
+"['Countdown Auckland City', 'Countdown Grey Lynn', 'Countdown St Lukes']",1033.1985416666666,Central Region
+"['Countdown Auckland City', 'Countdown Grey Lynn', 'Countdown Metro Albert Street']",967.8990277777777,Central Region
+"['Countdown Auckland City', 'Countdown Grey Lynn', 'Countdown Metro Halsey Street']",925.9179861111112,Central Region
+"['Countdown Auckland City', 'Countdown Grey Lynn Central', 'Countdown Mt Eden']",1031.0466666666666,Central Region
+"['Countdown Auckland City', 'Countdown Grey Lynn Central', 'Countdown Newmarket']",1074.356875,Central Region
+"['Countdown Auckland City', 'Countdown Grey Lynn Central', 'Countdown Onehunga']",1034.1984722222223,Central Region
+"['Countdown Auckland City', 'Countdown Grey Lynn Central', 'Countdown St Lukes']",1026.478611111111,Central Region
+"['Countdown Auckland City', 'Countdown Grey Lynn Central', 'Countdown Metro Albert Street']",986.5050694444444,Central Region
+"['Countdown Auckland City', 'Countdown Grey Lynn Central', 'Countdown Metro Halsey Street']",953.6265277777778,Central Region
+"['Countdown Auckland City', 'Countdown Lynfield', 'Countdown Mt Eden']",1113.8865972222225,Central Region
+"['Countdown Auckland City', 'Countdown Lynfield', 'Countdown Newmarket']",1163.5661111111112,Central Region
+"['Countdown Auckland City', 'Countdown Lynfield', 'Countdown Onehunga']",1044.802013888889,Central Region
+"['Countdown Auckland City', 'Countdown Lynfield', 'Countdown St Lukes']",1093.5480555555557,Central Region
+"['Countdown Auckland City', 'Countdown Lynfield', 'Countdown Metro Albert Street']",1075.7135416666665,Central Region
+"['Countdown Auckland City', 'Countdown Lynfield', 'Countdown Metro Halsey Street']",1043.165763888889,Central Region
+"['Countdown Auckland City', 'Countdown Mt Eden', 'Countdown Mt Roskill']",1026.4396527777778,Central Region
+"['Countdown Auckland City', 'Countdown Mt Eden', 'Countdown Newmarket']",1026.899513888889,Central Region
+"['Countdown Auckland City', 'Countdown Mt Eden', 'Countdown Onehunga']",986.4286805555556,Central Region
+"['Countdown Auckland City', 'Countdown Mt Eden', 'Countdown Pt Chevalier']",1059.3380555555557,Central Region
+"['Countdown Auckland City', 'Countdown Mt Eden', 'Countdown St Lukes']",989.2565972222221,Central Region
+"['Countdown Auckland City', 'Countdown Mt Eden', 'Countdown Metro Albert Street']",966.1963194444445,Central Region
+"['Countdown Auckland City', 'Countdown Mt Eden', 'Countdown Metro Halsey Street']",942.1468055555556,Central Region
+"['Countdown Auckland City', 'Countdown Mt Roskill', 'Countdown Newmarket']",1127.928402777778,Central Region
+"['Countdown Auckland City', 'Countdown Mt Roskill', 'Countdown Onehunga']",1031.2674305555556,Central Region
+"['Countdown Auckland City', 'Countdown Mt Roskill', 'Countdown St Lukes']",1056.053333333333,Central Region
+"['Countdown Auckland City', 'Countdown Mt Roskill', 'Countdown Metro Albert Street']",1061.6060416666667,Central Region
+"['Countdown Auckland City', 'Countdown Mt Roskill', 'Countdown Metro Halsey Street']",1029.0582638888889,Central Region
+"['Countdown Auckland City', 'Countdown Newmarket', 'Countdown Onehunga']",993.108888888889,Central Region
+"['Countdown Auckland City', 'Countdown Newmarket', 'Countdown Pt Chevalier']",1040.0827083333334,Central Region
+"['Countdown Auckland City', 'Countdown Newmarket', 'Countdown St Lukes']",996.4791666666667,Central Region
+"['Countdown Auckland City', 'Countdown Newmarket', 'Countdown Metro Albert Street']",922.5041666666668,Central Region
+"['Countdown Auckland City', 'Countdown Newmarket', 'Countdown Metro Halsey Street']",898.735625,Central Region
+"['Countdown Auckland City', 'Countdown Onehunga', 'Countdown Pt Chevalier']",1156.4466666666667,Central Region
+"['Countdown Auckland City', 'Countdown Onehunga', 'Countdown St Lukes']",1090.979861111111,Central Region
+"['Countdown Auckland City', 'Countdown Onehunga', 'Countdown Metro Albert Street']",1043.23375,Central Region
+"['Countdown Auckland City', 'Countdown Onehunga', 'Countdown Metro Halsey Street']",1019.184236111111,Central Region
+"['Countdown Auckland City', 'Countdown Ponsonby', 'Countdown Metro Albert Street']",980.0693055555556,Central Region
+"['Countdown Auckland City', 'Countdown Ponsonby', 'Countdown Metro Halsey Street']",955.680625,Central Region
+"['Countdown Auckland City', 'Countdown Pt Chevalier', 'Countdown St Lukes']",1029.812986111111,Central Region
+"['Countdown Auckland City', 'Countdown Pt Chevalier', 'Countdown Metro Albert Street']",992.4221527777779,Central Region
+"['Countdown Auckland City', 'Countdown Pt Chevalier', 'Countdown Metro Halsey Street']",959.8736111111111,Central Region
+"['Countdown Auckland City', 'Countdown St Lukes', 'Countdown Metro Albert Street']",977.3582638888889,Central Region
+"['Countdown Auckland City', 'Countdown St Lukes', 'Countdown Metro Halsey Street']",944.8104861111111,Central Region
+"['Countdown Auckland City', 'Countdown Three Kings', 'Countdown Metro Albert Street']",1063.7265972222222,Central Region
+"['Countdown Auckland City', 'Countdown Three Kings', 'Countdown Metro Halsey Street']",1039.6770833333335,Central Region
+"['Countdown Auckland City', 'Countdown Victoria Street West', 'Countdown Metro Albert Street']",935.7125694444444,Central Region
+"['Countdown Auckland City', 'Countdown Victoria Street West', 'Countdown Metro Halsey Street']",909.356875,Central Region
+"['Countdown Auckland City', 'Countdown Metro Albert Street', 'Countdown Metro Halsey Street']",756.1800000000001,Central Region
+"['Countdown Blockhouse Bay', 'Countdown Greenlane', 'Countdown Grey Lynn']",1105.1629861111112,Central Region
+"['Countdown Blockhouse Bay', 'Countdown Greenlane', 'Countdown Grey Lynn Central']",1090.911875,Central Region
+"['Countdown Blockhouse Bay', 'Countdown Greenlane', 'Countdown Lynfield']",1105.1660416666668,Central Region
+"['Countdown Blockhouse Bay', 'Countdown Greenlane', 'Countdown Mt Eden']",1018.2324305555557,Central Region
+"['Countdown Blockhouse Bay', 'Countdown Greenlane', 'Countdown Mt Roskill']",1062.2431250000004,Central Region
+"['Countdown Blockhouse Bay', 'Countdown Greenlane', 'Countdown Newmarket']",1034.585763888889,Central Region
+"['Countdown Blockhouse Bay', 'Countdown Greenlane', 'Countdown Onehunga']",975.4210416666665,Central Region
+"['Countdown Blockhouse Bay', 'Countdown Greenlane', 'Countdown Pt Chevalier']",1089.5131944444445,Central Region
+"['Countdown Blockhouse Bay', 'Countdown Greenlane', 'Countdown St Lukes']",1045.9096527777774,Central Region
+"['Countdown Blockhouse Bay', 'Countdown Greenlane', 'Countdown Metro Albert Street']",971.933888888889,Central Region
+"['Countdown Blockhouse Bay', 'Countdown Greenlane', 'Countdown Metro Halsey Street']",947.8843750000001,Central Region
+"['Countdown Blockhouse Bay', 'Countdown Grey Lynn', 'Countdown Grey Lynn Central']",1015.7024305555556,Central Region
+"['Countdown Blockhouse Bay', 'Countdown Grey Lynn', 'Countdown Lynfield']",1062.367638888889,Central Region
+"['Countdown Blockhouse Bay', 'Countdown Grey Lynn', 'Countdown Mt Eden']",1000.284097222222,Central Region
+"['Countdown Blockhouse Bay', 'Countdown Grey Lynn', 'Countdown Mt Roskill']",1036.7017361111114,Central Region
+"['Countdown Blockhouse Bay', 'Countdown Grey Lynn', 'Countdown Newmarket']",1032.4766666666667,Central Region
+"['Countdown Blockhouse Bay', 'Countdown Grey Lynn', 'Countdown Onehunga']",999.7402083333334,Central Region
+"['Countdown Blockhouse Bay', 'Countdown Grey Lynn', 'Countdown Pt Chevalier']",1037.471736111111,Central Region
+"['Countdown Blockhouse Bay', 'Countdown Grey Lynn', 'Countdown St Lukes']",995.7168055555555,Central Region
+"['Countdown Blockhouse Bay', 'Countdown Grey Lynn', 'Countdown Metro Albert Street']",930.4172916666668,Central Region
+"['Countdown Blockhouse Bay', 'Countdown Grey Lynn', 'Countdown Metro Halsey Street']",890.5387499999999,Central Region
+"['Countdown Blockhouse Bay', 'Countdown Grey Lynn Central', 'Countdown Lynfield']",1036.2632638888888,Central Region
+"['Countdown Blockhouse Bay', 'Countdown Grey Lynn Central', 'Countdown Mt Eden']",970.4840277777777,Central Region
+"['Countdown Blockhouse Bay', 'Countdown Grey Lynn Central', 'Countdown Mt Roskill']",1006.9016666666668,Central Region
+"['Countdown Blockhouse Bay', 'Countdown Grey Lynn Central', 'Countdown Newmarket']",1013.7942361111111,Central Region
+"['Countdown Blockhouse Bay', 'Countdown Grey Lynn Central', 'Countdown Onehunga']",973.6358333333335,Central Region
+"['Countdown Blockhouse Bay', 'Countdown Grey Lynn Central', 'Countdown Pt Chevalier']",1014.4740972222221,Central Region
+"['Countdown Blockhouse Bay', 'Countdown Grey Lynn Central', 'Countdown St Lukes']",965.9159722222222,Central Region
+"['Countdown Blockhouse Bay', 'Countdown Grey Lynn Central', 'Countdown Metro Albert Street']",925.9424305555556,Central Region
+"['Countdown Blockhouse Bay', 'Countdown Grey Lynn Central', 'Countdown Metro Halsey Street']",894.325,Central Region
+"['Countdown Blockhouse Bay', 'Countdown Lynfield', 'Countdown Mt Eden']",960.5733333333333,Central Region
+"['Countdown Blockhouse Bay', 'Countdown Lynfield', 'Countdown Mt Roskill']",943.2567361111112,Central Region
+"['Countdown Blockhouse Bay', 'Countdown Lynfield', 'Countdown Newmarket']",1010.2528472222222,Central Region
+"['Countdown Blockhouse Bay', 'Countdown Lynfield', 'Countdown Onehunga']",893.03625,Central Region
+"['Countdown Blockhouse Bay', 'Countdown Lynfield', 'Countdown Pt Chevalier']",995.8665277777778,Central Region
+"['Countdown Blockhouse Bay', 'Countdown Lynfield', 'Countdown St Lukes']",940.2347916666665,Central Region
+"['Countdown Blockhouse Bay', 'Countdown Lynfield', 'Countdown Metro Albert Street']",922.4002777777777,Central Region
+"['Countdown Blockhouse Bay', 'Countdown Lynfield', 'Countdown Metro Halsey Street']",891.6975,Central Region
+"['Countdown Blockhouse Bay', 'Countdown Mt Eden', 'Countdown Mt Roskill']",970.4374305555557,Central Region
+"['Countdown Blockhouse Bay', 'Countdown Mt Eden', 'Countdown Newmarket']",970.8972916666667,Central Region
+"['Countdown Blockhouse Bay', 'Countdown Mt Eden', 'Countdown Onehunga']",930.4264583333335,Central Region
+"['Countdown Blockhouse Bay', 'Countdown Mt Eden', 'Countdown Ponsonby']",1034.352013888889,Central Region
+"['Countdown Blockhouse Bay', 'Countdown Mt Eden', 'Countdown Pt Chevalier']",1003.3358333333335,Central Region
+"['Countdown Blockhouse Bay', 'Countdown Mt Eden', 'Countdown St Lukes']",933.2543750000001,Central Region
+"['Countdown Blockhouse Bay', 'Countdown Mt Eden', 'Countdown Three Kings']",989.0259027777778,Central Region
+"['Countdown Blockhouse Bay', 'Countdown Mt Eden', 'Countdown Victoria Street West']",1056.7011111111112,Central Region
+"['Countdown Blockhouse Bay', 'Countdown Mt Eden', 'Countdown Metro Albert Street']",910.1940972222224,Central Region
+"['Countdown Blockhouse Bay', 'Countdown Mt Eden', 'Countdown Metro Halsey Street']",888.66375,Central Region
+"['Countdown Blockhouse Bay', 'Countdown Mt Roskill', 'Countdown Newmarket']",1010.7302777777778,Central Region
+"['Countdown Blockhouse Bay', 'Countdown Mt Roskill', 'Countdown Onehunga']",914.0693055555556,Central Region
+"['Countdown Blockhouse Bay', 'Countdown Mt Roskill', 'Countdown Pt Chevalier']",1009.4660416666666,Central Region
+"['Countdown Blockhouse Bay', 'Countdown Mt Roskill', 'Countdown St Lukes']",938.8552083333333,Central Region
+"['Countdown Blockhouse Bay', 'Countdown Mt Roskill', 'Countdown Metro Albert Street']",944.4079166666667,Central Region
+"['Countdown Blockhouse Bay', 'Countdown Mt Roskill', 'Countdown Metro Halsey Street']",911.860138888889,Central Region
+"['Countdown Blockhouse Bay', 'Countdown Newmarket', 'Countdown Onehunga']",975.6135416666667,Central Region
+"['Countdown Blockhouse Bay', 'Countdown Newmarket', 'Countdown Ponsonby']",1056.6850694444445,Central Region
+"['Countdown Blockhouse Bay', 'Countdown Newmarket', 'Countdown Pt Chevalier']",1022.587361111111,Central Region
+"['Countdown Blockhouse Bay', 'Countdown Newmarket', 'Countdown St Lukes']",978.9838194444443,Central Region
+"['Countdown Blockhouse Bay', 'Countdown Newmarket', 'Countdown Three Kings']",1009.0161111111113,Central Region
+"['Countdown Blockhouse Bay', 'Countdown Newmarket', 'Countdown Victoria Street West']",1064.7425694444446,Central Region
+"['Countdown Blockhouse Bay', 'Countdown Newmarket', 'Countdown Metro Albert Street']",905.0088194444444,Central Region
+"['Countdown Blockhouse Bay', 'Countdown Newmarket', 'Countdown Metro Halsey Street']",884.42125,Central Region
+"['Countdown Blockhouse Bay', 'Countdown Onehunga', 'Countdown Ponsonby']",1088.8402083333333,Central Region
+"['Countdown Blockhouse Bay', 'Countdown Onehunga', 'Countdown Pt Chevalier']",1042.2743055555557,Central Region
+"['Countdown Blockhouse Bay', 'Countdown Onehunga', 'Countdown St Lukes']",976.8074999999999,Central Region
+"['Countdown Blockhouse Bay', 'Countdown Onehunga', 'Countdown Three Kings']",970.8270138888889,Central Region
+"['Countdown Blockhouse Bay', 'Countdown Onehunga', 'Countdown Victoria Street West']",1117.2622222222221,Central Region
+"['Countdown Blockhouse Bay', 'Countdown Onehunga', 'Countdown Metro Albert Street']",929.0613888888889,Central Region
+"['Countdown Blockhouse Bay', 'Countdown Onehunga', 'Countdown Metro Halsey Street']",905.011875,Central Region
+"['Countdown Blockhouse Bay', 'Countdown Ponsonby', 'Countdown St Lukes']",1016.964375,Central Region
+"['Countdown Blockhouse Bay', 'Countdown Ponsonby', 'Countdown Metro Albert Street']",950.1531249999999,Central Region
+"['Countdown Blockhouse Bay', 'Countdown Ponsonby', 'Countdown Metro Halsey Street']",925.7644444444444,Central Region
+"['Countdown Blockhouse Bay', 'Countdown Pt Chevalier', 'Countdown St Lukes']",954.4110416666666,Central Region
+"['Countdown Blockhouse Bay', 'Countdown Pt Chevalier', 'Countdown Metro Albert Street']",917.0202083333334,Central Region
+"['Countdown Blockhouse Bay', 'Countdown Pt Chevalier', 'Countdown Metro Halsey Street']",887.2950000000001,Central Region
+"['Countdown Blockhouse Bay', 'Countdown St Lukes', 'Countdown Three Kings']",965.2796527777779,Central Region
+"['Countdown Blockhouse Bay', 'Countdown St Lukes', 'Countdown Victoria Street West']",1052.2972916666668,Central Region
+"['Countdown Blockhouse Bay', 'Countdown St Lukes', 'Countdown Metro Albert Street']",897.8793750000001,Central Region
+"['Countdown Blockhouse Bay', 'Countdown St Lukes', 'Countdown Metro Halsey Street']",871.2493750000001,Central Region
+"['Countdown Blockhouse Bay', 'Countdown Three Kings', 'Countdown Metro Albert Street']",980.8652777777777,Central Region
+"['Countdown Blockhouse Bay', 'Countdown Three Kings', 'Countdown Metro Halsey Street']",956.815763888889,Central Region
+"['Countdown Blockhouse Bay', 'Countdown Victoria Street West', 'Countdown Metro Albert Street']",949.0134027777779,Central Region
+"['Countdown Blockhouse Bay', 'Countdown Victoria Street West', 'Countdown Metro Halsey Street']",922.6577083333333,Central Region
+"['Countdown Blockhouse Bay', 'Countdown Metro Albert Street', 'Countdown Metro Halsey Street']",776.0075,Central Region
+"['Countdown Greenlane', 'Countdown Grey Lynn', 'Countdown Mt Eden']",1000.9448611111112,Central Region
+"['Countdown Greenlane', 'Countdown Grey Lynn', 'Countdown Newmarket']",1033.1374305555557,Central Region
+"['Countdown Greenlane', 'Countdown Grey Lynn', 'Countdown Onehunga']",1000.4009722222222,Central Region
+"['Countdown Greenlane', 'Countdown Grey Lynn', 'Countdown St Lukes']",996.3775694444444,Central Region
+"['Countdown Greenlane', 'Countdown Grey Lynn', 'Countdown Metro Albert Street']",931.0780555555556,Central Region
+"['Countdown Greenlane', 'Countdown Grey Lynn', 'Countdown Metro Halsey Street']",891.079375,Central Region
+"['Countdown Greenlane', 'Countdown Grey Lynn Central', 'Countdown Mt Eden']",982.9980555555557,Central Region
+"['Countdown Greenlane', 'Countdown Grey Lynn Central', 'Countdown Newmarket']",1026.3082638888886,Central Region
+"['Countdown Greenlane', 'Countdown Grey Lynn Central', 'Countdown Onehunga']",986.1498611111111,Central Region
+"['Countdown Greenlane', 'Countdown Grey Lynn Central', 'Countdown St Lukes']",978.4299999999998,Central Region
+"['Countdown Greenlane', 'Countdown Grey Lynn Central', 'Countdown Metro Albert Street']",938.4564583333333,Central Region
+"['Countdown Greenlane', 'Countdown Grey Lynn Central', 'Countdown Metro Halsey Street']",905.5779166666667,Central Region
+"['Countdown Greenlane', 'Countdown Lynfield', 'Countdown Mt Eden']",1069.4878472222222,Central Region
+"['Countdown Greenlane', 'Countdown Lynfield', 'Countdown Newmarket']",1119.167361111111,Central Region
+"['Countdown Greenlane', 'Countdown Lynfield', 'Countdown Onehunga']",1000.4032638888891,Central Region
+"['Countdown Greenlane', 'Countdown Lynfield', 'Countdown St Lukes']",1049.1493055555557,Central Region
+"['Countdown Greenlane', 'Countdown Lynfield', 'Countdown Metro Albert Street']",1031.3147916666667,Central Region
+"['Countdown Greenlane', 'Countdown Lynfield', 'Countdown Metro Halsey Street']",998.767013888889,Central Region
+"['Countdown Greenlane', 'Countdown Mt Eden', 'Countdown Mt Roskill']",953.4813888888889,Central Region
+"['Countdown Greenlane', 'Countdown Mt Eden', 'Countdown Newmarket']",953.9412500000002,Central Region
+"['Countdown Greenlane', 'Countdown Mt Eden', 'Countdown Onehunga']",913.4704166666667,Central Region
+"['Countdown Greenlane', 'Countdown Mt Eden', 'Countdown Pt Chevalier']",986.3797916666666,Central Region
+"['Countdown Greenlane', 'Countdown Mt Eden', 'Countdown St Lukes']",916.2983333333333,Central Region
+"['Countdown Greenlane', 'Countdown Mt Eden', 'Countdown Metro Albert Street']",894.4675,Central Region
+"['Countdown Greenlane', 'Countdown Mt Eden', 'Countdown Metro Halsey Street']",874.7906250000001,Central Region
+"['Countdown Greenlane', 'Countdown Mt Roskill', 'Countdown Newmarket']",1054.1420833333334,Central Region
+"['Countdown Greenlane', 'Countdown Mt Roskill', 'Countdown Onehunga']",957.4811111111113,Central Region
+"['Countdown Greenlane', 'Countdown Mt Roskill', 'Countdown St Lukes']",982.2670138888889,Central Region
+"['Countdown Greenlane', 'Countdown Mt Roskill', 'Countdown Metro Albert Street']",987.8197222222225,Central Region
+"['Countdown Greenlane', 'Countdown Mt Roskill', 'Countdown Metro Halsey Street']",955.2719444444444,Central Region
+"['Countdown Greenlane', 'Countdown Newmarket', 'Countdown Onehunga']",929.82375,Central Region
+"['Countdown Greenlane', 'Countdown Newmarket', 'Countdown Pt Chevalier']",976.7975694444447,Central Region
+"['Countdown Greenlane', 'Countdown Newmarket', 'Countdown St Lukes']",933.1940277777776,Central Region
+"['Countdown Greenlane', 'Countdown Newmarket', 'Countdown Metro Albert Street']",866.6337500000001,Central Region
+"['Countdown Greenlane', 'Countdown Newmarket', 'Countdown Metro Halsey Street']",846.9568750000001,Central Region
+"['Countdown Greenlane', 'Countdown Onehunga', 'Countdown Pt Chevalier']",1044.9303472222223,Central Region
+"['Countdown Greenlane', 'Countdown Onehunga', 'Countdown St Lukes']",979.4635416666665,Central Region
+"['Countdown Greenlane', 'Countdown Onehunga', 'Countdown Metro Albert Street']",931.7174305555557,Central Region
+"['Countdown Greenlane', 'Countdown Onehunga', 'Countdown Metro Halsey Street']",907.6679166666668,Central Region
+"['Countdown Greenlane', 'Countdown Ponsonby', 'Countdown Metro Albert Street']",944.3177777777778,Central Region
+"['Countdown Greenlane', 'Countdown Ponsonby', 'Countdown Metro Halsey Street']",919.9290972222221,Central Region
+"['Countdown Greenlane', 'Countdown Pt Chevalier', 'Countdown St Lukes']",985.4150000000001,Central Region
+"['Countdown Greenlane', 'Countdown Pt Chevalier', 'Countdown Metro Albert Street']",948.0241666666667,Central Region
+"['Countdown Greenlane', 'Countdown Pt Chevalier', 'Countdown Metro Halsey Street']",915.4756249999999,Central Region
+"['Countdown Greenlane', 'Countdown St Lukes', 'Countdown Metro Albert Street']",932.9602777777778,Central Region
+"['Countdown Greenlane', 'Countdown St Lukes', 'Countdown Metro Halsey Street']",900.4125000000001,Central Region
+"['Countdown Greenlane', 'Countdown Three Kings', 'Countdown Metro Albert Street']",984.6144444444445,Central Region
+"['Countdown Greenlane', 'Countdown Three Kings', 'Countdown Metro Halsey Street']",960.5649305555555,Central Region
+"['Countdown Greenlane', 'Countdown Victoria Street West', 'Countdown Metro Albert Street']",922.8127777777778,Central Region
+"['Countdown Greenlane', 'Countdown Victoria Street West', 'Countdown Metro Halsey Street']",897.10125,Central Region
+"['Countdown Greenlane', 'Countdown Metro Albert Street', 'Countdown Metro Halsey Street']",759.1612500000001,Central Region
+"['Countdown Grey Lynn', 'Countdown Grey Lynn Central', 'Countdown Mt Eden']",967.0633333333333,Central Region
+"['Countdown Grey Lynn', 'Countdown Grey Lynn Central', 'Countdown Newmarket']",1010.3735416666667,Central Region
+"['Countdown Grey Lynn', 'Countdown Grey Lynn Central', 'Countdown Onehunga']",970.215138888889,Central Region
+"['Countdown Grey Lynn', 'Countdown Grey Lynn Central', 'Countdown St Lukes']",962.4952777777777,Central Region
+"['Countdown Grey Lynn', 'Countdown Grey Lynn Central', 'Countdown Metro Albert Street']",922.5217361111113,Central Region
+"['Countdown Grey Lynn', 'Countdown Grey Lynn Central', 'Countdown Metro Halsey Street']",891.52625,Central Region
+"['Countdown Grey Lynn', 'Countdown Lynfield', 'Countdown Mt Eden']",1085.9641666666664,Central Region
+"['Countdown Grey Lynn', 'Countdown Lynfield', 'Countdown Newmarket']",1135.6436805555554,Central Region
+"['Countdown Grey Lynn', 'Countdown Lynfield', 'Countdown Onehunga']",1016.8795833333332,Central Region
+"['Countdown Grey Lynn', 'Countdown Lynfield', 'Countdown St Lukes']",1065.6256250000001,Central Region
+"['Countdown Grey Lynn', 'Countdown Lynfield', 'Countdown Metro Albert Street']",1047.7911111111111,Central Region
+"['Countdown Grey Lynn', 'Countdown Lynfield', 'Countdown Metro Halsey Street']",1015.2433333333333,Central Region
+"['Countdown Grey Lynn', 'Countdown Mt Eden', 'Countdown Mt Roskill']",994.8077777777778,Central Region
+"['Countdown Grey Lynn', 'Countdown Mt Eden', 'Countdown Newmarket']",995.2676388888891,Central Region
+"['Countdown Grey Lynn', 'Countdown Mt Eden', 'Countdown Onehunga']",954.7968055555556,Central Region
+"['Countdown Grey Lynn', 'Countdown Mt Eden', 'Countdown Pt Chevalier']",1027.7061805555556,Central Region
+"['Countdown Grey Lynn', 'Countdown Mt Eden', 'Countdown St Lukes']",957.6247222222221,Central Region
+"['Countdown Grey Lynn', 'Countdown Mt Eden', 'Countdown Metro Albert Street']",934.5644444444443,Central Region
+"['Countdown Grey Lynn', 'Countdown Mt Eden', 'Countdown Metro Halsey Street']",910.5149305555557,Central Region
+"['Countdown Grey Lynn', 'Countdown Mt Roskill', 'Countdown Newmarket']",1087.8754166666665,Central Region
+"['Countdown Grey Lynn', 'Countdown Mt Roskill', 'Countdown Onehunga']",991.2144444444446,Central Region
+"['Countdown Grey Lynn', 'Countdown Mt Roskill', 'Countdown St Lukes']",1016.0003472222222,Central Region
+"['Countdown Grey Lynn', 'Countdown Mt Roskill', 'Countdown Metro Albert Street']",1021.5530555555556,Central Region
+"['Countdown Grey Lynn', 'Countdown Mt Roskill', 'Countdown Metro Halsey Street']",989.0052777777778,Central Region
+"['Countdown Grey Lynn', 'Countdown Newmarket', 'Countdown Onehunga']",986.9893750000001,Central Region
+"['Countdown Grey Lynn', 'Countdown Newmarket', 'Countdown Pt Chevalier']",1033.9631944444445,Central Region
+"['Countdown Grey Lynn', 'Countdown Newmarket', 'Countdown St Lukes']",990.3596527777778,Central Region
+"['Countdown Grey Lynn', 'Countdown Newmarket', 'Countdown Metro Albert Street']",916.384652777778,Central Region
+"['Countdown Grey Lynn', 'Countdown Newmarket', 'Countdown Metro Halsey Street']",893.72875,Central Region
+"['Countdown Grey Lynn', 'Countdown Onehunga', 'Countdown Pt Chevalier']",1128.524236111111,Central Region
+"['Countdown Grey Lynn', 'Countdown Onehunga', 'Countdown St Lukes']",1063.0574305555556,Central Region
+"['Countdown Grey Lynn', 'Countdown Onehunga', 'Countdown Metro Albert Street']",1015.3113194444445,Central Region
+"['Countdown Grey Lynn', 'Countdown Onehunga', 'Countdown Metro Halsey Street']",991.2618055555556,Central Region
+"['Countdown Grey Lynn', 'Countdown Ponsonby', 'Countdown Metro Albert Street']",938.5756250000001,Central Region
+"['Countdown Grey Lynn', 'Countdown Ponsonby', 'Countdown Metro Halsey Street']",914.1869444444445,Central Region
+"['Countdown Grey Lynn', 'Countdown Pt Chevalier', 'Countdown St Lukes']",992.648263888889,Central Region
+"['Countdown Grey Lynn', 'Countdown Pt Chevalier', 'Countdown Metro Albert Street']",955.2574305555556,Central Region
+"['Countdown Grey Lynn', 'Countdown Pt Chevalier', 'Countdown Metro Halsey Street']",922.7088888888889,Central Region
+"['Countdown Grey Lynn', 'Countdown St Lukes', 'Countdown Metro Albert Street']",942.0421527777779,Central Region
+"['Countdown Grey Lynn', 'Countdown St Lukes', 'Countdown Metro Halsey Street']",909.4943750000001,Central Region
+"['Countdown Grey Lynn', 'Countdown Three Kings', 'Countdown Metro Albert Street']",1067.1152083333336,Central Region
+"['Countdown Grey Lynn', 'Countdown Three Kings', 'Countdown Metro Halsey Street']",1043.0656944444445,Central Region
+"['Countdown Grey Lynn', 'Countdown Victoria Street West', 'Countdown Metro Albert Street']",949.5007638888891,Central Region
+"['Countdown Grey Lynn', 'Countdown Victoria Street West', 'Countdown Metro Halsey Street']",923.1450694444446,Central Region
+"['Countdown Grey Lynn', 'Countdown Metro Albert Street', 'Countdown Metro Halsey Street']",773.6906250000001,Central Region
+"['Countdown Grey Lynn Central', 'Countdown Lynfield', 'Countdown Mt Eden']",1059.8590277777778,Central Region
+"['Countdown Grey Lynn Central', 'Countdown Lynfield', 'Countdown Newmarket']",1109.5385416666668,Central Region
+"['Countdown Grey Lynn Central', 'Countdown Lynfield', 'Countdown Onehunga']",990.7744444444445,Central Region
+"['Countdown Grey Lynn Central', 'Countdown Lynfield', 'Countdown St Lukes']",1039.520486111111,Central Region
+"['Countdown Grey Lynn Central', 'Countdown Lynfield', 'Countdown Metro Albert Street']",1021.6859722222222,Central Region
+"['Countdown Grey Lynn Central', 'Countdown Lynfield', 'Countdown Metro Halsey Street']",989.1381944444447,Central Region
+"['Countdown Grey Lynn Central', 'Countdown Mt Eden', 'Countdown Mt Roskill']",965.0069444444446,Central Region
+"['Countdown Grey Lynn Central', 'Countdown Mt Eden', 'Countdown Newmarket']",965.4668055555555,Central Region
+"['Countdown Grey Lynn Central', 'Countdown Mt Eden', 'Countdown Onehunga']",924.9959722222223,Central Region
+"['Countdown Grey Lynn Central', 'Countdown Mt Eden', 'Countdown Pt Chevalier']",997.9053472222223,Central Region
+"['Countdown Grey Lynn Central', 'Countdown Mt Eden', 'Countdown St Lukes']",927.8238888888889,Central Region
+"['Countdown Grey Lynn Central', 'Countdown Mt Eden', 'Countdown Metro Albert Street']",904.7636111111111,Central Region
+"['Countdown Grey Lynn Central', 'Countdown Mt Eden', 'Countdown Metro Halsey Street']",884.220625,Central Region
+"['Countdown Grey Lynn Central', 'Countdown Mt Roskill', 'Countdown Newmarket']",1058.0745833333333,Central Region
+"['Countdown Grey Lynn Central', 'Countdown Mt Roskill', 'Countdown Onehunga']",961.4136111111112,Central Region
+"['Countdown Grey Lynn Central', 'Countdown Mt Roskill', 'Countdown St Lukes']",986.1995138888889,Central Region
+"['Countdown Grey Lynn Central', 'Countdown Mt Roskill', 'Countdown Metro Albert Street']",991.7522222222221,Central Region
+"['Countdown Grey Lynn Central', 'Countdown Mt Roskill', 'Countdown Metro Halsey Street']",959.2044444444444,Central Region
+"['Countdown Grey Lynn Central', 'Countdown Newmarket', 'Countdown Onehunga']",968.3061805555556,Central Region
+"['Countdown Grey Lynn Central', 'Countdown Newmarket', 'Countdown Pt Chevalier']",1015.28,Central Region
+"['Countdown Grey Lynn Central', 'Countdown Newmarket', 'Countdown St Lukes']",971.6764583333334,Central Region
+"['Countdown Grey Lynn Central', 'Countdown Newmarket', 'Countdown Metro Albert Street']",898.119375,Central Region
+"['Countdown Grey Lynn Central', 'Countdown Newmarket', 'Countdown Metro Halsey Street']",878.4425,Central Region
+"['Countdown Grey Lynn Central', 'Countdown Onehunga', 'Countdown Pt Chevalier']",1102.419097222222,Central Region
+"['Countdown Grey Lynn Central', 'Countdown Onehunga', 'Countdown St Lukes']",1036.9522916666665,Central Region
+"['Countdown Grey Lynn Central', 'Countdown Onehunga', 'Countdown Metro Albert Street']",989.2061805555555,Central Region
+"['Countdown Grey Lynn Central', 'Countdown Onehunga', 'Countdown Metro Halsey Street']",965.1566666666665,Central Region
+"['Countdown Grey Lynn Central', 'Countdown Ponsonby', 'Countdown Metro Albert Street']",918.4219444444444,Central Region
+"['Countdown Grey Lynn Central', 'Countdown Ponsonby', 'Countdown Metro Halsey Street']",895.118125,Central Region
+"['Countdown Grey Lynn Central', 'Countdown Pt Chevalier', 'Countdown St Lukes']",969.6498611111111,Central Region
+"['Countdown Grey Lynn Central', 'Countdown Pt Chevalier', 'Countdown Metro Albert Street']",932.2590277777779,Central Region
+"['Countdown Grey Lynn Central', 'Countdown Pt Chevalier', 'Countdown Metro Halsey Street']",899.763125,Central Region
+"['Countdown Grey Lynn Central', 'Countdown St Lukes', 'Countdown Metro Albert Street']",912.2405555555557,Central Region
+"['Countdown Grey Lynn Central', 'Countdown St Lukes', 'Countdown Metro Halsey Street']",883.385,Central Region
+"['Countdown Grey Lynn Central', 'Countdown Three Kings', 'Countdown Metro Albert Street']",1041.0100694444443,Central Region
+"['Countdown Grey Lynn Central', 'Countdown Three Kings', 'Countdown Metro Halsey Street']",1016.9605555555555,Central Region
+"['Countdown Grey Lynn Central', 'Countdown Victoria Street West', 'Countdown Metro Albert Street']",941.705277777778,Central Region
+"['Countdown Grey Lynn Central', 'Countdown Victoria Street West', 'Countdown Metro Halsey Street']",915.3495833333334,Central Region
+"['Countdown Grey Lynn Central', 'Countdown Metro Albert Street', 'Countdown Metro Halsey Street']",770.0287500000001,Central Region
+"['Countdown Lynfield', 'Countdown Mt Eden', 'Countdown Mt Roskill']",981.0684722222221,Central Region
+"['Countdown Lynfield', 'Countdown Mt Eden', 'Countdown Newmarket']",981.5283333333334,Central Region
+"['Countdown Lynfield', 'Countdown Mt Eden', 'Countdown Onehunga']",941.0575000000001,Central Region
+"['Countdown Lynfield', 'Countdown Mt Eden', 'Countdown Pt Chevalier']",1013.966875,Central Region
+"['Countdown Lynfield', 'Countdown Mt Eden', 'Countdown St Lukes']",943.8854166666666,Central Region
+"['Countdown Lynfield', 'Countdown Mt Eden', 'Countdown Metro Albert Street']",920.8251388888889,Central Region
+"['Countdown Lynfield', 'Countdown Mt Eden', 'Countdown Metro Halsey Street']",897.361875,Central Region
+"['Countdown Lynfield', 'Countdown Mt Roskill', 'Countdown Newmarket']",1020.401875,Central Region
+"['Countdown Lynfield', 'Countdown Mt Roskill', 'Countdown Onehunga']",923.7409027777778,Central Region
+"['Countdown Lynfield', 'Countdown Mt Roskill', 'Countdown St Lukes']",948.5268055555556,Central Region
+"['Countdown Lynfield', 'Countdown Mt Roskill', 'Countdown Metro Albert Street']",954.079513888889,Central Region
+"['Countdown Lynfield', 'Countdown Mt Roskill', 'Countdown Metro Halsey Street']",921.5317361111112,Central Region
+"['Countdown Lynfield', 'Countdown Newmarket', 'Countdown Onehunga']",990.7370138888889,Central Region
+"['Countdown Lynfield', 'Countdown Newmarket', 'Countdown Pt Chevalier']",1037.7108333333335,Central Region
+"['Countdown Lynfield', 'Countdown Newmarket', 'Countdown St Lukes']",994.1072916666665,Central Region
+"['Countdown Lynfield', 'Countdown Newmarket', 'Countdown Metro Albert Street']",920.1322916666667,Central Region
+"['Countdown Lynfield', 'Countdown Newmarket', 'Countdown Metro Halsey Street']",896.7950000000001,Central Region
+"['Countdown Lynfield', 'Countdown Onehunga', 'Countdown Pt Chevalier']",1046.2442361111114,Central Region
+"['Countdown Lynfield', 'Countdown Onehunga', 'Countdown St Lukes']",980.7774305555556,Central Region
+"['Countdown Lynfield', 'Countdown Onehunga', 'Countdown Metro Albert Street']",933.0313194444444,Central Region
+"['Countdown Lynfield', 'Countdown Onehunga', 'Countdown Metro Halsey Street']",908.9818055555555,Central Region
+"['Countdown Lynfield', 'Countdown Ponsonby', 'Countdown Metro Albert Street']",965.2758333333334,Central Region
+"['Countdown Lynfield', 'Countdown Ponsonby', 'Countdown Metro Halsey Street']",940.8871527777777,Central Region
+"['Countdown Lynfield', 'Countdown Pt Chevalier', 'Countdown St Lukes']",977.014513888889,Central Region
+"['Countdown Lynfield', 'Countdown Pt Chevalier', 'Countdown Metro Albert Street']",939.6236805555557,Central Region
+"['Countdown Lynfield', 'Countdown Pt Chevalier', 'Countdown Metro Halsey Street']",907.0751388888888,Central Region
+"['Countdown Lynfield', 'Countdown St Lukes', 'Countdown Metro Albert Street']",912.5315972222223,Central Region
+"['Countdown Lynfield', 'Countdown St Lukes', 'Countdown Metro Halsey Street']",883.6231250000001,Central Region
+"['Countdown Lynfield', 'Countdown Three Kings', 'Countdown Metro Albert Street']",976.705138888889,Central Region
+"['Countdown Lynfield', 'Countdown Three Kings', 'Countdown Metro Halsey Street']",952.6556250000001,Central Region
+"['Countdown Lynfield', 'Countdown Victoria Street West', 'Countdown Metro Albert Street']",964.1361111111113,Central Region
+"['Countdown Lynfield', 'Countdown Victoria Street West', 'Countdown Metro Halsey Street']",937.7804166666667,Central Region
+"['Countdown Lynfield', 'Countdown Metro Albert Street', 'Countdown Metro Halsey Street']",788.380625,Central Region
+"['Countdown Mt Eden', 'Countdown Mt Roskill', 'Countdown Newmarket']",1008.3530555555556,Central Region
+"['Countdown Mt Eden', 'Countdown Mt Roskill', 'Countdown Onehunga']",911.6920833333334,Central Region
+"['Countdown Mt Eden', 'Countdown Mt Roskill', 'Countdown Pt Chevalier']",1007.0888194444443,Central Region
+"['Countdown Mt Eden', 'Countdown Mt Roskill', 'Countdown St Lukes']",936.4779861111111,Central Region
+"['Countdown Mt Eden', 'Countdown Mt Roskill', 'Countdown Metro Albert Street']",942.0306944444445,Central Region
+"['Countdown Mt Eden', 'Countdown Mt Roskill', 'Countdown Metro Halsey Street']",909.4829166666667,Central Region
+"['Countdown Mt Eden', 'Countdown Newmarket', 'Countdown Onehunga']",912.1519444444444,Central Region
+"['Countdown Mt Eden', 'Countdown Newmarket', 'Countdown Ponsonby']",993.2234722222223,Central Region
+"['Countdown Mt Eden', 'Countdown Newmarket', 'Countdown Pt Chevalier']",959.1257638888891,Central Region
+"['Countdown Mt Eden', 'Countdown Newmarket', 'Countdown St Lukes']",915.5222222222221,Central Region
+"['Countdown Mt Eden', 'Countdown Newmarket', 'Countdown Three Kings']",945.5545138888889,Central Region
+"['Countdown Mt Eden', 'Countdown Newmarket', 'Countdown Victoria Street West']",1001.2809722222222,Central Region
+"['Countdown Mt Eden', 'Countdown Newmarket', 'Countdown Metro Albert Street']",852.1750000000001,Central Region
+"['Countdown Mt Eden', 'Countdown Newmarket', 'Countdown Metro Halsey Street']",832.4981250000001,Central Region
+"['Countdown Mt Eden', 'Countdown Onehunga', 'Countdown Ponsonby']",1092.5183333333334,Central Region
+"['Countdown Mt Eden', 'Countdown Onehunga', 'Countdown Pt Chevalier']",1045.9524305555556,Central Region
+"['Countdown Mt Eden', 'Countdown Onehunga', 'Countdown St Lukes']",980.4856249999999,Central Region
+"['Countdown Mt Eden', 'Countdown Onehunga', 'Countdown Three Kings']",974.505138888889,Central Region
+"['Countdown Mt Eden', 'Countdown Onehunga', 'Countdown Victoria Street West']",1120.9403472222223,Central Region
+"['Countdown Mt Eden', 'Countdown Onehunga', 'Countdown Metro Albert Street']",932.739513888889,Central Region
+"['Countdown Mt Eden', 'Countdown Onehunga', 'Countdown Metro Halsey Street']",908.69,Central Region
+"['Countdown Mt Eden', 'Countdown Ponsonby', 'Countdown St Lukes']",967.8868055555554,Central Region
+"['Countdown Mt Eden', 'Countdown Ponsonby', 'Countdown Metro Albert Street']",901.0755555555555,Central Region
+"['Countdown Mt Eden', 'Countdown Ponsonby', 'Countdown Metro Halsey Street']",880.925625,Central Region
+"['Countdown Mt Eden', 'Countdown Pt Chevalier', 'Countdown St Lukes']",945.2543055555556,Central Region
+"['Countdown Mt Eden', 'Countdown Pt Chevalier', 'Countdown Metro Albert Street']",907.8634722222222,Central Region
+"['Countdown Mt Eden', 'Countdown Pt Chevalier', 'Countdown Metro Halsey Street']",879.803125,Central Region
+"['Countdown Mt Eden', 'Countdown St Lukes', 'Countdown Three Kings']",934.1931944444445,Central Region
+"['Countdown Mt Eden', 'Countdown St Lukes', 'Countdown Victoria Street West']",1021.2108333333332,Central Region
+"['Countdown Mt Eden', 'Countdown St Lukes', 'Countdown Metro Albert Street']",872.445,Central Region
+"['Countdown Mt Eden', 'Countdown St Lukes', 'Countdown Metro Halsey Street']",845.815,Central Region
+"['Countdown Mt Eden', 'Countdown Three Kings', 'Countdown Metro Albert Street']",955.1229861111111,Central Region
+"['Countdown Mt Eden', 'Countdown Three Kings', 'Countdown Metro Halsey Street']",931.0734722222222,Central Region
+"['Countdown Mt Eden', 'Countdown Victoria Street West', 'Countdown Metro Albert Street']",894.97875,Central Region
+"['Countdown Mt Eden', 'Countdown Victoria Street West', 'Countdown Metro Halsey Street']",873.415,Central Region
+"['Countdown Mt Eden', 'Countdown Metro Albert Street', 'Countdown Metro Halsey Street']",746.296875,Central Region
+"['Countdown Mt Roskill', 'Countdown Newmarket', 'Countdown Onehunga']",962.7427777777777,Central Region
+"['Countdown Mt Roskill', 'Countdown Newmarket', 'Countdown Pt Chevalier']",1009.7165972222223,Central Region
+"['Countdown Mt Roskill', 'Countdown Newmarket', 'Countdown St Lukes']",966.1130555555555,Central Region
+"['Countdown Mt Roskill', 'Countdown Newmarket', 'Countdown Metro Albert Street']",893.5675000000001,Central Region
+"['Countdown Mt Roskill', 'Countdown Newmarket', 'Countdown Metro Halsey Street']",873.890625,Central Region
+"['Countdown Mt Roskill', 'Countdown Onehunga', 'Countdown Pt Chevalier']",1040.353125,Central Region
+"['Countdown Mt Roskill', 'Countdown Onehunga', 'Countdown St Lukes']",974.8863194444446,Central Region
+"['Countdown Mt Roskill', 'Countdown Onehunga', 'Countdown Metro Albert Street']",927.1402083333334,Central Region
+"['Countdown Mt Roskill', 'Countdown Onehunga', 'Countdown Metro Halsey Street']",903.0906944444444,Central Region
+"['Countdown Mt Roskill', 'Countdown Ponsonby', 'Countdown Metro Albert Street']",944.8914583333333,Central Region
+"['Countdown Mt Roskill', 'Countdown Ponsonby', 'Countdown Metro Halsey Street']",920.5027777777777,Central Region
+"['Countdown Mt Roskill', 'Countdown Pt Chevalier', 'Countdown St Lukes']",962.1423611111111,Central Region
+"['Countdown Mt Roskill', 'Countdown Pt Chevalier', 'Countdown Metro Albert Street']",924.7515277777778,Central Region
+"['Countdown Mt Roskill', 'Countdown Pt Chevalier', 'Countdown Metro Halsey Street']",893.620625,Central Region
+"['Countdown Mt Roskill', 'Countdown St Lukes', 'Countdown Metro Albert Street']",885.829375,Central Region
+"['Countdown Mt Roskill', 'Countdown St Lukes', 'Countdown Metro Halsey Street']",859.199375,Central Region
+"['Countdown Mt Roskill', 'Countdown Three Kings', 'Countdown Metro Albert Street']",960.369375,Central Region
+"['Countdown Mt Roskill', 'Countdown Three Kings', 'Countdown Metro Halsey Street']",936.3198611111111,Central Region
+"['Countdown Mt Roskill', 'Countdown Victoria Street West', 'Countdown Metro Albert Street']",957.6720833333335,Central Region
+"['Countdown Mt Roskill', 'Countdown Victoria Street West', 'Countdown Metro Halsey Street']",931.3163888888889,Central Region
+"['Countdown Mt Roskill', 'Countdown Metro Albert Street', 'Countdown Metro Halsey Street']",783.0918750000001,Central Region
+"['Countdown Newmarket', 'Countdown Onehunga', 'Countdown Ponsonby']",1133.4459722222223,Central Region
+"['Countdown Newmarket', 'Countdown Onehunga', 'Countdown Pt Chevalier']",1086.8800694444444,Central Region
+"['Countdown Newmarket', 'Countdown Onehunga', 'Countdown St Lukes']",1021.4132638888889,Central Region
+"['Countdown Newmarket', 'Countdown Onehunga', 'Countdown Three Kings']",1015.4327777777778,Central Region
+"['Countdown Newmarket', 'Countdown Onehunga', 'Countdown Victoria Street West']",1161.8679861111111,Central Region
+"['Countdown Newmarket', 'Countdown Onehunga', 'Countdown Metro Albert Street']",973.6671527777778,Central Region
+"['Countdown Newmarket', 'Countdown Onehunga', 'Countdown Metro Halsey Street']",949.6176388888889,Central Region
+"['Countdown Newmarket', 'Countdown Ponsonby', 'Countdown St Lukes']",985.9604166666667,Central Region
+"['Countdown Newmarket', 'Countdown Ponsonby', 'Countdown Metro Albert Street']",919.1491666666667,Central Region
+"['Countdown Newmarket', 'Countdown Ponsonby', 'Countdown Metro Halsey Street']",895.713125,Central Region
+"['Countdown Newmarket', 'Countdown Pt Chevalier', 'Countdown St Lukes']",960.2463888888889,Central Region
+"['Countdown Newmarket', 'Countdown Pt Chevalier', 'Countdown Metro Albert Street']",922.8555555555556,Central Region
+"['Countdown Newmarket', 'Countdown Pt Chevalier', 'Countdown Metro Halsey Street']",892.069375,Central Region
+"['Countdown Newmarket', 'Countdown St Lukes', 'Countdown Three Kings']",975.6631944444443,Central Region
+"['Countdown Newmarket', 'Countdown St Lukes', 'Countdown Victoria Street West']",1062.680833333333,Central Region
+"['Countdown Newmarket', 'Countdown St Lukes', 'Countdown Metro Albert Street']",907.7916666666666,Central Region
+"['Countdown Newmarket', 'Countdown St Lukes', 'Countdown Metro Halsey Street']",879.745,Central Region
+"['Countdown Newmarket', 'Countdown Three Kings', 'Countdown Metro Albert Street']",970.85375,Central Region
+"['Countdown Newmarket', 'Countdown Three Kings', 'Countdown Metro Halsey Street']",946.804236111111,Central Region
+"['Countdown Newmarket', 'Countdown Victoria Street West', 'Countdown Metro Albert Street']",898.0731250000001,Central Region
+"['Countdown Newmarket', 'Countdown Victoria Street West', 'Countdown Metro Halsey Street']",876.5093750000001,Central Region
+"['Countdown Newmarket', 'Countdown Metro Albert Street', 'Countdown Metro Halsey Street']",738.569375,Central Region
+"['Countdown Onehunga', 'Countdown Ponsonby', 'Countdown St Lukes']",991.1418749999999,Central Region
+"['Countdown Onehunga', 'Countdown Ponsonby', 'Countdown Metro Albert Street']",924.330625,Central Region
+"['Countdown Onehunga', 'Countdown Ponsonby', 'Countdown Metro Halsey Street']",899.9525,Central Region
+"['Countdown Onehunga', 'Countdown Pt Chevalier', 'Countdown St Lukes']",952.9596527777776,Central Region
+"['Countdown Onehunga', 'Countdown Pt Chevalier', 'Countdown Metro Albert Street']",915.5688194444446,Central Region
+"['Countdown Onehunga', 'Countdown Pt Chevalier', 'Countdown Metro Halsey Street']",886.1075000000001,Central Region
+"['Countdown Onehunga', 'Countdown St Lukes', 'Countdown Three Kings']",946.5131944444445,Central Region
+"['Countdown Onehunga', 'Countdown St Lukes', 'Countdown Victoria Street West']",1033.5308333333335,Central Region
+"['Countdown Onehunga', 'Countdown St Lukes', 'Countdown Metro Albert Street']",882.5250000000001,Central Region
+"['Countdown Onehunga', 'Countdown St Lukes', 'Countdown Metro Halsey Street']",855.895,Central Region
+"['Countdown Onehunga', 'Countdown Three Kings', 'Countdown Metro Albert Street']",905.6909722222223,Central Region
+"['Countdown Onehunga', 'Countdown Three Kings', 'Countdown Metro Halsey Street']",884.979375,Central Region
+"['Countdown Onehunga', 'Countdown Victoria Street West', 'Countdown Metro Albert Street']",923.1909027777778,Central Region
+"['Countdown Onehunga', 'Countdown Victoria Street West', 'Countdown Metro Halsey Street']",897.410625,Central Region
+"['Countdown Onehunga', 'Countdown Metro Albert Street', 'Countdown Metro Halsey Street']",736.179375,Central Region
+"['Countdown Ponsonby', 'Countdown Pt Chevalier', 'Countdown Metro Albert Street']",983.3081944444444,Central Region
+"['Countdown Ponsonby', 'Countdown Pt Chevalier', 'Countdown Metro Halsey Street']",950.7596527777777,Central Region
+"['Countdown Ponsonby', 'Countdown St Lukes', 'Countdown Metro Albert Street']",963.2897222222223,Central Region
+"['Countdown Ponsonby', 'Countdown St Lukes', 'Countdown Metro Halsey Street']",930.7419444444444,Central Region
+"['Countdown Ponsonby', 'Countdown Three Kings', 'Countdown Metro Albert Street']",1071.8933333333334,Central Region
+"['Countdown Ponsonby', 'Countdown Three Kings', 'Countdown Metro Halsey Street']",1047.8438194444443,Central Region
+"['Countdown Ponsonby', 'Countdown Victoria Street West', 'Countdown Metro Albert Street']",965.2208333333334,Central Region
+"['Countdown Ponsonby', 'Countdown Victoria Street West', 'Countdown Metro Halsey Street']",938.865138888889,Central Region
+"['Countdown Ponsonby', 'Countdown Metro Albert Street', 'Countdown Metro Halsey Street']",789.838125,Central Region
+"['Countdown Pt Chevalier', 'Countdown St Lukes', 'Countdown Metro Albert Street']",925.1075000000001,Central Region
+"['Countdown Pt Chevalier', 'Countdown St Lukes', 'Countdown Metro Halsey Street']",893.9125,Central Region
+"['Countdown Pt Chevalier', 'Countdown Three Kings', 'Countdown Metro Albert Street']",1045.4925694444444,Central Region
+"['Countdown Pt Chevalier', 'Countdown Three Kings', 'Countdown Metro Halsey Street']",1021.4430555555556,Central Region
+"['Countdown Pt Chevalier', 'Countdown Victoria Street West', 'Countdown Metro Albert Street']",957.1549305555556,Central Region
+"['Countdown Pt Chevalier', 'Countdown Victoria Street West', 'Countdown Metro Halsey Street']",930.7992361111112,Central Region
+"['Countdown Pt Chevalier', 'Countdown Metro Albert Street', 'Countdown Metro Halsey Street']",782.6693750000001,Central Region
+"['Countdown St Lukes', 'Countdown Three Kings', 'Countdown Metro Albert Street']",951.6908333333333,Central Region
+"['Countdown St Lukes', 'Countdown Three Kings', 'Countdown Metro Halsey Street']",927.6413194444444,Central Region
+"['Countdown St Lukes', 'Countdown Victoria Street West', 'Countdown Metro Albert Street']",909.7731944444445,Central Region
+"['Countdown St Lukes', 'Countdown Victoria Street West', 'Countdown Metro Halsey Street']",886.4325,Central Region
+"['Countdown St Lukes', 'Countdown Metro Albert Street', 'Countdown Metro Halsey Street']",752.4562500000001,Central Region
+"['Countdown Three Kings', 'Countdown Victoria Street West', 'Countdown Metro Albert Street']",959.5313888888888,Central Region
+"['Countdown Three Kings', 'Countdown Victoria Street West', 'Countdown Metro Halsey Street']",933.1756944444444,Central Region
+"['Countdown Three Kings', 'Countdown Metro Albert Street', 'Countdown Metro Halsey Street']",789.20375,Central Region
+"['Countdown Victoria Street West', 'Countdown Metro Albert Street', 'Countdown Metro Halsey Street']",788.9050000000001,Central Region
+"['Countdown Auckland City', 'Countdown Blockhouse Bay', 'Countdown Metro Albert Street', 'Countdown Metro Halsey Street']",1208.556111111111,Central Region
+"['Countdown Auckland City', 'Countdown Mt Eden', 'Countdown Metro Albert Street', 'Countdown Metro Halsey Street']",1123.9966666666667,Central Region
+"['Countdown Auckland City', 'Countdown Newmarket', 'Countdown Metro Albert Street', 'Countdown Metro Halsey Street']",1080.304513888889,Central Region
+"['Countdown Auckland City', 'Countdown Onehunga', 'Countdown Metro Albert Street', 'Countdown Metro Halsey Street']",1201.0340972222225,Central Region
+"['Countdown Auckland City', 'Countdown St Lukes', 'Countdown Metro Albert Street', 'Countdown Metro Halsey Street']",1135.1586111111112,Central Region
+"['Countdown Blockhouse Bay', 'Countdown Greenlane', 'Countdown Metro Albert Street', 'Countdown Metro Halsey Street']",1129.734236111111,Central Region
+"['Countdown Blockhouse Bay', 'Countdown Grey Lynn', 'Countdown Metro Albert Street', 'Countdown Metro Halsey Street']",1088.217638888889,Central Region
+"['Countdown Blockhouse Bay', 'Countdown Grey Lynn Central', 'Countdown Metro Albert Street', 'Countdown Metro Halsey Street']",1083.7427777777777,Central Region
+"['Countdown Blockhouse Bay', 'Countdown Lynfield', 'Countdown Metro Albert Street', 'Countdown Metro Halsey Street']",1080.2006249999997,Central Region
+"['Countdown Blockhouse Bay', 'Countdown Mt Eden', 'Countdown Metro Albert Street', 'Countdown Metro Halsey Street']",1067.9944444444445,Central Region
+"['Countdown Blockhouse Bay', 'Countdown Mt Roskill', 'Countdown Metro Albert Street', 'Countdown Metro Halsey Street']",1102.208263888889,Central Region
+"['Countdown Blockhouse Bay', 'Countdown Newmarket', 'Countdown Metro Albert Street', 'Countdown Metro Halsey Street']",1062.8091666666667,Central Region
+"['Countdown Blockhouse Bay', 'Countdown Onehunga', 'Countdown Metro Albert Street', 'Countdown Metro Halsey Street']",1086.8617361111114,Central Region
+"['Countdown Blockhouse Bay', 'Countdown Pt Chevalier', 'Countdown Metro Albert Street', 'Countdown Metro Halsey Street']",1074.8205555555555,Central Region
+"['Countdown Blockhouse Bay', 'Countdown St Lukes', 'Countdown Metro Albert Street', 'Countdown Metro Halsey Street']",1055.2084722222223,Central Region
+"['Countdown Greenlane', 'Countdown Mt Eden', 'Countdown Metro Albert Street', 'Countdown Metro Halsey Street']",1051.0384027777777,Central Region
+"['Countdown Greenlane', 'Countdown Newmarket', 'Countdown Metro Albert Street', 'Countdown Metro Halsey Street']",1017.019375,Central Region
+"['Countdown Greenlane', 'Countdown Onehunga', 'Countdown Metro Albert Street', 'Countdown Metro Halsey Street']",1089.5177777777778,Central Region
+"['Countdown Greenlane', 'Countdown St Lukes', 'Countdown Metro Albert Street', 'Countdown Metro Halsey Street']",1090.7606250000001,Central Region
+"['Countdown Grey Lynn', 'Countdown Mt Eden', 'Countdown Metro Albert Street', 'Countdown Metro Halsey Street']",1092.3647916666666,Central Region
+"['Countdown Grey Lynn', 'Countdown Newmarket', 'Countdown Metro Albert Street', 'Countdown Metro Halsey Street']",1074.1850000000002,Central Region
+"['Countdown Grey Lynn', 'Countdown Onehunga', 'Countdown Metro Albert Street', 'Countdown Metro Halsey Street']",1173.1116666666665,Central Region
+"['Countdown Grey Lynn', 'Countdown St Lukes', 'Countdown Metro Albert Street', 'Countdown Metro Halsey Street']",1099.8425000000002,Central Region
+"['Countdown Grey Lynn Central', 'Countdown Mt Eden', 'Countdown Metro Albert Street', 'Countdown Metro Halsey Street']",1062.5639583333334,Central Region
+"['Countdown Grey Lynn Central', 'Countdown Newmarket', 'Countdown Metro Albert Street', 'Countdown Metro Halsey Street']",1055.5018055555554,Central Region
+"['Countdown Grey Lynn Central', 'Countdown Onehunga', 'Countdown Metro Albert Street', 'Countdown Metro Halsey Street']",1147.0065277777778,Central Region
+"['Countdown Grey Lynn Central', 'Countdown St Lukes', 'Countdown Metro Albert Street', 'Countdown Metro Halsey Street']",1070.040902777778,Central Region
+"['Countdown Lynfield', 'Countdown Mt Eden', 'Countdown Metro Albert Street', 'Countdown Metro Halsey Street']",1078.6254861111113,Central Region
+"['Countdown Lynfield', 'Countdown Newmarket', 'Countdown Metro Albert Street', 'Countdown Metro Halsey Street']",1077.9326388888892,Central Region
+"['Countdown Lynfield', 'Countdown Onehunga', 'Countdown Metro Albert Street', 'Countdown Metro Halsey Street']",1090.8316666666667,Central Region
+"['Countdown Lynfield', 'Countdown St Lukes', 'Countdown Metro Albert Street', 'Countdown Metro Halsey Street']",1070.3319444444446,Central Region
+"['Countdown Mt Eden', 'Countdown Mt Roskill', 'Countdown Metro Albert Street', 'Countdown Metro Halsey Street']",1099.8310416666668,Central Region
+"['Countdown Mt Eden', 'Countdown Newmarket', 'Countdown Metro Albert Street', 'Countdown Metro Halsey Street']",999.3475694444445,Central Region
+"['Countdown Mt Eden', 'Countdown Onehunga', 'Countdown Metro Albert Street', 'Countdown Metro Halsey Street']",1090.5398611111111,Central Region
+"['Countdown Mt Eden', 'Countdown Pt Chevalier', 'Countdown Metro Albert Street', 'Countdown Metro Halsey Street']",1065.6638194444447,Central Region
+"['Countdown Mt Eden', 'Countdown St Lukes', 'Countdown Metro Albert Street', 'Countdown Metro Halsey Street']",1024.122013888889,Central Region
+"['Countdown Mt Roskill', 'Countdown Newmarket', 'Countdown Metro Albert Street', 'Countdown Metro Halsey Street']",1049.9384027777778,Central Region
+"['Countdown Mt Roskill', 'Countdown Onehunga', 'Countdown Metro Albert Street', 'Countdown Metro Halsey Street']",1084.9405555555554,Central Region
+"['Countdown Mt Roskill', 'Countdown St Lukes', 'Countdown Metro Albert Street', 'Countdown Metro Halsey Street']",1040.4806944444445,Central Region
+"['Countdown Newmarket', 'Countdown Onehunga', 'Countdown Metro Albert Street', 'Countdown Metro Halsey Street']",1131.4675000000002,Central Region
+"['Countdown Newmarket', 'Countdown Pt Chevalier', 'Countdown Metro Albert Street', 'Countdown Metro Halsey Street']",1080.6559027777778,Central Region
+"['Countdown Newmarket', 'Countdown St Lukes', 'Countdown Metro Albert Street', 'Countdown Metro Halsey Street']",1065.592013888889,Central Region
+"['Countdown Onehunga', 'Countdown Pt Chevalier', 'Countdown Metro Albert Street', 'Countdown Metro Halsey Street']",1073.3691666666668,Central Region
+"['Countdown Onehunga', 'Countdown St Lukes', 'Countdown Metro Albert Street', 'Countdown Metro Halsey Street']",1036.442013888889,Central Region
+"['Countdown Pt Chevalier', 'Countdown St Lukes', 'Countdown Metro Albert Street', 'Countdown Metro Halsey Street']",1082.9078472222222,Central Region
+['Countdown Airport'],335.25625,South Region
+['Countdown Mangere East'],306.98625,South Region
+['Countdown Mangere Mall'],279.525625,South Region
+['Countdown Manukau'],372.27625,South Region
+['Countdown Manukau Mall'],386.825625,South Region
+['Countdown Manurewa'],397.11,South Region
+['Countdown Papatoetoe'],386.58000000000004,South Region
+['FreshChoice Mangere Bridge'],196.539375,South Region
+['SuperValue Flatbush'],309.10625,South Region
+"['Countdown Airport', 'Countdown Mangere East']",614.18875,South Region
+"['Countdown Airport', 'Countdown Mangere Mall']",569.9368750000001,South Region
+"['Countdown Airport', 'Countdown Manukau']",665.2987499999999,South Region
+"['Countdown Airport', 'Countdown Manukau Mall']",680.3725,South Region
+"['Countdown Airport', 'Countdown Manurewa']",685.99625,South Region
+"['Countdown Airport', 'Countdown Papatoetoe']",687.7049999999999,South Region
+"['Countdown Airport', 'FreshChoice Mangere Bridge']",492.5425000000001,South Region
+"['Countdown Airport', 'SuperValue Flatbush']",601.46,South Region
+"['Countdown Mangere East', 'Countdown Mangere Mall']",552.798125,South Region
+"['Countdown Mangere East', 'Countdown Manukau']",635.55,South Region
+"['Countdown Mangere East', 'Countdown Manukau Mall']",650.099375,South Region
+"['Countdown Mangere East', 'Countdown Manurewa']",660.38375,South Region
+"['Countdown Mangere East', 'Countdown Papatoetoe']",650.7225,South Region
+"['Countdown Mangere East', 'FreshChoice Mangere Bridge']",481.499375,South Region
+"['Countdown Mangere East', 'SuperValue Flatbush']",572.38,South Region
+"['Countdown Mangere Mall', 'Countdown Manukau']",614.0037500000001,South Region
+"['Countdown Mangere Mall', 'Countdown Manukau Mall']",628.5531249999999,South Region
+"['Countdown Mangere Mall', 'Countdown Manurewa']",638.8375,South Region
+"['Countdown Mangere Mall', 'Countdown Papatoetoe']",640.338125,South Region
+"['Countdown Mangere Mall', 'FreshChoice Mangere Bridge']",448.79562500000003,South Region
+"['Countdown Mangere Mall', 'SuperValue Flatbush']",550.83375,South Region
+"['Countdown Manukau', 'Countdown Manukau Mall']",629.29625,South Region
+"['Countdown Manukau', 'Countdown Manurewa']",665.999375,South Region
+"['Countdown Manukau', 'Countdown Papatoetoe']",656.9,South Region
+"['Countdown Manukau', 'FreshChoice Mangere Bridge']",529.5618750000001,South Region
+"['Countdown Manukau', 'SuperValue Flatbush']",547.41125,South Region
+"['Countdown Manukau Mall', 'Countdown Manurewa']",680.54875,South Region
+"['Countdown Manukau Mall', 'Countdown Papatoetoe']",683.7887499999999,South Region
+"['Countdown Manukau Mall', 'FreshChoice Mangere Bridge']",544.111875,South Region
+"['Countdown Manukau Mall', 'SuperValue Flatbush']",569.6925,South Region
+"['Countdown Manurewa', 'Countdown Papatoetoe']",713.73875,South Region
+"['Countdown Manurewa', 'FreshChoice Mangere Bridge']",554.39625,South Region
+"['Countdown Manurewa', 'SuperValue Flatbush']",599.391875,South Region
+"['Countdown Papatoetoe', 'FreshChoice Mangere Bridge']",564.6375,South Region
+"['Countdown Papatoetoe', 'SuperValue Flatbush']",590.229375,South Region
+"['FreshChoice Mangere Bridge', 'SuperValue Flatbush']",479.4125,South Region
+"['Countdown Airport', 'Countdown Mangere East', 'Countdown Mangere Mall']",860.0006249999999,South Region
+"['Countdown Airport', 'Countdown Mangere East', 'Countdown Manukau']",952.2530555555556,South Region
+"['Countdown Airport', 'Countdown Mangere East', 'Countdown Manukau Mall']",970.0356249999998,South Region
+"['Countdown Airport', 'Countdown Mangere East', 'Countdown Manurewa']",982.6054166666665,South Region
+"['Countdown Airport', 'Countdown Mangere East', 'FreshChoice Mangere Bridge']",788.701875,South Region
+"['Countdown Airport', 'Countdown Mangere East', 'SuperValue Flatbush']",879.5825,South Region
+"['Countdown Airport', 'Countdown Mangere Mall', 'Countdown Manukau']",905.3961111111112,South Region
+"['Countdown Airport', 'Countdown Mangere Mall', 'Countdown Manukau Mall']",923.1786805555555,South Region
+"['Countdown Airport', 'Countdown Mangere Mall', 'Countdown Manurewa']",935.7484722222224,South Region
+"['Countdown Airport', 'Countdown Mangere Mall', 'Countdown Papatoetoe']",937.5825694444444,South Region
+"['Countdown Airport', 'Countdown Mangere Mall', 'FreshChoice Mangere Bridge']",739.2068750000001,South Region
+"['Countdown Airport', 'Countdown Mangere Mall', 'SuperValue Flatbush']",841.2450000000001,South Region
+"['Countdown Airport', 'Countdown Manukau', 'Countdown Manukau Mall']",927.2784722222221,South Region
+"['Countdown Airport', 'Countdown Manukau', 'Countdown Manurewa']",972.1378472222223,South Region
+"['Countdown Airport', 'Countdown Manukau', 'Countdown Papatoetoe']",961.0163888888887,South Region
+"['Countdown Airport', 'Countdown Manukau', 'FreshChoice Mangere Bridge']",822.584375,South Region
+"['Countdown Airport', 'Countdown Manukau', 'SuperValue Flatbush']",840.4337499999999,South Region
+"['Countdown Airport', 'Countdown Manukau Mall', 'Countdown Manurewa']",990.5613194444446,South Region
+"['Countdown Airport', 'Countdown Manukau Mall', 'FreshChoice Mangere Bridge']",837.65875,South Region
+"['Countdown Airport', 'Countdown Manukau Mall', 'SuperValue Flatbush']",863.239375,South Region
+"['Countdown Airport', 'Countdown Manurewa', 'FreshChoice Mangere Bridge']",843.2825,South Region
+"['Countdown Airport', 'Countdown Manurewa', 'SuperValue Flatbush']",888.278125,South Region
+"['Countdown Airport', 'Countdown Papatoetoe', 'FreshChoice Mangere Bridge']",865.7625,South Region
+"['Countdown Airport', 'Countdown Papatoetoe', 'SuperValue Flatbush']",891.354375,South Region
+"['Countdown Airport', 'FreshChoice Mangere Bridge', 'SuperValue Flatbush']",775.415625,South Region
+"['Countdown Mangere East', 'Countdown Mangere Mall', 'Countdown Manukau']",887.2762500000001,South Region
+"['Countdown Mangere East', 'Countdown Mangere Mall', 'Countdown Manukau Mall']",902.2313194444444,South Region
+"['Countdown Mangere East', 'Countdown Mangere Mall', 'Countdown Manurewa']",914.8011111111111,South Region
+"['Countdown Mangere East', 'Countdown Mangere Mall', 'FreshChoice Mangere Bridge']",722.068125,South Region
+"['Countdown Mangere East', 'Countdown Mangere Mall', 'SuperValue Flatbush']",824.10625,South Region
+"['Countdown Mangere East', 'Countdown Manukau', 'Countdown Manukau Mall']",892.5699999999999,South Region
+"['Countdown Mangere East', 'Countdown Manukau', 'Countdown Manurewa']",935.778263888889,South Region
+"['Countdown Mangere East', 'Countdown Manukau', 'FreshChoice Mangere Bridge']",792.835625,South Region
+"['Countdown Mangere East', 'Countdown Manukau', 'SuperValue Flatbush']",810.685,South Region
+"['Countdown Mangere East', 'Countdown Manukau Mall', 'FreshChoice Mangere Bridge']",807.385625,South Region
+"['Countdown Mangere East', 'Countdown Manukau Mall', 'SuperValue Flatbush']",832.96625,South Region
+"['Countdown Mangere East', 'Countdown Manurewa', 'FreshChoice Mangere Bridge']",817.6700000000001,South Region
+"['Countdown Mangere East', 'Countdown Manurewa', 'SuperValue Flatbush']",862.6656250000001,South Region
+"['Countdown Mangere East', 'Countdown Papatoetoe', 'FreshChoice Mangere Bridge']",828.78,South Region
+"['Countdown Mangere East', 'Countdown Papatoetoe', 'SuperValue Flatbush']",854.371875,South Region
+"['Countdown Mangere East', 'FreshChoice Mangere Bridge', 'SuperValue Flatbush']",764.3725,South Region
+"['Countdown Mangere Mall', 'Countdown Manukau', 'Countdown Manukau Mall']",871.0237500000001,South Region
+"['Countdown Mangere Mall', 'Countdown Manukau', 'Countdown Manurewa']",909.4439583333334,South Region
+"['Countdown Mangere Mall', 'Countdown Manukau', 'Countdown Papatoetoe']",898.6275,South Region
+"['Countdown Mangere Mall', 'Countdown Manukau', 'FreshChoice Mangere Bridge']",771.2893750000001,South Region
+"['Countdown Mangere Mall', 'Countdown Manukau', 'SuperValue Flatbush']",789.1387500000001,South Region
+"['Countdown Mangere Mall', 'Countdown Manukau Mall', 'Countdown Manurewa']",927.2265277777778,South Region
+"['Countdown Mangere Mall', 'Countdown Manukau Mall', 'FreshChoice Mangere Bridge']",785.839375,South Region
+"['Countdown Mangere Mall', 'Countdown Manukau Mall', 'SuperValue Flatbush']",811.42,South Region
+"['Countdown Mangere Mall', 'Countdown Manurewa', 'FreshChoice Mangere Bridge']",796.12375,South Region
+"['Countdown Mangere Mall', 'Countdown Manurewa', 'SuperValue Flatbush']",841.119375,South Region
+"['Countdown Mangere Mall', 'Countdown Papatoetoe', 'FreshChoice Mangere Bridge']",818.395625,South Region
+"['Countdown Mangere Mall', 'Countdown Papatoetoe', 'SuperValue Flatbush']",843.9875,South Region
+"['Countdown Mangere Mall', 'FreshChoice Mangere Bridge', 'SuperValue Flatbush']",731.66875,South Region
+"['Countdown Manukau', 'Countdown Manukau Mall', 'Countdown Manurewa']",928.1347916666666,South Region
+"['Countdown Manukau', 'Countdown Manukau Mall', 'FreshChoice Mangere Bridge']",786.5825,South Region
+"['Countdown Manukau', 'Countdown Manukau Mall', 'SuperValue Flatbush']",812.163125,South Region
+"['Countdown Manukau', 'Countdown Manurewa', 'FreshChoice Mangere Bridge']",823.285625,South Region
+"['Countdown Manukau', 'Countdown Manurewa', 'SuperValue Flatbush']",868.28125,South Region
+"['Countdown Manukau', 'Countdown Papatoetoe', 'FreshChoice Mangere Bridge']",834.9575,South Region
+"['Countdown Manukau', 'Countdown Papatoetoe', 'SuperValue Flatbush']",860.549375,South Region
+"['Countdown Manukau', 'FreshChoice Mangere Bridge', 'SuperValue Flatbush']",812.4350000000001,South Region
+"['Countdown Manukau Mall', 'Countdown Manurewa', 'FreshChoice Mangere Bridge']",837.835,South Region
+"['Countdown Manukau Mall', 'Countdown Manurewa', 'SuperValue Flatbush']",882.830625,South Region
+"['Countdown Manukau Mall', 'Countdown Papatoetoe', 'FreshChoice Mangere Bridge']",861.84625,South Region
+"['Countdown Manukau Mall', 'Countdown Papatoetoe', 'SuperValue Flatbush']",887.438125,South Region
+"['Countdown Manukau Mall', 'FreshChoice Mangere Bridge', 'SuperValue Flatbush']",826.985,South Region
+"['Countdown Manurewa', 'Countdown Papatoetoe', 'FreshChoice Mangere Bridge']",891.79625,South Region
+"['Countdown Manurewa', 'Countdown Papatoetoe', 'SuperValue Flatbush']",921.2521527777777,South Region
+"['Countdown Manurewa', 'FreshChoice Mangere Bridge', 'SuperValue Flatbush']",837.269375,South Region
+"['Countdown Papatoetoe', 'FreshChoice Mangere Bridge', 'SuperValue Flatbush']",847.510625,South Region
+"['Countdown Airport', 'Countdown Mangere Mall', 'FreshChoice Mangere Bridge', 'SuperValue Flatbush']",1049.2088888888889,South Region
+"['Countdown Airport', 'Countdown Manukau', 'FreshChoice Mangere Bridge', 'SuperValue Flatbush']",1151.114722222222,South Region
+"['Countdown Mangere Mall', 'Countdown Manukau', 'FreshChoice Mangere Bridge', 'SuperValue Flatbush']",1088.4208333333331,South Region
+['Countdown Birkenhead'],529.57625,North Region
+['Countdown Browns Bay'],643.809375,North Region
+['Countdown Glenfield'],537.949375,North Region
+['Countdown Hauraki Corner'],516.61625,North Region
+['Countdown Mairangi Bay'],628.263125,North Region
+['Countdown Milford'],569.4375,North Region
+['Countdown Northcote'],495.53062500000004,North Region
+['Countdown Sunnynook'],563.06125,North Region
+['Countdown Takapuna'],528.795625,North Region
+"['Countdown Birkenhead', 'Countdown Browns Bay']",941.8748611111112,North Region
+"['Countdown Birkenhead', 'Countdown Glenfield']",799.514375,North Region
+"['Countdown Birkenhead', 'Countdown Hauraki Corner']",807.068125,North Region
+"['Countdown Birkenhead', 'Countdown Mairangi Bay']",922.8738888888889,North Region
+"['Countdown Birkenhead', 'Countdown Milford']",853.63875,North Region
+"['Countdown Birkenhead', 'Countdown Northcote']",771.8824999999999,North Region
+"['Countdown Birkenhead', 'Countdown Sunnynook']",853.513125,North Region
+"['Countdown Birkenhead', 'Countdown Takapuna']",819.2475,North Region
+"['Countdown Browns Bay', 'Countdown Glenfield']",909.0566666666666,North Region
+"['Countdown Browns Bay', 'Countdown Hauraki Corner']",910.8785416666667,North Region
+"['Countdown Browns Bay', 'Countdown Mairangi Bay']",942.8556944444445,North Region
+"['Countdown Browns Bay', 'Countdown Milford']",927.0233333333334,North Region
+"['Countdown Browns Bay', 'Countdown Northcote']",894.0231249999999,North Region
+"['Countdown Browns Bay', 'Countdown Sunnynook']",909.7021527777777,North Region
+"['Countdown Browns Bay', 'Countdown Takapuna']",925.7644444444444,North Region
+"['Countdown Glenfield', 'Countdown Hauraki Corner']",803.040625,North Region
+"['Countdown Glenfield', 'Countdown Mairangi Bay']",883.718125,North Region
+"['Countdown Glenfield', 'Countdown Milford']",836.120625,North Region
+"['Countdown Glenfield', 'Countdown Northcote']",776.0431249999999,North Region
+"['Countdown Glenfield', 'Countdown Sunnynook']",819.9593749999999,North Region
+"['Countdown Glenfield', 'Countdown Takapuna']",815.219375,North Region
+"['Countdown Hauraki Corner', 'Countdown Mairangi Bay']",899.610625,North Region
+"['Countdown Hauraki Corner', 'Countdown Milford']",809.003125,North Region
+"['Countdown Hauraki Corner', 'Countdown Northcote']",771.100625,North Region
+"['Countdown Hauraki Corner', 'Countdown Sunnynook']",834.40875,North Region
+"['Countdown Hauraki Corner', 'Countdown Takapuna']",782.005625,North Region
+"['Countdown Mairangi Bay', 'Countdown Milford']",896.560625,North Region
+"['Countdown Mairangi Bay', 'Countdown Northcote']",878.4768750000001,North Region
+"['Countdown Mairangi Bay', 'Countdown Sunnynook']",882.3887500000001,North Region
+"['Countdown Mairangi Bay', 'Countdown Takapuna']",906.7634722222222,North Region
+"['Countdown Milford', 'Countdown Northcote']",816.97125,North Region
+"['Countdown Milford', 'Countdown Sunnynook']",854.0037500000001,North Region
+"['Countdown Milford', 'Countdown Takapuna']",826.91875,North Region
+"['Countdown Northcote', 'Countdown Sunnynook']",809.405,North Region
+"['Countdown Northcote', 'Countdown Takapuna']",776.793125,North Region
+"['Countdown Sunnynook', 'Countdown Takapuna']",840.331875,North Region
+"['Countdown Birkenhead', 'Countdown Browns Bay', 'Countdown Glenfield']",1264.0534027777778,North Region
+"['Countdown Birkenhead', 'Countdown Browns Bay', 'Countdown Hauraki Corner']",1265.8752777777777,North Region
+"['Countdown Birkenhead', 'Countdown Browns Bay', 'Countdown Northcote']",1247.6916666666664,North Region
+"['Countdown Birkenhead', 'Countdown Glenfield', 'Countdown Hauraki Corner']",1101.1846527777777,North Region
+"['Countdown Birkenhead', 'Countdown Glenfield', 'Countdown Milford']",1141.615763888889,North Region
+"['Countdown Birkenhead', 'Countdown Glenfield', 'Countdown Northcote']",1068.1877083333331,North Region
+"['Countdown Birkenhead', 'Countdown Glenfield', 'Countdown Sunnynook']",1121.8631249999999,North Region
+"['Countdown Birkenhead', 'Countdown Glenfield', 'Countdown Takapuna']",1116.0697916666666,North Region
+"['Countdown Birkenhead', 'Countdown Hauraki Corner', 'Countdown Milford']",1143.7783333333332,North Region
+"['Countdown Birkenhead', 'Countdown Hauraki Corner', 'Countdown Northcote']",1097.4530555555557,North Region
+"['Countdown Birkenhead', 'Countdown Hauraki Corner', 'Countdown Sunnynook']",1174.8296527777777,North Region
+"['Countdown Birkenhead', 'Countdown Hauraki Corner', 'Countdown Takapuna']",1110.781388888889,North Region
+"['Countdown Birkenhead', 'Countdown Milford', 'Countdown Northcote']",1145.8774999999998,North Region
+"['Countdown Birkenhead', 'Countdown Northcote', 'Countdown Sunnynook']",1127.0361805555556,North Region
+"['Countdown Birkenhead', 'Countdown Northcote', 'Countdown Takapuna']",1087.177222222222,North Region
+"['Countdown Browns Bay', 'Countdown Glenfield', 'Countdown Hauraki Corner']",1233.0570833333331,North Region
+"['Countdown Browns Bay', 'Countdown Glenfield', 'Countdown Milford']",1273.4881944444444,North Region
+"['Countdown Browns Bay', 'Countdown Glenfield', 'Countdown Northcote']",1200.0601388888886,North Region
+"['Countdown Browns Bay', 'Countdown Glenfield', 'Countdown Sunnynook']",1253.7355555555555,North Region
+"['Countdown Browns Bay', 'Countdown Glenfield', 'Countdown Takapuna']",1247.942222222222,North Region
+"['Countdown Browns Bay', 'Countdown Hauraki Corner', 'Countdown Milford']",1268.2402777777777,North Region
+"['Countdown Browns Bay', 'Countdown Hauraki Corner', 'Countdown Northcote']",1221.915,North Region
+"['Countdown Browns Bay', 'Countdown Hauraki Corner', 'Countdown Sunnynook']",1299.2915972222222,North Region
+"['Countdown Browns Bay', 'Countdown Hauraki Corner', 'Countdown Takapuna']",1235.2433333333333,North Region
+"['Countdown Browns Bay', 'Countdown Milford', 'Countdown Northcote']",1229.5645833333333,North Region
+"['Countdown Browns Bay', 'Countdown Northcote', 'Countdown Sunnynook']",1276.3191666666667,North Region
+"['Countdown Browns Bay', 'Countdown Northcote', 'Countdown Takapuna']",1236.4602083333332,North Region
+"['Countdown Glenfield', 'Countdown Hauraki Corner', 'Countdown Mairangi Bay']",1249.5983333333331,North Region
+"['Countdown Glenfield', 'Countdown Hauraki Corner', 'Countdown Milford']",1138.8558333333333,North Region
+"['Countdown Glenfield', 'Countdown Hauraki Corner', 'Countdown Northcote']",1092.5305555555558,North Region
+"['Countdown Glenfield', 'Countdown Hauraki Corner', 'Countdown Sunnynook']",1169.9071527777778,North Region
+"['Countdown Glenfield', 'Countdown Hauraki Corner', 'Countdown Takapuna']",1105.8588888888887,North Region
+"['Countdown Glenfield', 'Countdown Mairangi Bay', 'Countdown Northcote']",1185.9167361111108,North Region
+"['Countdown Glenfield', 'Countdown Milford', 'Countdown Northcote']",1124.4664583333335,North Region
+"['Countdown Glenfield', 'Countdown Milford', 'Countdown Sunnynook']",1169.728402777778,North Region
+"['Countdown Glenfield', 'Countdown Milford', 'Countdown Takapuna']",1136.6245138888885,North Region
+"['Countdown Glenfield', 'Countdown Northcote', 'Countdown Sunnynook']",1132.121388888889,North Region
+"['Countdown Glenfield', 'Countdown Northcote', 'Countdown Takapuna']",1092.2624305555555,North Region
+"['Countdown Glenfield', 'Countdown Sunnynook', 'Countdown Takapuna']",1141.058888888889,North Region
+"['Countdown Hauraki Corner', 'Countdown Mairangi Bay', 'Countdown Northcote']",1205.340902777778,North Region
+"['Countdown Hauraki Corner', 'Countdown Milford', 'Countdown Northcote']",1091.3228472222224,North Region
+"['Countdown Hauraki Corner', 'Countdown Milford', 'Countdown Sunnynook']",1136.5847916666667,North Region
+"['Countdown Hauraki Corner', 'Countdown Milford', 'Countdown Takapuna']",1103.4809027777776,North Region
+"['Countdown Hauraki Corner', 'Countdown Northcote', 'Countdown Sunnynook']",1126.0805555555555,North Region
+"['Countdown Hauraki Corner', 'Countdown Northcote', 'Countdown Takapuna']",1086.221597222222,North Region
+"['Countdown Hauraki Corner', 'Countdown Sunnynook', 'Countdown Takapuna']",1158.719236111111,North Region
+"['Countdown Milford', 'Countdown Northcote', 'Countdown Sunnynook']",1182.1446527777778,North Region
+"['Countdown Milford', 'Countdown Northcote', 'Countdown Takapuna']",1142.2856944444443,North Region
+"['Countdown Northcote', 'Countdown Sunnynook', 'Countdown Takapuna']",1128.159097222222,North Region
+['Countdown Aviemore Drive'],443.05,East Region
+['Countdown Botany Downs'],447.605,East Region
+['Countdown Highland Park'],447.371875,East Region
+['Countdown Howick'],536.74625,East Region
+['Countdown Meadowbank'],451.64937499999996,East Region
+['Countdown Meadowlands'],478.99,East Region
+['Countdown Mt Wellington'],384.385625,East Region
+['Countdown Pakuranga'],385.8575,East Region
+['Countdown St Johns'],419.640625,East Region
+['Countdown Sylvia Park'],374.015625,East Region
+['FreshChoice Half Moon Bay'],366.64,East Region
+['FreshChoice Otahuhu'],195.43625,East Region
+"['Countdown Aviemore Drive', 'Countdown Botany Downs']",717.800625,East Region
+"['Countdown Aviemore Drive', 'Countdown Highland Park']",675.5787499999999,East Region
+"['Countdown Aviemore Drive', 'Countdown Howick']",768.94625,East Region
+"['Countdown Aviemore Drive', 'Countdown Meadowbank']",774.2875,East Region
+"['Countdown Aviemore Drive', 'Countdown Meadowlands']",727.548125,East Region
+"['Countdown Aviemore Drive', 'Countdown Mt Wellington']",718.17125,East Region
+"['Countdown Aviemore Drive', 'Countdown Pakuranga']",682.5106249999999,East Region
+"['Countdown Aviemore Drive', 'Countdown St Johns']",732.496875,East Region
+"['Countdown Aviemore Drive', 'Countdown Sylvia Park']",722.688125,East Region
+"['Countdown Aviemore Drive', 'FreshChoice Half Moon Bay']",608.4293749999999,East Region
+"['Countdown Aviemore Drive', 'FreshChoice Otahuhu']",588.975,East Region
+"['Countdown Botany Downs', 'Countdown Highland Park']",719.9918749999999,East Region
+"['Countdown Botany Downs', 'Countdown Howick']",794.1587499999999,East Region
+"['Countdown Botany Downs', 'Countdown Meadowbank']",791.54875,East Region
+"['Countdown Botany Downs', 'Countdown Meadowlands']",736.4024999999999,East Region
+"['Countdown Botany Downs', 'Countdown Mt Wellington']",726.5118749999999,East Region
+"['Countdown Botany Downs', 'Countdown Pakuranga']",695.371875,East Region
+"['Countdown Botany Downs', 'Countdown St Johns']",749.7574999999999,East Region
+"['Countdown Botany Downs', 'Countdown Sylvia Park']",731.028125,East Region
+"['Countdown Botany Downs', 'FreshChoice Half Moon Bay']",652.806875,East Region
+"['Countdown Botany Downs', 'FreshChoice Otahuhu']",588.7275,East Region
+"['Countdown Highland Park', 'Countdown Howick']",773.655,East Region
+"['Countdown Highland Park', 'Countdown Meadowbank']",778.609375,East Region
+"['Countdown Highland Park', 'Countdown Meadowlands']",730.97875,East Region
+"['Countdown Highland Park', 'Countdown Mt Wellington']",722.493125,East Region
+"['Countdown Highland Park', 'Countdown Pakuranga']",686.8325,East Region
+"['Countdown Highland Park', 'Countdown St Johns']",736.81875,East Region
+"['Countdown Highland Park', 'Countdown Sylvia Park']",727.009375,East Region
+"['Countdown Highland Park', 'FreshChoice Half Moon Bay']",612.75125,East Region
+"['Countdown Highland Park', 'FreshChoice Otahuhu']",593.29625,East Region
+"['Countdown Howick', 'Countdown Meadowbank']",874.0218749999999,East Region
+"['Countdown Howick', 'Countdown Meadowlands']",792.6725,East Region
+"['Countdown Howick', 'Countdown Mt Wellington']",817.9056250000001,East Region
+"['Countdown Howick', 'Countdown Pakuranga']",782.245,East Region
+"['Countdown Howick', 'Countdown St Johns']",832.23125,East Region
+"['Countdown Howick', 'Countdown Sylvia Park']",822.421875,East Region
+"['Countdown Howick', 'FreshChoice Half Moon Bay']",696.089375,East Region
+"['Countdown Howick', 'FreshChoice Otahuhu']",677.86875,East Region
+"['Countdown Meadowbank', 'Countdown Meadowlands']",822.0393750000001,East Region
+"['Countdown Meadowbank', 'Countdown Mt Wellington']",709.9043750000001,East Region
+"['Countdown Meadowbank', 'Countdown Pakuranga']",721.286875,East Region
+"['Countdown Meadowbank', 'Countdown St Johns']",707.255625,East Region
+"['Countdown Meadowbank', 'Countdown Sylvia Park']",715.09875,East Region
+"['Countdown Meadowbank', 'FreshChoice Half Moon Bay']",695.788125,East Region
+"['Countdown Meadowbank', 'FreshChoice Otahuhu']",592.771875,East Region
+"['Countdown Meadowlands', 'Countdown Mt Wellington']",757.8975,East Region
+"['Countdown Meadowlands', 'Countdown Pakuranga']",726.756875,East Region
+"['Countdown Meadowlands', 'Countdown St Johns']",778.005625,East Region
+"['Countdown Meadowlands', 'Countdown Sylvia Park']",762.4137499999999,East Region
+"['Countdown Meadowlands', 'FreshChoice Half Moon Bay']",664.2225000000001,East Region
+"['Countdown Meadowlands', 'FreshChoice Otahuhu']",620.1125,East Region
+"['Countdown Mt Wellington', 'Countdown Pakuranga']",656.9081249999999,East Region
+"['Countdown Mt Wellington', 'Countdown St Johns']",680.135,East Region
+"['Countdown Mt Wellington', 'Countdown Sylvia Park']",643.8299999999999,East Region
+"['Countdown Mt Wellington', 'FreshChoice Half Moon Bay']",637.690625,East Region
+"['Countdown Mt Wellington', 'FreshChoice Otahuhu']",525.5081250000001,East Region
+"['Countdown Pakuranga', 'Countdown St Johns']",681.605625,East Region
+"['Countdown Pakuranga', 'Countdown Sylvia Park']",665.495,East Region
+"['Countdown Pakuranga', 'FreshChoice Half Moon Bay']",608.0025,East Region
+"['Countdown Pakuranga', 'FreshChoice Otahuhu']",531.781875,East Region
+"['Countdown St Johns', 'Countdown Sylvia Park']",679.085,East Region
+"['Countdown St Johns', 'FreshChoice Half Moon Bay']",646.03125,East Region
+"['Countdown St Johns', 'FreshChoice Otahuhu']",560.763125,East Region
+"['Countdown Sylvia Park', 'FreshChoice Half Moon Bay']",645.5350000000001,East Region
+"['Countdown Sylvia Park', 'FreshChoice Otahuhu']",515.138125,East Region
+"['FreshChoice Half Moon Bay', 'FreshChoice Otahuhu']",512.564375,East Region
+"['Countdown Aviemore Drive', 'Countdown Botany Downs', 'Countdown Highland Park']",1010.2291666666667,East Region
+"['Countdown Aviemore Drive', 'Countdown Botany Downs', 'Countdown Meadowbank']",1097.6875694444443,East Region
+"['Countdown Aviemore Drive', 'Countdown Botany Downs', 'Countdown Meadowlands']",1030.2865972222223,East Region
+"['Countdown Aviemore Drive', 'Countdown Botany Downs', 'Countdown Mt Wellington']",1018.1980555555555,East Region
+"['Countdown Aviemore Drive', 'Countdown Botany Downs', 'Countdown Pakuranga']",980.1380555555555,East Region
+"['Countdown Aviemore Drive', 'Countdown Botany Downs', 'Countdown St Johns']",1046.609375,East Region
+"['Countdown Aviemore Drive', 'Countdown Botany Downs', 'Countdown Sylvia Park']",1023.7179166666666,East Region
+"['Countdown Aviemore Drive', 'Countdown Botany Downs', 'FreshChoice Half Moon Bay']",928.1141666666667,East Region
+"['Countdown Aviemore Drive', 'Countdown Botany Downs', 'FreshChoice Otahuhu']",858.923125,East Region
+"['Countdown Aviemore Drive', 'Countdown Highland Park', 'Countdown Howick']",1024.4978472222222,East Region
+"['Countdown Aviemore Drive', 'Countdown Highland Park', 'Countdown Meadowbank']",1030.5531944444444,East Region
+"['Countdown Aviemore Drive', 'Countdown Highland Park', 'Countdown Meadowlands']",972.337986111111,East Region
+"['Countdown Aviemore Drive', 'Countdown Highland Park', 'Countdown Mt Wellington']",961.9666666666667,East Region
+"['Countdown Aviemore Drive', 'Countdown Highland Park', 'Countdown Pakuranga']",918.3814583333333,East Region
+"['Countdown Aviemore Drive', 'Countdown Highland Park', 'Countdown St Johns']",979.4757638888889,East Region
+"['Countdown Aviemore Drive', 'Countdown Highland Park', 'Countdown Sylvia Park']",967.4865277777776,East Region
+"['Countdown Aviemore Drive', 'Countdown Highland Park', 'FreshChoice Half Moon Bay']",840.9581250000001,East Region
+"['Countdown Aviemore Drive', 'Countdown Highland Park', 'FreshChoice Otahuhu']",821.503125,East Region
+"['Countdown Aviemore Drive', 'Countdown Howick', 'Countdown Pakuranga']",1039.8772222222221,East Region
+"['Countdown Aviemore Drive', 'Countdown Howick', 'Countdown St Johns']",1100.971527777778,East Region
+"['Countdown Aviemore Drive', 'Countdown Howick', 'FreshChoice Half Moon Bay']",934.5759027777779,East Region
+"['Countdown Aviemore Drive', 'Countdown Howick', 'FreshChoice Otahuhu']",912.30625,East Region
+"['Countdown Aviemore Drive', 'Countdown Meadowbank', 'Countdown Meadowlands']",1199.0502777777779,East Region
+"['Countdown Aviemore Drive', 'Countdown Meadowbank', 'Countdown Mt Wellington']",1061.996388888889,East Region
+"['Countdown Aviemore Drive', 'Countdown Meadowbank', 'Countdown Pakuranga']",1075.9083333333335,East Region
+"['Countdown Aviemore Drive', 'Countdown Meadowbank', 'Countdown St Johns']",1058.7590277777776,East Region
+"['Countdown Aviemore Drive', 'Countdown Meadowbank', 'Countdown Sylvia Park']",1068.3450694444446,East Region
+"['Countdown Aviemore Drive', 'Countdown Meadowbank', 'FreshChoice Half Moon Bay']",1044.7431944444445,East Region
+"['Countdown Aviemore Drive', 'Countdown Meadowbank', 'FreshChoice Otahuhu']",918.8344444444444,East Region
+"['Countdown Aviemore Drive', 'Countdown Meadowlands', 'Countdown Mt Wellington']",1030.1124305555556,East Region
+"['Countdown Aviemore Drive', 'Countdown Meadowlands', 'Countdown Pakuranga']",992.0516666666667,East Region
+"['Countdown Aviemore Drive', 'Countdown Meadowlands', 'Countdown St Johns']",1054.689027777778,East Region
+"['Countdown Aviemore Drive', 'Countdown Meadowlands', 'Countdown Sylvia Park']",1035.6322916666668,East Region
+"['Countdown Aviemore Drive', 'Countdown Meadowlands', 'FreshChoice Half Moon Bay']",915.620763888889,East Region
+"['Countdown Aviemore Drive', 'Countdown Meadowlands', 'FreshChoice Otahuhu']",868.670625,East Region
+"['Countdown Aviemore Drive', 'Countdown Mt Wellington', 'Countdown Pakuranga']",1010.8479166666666,East Region
+"['Countdown Aviemore Drive', 'Countdown Mt Wellington', 'Countdown St Johns']",1039.2363194444445,East Region
+"['Countdown Aviemore Drive', 'Countdown Mt Wellington', 'Countdown Sylvia Park']",994.8635416666666,East Region
+"['Countdown Aviemore Drive', 'Countdown Mt Wellington', 'FreshChoice Half Moon Bay']",987.359861111111,East Region
+"['Countdown Aviemore Drive', 'Countdown Mt Wellington', 'FreshChoice Otahuhu']",859.29375,East Region
+"['Countdown Aviemore Drive', 'Countdown Pakuranga', 'Countdown St Johns']",995.6495833333332,East Region
+"['Countdown Aviemore Drive', 'Countdown Pakuranga', 'Countdown Sylvia Park']",975.9588194444444,East Region
+"['Countdown Aviemore Drive', 'Countdown Pakuranga', 'FreshChoice Half Moon Bay']",905.6902083333332,East Region
+"['Countdown Aviemore Drive', 'Countdown Pakuranga', 'FreshChoice Otahuhu']",828.435,East Region
+"['Countdown Aviemore Drive', 'Countdown St Johns', 'Countdown Sylvia Park']",1012.372638888889,East Region
+"['Countdown Aviemore Drive', 'Countdown St Johns', 'FreshChoice Half Moon Bay']",971.9736111111112,East Region
+"['Countdown Aviemore Drive', 'Countdown St Johns', 'FreshChoice Otahuhu']",873.619375,East Region
+"['Countdown Aviemore Drive', 'Countdown Sylvia Park', 'FreshChoice Half Moon Bay']",1015.1425,East Region
+"['Countdown Aviemore Drive', 'Countdown Sylvia Park', 'FreshChoice Otahuhu']",863.8106250000001,East Region
+"['Countdown Aviemore Drive', 'FreshChoice Half Moon Bay', 'FreshChoice Otahuhu']",754.35375,East Region
+"['Countdown Botany Downs', 'Countdown Highland Park', 'Countdown Meadowbank']",1084.8359027777778,East Region
+"['Countdown Botany Downs', 'Countdown Highland Park', 'Countdown Meadowlands']",1026.6206944444443,East Region
+"['Countdown Botany Downs', 'Countdown Highland Park', 'Countdown Mt Wellington']",1016.2493750000002,East Region
+"['Countdown Botany Downs', 'Countdown Highland Park', 'Countdown Pakuranga']",972.6641666666666,East Region
+"['Countdown Botany Downs', 'Countdown Highland Park', 'Countdown St Johns']",1033.7584722222223,East Region
+"['Countdown Botany Downs', 'Countdown Highland Park', 'Countdown Sylvia Park']",1021.7692361111111,East Region
+"['Countdown Botany Downs', 'Countdown Highland Park', 'FreshChoice Half Moon Bay']",885.3712500000001,East Region
+"['Countdown Botany Downs', 'Countdown Highland Park', 'FreshChoice Otahuhu']",865.91625,East Region
+"['Countdown Botany Downs', 'Countdown Howick', 'FreshChoice Half Moon Bay']",965.3911805555554,East Region
+"['Countdown Botany Downs', 'Countdown Howick', 'FreshChoice Otahuhu']",943.1215277777777,East Region
+"['Countdown Botany Downs', 'Countdown Meadowbank', 'Countdown Pakuranga']",1097.0054166666669,East Region
+"['Countdown Botany Downs', 'Countdown Meadowbank', 'Countdown St Johns']",1079.8561111111112,East Region
+"['Countdown Botany Downs', 'Countdown Meadowbank', 'FreshChoice Half Moon Bay']",1065.8402777777778,East Region
+"['Countdown Botany Downs', 'Countdown Meadowbank', 'FreshChoice Otahuhu']",939.9315277777778,East Region
+"['Countdown Botany Downs', 'Countdown Meadowlands', 'Countdown Pakuranga']",1002.8736805555557,East Region
+"['Countdown Botany Downs', 'Countdown Meadowlands', 'Countdown St Johns']",1065.5110416666669,East Region
+"['Countdown Botany Downs', 'Countdown Meadowlands', 'FreshChoice Half Moon Bay']",926.4427777777777,East Region
+"['Countdown Botany Downs', 'Countdown Meadowlands', 'FreshChoice Otahuhu']",877.525,East Region
+"['Countdown Botany Downs', 'Countdown Mt Wellington', 'Countdown Pakuranga']",1021.042013888889,East Region
+"['Countdown Botany Downs', 'Countdown Mt Wellington', 'Countdown St Johns']",1049.4304166666666,East Region
+"['Countdown Botany Downs', 'Countdown Mt Wellington', 'FreshChoice Half Moon Bay']",997.5539583333332,East Region
+"['Countdown Botany Downs', 'Countdown Mt Wellington', 'FreshChoice Otahuhu']",867.634375,East Region
+"['Countdown Botany Downs', 'Countdown Pakuranga', 'Countdown St Johns']",1011.3688888888889,East Region
+"['Countdown Botany Downs', 'Countdown Pakuranga', 'Countdown Sylvia Park']",991.678125,East Region
+"['Countdown Botany Downs', 'Countdown Pakuranga', 'FreshChoice Half Moon Bay']",921.4095138888889,East Region
+"['Countdown Botany Downs', 'Countdown Pakuranga', 'FreshChoice Otahuhu']",841.29625,East Region
+"['Countdown Botany Downs', 'Countdown St Johns', 'Countdown Sylvia Park']",1033.4689583333334,East Region
+"['Countdown Botany Downs', 'Countdown St Johns', 'FreshChoice Half Moon Bay']",993.0699305555554,East Region
+"['Countdown Botany Downs', 'Countdown St Johns', 'FreshChoice Otahuhu']",890.88,East Region
+"['Countdown Botany Downs', 'Countdown Sylvia Park', 'FreshChoice Half Moon Bay']",1025.3358333333335,East Region
+"['Countdown Botany Downs', 'Countdown Sylvia Park', 'FreshChoice Otahuhu']",872.150625,East Region
+"['Countdown Botany Downs', 'FreshChoice Half Moon Bay', 'FreshChoice Otahuhu']",798.73125,East Region
+"['Countdown Highland Park', 'Countdown Howick', 'Countdown Pakuranga']",1045.632361111111,East Region
+"['Countdown Highland Park', 'Countdown Howick', 'Countdown St Johns']",1106.7266666666665,East Region
+"['Countdown Highland Park', 'Countdown Howick', 'FreshChoice Half Moon Bay']",940.3310416666668,East Region
+"['Countdown Highland Park', 'Countdown Howick', 'FreshChoice Otahuhu']",918.0613888888889,East Region
+"['Countdown Highland Park', 'Countdown Meadowbank', 'Countdown Meadowlands']",1204.3325694444443,East Region
+"['Countdown Highland Park', 'Countdown Meadowbank', 'Countdown Mt Wellington']",1067.2786805555556,East Region
+"['Countdown Highland Park', 'Countdown Meadowbank', 'Countdown Pakuranga']",1081.1906250000002,East Region
+"['Countdown Highland Park', 'Countdown Meadowbank', 'Countdown St Johns']",1064.0413194444445,East Region
+"['Countdown Highland Park', 'Countdown Meadowbank', 'Countdown Sylvia Park']",1073.6273611111112,East Region
+"['Countdown Highland Park', 'Countdown Meadowbank', 'FreshChoice Half Moon Bay']",1050.0254861111111,East Region
+"['Countdown Highland Park', 'Countdown Meadowbank', 'FreshChoice Otahuhu']",924.1167361111112,East Region
+"['Countdown Highland Park', 'Countdown Meadowlands', 'Countdown Mt Wellington']",1034.3054166666666,East Region
+"['Countdown Highland Park', 'Countdown Meadowlands', 'Countdown Pakuranga']",996.2446527777777,East Region
+"['Countdown Highland Park', 'Countdown Meadowlands', 'Countdown St Johns']",1058.8820138888889,East Region
+"['Countdown Highland Park', 'Countdown Meadowlands', 'Countdown Sylvia Park']",1039.825277777778,East Region
+"['Countdown Highland Park', 'Countdown Meadowlands', 'FreshChoice Half Moon Bay']",919.81375,East Region
+"['Countdown Highland Park', 'Countdown Meadowlands', 'FreshChoice Otahuhu']",872.1012499999999,East Region
+"['Countdown Highland Park', 'Countdown Mt Wellington', 'Countdown Pakuranga']",1016.1302083333335,East Region
+"['Countdown Highland Park', 'Countdown Mt Wellington', 'Countdown St Johns']",1044.518611111111,East Region
+"['Countdown Highland Park', 'Countdown Mt Wellington', 'Countdown Sylvia Park']",1000.1458333333335,East Region
+"['Countdown Highland Park', 'Countdown Mt Wellington', 'FreshChoice Half Moon Bay']",992.6421527777777,East Region
+"['Countdown Highland Park', 'Countdown Mt Wellington', 'FreshChoice Otahuhu']",863.615625,East Region
+"['Countdown Highland Park', 'Countdown Pakuranga', 'Countdown St Johns']",1000.931875,East Region
+"['Countdown Highland Park', 'Countdown Pakuranga', 'Countdown Sylvia Park']",981.241111111111,East Region
+"['Countdown Highland Park', 'Countdown Pakuranga', 'FreshChoice Half Moon Bay']",910.9724999999999,East Region
+"['Countdown Highland Park', 'Countdown Pakuranga', 'FreshChoice Otahuhu']",832.756875,East Region
+"['Countdown Highland Park', 'Countdown St Johns', 'Countdown Sylvia Park']",1017.6549305555556,East Region
+"['Countdown Highland Park', 'Countdown St Johns', 'FreshChoice Half Moon Bay']",977.2559027777778,East Region
+"['Countdown Highland Park', 'Countdown St Johns', 'FreshChoice Otahuhu']",877.9412500000001,East Region
+"['Countdown Highland Park', 'Countdown Sylvia Park', 'FreshChoice Half Moon Bay']",1020.4240277777778,East Region
+"['Countdown Highland Park', 'Countdown Sylvia Park', 'FreshChoice Otahuhu']",868.131875,East Region
+"['Countdown Highland Park', 'FreshChoice Half Moon Bay', 'FreshChoice Otahuhu']",758.675625,East Region
+"['Countdown Howick', 'Countdown Meadowbank', 'FreshChoice Half Moon Bay']",1166.640763888889,East Region
+"['Countdown Howick', 'Countdown Meadowbank', 'FreshChoice Otahuhu']",1040.732013888889,East Region
+"['Countdown Howick', 'Countdown Meadowlands', 'FreshChoice Half Moon Bay']",995.2172222222221,East Region
+"['Countdown Howick', 'Countdown Meadowlands', 'FreshChoice Otahuhu']",941.3050000000002,East Region
+"['Countdown Howick', 'Countdown Mt Wellington', 'FreshChoice Half Moon Bay']",1109.2574305555554,East Region
+"['Countdown Howick', 'Countdown Mt Wellington', 'FreshChoice Otahuhu']",972.1454861111112,East Region
+"['Countdown Howick', 'Countdown Pakuranga', 'Countdown St Johns']",1117.5471527777777,East Region
+"['Countdown Howick', 'Countdown Pakuranga', 'FreshChoice Half Moon Bay']",1027.5877777777778,East Region
+"['Countdown Howick', 'Countdown Pakuranga', 'FreshChoice Otahuhu']",934.4292361111112,East Region
+"['Countdown Howick', 'Countdown St Johns', 'FreshChoice Half Moon Bay']",1093.8711805555556,East Region
+"['Countdown Howick', 'Countdown St Johns', 'FreshChoice Otahuhu']",989.6545833333332,East Region
+"['Countdown Howick', 'Countdown Sylvia Park', 'FreshChoice Half Moon Bay']",1137.0393055555555,East Region
+"['Countdown Howick', 'Countdown Sylvia Park', 'FreshChoice Otahuhu']",977.6653472222223,East Region
+"['Countdown Howick', 'FreshChoice Half Moon Bay', 'FreshChoice Otahuhu']",842.01375,East Region
+"['Countdown Meadowbank', 'Countdown Meadowlands', 'Countdown Pakuranga']",1107.5409722222223,East Region
+"['Countdown Meadowbank', 'Countdown Meadowlands', 'Countdown St Johns']",1170.1783333333335,East Region
+"['Countdown Meadowbank', 'Countdown Meadowlands', 'FreshChoice Half Moon Bay']",1031.1100694444444,East Region
+"['Countdown Meadowbank', 'Countdown Meadowlands', 'FreshChoice Otahuhu']",977.1978472222222,East Region
+"['Countdown Meadowbank', 'Countdown Mt Wellington', 'Countdown Pakuranga']",1000.7439583333334,East Region
+"['Countdown Meadowbank', 'Countdown Mt Wellington', 'Countdown St Johns']",1029.132361111111,East Region
+"['Countdown Meadowbank', 'Countdown Mt Wellington', 'FreshChoice Half Moon Bay']",977.2559027777778,East Region
+"['Countdown Meadowbank', 'Countdown Mt Wellington', 'FreshChoice Otahuhu']",851.026875,East Region
+"['Countdown Meadowbank', 'Countdown Pakuranga', 'Countdown St Johns']",1043.042777777778,East Region
+"['Countdown Meadowbank', 'Countdown Pakuranga', 'Countdown Sylvia Park']",1023.3520138888888,East Region
+"['Countdown Meadowbank', 'Countdown Pakuranga', 'FreshChoice Half Moon Bay']",953.0834027777777,East Region
+"['Countdown Meadowbank', 'Countdown Pakuranga', 'FreshChoice Otahuhu']",867.21125,East Region
+"['Countdown Meadowbank', 'Countdown St Johns', 'Countdown Sylvia Park']",981.5222222222221,East Region
+"['Countdown Meadowbank', 'Countdown St Johns', 'FreshChoice Half Moon Bay']",941.1231944444444,East Region
+"['Countdown Meadowbank', 'Countdown St Johns', 'FreshChoice Otahuhu']",848.378125,East Region
+"['Countdown Meadowbank', 'Countdown Sylvia Park', 'FreshChoice Half Moon Bay']",1005.8665972222221,East Region
+"['Countdown Meadowbank', 'Countdown Sylvia Park', 'FreshChoice Otahuhu']",856.22125,East Region
+"['Countdown Meadowbank', 'FreshChoice Half Moon Bay', 'FreshChoice Otahuhu']",841.7125,East Region
+"['Countdown Meadowlands', 'Countdown Mt Wellington', 'Countdown Pakuranga']",1059.4022222222225,East Region
+"['Countdown Meadowlands', 'Countdown Mt Wellington', 'Countdown St Johns']",1087.7906249999999,East Region
+"['Countdown Meadowlands', 'Countdown Mt Wellington', 'FreshChoice Half Moon Bay']",1035.914166666667,East Region
+"['Countdown Meadowlands', 'Countdown Mt Wellington', 'FreshChoice Otahuhu']",899.02,East Region
+"['Countdown Meadowlands', 'Countdown Pakuranga', 'Countdown St Johns']",1049.7283333333335,East Region
+"['Countdown Meadowlands', 'Countdown Pakuranga', 'Countdown Sylvia Park']",1030.0375694444444,East Region
+"['Countdown Meadowlands', 'Countdown Pakuranga', 'FreshChoice Half Moon Bay']",959.7689583333333,East Region
+"['Countdown Meadowlands', 'Countdown Pakuranga', 'FreshChoice Otahuhu']",872.68125,East Region
+"['Countdown Meadowlands', 'Countdown St Johns', 'Countdown Sylvia Park']",1067.9944444444443,East Region
+"['Countdown Meadowlands', 'Countdown St Johns', 'FreshChoice Half Moon Bay']",1027.5954166666666,East Region
+"['Countdown Meadowlands', 'Countdown St Johns', 'FreshChoice Otahuhu']",923.3788194444444,East Region
+"['Countdown Meadowlands', 'Countdown Sylvia Park', 'FreshChoice Half Moon Bay']",1063.6960416666668,East Region
+"['Countdown Meadowlands', 'Countdown Sylvia Park', 'FreshChoice Otahuhu']",904.3220833333334,East Region
+"['Countdown Meadowlands', 'FreshChoice Half Moon Bay', 'FreshChoice Otahuhu']",810.146875,East Region
+"['Countdown Mt Wellington', 'Countdown Pakuranga', 'Countdown St Johns']",964.3576388888888,East Region
+"['Countdown Mt Wellington', 'Countdown Pakuranga', 'Countdown Sylvia Park']",944.666875,East Region
+"['Countdown Mt Wellington', 'Countdown Pakuranga', 'FreshChoice Half Moon Bay']",879.0531249999999,East Region
+"['Countdown Mt Wellington', 'Countdown Pakuranga', 'FreshChoice Otahuhu']",802.8325,East Region
+"['Countdown Mt Wellington', 'Countdown St Johns', 'Countdown Sylvia Park']",948.3747916666666,East Region
+"['Countdown Mt Wellington', 'Countdown St Johns', 'FreshChoice Half Moon Bay']",907.9757638888889,East Region
+"['Countdown Mt Wellington', 'Countdown St Johns', 'FreshChoice Otahuhu']",821.2574999999999,East Region
+"['Countdown Mt Wellington', 'Countdown Sylvia Park', 'FreshChoice Half Moon Bay']",918.7603472222222,East Region
+"['Countdown Mt Wellington', 'Countdown Sylvia Park', 'FreshChoice Otahuhu']",784.9525,East Region
+"['Countdown Mt Wellington', 'FreshChoice Half Moon Bay', 'FreshChoice Otahuhu']",783.615,East Region
+"['Countdown Pakuranga', 'Countdown St Johns', 'Countdown Sylvia Park']",950.1722222222223,East Region
+"['Countdown Pakuranga', 'Countdown St Johns', 'FreshChoice Half Moon Bay']",909.7731944444447,East Region
+"['Countdown Pakuranga', 'Countdown St Johns', 'FreshChoice Otahuhu']",822.7281250000001,East Region
+"['Countdown Pakuranga', 'Countdown Sylvia Park', 'FreshChoice Half Moon Bay']",945.2397916666666,East Region
+"['Countdown Pakuranga', 'Countdown Sylvia Park', 'FreshChoice Otahuhu']",806.6175000000001,East Region
+"['Countdown Pakuranga', 'FreshChoice Half Moon Bay', 'FreshChoice Otahuhu']",753.926875,East Region
+"['Countdown St Johns', 'Countdown Sylvia Park', 'FreshChoice Half Moon Bay']",961.8497916666669,East Region
+"['Countdown St Johns', 'Countdown Sylvia Park', 'FreshChoice Otahuhu']",820.2075,East Region
+"['Countdown St Johns', 'FreshChoice Half Moon Bay', 'FreshChoice Otahuhu']",791.955625,East Region
+"['Countdown Sylvia Park', 'FreshChoice Half Moon Bay', 'FreshChoice Otahuhu']",791.459375,East Region
+"['Countdown Aviemore Drive', 'Countdown Highland Park', 'FreshChoice Half Moon Bay', 'FreshChoice Otahuhu']",1006.1897222222224,East Region
+"['Countdown Aviemore Drive', 'Countdown Pakuranga', 'FreshChoice Half Moon Bay', 'FreshChoice Otahuhu']",1084.042222222222,East Region
+"['Countdown Aviemore Drive', 'Countdown St Johns', 'FreshChoice Half Moon Bay', 'FreshChoice Otahuhu']",1150.325625,East Region
+"['Countdown Highland Park', 'Countdown Pakuranga', 'FreshChoice Half Moon Bay', 'FreshChoice Otahuhu']",1089.3245138888888,East Region
+"['Countdown Highland Park', 'Countdown St Johns', 'FreshChoice Half Moon Bay', 'FreshChoice Otahuhu']",1155.6079166666666,East Region
+"['Countdown Pakuranga', 'Countdown St Johns', 'FreshChoice Half Moon Bay', 'FreshChoice Otahuhu']",1088.1252083333336,East Region
+['Countdown Henderson'],509.80875000000003,West Region
+['Countdown Hobsonville'],539.39,West Region
+['Countdown Kelston'],473.381875,West Region
+['Countdown Lincoln Road'],480.65625000000006,West Region
+['Countdown Lynmall'],404.5775,West Region
+['Countdown Northwest'],519.8206250000001,West Region
+['Countdown Te Atatu'],458.000625,West Region
+['Countdown Te Atatu South'],430.96875,West Region
+['Countdown Westgate'],500.23187499999995,West Region
+['FreshChoice Glen Eden'],368.885,West Region
+['FreshChoice Ranui'],413.74375,West Region
+['SuperValue Avondale'],294.63687500000003,West Region
+['SuperValue Palomino'],451.725,West Region
+['SuperValue Titirangi'],355.429375,West Region
+"['Countdown Henderson', 'Countdown Hobsonville']",859.695,West Region
+"['Countdown Henderson', 'Countdown Kelston']",784.17125,West Region
+"['Countdown Henderson', 'Countdown Lincoln Road']",777.1737499999999,West Region
+"['Countdown Henderson', 'Countdown Lynmall']",750.006875,West Region
+"['Countdown Henderson', 'Countdown Northwest']",840.125625,West Region
+"['Countdown Henderson', 'Countdown Te Atatu']",775.80875,West Region
+"['Countdown Henderson', 'Countdown Te Atatu South']",734.813125,West Region
+"['Countdown Henderson', 'Countdown Westgate']",820.536875,West Region
+"['Countdown Henderson', 'FreshChoice Glen Eden']",669.8000000000001,West Region
+"['Countdown Henderson', 'FreshChoice Ranui']",697.585,West Region
+"['Countdown Henderson', 'SuperValue Avondale']",658.974375,West Region
+"['Countdown Henderson', 'SuperValue Palomino']",715.385625,West Region
+"['Countdown Henderson', 'SuperValue Titirangi']",686.38375,West Region
+"['Countdown Hobsonville', 'Countdown Kelston']",869.479375,West Region
+"['Countdown Hobsonville', 'Countdown Lincoln Road']",820.124375,West Region
+"['Countdown Hobsonville', 'Countdown Lynmall']",814.894375,West Region
+"['Countdown Hobsonville', 'Countdown Northwest']",828.194375,West Region
+"['Countdown Hobsonville', 'Countdown Te Atatu']",807.465,West Region
+"['Countdown Hobsonville', 'Countdown Te Atatu South']",786.845625,West Region
+"['Countdown Hobsonville', 'Countdown Westgate']",810.398125,West Region
+"['Countdown Hobsonville', 'FreshChoice Glen Eden']",757.6325,West Region
+"['Countdown Hobsonville', 'FreshChoice Ranui']",753.21125,West Region
+"['Countdown Hobsonville', 'SuperValue Avondale']",707.079375,West Region
+"['Countdown Hobsonville', 'SuperValue Palomino']",791.193125,West Region
+"['Countdown Hobsonville', 'SuperValue Titirangi']",777.6387500000001,West Region
+"['Countdown Kelston', 'Countdown Lincoln Road']",795.249375,West Region
+"['Countdown Kelston', 'Countdown Lynmall']",707.46375,West Region
+"['Countdown Kelston', 'Countdown Northwest']",847.408125,West Region
+"['Countdown Kelston', 'Countdown Te Atatu']",783.09125,West Region
+"['Countdown Kelston', 'Countdown Te Atatu South']",742.095625,West Region
+"['Countdown Kelston', 'Countdown Westgate']",827.819375,West Region
+"['Countdown Kelston', 'FreshChoice Glen Eden']",629.8625,West Region
+"['Countdown Kelston', 'FreshChoice Ranui']",717.863125,West Region
+"['Countdown Kelston', 'SuperValue Avondale']",616.528125,West Region
+"['Countdown Kelston', 'SuperValue Palomino']",735.66375,West Region
+"['Countdown Kelston', 'SuperValue Titirangi']",639.21875,West Region
+"['Countdown Lincoln Road', 'Countdown Lynmall']",756.16,West Region
+"['Countdown Lincoln Road', 'Countdown Northwest']",795.3199999999999,West Region
+"['Countdown Lincoln Road', 'Countdown Te Atatu']",748.7312499999999,West Region
+"['Countdown Lincoln Road', 'Countdown Te Atatu South']",716.045,West Region
+"['Countdown Lincoln Road', 'Countdown Westgate']",775.7312499999999,West Region
+"['Countdown Lincoln Road', 'FreshChoice Glen Eden']",681.441875,West Region
+"['Countdown Lincoln Road', 'FreshChoice Ranui']",670.9449999999999,West Region
+"['Countdown Lincoln Road', 'SuperValue Avondale']",648.3456249999999,West Region
+"['Countdown Lincoln Road', 'SuperValue Palomino']",708.92625,West Region
+"['Countdown Lincoln Road', 'SuperValue Titirangi']",698.025625,West Region
+"['Countdown Lynmall', 'Countdown Northwest']",793.055625,West Region
+"['Countdown Lynmall', 'Countdown Te Atatu']",731.235625,West Region
+"['Countdown Lynmall', 'Countdown Te Atatu South']",704.20375,West Region
+"['Countdown Lynmall', 'Countdown Westgate']",773.466875,West Region
+"['Countdown Lynmall', 'FreshChoice Glen Eden']",605.454375,West Region
+"['Countdown Lynmall', 'FreshChoice Ranui']",686.97875,West Region
+"['Countdown Lynmall', 'SuperValue Avondale']",547.72375,West Region
+"['Countdown Lynmall', 'SuperValue Palomino']",701.03875,West Region
+"['Countdown Lynmall', 'SuperValue Titirangi']",597.86625,West Region
+"['Countdown Northwest', 'Countdown Te Atatu']",787.895625,West Region
+"['Countdown Northwest', 'Countdown Te Atatu South']",767.27625,West Region
+"['Countdown Northwest', 'Countdown Westgate']",766.53,West Region
+"['Countdown Northwest', 'FreshChoice Glen Eden']",738.063125,West Region
+"['Countdown Northwest', 'FreshChoice Ranui']",710.150625,West Region
+"['Countdown Northwest', 'SuperValue Avondale']",687.51,West Region
+"['Countdown Northwest', 'SuperValue Palomino']",771.623125,West Region
+"['Countdown Northwest', 'SuperValue Titirangi']",758.069375,West Region
+"['Countdown Te Atatu', 'Countdown Te Atatu South']",701.66625,West Region
+"['Countdown Te Atatu', 'Countdown Westgate']",773.0337499999999,West Region
+"['Countdown Te Atatu', 'FreshChoice Glen Eden']",672.453125,West Region
+"['Countdown Te Atatu', 'FreshChoice Ranui']",686.545625,West Region
+"['Countdown Te Atatu', 'SuperValue Avondale']",625.69,West Region
+"['Countdown Te Atatu', 'SuperValue Palomino']",724.526875,West Region
+"['Countdown Te Atatu', 'SuperValue Titirangi']",696.249375,West Region
+"['Countdown Te Atatu South', 'Countdown Westgate']",741.696875,West Region
+"['Countdown Te Atatu South', 'FreshChoice Glen Eden']",626.76,West Region
+"['Countdown Te Atatu South', 'FreshChoice Ranui']",645.44875,West Region
+"['Countdown Te Atatu South', 'SuperValue Avondale']",598.6581249999999,West Region
+"['Countdown Te Atatu South', 'SuperValue Palomino']",679.42,West Region
+"['Countdown Te Atatu South', 'SuperValue Titirangi']",643.34375,West Region
+"['Countdown Westgate', 'FreshChoice Glen Eden']",718.47375,West Region
+"['Countdown Westgate', 'FreshChoice Ranui']",705.318125,West Region
+"['Countdown Westgate', 'SuperValue Avondale']",667.92125,West Region
+"['Countdown Westgate', 'SuperValue Palomino']",752.0343750000001,West Region
+"['Countdown Westgate', 'SuperValue Titirangi']",738.480625,West Region
+"['FreshChoice Glen Eden', 'FreshChoice Ranui']",603.84125,West Region
+"['FreshChoice Glen Eden', 'SuperValue Avondale']",513.1775,West Region
+"['FreshChoice Glen Eden', 'SuperValue Palomino']",620.0075,West Region
+"['FreshChoice Glen Eden', 'SuperValue Titirangi']",526.09375,West Region
+"['FreshChoice Ranui', 'SuperValue Avondale']",581.433125,West Region
+"['FreshChoice Ranui', 'SuperValue Palomino']",617.42125,West Region
+"['FreshChoice Ranui', 'SuperValue Titirangi']",617.724375,West Region
+"['SuperValue Avondale', 'SuperValue Palomino']",625.88125,West Region
+"['SuperValue Avondale', 'SuperValue Titirangi']",512.815,West Region
+"['SuperValue Palomino', 'SuperValue Titirangi']",627.09375,West Region
+"['Countdown Henderson', 'Countdown Hobsonville', 'Countdown Lynmall']",1187.465902777778,West Region
+"['Countdown Henderson', 'Countdown Hobsonville', 'Countdown Te Atatu']",1178.3855555555556,West Region
+"['Countdown Henderson', 'Countdown Hobsonville', 'Countdown Te Atatu South']",1153.1840972222221,West Region
+"['Countdown Henderson', 'Countdown Hobsonville', 'FreshChoice Glen Eden']",1117.4791666666665,West Region
+"['Countdown Henderson', 'Countdown Hobsonville', 'FreshChoice Ranui']",1112.0754166666668,West Region
+"['Countdown Henderson', 'Countdown Hobsonville', 'SuperValue Avondale']",1055.692013888889,West Region
+"['Countdown Henderson', 'Countdown Hobsonville', 'SuperValue Palomino']",1158.4977083333335,West Region
+"['Countdown Henderson', 'Countdown Hobsonville', 'SuperValue Titirangi']",1141.9312499999999,West Region
+"['Countdown Henderson', 'Countdown Kelston', 'Countdown Lynmall']",1044.5315972222224,West Region
+"['Countdown Henderson', 'Countdown Kelston', 'Countdown Te Atatu']",1136.965208333333,West Region
+"['Countdown Henderson', 'Countdown Kelston', 'Countdown Te Atatu South']",1086.8594444444445,West Region
+"['Countdown Henderson', 'Countdown Kelston', 'FreshChoice Glen Eden']",949.685625,West Region
+"['Countdown Henderson', 'Countdown Kelston', 'FreshChoice Ranui']",1057.2419444444442,West Region
+"['Countdown Henderson', 'Countdown Kelston', 'SuperValue Avondale']",933.3880555555555,West Region
+"['Countdown Henderson', 'Countdown Kelston', 'SuperValue Palomino']",1078.998263888889,West Region
+"['Countdown Henderson', 'Countdown Kelston', 'SuperValue Titirangi']",961.1210416666668,West Region
+"['Countdown Henderson', 'Countdown Lincoln Road', 'Countdown Lynmall']",1086.6058333333333,West Region
+"['Countdown Henderson', 'Countdown Lincoln Road', 'Countdown Te Atatu']",1077.5262499999997,West Region
+"['Countdown Henderson', 'Countdown Lincoln Road', 'Countdown Te Atatu South']",1037.5763888888887,West Region
+"['Countdown Henderson', 'Countdown Lincoln Road', 'FreshChoice Glen Eden']",995.2836805555556,West Region
+"['Countdown Henderson', 'Countdown Lincoln Road', 'FreshChoice Ranui']",982.4541666666664,West Region
+"['Countdown Henderson', 'Countdown Lincoln Road', 'SuperValue Avondale']",954.8327083333332,West Region
+"['Countdown Henderson', 'Countdown Lincoln Road', 'SuperValue Palomino']",1028.8756944444444,West Region
+"['Countdown Henderson', 'Countdown Lincoln Road', 'SuperValue Titirangi']",1015.5527083333334,West Region
+"['Countdown Henderson', 'Countdown Lynmall', 'Countdown Northwest']",1191.481666666667,West Region
+"['Countdown Henderson', 'Countdown Lynmall', 'Countdown Te Atatu']",1115.9238888888888,West Region
+"['Countdown Henderson', 'Countdown Lynmall', 'Countdown Te Atatu South']",1082.8849305555557,West Region
+"['Countdown Henderson', 'Countdown Lynmall', 'Countdown Westgate']",1167.5398611111113,West Region
+"['Countdown Henderson', 'Countdown Lynmall', 'FreshChoice Glen Eden']",962.1912500000001,West Region
+"['Countdown Henderson', 'Countdown Lynmall', 'FreshChoice Ranui']",1061.8321527777778,West Region
+"['Countdown Henderson', 'Countdown Lynmall', 'SuperValue Avondale']",893.153125,West Region
+"['Countdown Henderson', 'Countdown Lynmall', 'SuperValue Palomino']",1079.0165972222223,West Region
+"['Countdown Henderson', 'Countdown Lynmall', 'SuperValue Titirangi']",952.916875,West Region
+"['Countdown Henderson', 'Countdown Northwest', 'Countdown Te Atatu']",1154.4674305555554,West Region
+"['Countdown Henderson', 'Countdown Northwest', 'Countdown Te Atatu South']",1129.265972222222,West Region
+"['Countdown Henderson', 'Countdown Northwest', 'FreshChoice Glen Eden']",1093.5610416666666,West Region
+"['Countdown Henderson', 'Countdown Northwest', 'FreshChoice Ranui']",1059.445763888889,West Region
+"['Countdown Henderson', 'Countdown Northwest', 'SuperValue Avondale']",1031.773888888889,West Region
+"['Countdown Henderson', 'Countdown Northwest', 'SuperValue Palomino']",1134.5788194444442,West Region
+"['Countdown Henderson', 'Countdown Northwest', 'SuperValue Titirangi']",1118.0131250000002,West Region
+"['Countdown Henderson', 'Countdown Te Atatu', 'Countdown Te Atatu South']",1046.024236111111,West Region
+"['Countdown Henderson', 'Countdown Te Atatu', 'Countdown Westgate']",1133.2511805555555,West Region
+"['Countdown Henderson', 'Countdown Te Atatu', 'FreshChoice Glen Eden']",1010.3193055555555,West Region
+"['Countdown Henderson', 'Countdown Te Atatu', 'FreshChoice Ranui']",1027.5434722222224,West Region
+"['Countdown Henderson', 'Countdown Te Atatu', 'SuperValue Avondale']",953.1643750000001,West Region
+"['Countdown Henderson', 'Countdown Te Atatu', 'SuperValue Palomino']",1073.9650000000001,West Region
+"['Countdown Henderson', 'Countdown Te Atatu', 'SuperValue Titirangi']",1039.4036111111109,West Region
+"['Countdown Henderson', 'Countdown Te Atatu South', 'Countdown Westgate']",1077.88375,West Region
+"['Countdown Henderson', 'Countdown Te Atatu South', 'FreshChoice Glen Eden']",937.4053472222224,West Region
+"['Countdown Henderson', 'Countdown Te Atatu South', 'FreshChoice Ranui']",960.2471527777776,West Region
+"['Countdown Henderson', 'Countdown Te Atatu South', 'SuperValue Avondale']",903.0586111111112,West Region
+"['Countdown Henderson', 'Countdown Te Atatu South', 'SuperValue Palomino']",1001.7675694444446,West Region
+"['Countdown Henderson', 'Countdown Te Atatu South', 'SuperValue Titirangi']",957.6743750000002,West Region
+"['Countdown Henderson', 'Countdown Westgate', 'FreshChoice Glen Eden']",1069.618472222222,West Region
+"['Countdown Henderson', 'Countdown Westgate', 'FreshChoice Ranui']",1053.539375,West Region
+"['Countdown Henderson', 'Countdown Westgate', 'SuperValue Avondale']",1007.8320833333332,West Region
+"['Countdown Henderson', 'Countdown Westgate', 'SuperValue Palomino']",1110.637013888889,West Region
+"['Countdown Henderson', 'Countdown Westgate', 'SuperValue Titirangi']",1094.0713194444443,West Region
+"['Countdown Henderson', 'FreshChoice Glen Eden', 'FreshChoice Ranui']",905.8131944444445,West Region
+"['Countdown Henderson', 'FreshChoice Glen Eden', 'SuperValue Avondale']",814.0925000000001,West Region
+"['Countdown Henderson', 'FreshChoice Glen Eden', 'SuperValue Palomino']",925.5719444444444,West Region
+"['Countdown Henderson', 'FreshChoice Glen Eden', 'SuperValue Titirangi']",827.0087500000001,West Region
+"['Countdown Henderson', 'FreshChoice Ranui', 'SuperValue Avondale']",865.2743750000001,West Region
+"['Countdown Henderson', 'FreshChoice Ranui', 'SuperValue Palomino']",901.5430555555556,West Region
+"['Countdown Henderson', 'FreshChoice Ranui', 'SuperValue Titirangi']",901.9135416666668,West Region
+"['Countdown Henderson', 'SuperValue Avondale', 'SuperValue Palomino']",1010.2673611111111,West Region
+"['Countdown Henderson', 'SuperValue Avondale', 'SuperValue Titirangi']",877.1524999999999,West Region
+"['Countdown Henderson', 'SuperValue Palomino', 'SuperValue Titirangi']",890.754375,West Region
+"['Countdown Hobsonville', 'Countdown Kelston', 'Countdown Lynmall']",1148.7970833333334,West Region
+"['Countdown Hobsonville', 'Countdown Kelston', 'Countdown Te Atatu']",1241.2306944444442,West Region
+"['Countdown Hobsonville', 'Countdown Kelston', 'Countdown Te Atatu South']",1191.1249305555557,West Region
+"['Countdown Hobsonville', 'Countdown Kelston', 'FreshChoice Glen Eden']",1053.9511111111112,West Region
+"['Countdown Hobsonville', 'Countdown Kelston', 'FreshChoice Ranui']",1161.5074305555554,West Region
+"['Countdown Hobsonville', 'Countdown Kelston', 'SuperValue Avondale']",1037.6535416666666,West Region
+"['Countdown Hobsonville', 'Countdown Kelston', 'SuperValue Palomino']",1183.26375,West Region
+"['Countdown Hobsonville', 'Countdown Kelston', 'SuperValue Titirangi']",1065.3865277777775,West Region
+"['Countdown Hobsonville', 'Countdown Lincoln Road', 'Countdown Lynmall']",1139.101041666667,West Region
+"['Countdown Hobsonville', 'Countdown Lincoln Road', 'Countdown Te Atatu']",1130.0214583333334,West Region
+"['Countdown Hobsonville', 'Countdown Lincoln Road', 'Countdown Te Atatu South']",1090.0715972222222,West Region
+"['Countdown Hobsonville', 'Countdown Lincoln Road', 'FreshChoice Glen Eden']",1047.778888888889,West Region
+"['Countdown Hobsonville', 'Countdown Lincoln Road', 'FreshChoice Ranui']",1034.9493750000001,West Region
+"['Countdown Hobsonville', 'Countdown Lincoln Road', 'SuperValue Avondale']",1007.3279166666669,West Region
+"['Countdown Hobsonville', 'Countdown Lincoln Road', 'SuperValue Palomino']",1081.370902777778,West Region
+"['Countdown Hobsonville', 'Countdown Lincoln Road', 'SuperValue Titirangi']",1068.0479166666667,West Region
+"['Countdown Hobsonville', 'Countdown Lynmall', 'Countdown Northwest']",1270.788611111111,West Region
+"['Countdown Hobsonville', 'Countdown Lynmall', 'Countdown Te Atatu']",1195.2308333333333,West Region
+"['Countdown Hobsonville', 'Countdown Lynmall', 'Countdown Te Atatu South']",1162.191875,West Region
+"['Countdown Hobsonville', 'Countdown Lynmall', 'Countdown Westgate']",1246.8468055555556,West Region
+"['Countdown Hobsonville', 'Countdown Lynmall', 'FreshChoice Glen Eden']",1041.4981944444446,West Region
+"['Countdown Hobsonville', 'Countdown Lynmall', 'FreshChoice Ranui']",1141.1390972222223,West Region
+"['Countdown Hobsonville', 'Countdown Lynmall', 'SuperValue Avondale']",970.9385416666668,West Region
+"['Countdown Hobsonville', 'Countdown Lynmall', 'SuperValue Palomino']",1158.3235416666669,West Region
+"['Countdown Hobsonville', 'Countdown Lynmall', 'SuperValue Titirangi']",1032.2238194444444,West Region
+"['Countdown Hobsonville', 'Countdown Northwest', 'Countdown Te Atatu']",1139.8847916666664,West Region
+"['Countdown Hobsonville', 'Countdown Northwest', 'Countdown Te Atatu South']",1114.6833333333334,West Region
+"['Countdown Hobsonville', 'Countdown Northwest', 'FreshChoice Glen Eden']",1078.978402777778,West Region
+"['Countdown Hobsonville', 'Countdown Northwest', 'FreshChoice Ranui']",1044.8631249999999,West Region
+"['Countdown Hobsonville', 'Countdown Northwest', 'SuperValue Avondale']",1017.1912500000001,West Region
+"['Countdown Hobsonville', 'Countdown Northwest', 'SuperValue Palomino']",1119.9961805555556,West Region
+"['Countdown Hobsonville', 'Countdown Northwest', 'SuperValue Titirangi']",1103.4304861111111,West Region
+"['Countdown Hobsonville', 'Countdown Te Atatu', 'Countdown Te Atatu South']",1084.7152083333333,West Region
+"['Countdown Hobsonville', 'Countdown Te Atatu', 'Countdown Westgate']",1171.9421527777777,West Region
+"['Countdown Hobsonville', 'Countdown Te Atatu', 'FreshChoice Glen Eden']",1049.0102777777777,West Region
+"['Countdown Hobsonville', 'Countdown Te Atatu', 'FreshChoice Ranui']",1066.2344444444445,West Region
+"['Countdown Hobsonville', 'Countdown Te Atatu', 'SuperValue Avondale']",991.8553472222223,West Region
+"['Countdown Hobsonville', 'Countdown Te Atatu', 'SuperValue Palomino']",1112.6559722222223,West Region
+"['Countdown Hobsonville', 'Countdown Te Atatu', 'SuperValue Titirangi']",1078.0945833333333,West Region
+"['Countdown Hobsonville', 'Countdown Te Atatu South', 'Countdown Westgate']",1141.4790277777777,West Region
+"['Countdown Hobsonville', 'Countdown Te Atatu South', 'FreshChoice Glen Eden']",1001.0006249999999,West Region
+"['Countdown Hobsonville', 'Countdown Te Atatu South', 'FreshChoice Ranui']",1023.8424305555553,West Region
+"['Countdown Hobsonville', 'Countdown Te Atatu South', 'SuperValue Avondale']",966.653888888889,West Region
+"['Countdown Hobsonville', 'Countdown Te Atatu South', 'SuperValue Palomino']",1065.3628472222222,West Region
+"['Countdown Hobsonville', 'Countdown Te Atatu South', 'SuperValue Titirangi']",1021.2696527777779,West Region
+"['Countdown Hobsonville', 'Countdown Westgate', 'FreshChoice Glen Eden']",1057.226666666667,West Region
+"['Countdown Hobsonville', 'Countdown Westgate', 'FreshChoice Ranui']",1041.1475694444446,West Region
+"['Countdown Hobsonville', 'Countdown Westgate', 'SuperValue Avondale']",995.440277777778,West Region
+"['Countdown Hobsonville', 'Countdown Westgate', 'SuperValue Palomino']",1098.2452083333333,West Region
+"['Countdown Hobsonville', 'Countdown Westgate', 'SuperValue Titirangi']",1081.6795138888888,West Region
+"['Countdown Hobsonville', 'FreshChoice Glen Eden', 'FreshChoice Ranui']",1013.1640277777778,West Region
+"['Countdown Hobsonville', 'FreshChoice Glen Eden', 'SuperValue Avondale']",902.3527777777779,West Region
+"['Countdown Hobsonville', 'FreshChoice Glen Eden', 'SuperValue Palomino']",1032.9227777777778,West Region
+"['Countdown Hobsonville', 'FreshChoice Glen Eden', 'SuperValue Titirangi']",918.1393055555557,West Region
+"['Countdown Hobsonville', 'FreshChoice Ranui', 'SuperValue Avondale']",925.5452083333333,West Region
+"['Countdown Hobsonville', 'FreshChoice Ranui', 'SuperValue Palomino']",969.5306944444444,West Region
+"['Countdown Hobsonville', 'FreshChoice Ranui', 'SuperValue Titirangi']",969.9011805555555,West Region
+"['Countdown Hobsonville', 'SuperValue Avondale', 'SuperValue Palomino']",1069.062361111111,West Region
+"['Countdown Hobsonville', 'SuperValue Avondale', 'SuperValue Titirangi']",930.8702777777779,West Region
+"['Countdown Hobsonville', 'SuperValue Palomino', 'SuperValue Titirangi']",981.3534027777779,West Region
+"['Countdown Kelston', 'Countdown Lincoln Road', 'Countdown Lynmall']",1108.698263888889,West Region
+"['Countdown Kelston', 'Countdown Lincoln Road', 'Countdown Te Atatu']",1099.6186805555558,West Region
+"['Countdown Kelston', 'Countdown Lincoln Road', 'Countdown Te Atatu South']",1059.6688194444446,West Region
+"['Countdown Kelston', 'Countdown Lincoln Road', 'FreshChoice Glen Eden']",1017.3761111111113,West Region
+"['Countdown Kelston', 'Countdown Lincoln Road', 'FreshChoice Ranui']",1004.5465972222224,West Region
+"['Countdown Kelston', 'Countdown Lincoln Road', 'SuperValue Avondale']",976.925138888889,West Region
+"['Countdown Kelston', 'Countdown Lincoln Road', 'SuperValue Palomino']",1050.968125,West Region
+"['Countdown Kelston', 'Countdown Lincoln Road', 'SuperValue Titirangi']",1037.645138888889,West Region
+"['Countdown Kelston', 'Countdown Lynmall', 'Countdown Northwest']",1139.4845138888888,West Region
+"['Countdown Kelston', 'Countdown Lynmall', 'Countdown Te Atatu']",1063.9267361111108,West Region
+"['Countdown Kelston', 'Countdown Lynmall', 'Countdown Te Atatu South']",1030.8877777777777,West Region
+"['Countdown Kelston', 'Countdown Lynmall', 'Countdown Westgate']",1115.5427083333334,West Region
+"['Countdown Kelston', 'Countdown Lynmall', 'FreshChoice Glen Eden']",910.1940972222224,West Region
+"['Countdown Kelston', 'Countdown Lynmall', 'FreshChoice Ranui']",1009.835,West Region
+"['Countdown Kelston', 'Countdown Lynmall', 'SuperValue Avondale']",850.61,West Region
+"['Countdown Kelston', 'Countdown Lynmall', 'SuperValue Palomino']",1027.0194444444446,West Region
+"['Countdown Kelston', 'Countdown Lynmall', 'SuperValue Titirangi']",900.9197222222223,West Region
+"['Countdown Kelston', 'Countdown Northwest', 'Countdown Te Atatu']",1163.3682638888886,West Region
+"['Countdown Kelston', 'Countdown Northwest', 'Countdown Te Atatu South']",1138.1668055555556,West Region
+"['Countdown Kelston', 'Countdown Northwest', 'FreshChoice Glen Eden']",1102.4618750000002,West Region
+"['Countdown Kelston', 'Countdown Northwest', 'FreshChoice Ranui']",1068.3465972222223,West Region
+"['Countdown Kelston', 'Countdown Northwest', 'SuperValue Avondale']",1040.6747222222223,West Region
+"['Countdown Kelston', 'Countdown Northwest', 'SuperValue Palomino']",1143.479652777778,West Region
+"['Countdown Kelston', 'Countdown Northwest', 'SuperValue Titirangi']",1126.9139583333335,West Region
+"['Countdown Kelston', 'Countdown Te Atatu', 'Countdown Te Atatu South']",1054.9250694444445,West Region
+"['Countdown Kelston', 'Countdown Te Atatu', 'Countdown Westgate']",1142.1520138888886,West Region
+"['Countdown Kelston', 'Countdown Te Atatu', 'FreshChoice Glen Eden']",1019.2201388888889,West Region
+"['Countdown Kelston', 'Countdown Te Atatu', 'FreshChoice Ranui']",1036.4443055555557,West Region
+"['Countdown Kelston', 'Countdown Te Atatu', 'SuperValue Avondale']",962.0652083333332,West Region
+"['Countdown Kelston', 'Countdown Te Atatu', 'SuperValue Palomino']",1082.8658333333335,West Region
+"['Countdown Kelston', 'Countdown Te Atatu', 'SuperValue Titirangi']",1048.3044444444445,West Region
+"['Countdown Kelston', 'Countdown Te Atatu South', 'Countdown Westgate']",1086.7845833333333,West Region
+"['Countdown Kelston', 'Countdown Te Atatu South', 'FreshChoice Glen Eden']",946.3061805555557,West Region
+"['Countdown Kelston', 'Countdown Te Atatu South', 'FreshChoice Ranui']",969.1479861111111,West Region
+"['Countdown Kelston', 'Countdown Te Atatu South', 'SuperValue Avondale']",911.9594444444444,West Region
+"['Countdown Kelston', 'Countdown Te Atatu South', 'SuperValue Palomino']",1010.6684027777777,West Region
+"['Countdown Kelston', 'Countdown Te Atatu South', 'SuperValue Titirangi']",966.5752083333334,West Region
+"['Countdown Kelston', 'Countdown Westgate', 'FreshChoice Glen Eden']",1078.5193055555558,West Region
+"['Countdown Kelston', 'Countdown Westgate', 'FreshChoice Ranui']",1062.4402083333332,West Region
+"['Countdown Kelston', 'Countdown Westgate', 'SuperValue Avondale']",1016.7329166666666,West Region
+"['Countdown Kelston', 'Countdown Westgate', 'SuperValue Palomino']",1119.5378472222224,West Region
+"['Countdown Kelston', 'Countdown Westgate', 'SuperValue Titirangi']",1102.9721527777776,West Region
+"['Countdown Kelston', 'FreshChoice Glen Eden', 'FreshChoice Ranui']",864.81875,West Region
+"['Countdown Kelston', 'FreshChoice Glen Eden', 'SuperValue Avondale']",774.1550000000001,West Region
+"['Countdown Kelston', 'FreshChoice Glen Eden', 'SuperValue Palomino']",880.985,West Region
+"['Countdown Kelston', 'FreshChoice Glen Eden', 'SuperValue Titirangi']",787.0712500000001,West Region
+"['Countdown Kelston', 'FreshChoice Ranui', 'SuperValue Avondale']",885.5525,West Region
+"['Countdown Kelston', 'FreshChoice Ranui', 'SuperValue Palomino']",926.3274305555556,West Region
+"['Countdown Kelston', 'FreshChoice Ranui', 'SuperValue Titirangi']",926.6979166666666,West Region
+"['Countdown Kelston', 'SuperValue Avondale', 'SuperValue Palomino']",958.3886111111112,West Region
+"['Countdown Kelston', 'SuperValue Avondale', 'SuperValue Titirangi']",834.70625,West Region
+"['Countdown Kelston', 'SuperValue Palomino', 'SuperValue Titirangi']",913.4841666666667,West Region
+"['Countdown Lincoln Road', 'Countdown Lynmall', 'Countdown Northwest']",1199.0021527777776,West Region
+"['Countdown Lincoln Road', 'Countdown Lynmall', 'Countdown Te Atatu']",1123.444375,West Region
+"['Countdown Lincoln Road', 'Countdown Lynmall', 'Countdown Te Atatu South']",1090.4054166666667,West Region
+"['Countdown Lincoln Road', 'Countdown Lynmall', 'Countdown Westgate']",1175.0603472222224,West Region
+"['Countdown Lincoln Road', 'Countdown Lynmall', 'FreshChoice Glen Eden']",969.7117361111111,West Region
+"['Countdown Lincoln Road', 'Countdown Lynmall', 'FreshChoice Ranui']",1069.3526388888888,West Region
+"['Countdown Lincoln Road', 'Countdown Lynmall', 'SuperValue Avondale']",899.30625,West Region
+"['Countdown Lincoln Road', 'Countdown Lynmall', 'SuperValue Palomino']",1086.5370833333334,West Region
+"['Countdown Lincoln Road', 'Countdown Lynmall', 'SuperValue Titirangi']",960.4373611111112,West Region
+"['Countdown Lincoln Road', 'Countdown Northwest', 'Countdown Te Atatu']",1099.705,West Region
+"['Countdown Lincoln Road', 'Countdown Northwest', 'Countdown Te Atatu South']",1074.5035416666667,West Region
+"['Countdown Lincoln Road', 'Countdown Northwest', 'FreshChoice Glen Eden']",1038.7986111111113,West Region
+"['Countdown Lincoln Road', 'Countdown Northwest', 'FreshChoice Ranui']",1004.6833333333332,West Region
+"['Countdown Lincoln Road', 'Countdown Northwest', 'SuperValue Avondale']",977.0114583333334,West Region
+"['Countdown Lincoln Road', 'Countdown Northwest', 'SuperValue Palomino']",1079.816388888889,West Region
+"['Countdown Lincoln Road', 'Countdown Northwest', 'SuperValue Titirangi']",1063.2506944444442,West Region
+"['Countdown Lincoln Road', 'Countdown Te Atatu', 'Countdown Te Atatu South']",1012.9295138888888,West Region
+"['Countdown Lincoln Road', 'Countdown Te Atatu', 'Countdown Westgate']",1100.1564583333334,West Region
+"['Countdown Lincoln Road', 'Countdown Te Atatu', 'FreshChoice Glen Eden']",977.2245833333333,West Region
+"['Countdown Lincoln Road', 'Countdown Te Atatu', 'FreshChoice Ranui']",994.4487499999999,West Region
+"['Countdown Lincoln Road', 'Countdown Te Atatu', 'SuperValue Avondale']",920.0696527777778,West Region
+"['Countdown Lincoln Road', 'Countdown Te Atatu', 'SuperValue Palomino']",1040.8702777777778,West Region
+"['Countdown Lincoln Road', 'Countdown Te Atatu', 'SuperValue Titirangi']",1006.3088888888888,West Region
+"['Countdown Lincoln Road', 'Countdown Te Atatu South', 'Countdown Westgate']",1054.9449305555554,West Region
+"['Countdown Lincoln Road', 'Countdown Te Atatu South', 'FreshChoice Glen Eden']",914.4665277777779,West Region
+"['Countdown Lincoln Road', 'Countdown Te Atatu South', 'FreshChoice Ranui']",937.3083333333332,West Region
+"['Countdown Lincoln Road', 'Countdown Te Atatu South', 'SuperValue Avondale']",883.734375,West Region
+"['Countdown Lincoln Road', 'Countdown Te Atatu South', 'SuperValue Palomino']",978.82875,West Region
+"['Countdown Lincoln Road', 'Countdown Te Atatu South', 'SuperValue Titirangi']",934.7355555555557,West Region
+"['Countdown Lincoln Road', 'Countdown Westgate', 'FreshChoice Glen Eden']",1014.8560416666667,West Region
+"['Countdown Lincoln Road', 'Countdown Westgate', 'FreshChoice Ranui']",998.7769444444442,West Region
+"['Countdown Lincoln Road', 'Countdown Westgate', 'SuperValue Avondale']",953.0696527777778,West Region
+"['Countdown Lincoln Road', 'Countdown Westgate', 'SuperValue Palomino']",1055.8745833333335,West Region
+"['Countdown Lincoln Road', 'Countdown Westgate', 'SuperValue Titirangi']",1039.308888888889,West Region
+"['Countdown Lincoln Road', 'FreshChoice Glen Eden', 'FreshChoice Ranui']",920.0421527777777,West Region
+"['Countdown Lincoln Road', 'FreshChoice Glen Eden', 'SuperValue Avondale']",825.7343750000001,West Region
+"['Countdown Lincoln Road', 'FreshChoice Glen Eden', 'SuperValue Palomino']",939.8009027777779,West Region
+"['Countdown Lincoln Road', 'FreshChoice Glen Eden', 'SuperValue Titirangi']",838.650625,West Region
+"['Countdown Lincoln Road', 'FreshChoice Ranui', 'SuperValue Avondale']",838.634375,West Region
+"['Countdown Lincoln Road', 'FreshChoice Ranui', 'SuperValue Palomino']",874.6225000000001,West Region
+"['Countdown Lincoln Road', 'FreshChoice Ranui', 'SuperValue Titirangi']",874.925625,West Region
+"['Countdown Lincoln Road', 'SuperValue Avondale', 'SuperValue Palomino']",997.2766666666666,West Region
+"['Countdown Lincoln Road', 'SuperValue Avondale', 'SuperValue Titirangi']",866.5237500000001,West Region
+"['Countdown Lincoln Road', 'SuperValue Palomino', 'SuperValue Titirangi']",884.2950000000001,West Region
+"['Countdown Lynmall', 'Countdown Northwest', 'Countdown Te Atatu']",1096.9374305555552,West Region
+"['Countdown Lynmall', 'Countdown Northwest', 'Countdown Te Atatu South']",1071.7359722222222,West Region
+"['Countdown Lynmall', 'Countdown Northwest', 'Countdown Westgate']",1070.8238888888886,West Region
+"['Countdown Lynmall', 'Countdown Northwest', 'FreshChoice Glen Eden']",1036.0310416666666,West Region
+"['Countdown Lynmall', 'Countdown Northwest', 'FreshChoice Ranui']",1001.9157638888889,West Region
+"['Countdown Lynmall', 'Countdown Northwest', 'SuperValue Avondale']",974.2438888888889,West Region
+"['Countdown Lynmall', 'Countdown Northwest', 'SuperValue Palomino']",1077.0488194444447,West Region
+"['Countdown Lynmall', 'Countdown Northwest', 'SuperValue Titirangi']",1060.4831250000002,West Region
+"['Countdown Lynmall', 'Countdown Te Atatu', 'Countdown Te Atatu South']",991.5459722222221,West Region
+"['Countdown Lynmall', 'Countdown Te Atatu', 'Countdown Westgate']",1078.7729166666666,West Region
+"['Countdown Lynmall', 'Countdown Te Atatu', 'FreshChoice Glen Eden']",955.8410416666668,West Region
+"['Countdown Lynmall', 'Countdown Te Atatu', 'FreshChoice Ranui']",973.0652083333333,West Region
+"['Countdown Lynmall', 'Countdown Te Atatu', 'SuperValue Avondale']",898.9250000000001,West Region
+"['Countdown Lynmall', 'Countdown Te Atatu', 'SuperValue Palomino']",1019.4867361111112,West Region
+"['Countdown Lynmall', 'Countdown Te Atatu', 'SuperValue Titirangi']",984.9253472222221,West Region
+"['Countdown Lynmall', 'Countdown Te Atatu South', 'Countdown Westgate']",1040.4722916666667,West Region
+"['Countdown Lynmall', 'Countdown Te Atatu South', 'FreshChoice Glen Eden']",899.9950000000001,West Region
+"['Countdown Lynmall', 'Countdown Te Atatu South', 'FreshChoice Ranui']",922.8356944444444,West Region
+"['Countdown Lynmall', 'Countdown Te Atatu South', 'SuperValue Avondale']",871.893125,West Region
+"['Countdown Lynmall', 'Countdown Te Atatu South', 'SuperValue Palomino']",964.3561111111113,West Region
+"['Countdown Lynmall', 'Countdown Te Atatu South', 'SuperValue Titirangi']",920.2629166666668,West Region
+"['Countdown Lynmall', 'Countdown Westgate', 'FreshChoice Glen Eden']",1012.0884722222222,West Region
+"['Countdown Lynmall', 'Countdown Westgate', 'FreshChoice Ranui']",996.009375,West Region
+"['Countdown Lynmall', 'Countdown Westgate', 'SuperValue Avondale']",950.3020833333333,West Region
+"['Countdown Lynmall', 'Countdown Westgate', 'SuperValue Palomino']",1053.1070138888886,West Region
+"['Countdown Lynmall', 'Countdown Westgate', 'SuperValue Titirangi']",1036.5413194444445,West Region
+"['Countdown Lynmall', 'FreshChoice Glen Eden', 'FreshChoice Ranui']",840.410625,West Region
+"['Countdown Lynmall', 'FreshChoice Glen Eden', 'SuperValue Avondale']",749.746875,West Region
+"['Countdown Lynmall', 'FreshChoice Glen Eden', 'SuperValue Palomino']",856.5768750000001,West Region
+"['Countdown Lynmall', 'FreshChoice Glen Eden', 'SuperValue Titirangi']",762.663125,West Region
+"['Countdown Lynmall', 'FreshChoice Ranui', 'SuperValue Avondale']",854.668125,West Region
+"['Countdown Lynmall', 'FreshChoice Ranui', 'SuperValue Palomino']",890.6562500000001,West Region
+"['Countdown Lynmall', 'FreshChoice Ranui', 'SuperValue Titirangi']",890.959375,West Region
+"['Countdown Lynmall', 'SuperValue Avondale', 'SuperValue Palomino']",878.968125,West Region
+"['Countdown Lynmall', 'SuperValue Avondale', 'SuperValue Titirangi']",765.901875,West Region
+"['Countdown Lynmall', 'SuperValue Palomino', 'SuperValue Titirangi']",876.4075,West Region
+"['Countdown Northwest', 'Countdown Te Atatu', 'Countdown Te Atatu South']",1060.7970833333331,West Region
+"['Countdown Northwest', 'Countdown Te Atatu', 'Countdown Westgate']",1148.0240277777777,West Region
+"['Countdown Northwest', 'Countdown Te Atatu', 'FreshChoice Glen Eden']",1025.0921527777778,West Region
+"['Countdown Northwest', 'Countdown Te Atatu', 'FreshChoice Ranui']",1042.3163194444444,West Region
+"['Countdown Northwest', 'Countdown Te Atatu', 'SuperValue Avondale']",967.9372222222222,West Region
+"['Countdown Northwest', 'Countdown Te Atatu', 'SuperValue Palomino']",1088.7378472222222,West Region
+"['Countdown Northwest', 'Countdown Te Atatu', 'SuperValue Titirangi']",1054.1764583333331,West Region
+"['Countdown Northwest', 'Countdown Te Atatu South', 'Countdown Westgate']",1117.5609027777778,West Region
+"['Countdown Northwest', 'Countdown Te Atatu South', 'FreshChoice Glen Eden']",977.0825000000002,West Region
+"['Countdown Northwest', 'Countdown Te Atatu South', 'FreshChoice Ranui']",999.9243055555553,West Region
+"['Countdown Northwest', 'Countdown Te Atatu South', 'SuperValue Avondale']",942.735763888889,West Region
+"['Countdown Northwest', 'Countdown Te Atatu South', 'SuperValue Palomino']",1041.4447222222225,West Region
+"['Countdown Northwest', 'Countdown Te Atatu South', 'SuperValue Titirangi']",997.3515277777778,West Region
+"['Countdown Northwest', 'Countdown Westgate', 'FreshChoice Glen Eden']",1003.6100694444445,West Region
+"['Countdown Northwest', 'Countdown Westgate', 'FreshChoice Ranui']",987.5309722222222,West Region
+"['Countdown Northwest', 'Countdown Westgate', 'SuperValue Avondale']",941.8236805555556,West Region
+"['Countdown Northwest', 'Countdown Westgate', 'SuperValue Palomino']",1044.6286111111112,West Region
+"['Countdown Northwest', 'Countdown Westgate', 'SuperValue Titirangi']",1028.0629166666668,West Region
+"['Countdown Northwest', 'FreshChoice Glen Eden', 'FreshChoice Ranui']",989.2459027777778,West Region
+"['Countdown Northwest', 'FreshChoice Glen Eden', 'SuperValue Avondale']",882.355625,West Region
+"['Countdown Northwest', 'FreshChoice Glen Eden', 'SuperValue Palomino']",1009.0046527777777,West Region
+"['Countdown Northwest', 'FreshChoice Glen Eden', 'SuperValue Titirangi']",895.271875,West Region
+"['Countdown Northwest', 'FreshChoice Ranui', 'SuperValue Avondale']",877.84,West Region
+"['Countdown Northwest', 'FreshChoice Ranui', 'SuperValue Palomino']",916.9010416666667,West Region
+"['Countdown Northwest', 'FreshChoice Ranui', 'SuperValue Titirangi']",917.2715277777778,West Region
+"['Countdown Northwest', 'SuperValue Avondale', 'SuperValue Palomino']",1045.1442361111112,West Region
+"['Countdown Northwest', 'SuperValue Avondale', 'SuperValue Titirangi']",906.9521527777778,West Region
+"['Countdown Northwest', 'SuperValue Palomino', 'SuperValue Titirangi']",957.4345138888889,West Region
+"['Countdown Te Atatu', 'Countdown Te Atatu South', 'Countdown Westgate']",1037.3709027777777,West Region
+"['Countdown Te Atatu', 'Countdown Te Atatu South', 'FreshChoice Glen Eden']",897.4575,West Region
+"['Countdown Te Atatu', 'Countdown Te Atatu South', 'FreshChoice Ranui']",919.7343055555556,West Region
+"['Countdown Te Atatu', 'Countdown Te Atatu South', 'SuperValue Avondale']",869.355625,West Region
+"['Countdown Te Atatu', 'Countdown Te Atatu South', 'SuperValue Palomino']",961.2547222222223,West Region
+"['Countdown Te Atatu', 'Countdown Te Atatu South', 'SuperValue Titirangi']",917.1615277777778,West Region
+"['Countdown Te Atatu', 'Countdown Westgate', 'FreshChoice Glen Eden']",1011.5590972222222,West Region
+"['Countdown Te Atatu', 'Countdown Westgate', 'FreshChoice Ranui']",995.48,West Region
+"['Countdown Te Atatu', 'Countdown Westgate', 'SuperValue Avondale']",949.7727083333333,West Region
+"['Countdown Te Atatu', 'Countdown Westgate', 'SuperValue Palomino']",1052.5776388888887,West Region
+"['Countdown Te Atatu', 'Countdown Westgate', 'SuperValue Titirangi']",1036.0119444444445,West Region
+"['Countdown Te Atatu', 'FreshChoice Glen Eden', 'FreshChoice Ranui']",909.0559027777778,West Region
+"['Countdown Te Atatu', 'FreshChoice Glen Eden', 'SuperValue Avondale']",816.7456250000001,West Region
+"['Countdown Te Atatu', 'FreshChoice Glen Eden', 'SuperValue Palomino']",928.814652777778,West Region
+"['Countdown Te Atatu', 'FreshChoice Glen Eden', 'SuperValue Titirangi']",829.661875,West Region
+"['Countdown Te Atatu', 'FreshChoice Ranui', 'SuperValue Avondale']",854.235,West Region
+"['Countdown Te Atatu', 'FreshChoice Ranui', 'SuperValue Palomino']",890.2231250000001,West Region
+"['Countdown Te Atatu', 'FreshChoice Ranui', 'SuperValue Titirangi']",890.52625,West Region
+"['Countdown Te Atatu', 'SuperValue Avondale', 'SuperValue Palomino']",969.5864583333333,West Region
+"['Countdown Te Atatu', 'SuperValue Avondale', 'SuperValue Titirangi']",843.868125,West Region
+"['Countdown Te Atatu', 'SuperValue Palomino', 'SuperValue Titirangi']",899.895625,West Region
+"['Countdown Te Atatu South', 'Countdown Westgate', 'FreshChoice Glen Eden']",973.2584722222222,West Region
+"['Countdown Te Atatu South', 'Countdown Westgate', 'FreshChoice Ranui']",957.1793749999999,West Region
+"['Countdown Te Atatu South', 'Countdown Westgate', 'SuperValue Avondale']",911.4720833333334,West Region
+"['Countdown Te Atatu South', 'Countdown Westgate', 'SuperValue Palomino']",1014.2770138888887,West Region
+"['Countdown Te Atatu South', 'Countdown Westgate', 'SuperValue Titirangi']",997.7113194444446,West Region
+"['Countdown Te Atatu South', 'FreshChoice Glen Eden', 'FreshChoice Ranui']",861.71625,West Region
+"['Countdown Te Atatu South', 'FreshChoice Glen Eden', 'SuperValue Avondale']",771.0525000000001,West Region
+"['Countdown Te Atatu South', 'FreshChoice Glen Eden', 'SuperValue Palomino']",877.8825,West Region
+"['Countdown Te Atatu South', 'FreshChoice Glen Eden', 'SuperValue Titirangi']",783.96875,West Region
+"['Countdown Te Atatu South', 'FreshChoice Ranui', 'SuperValue Avondale']",813.1381250000001,West Region
+"['Countdown Te Atatu South', 'FreshChoice Ranui', 'SuperValue Palomino']",849.12625,West Region
+"['Countdown Te Atatu South', 'FreshChoice Ranui', 'SuperValue Titirangi']",849.429375,West Region
+"['Countdown Te Atatu South', 'SuperValue Avondale', 'SuperValue Palomino']",936.5475000000001,West Region
+"['Countdown Te Atatu South', 'SuperValue Avondale', 'SuperValue Titirangi']",816.8362500000001,West Region
+"['Countdown Te Atatu South', 'SuperValue Palomino', 'SuperValue Titirangi']",854.7887499999999,West Region
+"['Countdown Westgate', 'FreshChoice Glen Eden', 'FreshChoice Ranui']",965.3033333333333,West Region
+"['Countdown Westgate', 'FreshChoice Glen Eden', 'SuperValue Avondale']",862.76625,West Region
+"['Countdown Westgate', 'FreshChoice Glen Eden', 'SuperValue Palomino']",985.0620833333335,West Region
+"['Countdown Westgate', 'FreshChoice Glen Eden', 'SuperValue Titirangi']",875.6825,West Region
+"['Countdown Westgate', 'FreshChoice Ranui', 'SuperValue Avondale']",873.0075,West Region
+"['Countdown Westgate', 'FreshChoice Ranui', 'SuperValue Palomino']",910.9946527777779,West Region
+"['Countdown Westgate', 'FreshChoice Ranui', 'SuperValue Titirangi']",911.365138888889,West Region
+"['Countdown Westgate', 'SuperValue Avondale', 'SuperValue Palomino']",1021.2024305555556,West Region
+"['Countdown Westgate', 'SuperValue Avondale', 'SuperValue Titirangi']",886.099375,West Region
+"['Countdown Westgate', 'SuperValue Palomino', 'SuperValue Titirangi']",933.4927083333333,West Region
+"['FreshChoice Glen Eden', 'FreshChoice Ranui', 'SuperValue Avondale']",771.530625,West Region
+"['FreshChoice Glen Eden', 'FreshChoice Ranui', 'SuperValue Palomino']",807.51875,West Region
+"['FreshChoice Glen Eden', 'FreshChoice Ranui', 'SuperValue Titirangi']",807.821875,West Region
+"['FreshChoice Glen Eden', 'SuperValue Avondale', 'SuperValue Palomino']",844.421875,West Region
+"['FreshChoice Glen Eden', 'SuperValue Avondale', 'SuperValue Titirangi']",731.3556249999999,West Region
+"['FreshChoice Glen Eden', 'SuperValue Palomino', 'SuperValue Titirangi']",795.37625,West Region
+"['FreshChoice Ranui', 'SuperValue Avondale', 'SuperValue Palomino']",915.4947222222222,West Region
+"['FreshChoice Ranui', 'SuperValue Avondale', 'SuperValue Titirangi']",799.6112499999999,West Region
+"['FreshChoice Ranui', 'SuperValue Palomino', 'SuperValue Titirangi']",792.79,West Region
+"['SuperValue Avondale', 'SuperValue Palomino', 'SuperValue Titirangi']",801.25,West Region
+"['Countdown Henderson', 'FreshChoice Glen Eden', 'FreshChoice Ranui', 'SuperValue Avondale']",1110.766875,West Region
+"['Countdown Henderson', 'FreshChoice Glen Eden', 'FreshChoice Ranui', 'SuperValue Palomino']",1154.7523611111114,West Region
+"['Countdown Henderson', 'FreshChoice Glen Eden', 'FreshChoice Ranui', 'SuperValue Titirangi']",1155.1228472222222,West Region
+"['Countdown Henderson', 'FreshChoice Glen Eden', 'SuperValue Avondale', 'SuperValue Palomino']",1199.8561805555555,West Region
+"['Countdown Henderson', 'FreshChoice Glen Eden', 'SuperValue Avondale', 'SuperValue Titirangi']",1061.6640972222224,West Region
+"['Countdown Henderson', 'FreshChoice Glen Eden', 'SuperValue Palomino', 'SuperValue Titirangi']",1139.9115277777778,West Region
+"['Countdown Henderson', 'FreshChoice Ranui', 'SuperValue Avondale', 'SuperValue Palomino']",1262.4118055555555,West Region
+"['Countdown Henderson', 'FreshChoice Ranui', 'SuperValue Avondale', 'SuperValue Titirangi']",1124.2197222222223,West Region
+"['Countdown Henderson', 'FreshChoice Ranui', 'SuperValue Palomino', 'SuperValue Titirangi']",1115.8826388888888,West Region
+"['Countdown Henderson', 'SuperValue Avondale', 'SuperValue Palomino', 'SuperValue Titirangi']",1224.6069444444443,West Region
+"['Countdown Hobsonville', 'FreshChoice Glen Eden', 'FreshChoice Ranui', 'SuperValue Avondale']",1218.1177083333334,West Region
+"['Countdown Hobsonville', 'FreshChoice Glen Eden', 'FreshChoice Ranui', 'SuperValue Palomino']",1262.1031944444444,West Region
+"['Countdown Hobsonville', 'FreshChoice Glen Eden', 'FreshChoice Ranui', 'SuperValue Titirangi']",1262.4736805555556,West Region
+"['Countdown Hobsonville', 'FreshChoice Glen Eden', 'SuperValue Avondale', 'SuperValue Palomino']",1307.207013888889,West Region
+"['Countdown Hobsonville', 'FreshChoice Glen Eden', 'SuperValue Avondale', 'SuperValue Titirangi']",1169.0149305555558,West Region
+"['Countdown Hobsonville', 'FreshChoice Glen Eden', 'SuperValue Palomino', 'SuperValue Titirangi']",1247.262361111111,West Region
+"['Countdown Hobsonville', 'FreshChoice Ranui', 'SuperValue Avondale', 'SuperValue Palomino']",1330.3994444444443,West Region
+"['Countdown Hobsonville', 'FreshChoice Ranui', 'SuperValue Avondale', 'SuperValue Titirangi']",1192.2073611111114,West Region
+"['Countdown Hobsonville', 'FreshChoice Ranui', 'SuperValue Palomino', 'SuperValue Titirangi']",1183.8702777777776,West Region
+"['Countdown Hobsonville', 'SuperValue Avondale', 'SuperValue Palomino', 'SuperValue Titirangi']",1283.4019444444443,West Region
+"['Countdown Kelston', 'FreshChoice Glen Eden', 'FreshChoice Ranui', 'SuperValue Avondale']",1061.954375,West Region
+"['Countdown Kelston', 'FreshChoice Glen Eden', 'FreshChoice Ranui', 'SuperValue Palomino']",1105.9398611111112,West Region
+"['Countdown Kelston', 'FreshChoice Glen Eden', 'FreshChoice Ranui', 'SuperValue Titirangi']",1106.3103472222222,West Region
+"['Countdown Kelston', 'FreshChoice Glen Eden', 'SuperValue Avondale', 'SuperValue Palomino']",1151.0436805555555,West Region
+"['Countdown Kelston', 'FreshChoice Glen Eden', 'SuperValue Avondale', 'SuperValue Titirangi']",1012.8515972222224,West Region
+"['Countdown Kelston', 'FreshChoice Glen Eden', 'SuperValue Palomino', 'SuperValue Titirangi']",1091.0990277777776,West Region
+"['Countdown Kelston', 'FreshChoice Ranui', 'SuperValue Avondale', 'SuperValue Palomino']",1287.1961805555557,West Region
+"['Countdown Kelston', 'FreshChoice Ranui', 'SuperValue Avondale', 'SuperValue Titirangi']",1149.0040972222225,West Region
+"['Countdown Kelston', 'FreshChoice Ranui', 'SuperValue Palomino', 'SuperValue Titirangi']",1140.667013888889,West Region
+"['Countdown Kelston', 'SuperValue Avondale', 'SuperValue Palomino', 'SuperValue Titirangi']",1172.7281944444446,West Region
+"['Countdown Lincoln Road', 'FreshChoice Glen Eden', 'FreshChoice Ranui', 'SuperValue Avondale']",1124.9958333333334,West Region
+"['Countdown Lincoln Road', 'FreshChoice Glen Eden', 'FreshChoice Ranui', 'SuperValue Palomino']",1168.9813194444444,West Region
+"['Countdown Lincoln Road', 'FreshChoice Glen Eden', 'FreshChoice Ranui', 'SuperValue Titirangi']",1169.3518055555553,West Region
+"['Countdown Lincoln Road', 'FreshChoice Glen Eden', 'SuperValue Avondale', 'SuperValue Palomino']",1214.085138888889,West Region
+"['Countdown Lincoln Road', 'FreshChoice Glen Eden', 'SuperValue Avondale', 'SuperValue Titirangi']",1075.8930555555557,West Region
+"['Countdown Lincoln Road', 'FreshChoice Glen Eden', 'SuperValue Palomino', 'SuperValue Titirangi']",1154.140486111111,West Region
+"['Countdown Lincoln Road', 'FreshChoice Ranui', 'SuperValue Avondale', 'SuperValue Palomino']",1229.8518055555553,West Region
+"['Countdown Lincoln Road', 'FreshChoice Ranui', 'SuperValue Avondale', 'SuperValue Titirangi']",1091.6597222222222,West Region
+"['Countdown Lincoln Road', 'FreshChoice Ranui', 'SuperValue Palomino', 'SuperValue Titirangi']",1083.322638888889,West Region
+"['Countdown Lincoln Road', 'SuperValue Avondale', 'SuperValue Palomino', 'SuperValue Titirangi']",1211.6162499999998,West Region
+"['Countdown Lynmall', 'Countdown Te Atatu', 'FreshChoice Glen Eden', 'FreshChoice Ranui']",1243.0097916666666,West Region
+"['Countdown Lynmall', 'Countdown Te Atatu', 'FreshChoice Glen Eden', 'SuperValue Avondale']",1132.1985416666669,West Region
+"['Countdown Lynmall', 'Countdown Te Atatu', 'FreshChoice Glen Eden', 'SuperValue Titirangi']",1147.9850694444444,West Region
+"['Countdown Lynmall', 'Countdown Te Atatu', 'FreshChoice Ranui', 'SuperValue Avondale']",1178.0188888888888,West Region
+"['Countdown Lynmall', 'Countdown Te Atatu', 'FreshChoice Ranui', 'SuperValue Titirangi']",1222.3748611111112,West Region
+"['Countdown Lynmall', 'Countdown Te Atatu', 'SuperValue Avondale', 'SuperValue Titirangi']",1165.348263888889,West Region
+"['Countdown Lynmall', 'Countdown Te Atatu South', 'FreshChoice Glen Eden', 'FreshChoice Ranui']",1187.162638888889,West Region
+"['Countdown Lynmall', 'Countdown Te Atatu South', 'FreshChoice Glen Eden', 'SuperValue Avondale']",1076.351388888889,West Region
+"['Countdown Lynmall', 'Countdown Te Atatu South', 'FreshChoice Glen Eden', 'SuperValue Titirangi']",1092.1379166666668,West Region
+"['Countdown Lynmall', 'Countdown Te Atatu South', 'FreshChoice Ranui', 'SuperValue Avondale']",1127.789375,West Region
+"['Countdown Lynmall', 'Countdown Te Atatu South', 'FreshChoice Ranui', 'SuperValue Titirangi']",1172.145347222222,West Region
+"['Countdown Lynmall', 'Countdown Te Atatu South', 'SuperValue Avondale', 'SuperValue Titirangi']",1132.3093055555555,West Region
+"['Countdown Lynmall', 'FreshChoice Glen Eden', 'FreshChoice Ranui', 'SuperValue Avondale']",1032.1222222222223,West Region
+"['Countdown Lynmall', 'FreshChoice Glen Eden', 'FreshChoice Ranui', 'SuperValue Palomino']",1076.1077083333332,West Region
+"['Countdown Lynmall', 'FreshChoice Glen Eden', 'FreshChoice Ranui', 'SuperValue Titirangi']",1076.4781944444446,West Region
+"['Countdown Lynmall', 'FreshChoice Glen Eden', 'SuperValue Avondale', 'SuperValue Palomino']",1121.211527777778,West Region
+"['Countdown Lynmall', 'FreshChoice Glen Eden', 'SuperValue Avondale', 'SuperValue Titirangi']",983.0194444444445,West Region
+"['Countdown Lynmall', 'FreshChoice Glen Eden', 'SuperValue Palomino', 'SuperValue Titirangi']",1061.266875,West Region
+"['Countdown Lynmall', 'FreshChoice Ranui', 'SuperValue Avondale', 'SuperValue Palomino']",1249.448611111111,West Region
+"['Countdown Lynmall', 'FreshChoice Ranui', 'SuperValue Avondale', 'SuperValue Titirangi']",1111.2565277777778,West Region
+"['Countdown Lynmall', 'FreshChoice Ranui', 'SuperValue Palomino', 'SuperValue Titirangi']",1102.9194444444447,West Region
+"['Countdown Lynmall', 'SuperValue Avondale', 'SuperValue Palomino', 'SuperValue Titirangi']",1088.6339583333333,West Region
+"['Countdown Northwest', 'FreshChoice Glen Eden', 'FreshChoice Ranui', 'SuperValue Avondale']",1194.1995833333335,West Region
+"['Countdown Northwest', 'FreshChoice Glen Eden', 'FreshChoice Ranui', 'SuperValue Palomino']",1238.1850694444445,West Region
+"['Countdown Northwest', 'FreshChoice Glen Eden', 'FreshChoice Ranui', 'SuperValue Titirangi']",1238.5555555555557,West Region
+"['Countdown Northwest', 'FreshChoice Glen Eden', 'SuperValue Avondale', 'SuperValue Palomino']",1283.2888888888888,West Region
+"['Countdown Northwest', 'FreshChoice Glen Eden', 'SuperValue Avondale', 'SuperValue Titirangi']",1145.0968055555554,West Region
+"['Countdown Northwest', 'FreshChoice Glen Eden', 'SuperValue Palomino', 'SuperValue Titirangi']",1223.344236111111,West Region
+"['Countdown Northwest', 'FreshChoice Ranui', 'SuperValue Avondale', 'SuperValue Palomino']",1277.7697916666664,West Region
+"['Countdown Northwest', 'FreshChoice Ranui', 'SuperValue Avondale', 'SuperValue Titirangi']",1139.5777083333332,West Region
+"['Countdown Northwest', 'FreshChoice Ranui', 'SuperValue Palomino', 'SuperValue Titirangi']",1131.2406250000001,West Region
+"['Countdown Northwest', 'SuperValue Avondale', 'SuperValue Palomino', 'SuperValue Titirangi']",1259.4838194444446,West Region
+"['Countdown Te Atatu', 'Countdown Te Atatu South', 'FreshChoice Glen Eden', 'FreshChoice Ranui']",1184.0612499999997,West Region
+"['Countdown Te Atatu', 'Countdown Te Atatu South', 'FreshChoice Glen Eden', 'SuperValue Avondale']",1073.25,West Region
+"['Countdown Te Atatu', 'Countdown Te Atatu South', 'FreshChoice Glen Eden', 'SuperValue Titirangi']",1089.0365277777778,West Region
+"['Countdown Te Atatu', 'Countdown Te Atatu South', 'FreshChoice Ranui', 'SuperValue Avondale']",1124.6879861111113,West Region
+"['Countdown Te Atatu', 'Countdown Te Atatu South', 'FreshChoice Ranui', 'SuperValue Titirangi']",1169.0439583333332,West Region
+"['Countdown Te Atatu', 'Countdown Te Atatu South', 'SuperValue Avondale', 'SuperValue Titirangi']",1129.2079166666667,West Region
+"['Countdown Te Atatu', 'FreshChoice Glen Eden', 'FreshChoice Ranui', 'SuperValue Avondale']",1114.0095833333335,West Region
+"['Countdown Te Atatu', 'FreshChoice Glen Eden', 'FreshChoice Ranui', 'SuperValue Palomino']",1157.9950694444444,West Region
+"['Countdown Te Atatu', 'FreshChoice Glen Eden', 'FreshChoice Ranui', 'SuperValue Titirangi']",1158.3655555555554,West Region
+"['Countdown Te Atatu', 'FreshChoice Glen Eden', 'SuperValue Avondale', 'SuperValue Palomino']",1203.0988888888892,West Region
+"['Countdown Te Atatu', 'FreshChoice Glen Eden', 'SuperValue Avondale', 'SuperValue Titirangi']",1064.9068055555558,West Region
+"['Countdown Te Atatu', 'FreshChoice Glen Eden', 'SuperValue Palomino', 'SuperValue Titirangi']",1143.154236111111,West Region
+"['Countdown Te Atatu', 'FreshChoice Ranui', 'SuperValue Avondale', 'SuperValue Palomino']",1248.9192361111109,West Region
+"['Countdown Te Atatu', 'FreshChoice Ranui', 'SuperValue Avondale', 'SuperValue Titirangi']",1110.7271527777777,West Region
+"['Countdown Te Atatu', 'FreshChoice Ranui', 'SuperValue Palomino', 'SuperValue Titirangi']",1102.3900694444446,West Region
+"['Countdown Te Atatu', 'SuperValue Avondale', 'SuperValue Palomino', 'SuperValue Titirangi']",1183.9260416666666,West Region
+"['Countdown Te Atatu South', 'FreshChoice Glen Eden', 'FreshChoice Ranui', 'SuperValue Avondale']",1058.1624305555554,West Region
+"['Countdown Te Atatu South', 'FreshChoice Glen Eden', 'FreshChoice Ranui', 'SuperValue Palomino']",1102.1479166666666,West Region
+"['Countdown Te Atatu South', 'FreshChoice Glen Eden', 'FreshChoice Ranui', 'SuperValue Titirangi']",1102.5184027777777,West Region
+"['Countdown Te Atatu South', 'FreshChoice Glen Eden', 'SuperValue Avondale', 'SuperValue Palomino']",1147.251736111111,West Region
+"['Countdown Te Atatu South', 'FreshChoice Glen Eden', 'SuperValue Avondale', 'SuperValue Titirangi']",1009.059652777778,West Region
+"['Countdown Te Atatu South', 'FreshChoice Glen Eden', 'SuperValue Palomino', 'SuperValue Titirangi']",1087.3070833333334,West Region
+"['Countdown Te Atatu South', 'FreshChoice Ranui', 'SuperValue Avondale', 'SuperValue Palomino']",1198.6897222222224,West Region
+"['Countdown Te Atatu South', 'FreshChoice Ranui', 'SuperValue Avondale', 'SuperValue Titirangi']",1060.497638888889,West Region
+"['Countdown Te Atatu South', 'FreshChoice Ranui', 'SuperValue Palomino', 'SuperValue Titirangi']",1052.1605555555552,West Region
+"['Countdown Te Atatu South', 'SuperValue Avondale', 'SuperValue Palomino', 'SuperValue Titirangi']",1150.8870833333333,West Region
+"['Countdown Westgate', 'FreshChoice Glen Eden', 'FreshChoice Ranui', 'SuperValue Avondale']",1170.2570138888889,West Region
+"['Countdown Westgate', 'FreshChoice Glen Eden', 'FreshChoice Ranui', 'SuperValue Palomino']",1214.2425,West Region
+"['Countdown Westgate', 'FreshChoice Glen Eden', 'FreshChoice Ranui', 'SuperValue Titirangi']",1214.612986111111,West Region
+"['Countdown Westgate', 'FreshChoice Glen Eden', 'SuperValue Avondale', 'SuperValue Palomino']",1259.3463194444444,West Region
+"['Countdown Westgate', 'FreshChoice Glen Eden', 'SuperValue Avondale', 'SuperValue Titirangi']",1121.1542361111112,West Region
+"['Countdown Westgate', 'FreshChoice Glen Eden', 'SuperValue Palomino', 'SuperValue Titirangi']",1199.4016666666666,West Region
+"['Countdown Westgate', 'FreshChoice Ranui', 'SuperValue Avondale', 'SuperValue Palomino']",1271.8634027777775,West Region
+"['Countdown Westgate', 'FreshChoice Ranui', 'SuperValue Avondale', 'SuperValue Titirangi']",1133.6713194444446,West Region
+"['Countdown Westgate', 'FreshChoice Ranui', 'SuperValue Palomino', 'SuperValue Titirangi']",1125.334236111111,West Region
+"['Countdown Westgate', 'SuperValue Avondale', 'SuperValue Palomino', 'SuperValue Titirangi']",1235.5420138888887,West Region
+"['FreshChoice Glen Eden', 'FreshChoice Ranui', 'SuperValue Avondale', 'SuperValue Palomino']",1147.8361111111112,West Region
+"['FreshChoice Glen Eden', 'FreshChoice Ranui', 'SuperValue Avondale', 'SuperValue Titirangi']",1009.6440277777776,West Region
+"['FreshChoice Glen Eden', 'FreshChoice Ranui', 'SuperValue Palomino', 'SuperValue Titirangi']",1001.3069444444445,West Region
+"['FreshChoice Glen Eden', 'SuperValue Avondale', 'SuperValue Palomino', 'SuperValue Titirangi']",1046.4107638888888,West Region
+"['FreshChoice Ranui', 'SuperValue Avondale', 'SuperValue Palomino', 'SuperValue Titirangi']",1129.8343055555554,West Region
+['Countdown Papakura'],463.28875,Southern Most Region
+['Countdown Roselands'],484.6975,Southern Most Region
+['Countdown Takanini'],451.8375,Southern Most Region
+['SuperValue Papakura'],382.928125,Southern Most Region
+"['Countdown Papakura', 'Countdown Roselands']",726.88375,Southern Most Region
+"['Countdown Papakura', 'Countdown Takanini']",724.491875,Southern Most Region
+"['Countdown Papakura', 'SuperValue Papakura']",619.068125,Southern Most Region
+"['Countdown Roselands', 'Countdown Takanini']",738.205,Southern Most Region
+"['Countdown Roselands', 'SuperValue Papakura']",639.298125,Southern Most Region
+"['Countdown Takanini', 'SuperValue Papakura']",646.208125,Southern Most Region
+"['Countdown Papakura', 'Countdown Roselands', 'Countdown Takanini']",998.2559722222223,Southern Most Region
+"['Countdown Papakura', 'Countdown Roselands', 'SuperValue Papakura']",881.484375,Southern Most Region
+"['Countdown Papakura', 'Countdown Takanini', 'SuperValue Papakura']",923.0541666666668,Southern Most Region
+"['Countdown Roselands', 'Countdown Takanini', 'SuperValue Papakura']",939.8146527777778,Southern Most Region

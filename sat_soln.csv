@@ -1,17 +1,17 @@
 ,Route,Region,Cost
-0,"('Countdown Greenlane', 'Countdown Newmarket', 'Countdown Ponsonby', 'Countdown Victoria Street West')",['Central Region'],716.928125
-1,"('Countdown Mt Roskill', 'Countdown Pt Chevalier', 'Countdown St Lukes', 'Countdown Three Kings')",['Central Region'],708.39
-2,"('Countdown Airport', 'Countdown Mangere East', 'Countdown Mangere Mall')",['South Region'],522.500625
-3,"('Countdown Manukau', 'Countdown Manukau Mall', 'Countdown Manurewa', 'Countdown Papatoetoe')",['South Region'],705.2731249999999
-4,"('Countdown Birkenhead', 'Countdown Glenfield', 'Countdown Northcote')",['North Region'],756.358125
-5,"('Countdown Browns Bay', 'Countdown Mairangi Bay', 'Countdown Sunnynook')",['North Region'],767.3143749999999
-6,"('Countdown Hauraki Corner', 'Countdown Milford', 'Countdown Takapuna')",['North Region'],672.734375
-7,"('Countdown Mt Wellington', 'Countdown Sylvia Park')",['East Region'],362.58
-8,"('Countdown Blockhouse Bay', 'Countdown Lynfield', 'Countdown Onehunga')",['Central Region'],499.28625
-9,"('Countdown Aviemore Drive', 'Countdown Highland Park', 'Countdown Meadowbank', 'Countdown St Johns')",['East Region'],784.2975
-10,"('Countdown Botany Downs', 'Countdown Howick', 'Countdown Meadowlands', 'Countdown Pakuranga')",['East Region'],707.226875
-11,"('Countdown Kelston', 'Countdown Lynmall')",['West Region'],454.33875
-12,"('Countdown Hobsonville', 'Countdown Northwest', 'Countdown Westgate')",['West Region'],765.5287500000001
-13,"('Countdown Henderson', 'Countdown Lincoln Road', 'Countdown Te Atatu', 'Countdown Te Atatu South')",['West Region'],838.914375
-14,"('Countdown Papakura', 'Countdown Roselands', 'Countdown Takanini')",['Southern Most Region'],671.01625
-15,"('Countdown Auckland City', 'Countdown Grey Lynn', 'Countdown Grey Lynn Central', 'Countdown Mt Eden')",['Central Region'],787.7175
+0,"['Countdown Greenlane', 'Countdown Newmarket', 'Countdown Ponsonby', 'Countdown Victoria Street West']",Central Region,716.928125
+1,"['Countdown Mt Roskill', 'Countdown Pt Chevalier', 'Countdown St Lukes', 'Countdown Three Kings']",Central Region,708.39
+2,"['Countdown Airport', 'Countdown Mangere East', 'Countdown Mangere Mall']",South Region,522.500625
+3,"['Countdown Manukau', 'Countdown Manukau Mall', 'Countdown Manurewa', 'Countdown Papatoetoe']",South Region,705.2731249999998
+4,"['Countdown Birkenhead', 'Countdown Glenfield', 'Countdown Northcote']",North Region,756.358125
+5,"['Countdown Browns Bay', 'Countdown Mairangi Bay', 'Countdown Sunnynook']",North Region,767.3143749999998
+6,"['Countdown Hauraki Corner', 'Countdown Milford', 'Countdown Takapuna']",North Region,672.734375
+7,"['Countdown Mt Wellington', 'Countdown Sylvia Park']",East Region,362.58
+8,"['Countdown Blockhouse Bay', 'Countdown Lynfield', 'Countdown Onehunga']",Central Region,499.28625
+9,"['Countdown Aviemore Drive', 'Countdown Highland Park', 'Countdown Meadowbank', 'Countdown St Johns']",East Region,784.2975
+10,"['Countdown Botany Downs', 'Countdown Howick', 'Countdown Meadowlands', 'Countdown Pakuranga']",East Region,707.226875
+11,"['Countdown Kelston', 'Countdown Lynmall']",West Region,454.33875
+12,"['Countdown Hobsonville', 'Countdown Northwest', 'Countdown Westgate']",West Region,765.5287500000002
+13,"['Countdown Henderson', 'Countdown Lincoln Road', 'Countdown Te Atatu', 'Countdown Te Atatu South']",West Region,838.914375
+14,"['Countdown Papakura', 'Countdown Roselands', 'Countdown Takanini']",Southern Most Region,671.01625
+15,"['Countdown Auckland City', 'Countdown Grey Lynn', 'Countdown Grey Lynn Central', 'Countdown Mt Eden']",Central Region,787.7175
