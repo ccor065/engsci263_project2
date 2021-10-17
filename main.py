@@ -3,12 +3,12 @@ import pandas as pd
 import numpy as np
 from pulp.constants import LpMinimize
 from collections import Counter
-import openrouteservice as ors
+#import openrouteservice as ors
 import folium
 from scipy import stats
 import matplotlib.pyplot as plt
 from random import randint
-
+import random
 ORSkey = '5b3ce3597851110001cf6248324acec39fa94080ac19d056286d0ccb'
 
 
@@ -348,6 +348,7 @@ def construct_matrix(day_df,storeSeries): # Consruct adjacency matrix for solver
     return matrix
 
 ## Simulate with uncertainty functions
+<<<<<<< HEAD
 ''' REMOVE THESE FUNCTIONS AND EDIT FOR BOOT-STRAPPPING'''
 def alphaBetaFromAmB(a, m, b): 
     # Taken from code by David L. Mueller
@@ -371,32 +372,52 @@ def generate(a, m, b):
     value = stats.beta.rvs(alpha, beta) * scale + location
     
     return value
+=======
+## Bootstrapping distribution for demand
+def bootstrap(mean, sd):
+    # generate normal distribution from the mean and standard deviation for a given day, simulates population distribution
+    randMeans = np.random.normal(loc = mean, scale = sd, size = 1000)
+    # bootstrap 1000 samples 
+    sampMean = []
+    for i in range(100):
+        # takes sample of size 50 from population
+        sampleTaken = np.random.choice(randMeans, replace = True, size = 50)
+        # calculates mean of sample
+        sampAvg = np.mean(sampleTaken)
+        sampMean.append(sampAvg)
+    # estimate mean from list of sampleMeans after the boostrap
+    m = np.mean(sampMean)
+    return m
+
+
+
+>>>>>>> refs/remotes/origin/main
 def generateDemandsSat(stores_df,saturday_stores):
     sat_demands = stores_df[stores_df["Saturday"] != 0]
-
     demands = []
     for i in range(len(saturday_stores)):
-        mu = sat_demands.iloc[i]["Saturday"]
-        demands.append(round(generate(mu-2, mu, mu+2)))
+        mu = sat_demands.iloc[i]["WeekendMu"]
+        sigma = sat_demands.iloc[i]["WeekendSd"]
+        demands.append(round(bootstrap(mu,sigma)))
     sat_stores = pd.DataFrame({'Store':saturday_stores, 'Demand':demands})
     return sat_stores
 def generateDemandsWeek(weekday_stores):
     # generate demand data frames
-    w_vairance = pd.read_csv("assignment_resources/pert_beta.csv")
-
+    demand_data = pd.read_csv("assignment_resources/DemandMeanSD.csv")
     demands = []
     for i in range(65):
-        a = w_vairance.iloc[i]["a"]
-        mu =  w_vairance.iloc[i]["mu"]
-        b =  w_vairance.iloc[i]["b"]
-        demand = generate(a, mu, b)
+        mu = demand_data.iloc[i]["WeekdayMu"]
+        sigma =  demand_data.iloc[i]["WeekdaySd"]
+        demand = bootstrap(mu, sigma)
         demands.append(round(demand)) 
     weekday_stores = pd.DataFrame({'Store':weekday_stores, 'Demand':demands})
-
     return weekday_stores
 
+<<<<<<< HEAD
 ''' END OF FUNCTIONS TO REMOVE'''
 
+=======
+>>>>>>> refs/remotes/origin/main
 def getDurationsVariance(store_demands, route_set):
     """
     This function calculates the time taken of a set of valid routes and 
@@ -441,8 +462,14 @@ def getDurationsVariance(store_demands, route_set):
                 nPallets = row["Demand"].values[0]
                 duration += 450* nPallets
         # inttroduce vairiance
+<<<<<<< HEAD
         """ CHANGE ME"""
         multiplcationFactor = generate(0.85, 1, 1.35)
+=======
+        multiplcationFactor = np.random.normal(loc=1, scale= 0.2) # Normal distribution, small deviation
+        if multiplcationFactor < 0.8:
+            multiplcationFactor = 0.8 # Cut off factor values below lower range
+>>>>>>> refs/remotes/origin/main
         duration = (duration *multiplcationFactor)/60
         #return in duration in mins
         duration_set.append(duration)
@@ -671,8 +698,8 @@ if __name__ == "__main__":
     
             
     # Map the optimal routes per region per day :)
-    mapByRegion(satRoutes, stores_df, "Saturday")
-    mapByRegion(weekRoutes, stores_df, "Weekday")
+    # mapByRegion(satRoutes, stores_df, "Saturday")
+    # mapByRegion(weekRoutes, stores_df, "Weekday")
     n = 1000
     lwr = int(0.025 * n)
     uper = int(0.975 * n)
@@ -732,7 +759,7 @@ if __name__ == "__main__":
     plt.axvline(x = sat_costs[lwr], linestyle='dashed', color='red')
     plt.axvline(x = sat_costs[uper], linestyle='dashed', color='red')
 
-    plt.title("Cost distubtion for Saturdays for 1000 Simulations")
+    plt.title("Cost distribution for Saturdays for 1000 Simulations")
     plt.ylabel("Occurance")
     plt.xlabel("Cost")
     plt.savefig('saturday_sim_distribution ',dpi=300)
