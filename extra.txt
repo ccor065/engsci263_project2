@@ -1,0 +1,21 @@
+loop 1000 simulations
+    Generate demands
+        gets demands for each store
+        gets new cost for each route
+        based off new generated duration.
+    loop through optimal routes
+        check if theyre still valid
+            if so add to list of routes
+        if not valid
+            add store to list of dropped stores
+            add route (without dropped store to routes)
+        if there are 2 or more dropped stores
+            solve for optimal routes
+            get costs for generated routes
+        one store
+            add to list of routes
+        zero stores 
+            do nothing
+        sum costs
+        add cost to list of optimal costs
+            

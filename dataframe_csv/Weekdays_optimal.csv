@@ -1,0 +1,25 @@
+,Route,Region,Cost
+0,"['Countdown Meadowbank', 'Countdown St Johns', 'Countdown Sylvia Park']",East Region,981.522222222222
+1,"['Countdown Mt Wellington', 'Countdown Pakuranga', 'FreshChoice Otahuhu']",East Region,802.8325
+2,"['Countdown Mt Roskill', 'Countdown Three Kings']",Central Region,685.97875
+3,"['Countdown Northwest', 'Countdown Westgate']",West Region,766.53
+4,"['Countdown Henderson', 'FreshChoice Glen Eden', 'SuperValue Titirangi']",West Region,827.0087500000002
+5,"['Countdown Hobsonville', 'Countdown Te Atatu', 'Countdown Te Atatu South']",West Region,1084.7152083333333
+6,"['Countdown Kelston', 'Countdown Lynmall', 'SuperValue Avondale']",West Region,850.61
+7,"['Countdown Lincoln Road', 'FreshChoice Ranui', 'SuperValue Palomino']",West Region,874.6225000000002
+8,['Countdown Takanini'],Southern Most Region,451.8375
+9,"['Countdown Papakura', 'Countdown Roselands', 'SuperValue Papakura']",Southern Most Region,881.484375
+10,"['Countdown Auckland City', 'Countdown Victoria Street West', 'Countdown Metro Halsey Street']",Central Region,909.356875
+11,"['Countdown Blockhouse Bay', 'Countdown Lynfield', 'Countdown Onehunga']",Central Region,893.03625
+12,"['Countdown Greenlane', 'Countdown Newmarket', 'Countdown Pt Chevalier']",Central Region,976.7975694444448
+13,"['Countdown Grey Lynn', 'Countdown Grey Lynn Central', 'Countdown St Lukes']",Central Region,962.4952777777776
+14,"['Countdown Mt Eden', 'Countdown Ponsonby', 'Countdown Metro Albert Street']",Central Region,901.0755555555555
+15,"['Countdown Airport', 'Countdown Mangere Mall', 'FreshChoice Mangere Bridge']",South Region,739.2068750000002
+16,"['Countdown Mangere East', 'Countdown Papatoetoe', 'SuperValue Flatbush']",South Region,854.371875
+17,"['Countdown Manukau', 'Countdown Manukau Mall', 'Countdown Manurewa']",South Region,928.1347916666666
+18,"['Countdown Birkenhead', 'Countdown Northcote']",North Region,771.8824999999998
+19,"['Countdown Browns Bay', 'Countdown Mairangi Bay']",North Region,942.8556944444445
+20,"['Countdown Glenfield', 'Countdown Sunnynook']",North Region,819.9593749999998
+21,"['Countdown Hauraki Corner', 'Countdown Milford', 'Countdown Takapuna']",North Region,1103.4809027777776
+22,"['Countdown Aviemore Drive', 'Countdown Highland Park', 'Countdown Meadowlands']",East Region,972.337986111111
+23,"['Countdown Botany Downs', 'Countdown Howick', 'FreshChoice Half Moon Bay']",East Region,965.3911805555554

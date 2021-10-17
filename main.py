@@ -1,3 +1,4 @@
+from pandas.core.frame import DataFrame
 from pulp import *
 import pandas as pd
 import numpy as np
@@ -7,6 +8,7 @@ import folium
 from scipy import stats
 import matplotlib.pyplot as plt
 from  random import randint
+from multiprocessing import Pool
 ORSkey = '5b3ce3597851110001cf6248324acec39fa94080ac19d056286d0ccb'
 
 
@@ -151,7 +153,53 @@ def readInWeekDF():
         df.at[i,"Route"] = route
 
     return df
+def getSatOptimal():
+    '''
+    This function reads in a csv file containing the data for weekday feasible routes
+    ---------------------------------------------------------------------------------
+    Returns:
+            df: pandas dataframe
+                dataframe containing, feasible routes, their costs and the region the 
+                route is in
+    '''
+    df = pd.read_csv("dataframe_csv/Saturday_optimal.csv")
+    routes = df["Route"]
+    for i in range(len(df)):
+        route = routes[i]
+        route = route.replace('[','')
+        route = route.replace(']','')
+        route = route.replace("'",'')
+        route = route.split(',')
+        route = [ele.strip() for ele in route]
+        
+        df.at[i,"Route"] = route
+    f = open('SaturdayObjectiveValue.txt', 'r')
+    objVal = float((f.readline()))
 
+    return df, objVal
+def getWeekOptimal():
+    '''
+    This function reads in a csv file containing the data for weekday feasible routes
+    ---------------------------------------------------------------------------------
+    Returns:
+            df: pandas dataframe
+                dataframe containing, feasible routes, their costs and the region the 
+                route is in
+    '''
+    df = pd.read_csv("dataframe_csv/Weekdays_optimal.csv")
+    routes = df["Route"]
+    for i in range(len(df)):
+        route = routes[i]
+        route = route.replace('[','')
+        route = route.replace(']','')
+        route = route.replace("'",'')
+        route = route.split(',')
+        route = [ele.strip() for ele in route]
+        
+        df.at[i,"Route"] = route
+    f = open('WeekdaysObjectiveValue.txt', 'r')
+    objVal = float((f.readline()))
+    return df, objVal
 ## Linear programme solver and helper function.
 def solve(day_df, stores, day):
     """
@@ -165,8 +213,10 @@ def solve(day_df, stores, day):
         day:    String
                 name of the day that is being solved
     -------------------------------
-    Returns:
-        value(prob.objective): float
+    Returns: NONE
+    -----------------------------
+    NOTE: the following are saved to files to be read in later.
+        objectiveValue: float
                                 optimal cost of solution
         optimalRoutes: pandas dataframe
                         contains optimal routes, their individual costs and 
@@ -214,8 +264,12 @@ def solve(day_df, stores, day):
     optimalRoutes = pd.DataFrame({"Route":optimalRoutes, "Region":corRegion, "Cost":corCosts})
     # The optimised objective function valof Ingredients pue is printed to the screen    
     print("Total Cost = ", value(prob.objective))
-    # return objective value and the optimal routes
-    return  value(prob.objective), optimalRoutes
+    # return objective value and the optimal routes'
+    optimalRoutes.to_csv("dataframe_csv/%s_optimal.csv"%day)
+    optimalCost = value(prob.objective)
+    with open('%sObjectiveValue.txt'%day, 'w') as f:
+        f.write(str(optimalCost))
+    return  
 def construct_matrix(day_df,storeSeries): 
 
     """
@@ -540,7 +594,7 @@ def simulateWeek(route_df, stores, n):
         optimal_costs[i]= (sum(costs) + extraStores_cost)
         
     return optimal_costs, extraStores_list
-def simulateSat(stores_df, route_df, stores, n):
+def simulateSat(route_df, stores, n):
     prior_routes = route_df["Route"]
     extraStores_list = []
     optimal_costs =np.zeros(n)
@@ -595,80 +649,101 @@ if __name__ == "__main__":
     # List of stores that recive deliveries on saturdays
     saturday_stores = (stores_df.loc[stores_df["Saturday"] != 0, ["Store"]])["Store"]
    
-    # Solve saturday and sunday to obtain optimal cost and the optimal route set.
-    satCost, satRoutes = solve(sat_df, saturday_stores, "Saturday")
-    weekCost, weekRoutes = solve(week_df, weekday_stores, "Weekdays")
+    """  Unocmment saturday and sunday to obtain optimal cost and the optimal route set."""
+    # solve(sat_df, saturday_stores, "Saturday")
+    # solve(week_df, weekday_stores, "Weekdays")
 
-
+    # Obtain optimal routes data frames for each day and the objective value.
+    satRoutes, satCost = getSatOptimal()
+    weekRoutes, weekCost, = getWeekOptimal()
+    """ Uncomment to run mapping for optimal routes"""
     # mapByRegion(satRoutes, stores_df, "Saturday")
     # mapByRegion(weekRoutes, stores_df, "Weekday")
-    n = 10
+    
+    """ Simulation"""
+    p = Pool(4)     #Simulate using parellel processing
+
+    n =20
     lwr = int(0.025 * n)
     uper = int(0.975 * n)
     print("Weekday simulation...")
-    week_costs, extraStoresW = simulateWeek(weekRoutes, weekday_stores, n)
-    week_costs.sort()
+    inputs = [(weekRoutes, weekday_stores, 10)]*2
+    weekData = p.starmap(simulateWeek, inputs)
+    weekSimulatedCosts = []
+    weekExtraStores = []
+    for tup in weekData:
+        weekSimulatedCosts.extend([*tup[0]])
+        weekExtraStores.extend([*tup[1]])
+    weekSimulatedCosts.sort()
     print("")
-    print("=================================================")
+    print("=========================================================")
     print("WEEKDAY RESULTS:")
-    print("Central 95%% Interval: Lwr: %.3f - Upper: %.3f"%(week_costs[lwr],week_costs[uper]))
-    print("Average Cost: $%f"%np.mean(week_costs))
-    extraStoresW = Counter(extraStoresW)
-    print("=================================================")
-    print("STORE                            FREQUENCY")
-    print("================================================")
-    for store in extraStoresW:
-        print("%s:"%store,+(35- len(store))*" " + "%d"% extraStoresW[store])
-    print("================================================")
+    print("=========================================================")
+    print("Central 95%% Interval: Lwr: %.3f - Upper: %.3f"%(weekSimulatedCosts[lwr],weekSimulatedCosts[uper]))
+    print("Average Cost: $%f"%np.mean(weekSimulatedCosts))
+    weekExtraStores = Counter(weekExtraStores)
+    print("=========================================================")
+    print("STORE                                   FREQUENCY DROPPED")
+    print("=========================================================")
+    for store in weekExtraStores:
+        print("%s:"%store,+(45- len(store))*" " + "%d"% weekExtraStores[store])
+    print("=========================================================")
     print("")
 
 
     print("Saturday simulation...")
-    sat_costs, extraStoresS = simulateSat(stores_df, satRoutes,saturday_stores, n)
-    sat_costs.sort()
+    inputs = [(satRoutes,saturday_stores, 10)]*2
+    weekData = p.starmap(simulateSat, inputs)
+    satSimulatedCosts = []
+    satExtraStores = []
+    for tup in weekData:
+        satSimulatedCosts.extend([*tup[0]])
+        satExtraStores.extend([*tup[1]])
+    satSimulatedCosts.sort()
     print("")
-    print("================================================")
+    print("=========================================================")
     print("SATURDAY RESULTS:")
-    print("Central 95%% Interval: Lwr: %.3f - Upper: %.3f"%(sat_costs[lwr],sat_costs[uper]))
-    print("Average Cost: $%f" %np.mean(sat_costs))
+    print("=========================================================")
+    print("Central 95%% Interval: Lwr: %.3f - Upper: %.3f"%(satSimulatedCosts[lwr],satSimulatedCosts[uper]))
+    print("Average Cost: $%f" %np.mean(satSimulatedCosts))
 
-    if len(extraStoresS) == 0:
-        print("================================================")
+    if len(satExtraStores) == 0:
+        print("=========================================================")
         print("No extra routes were required in any simulation.")
-        print("================================================")
+        print("=========================================================")
     else:
-        extraStoresW = Counter(extraStoresW)
-        print("================================================")
-        print("STORE                            FREQUENCY")
-        print("================================================")
-        for store in extraStoresW:
-            print("%s:"%store,+(35- len(store))*" " + "%d"% extraStoresW[store])
-        print("===========================================")
+        satExtraStores = Counter(satExtraStores)
+        print("=========================================================")
+        print("STORE                                  FREQUENCY DROPPED")
+        print("=========================================================")
+        for store in satExtraStores:
+            print("%s:"%store,+(35- len(store))*" " + "%d"% satExtraStores[store])
+        print("=========================================================")
 
 
 
-    plt.hist(week_costs, density=True, histtype='bar', alpha=0.2)
-    plt.title("Cost distribution for Weekdays for 1000 Simulations")
-    plt.axvline(week_costs[lwr], linestyle='dashed', color='red')
-    plt.axvline( week_costs[uper], linestyle='dashed', color='red')
+    # plt.hist(week_costs, density=True, histtype='bar', alpha=0.2)
+    # plt.title("Cost distribution for Weekdays for 1000 Simulations")
+    # plt.axvline(week_costs[lwr], linestyle='dashed', color='red')
+    # plt.axvline( week_costs[uper], linestyle='dashed', color='red')
     
 
-    plt.ylabel("Occurance")
-    plt.xlabel("Cost")
-    plt.savefig('weekday_sim_distribution ',dpi=300)
-    plt.show()
-    plt.hist(sat_costs, density=True, histtype='bar', alpha=0.2)
-    plt.axvline(x = sat_costs[lwr], linestyle='dashed', color='red')
-    plt.axvline(x = sat_costs[uper], linestyle='dashed', color='red')
+    # plt.ylabel("Occurance")
+    # plt.xlabel("Cost")
+    # plt.savefig('weekday_sim_distribution ',dpi=300)
+    # plt.show()
+    # plt.hist(sat_costs, density=True, histtype='bar', alpha=0.2)
+    # plt.axvline(x = sat_costs[lwr], linestyle='dashed', color='red')
+    # plt.axvline(x = sat_costs[uper], linestyle='dashed', color='red')
 
-    plt.title("Cost distribution for Saturdays for 1000 Simulations")
-    plt.ylabel("Occurance")
-    plt.xlabel("Cost")
-    plt.savefig('saturday_sim_distribution ',dpi=300)
-    plt.show()
+    # plt.title("Cost distribution for Saturdays for 1000 Simulations")
+    # plt.ylabel("Occurance")
+    # plt.xlabel("Cost")
+    # plt.savefig('saturday_sim_distribution ',dpi=300)
+    # plt.show()
 
-    satRoutes.to_csv("sat_soln.csv")
-    weekRoutes.to_csv("weekday_soln.csv")
+    # satRoutes.to_csv("sat_soln.csv")
+    # weekRoutes.to_csv("weekday_soln.csv")
 
 
     
