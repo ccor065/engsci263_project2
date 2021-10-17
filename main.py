@@ -348,6 +348,7 @@ def construct_matrix(day_df,storeSeries): # Consruct adjacency matrix for solver
     return matrix
 
 ## Simulate with uncertainty functions
+''' REMOVE THESE FUNCTIONS AND EDIT FOR BOOT-STRAPPPING'''
 def alphaBetaFromAmB(a, m, b): 
     # Taken from code by David L. Mueller
     #github dlmueller/PERT-Beta-Python
@@ -361,6 +362,7 @@ def alphaBetaFromAmB(a, m, b):
     beta = (first_numer_beta / first_denom) * second
     return alpha, beta
 def generate(a, m, b):
+
     
     alpha, beta = alphaBetaFromAmB(a, m, b)
     location = a
@@ -378,7 +380,6 @@ def generateDemandsSat(stores_df,saturday_stores):
         demands.append(round(generate(mu-2, mu, mu+2)))
     sat_stores = pd.DataFrame({'Store':saturday_stores, 'Demand':demands})
     return sat_stores
-
 def generateDemandsWeek(weekday_stores):
     # generate demand data frames
     w_vairance = pd.read_csv("assignment_resources/pert_beta.csv")
@@ -393,6 +394,9 @@ def generateDemandsWeek(weekday_stores):
     weekday_stores = pd.DataFrame({'Store':weekday_stores, 'Demand':demands})
 
     return weekday_stores
+
+''' END OF FUNCTIONS TO REMOVE'''
+
 def getDurationsVariance(store_demands, route_set):
     """
     This function calculates the time taken of a set of valid routes and 
@@ -437,6 +441,7 @@ def getDurationsVariance(store_demands, route_set):
                 nPallets = row["Demand"].values[0]
                 duration += 450* nPallets
         # inttroduce vairiance
+        """ CHANGE ME"""
         multiplcationFactor = generate(0.85, 1, 1.35)
         duration = (duration *multiplcationFactor)/60
         #return in duration in mins
@@ -566,7 +571,7 @@ def getOptimal(stores_df, saturday_stores, weekday_stores):
     satCost, satRoutes = solve(sat_df, saturday_stores, "Saturday")
     weekCost, weekRoutes = solve(week_df, weekday_stores, "Weekdays")
     return satCost, satRoutes,weekCost, weekRoutes
-def simulateWeek( route_df, stores, n):
+def simulateWeek(route_df, stores, n):
     prior_routes = route_df["Route"]
     optimal_costs =np.zeros(n)
     extraStores_list = []
@@ -651,8 +656,6 @@ def simulateSat(stores_df, route_df, stores, n):
         costs = getCostsVariance(sat_demands, routes) 
         optimal_costs[i] = (sum(costs) + extraStores_cost)
     return optimal_costs, extraStores_list
-
-
 
 if __name__ == "__main__":
 
