@@ -350,16 +350,17 @@ def construct_matrix(day_df,storeSeries): # Consruct adjacency matrix for solver
 ## Simulate with uncertainty functions
 ## Bootstrapping distribution for demand
 def bootstrap(mean, sd):
-    # generate normal distribution from the mean and standard deviation for a given day, size of the sample is 100 entries
-    randMeans = np.random.normal(loc = mean, scale = sd, size = 100)
-    # bootstrap 25 samples of size 4 each to estimate the mean
+    # generate normal distribution from the mean and standard deviation for a given day, simulates population distribution
+    randMeans = np.random.normal(loc = mean, scale = sd, size = 1000)
+    # bootstrap 1000 samples 
     sampMean = []
-    for i in range(25):
-        sampleTaken = random.sample(randMeans.tolist(), 4)
+    for i in range(100):
+        # takes sample of size 50 from population
+        sampleTaken = np.random.choice(randMeans, replace = True, size = 50)
         # calculates mean of sample
         sampAvg = np.mean(sampleTaken)
         sampMean.append(sampAvg)
-    # estimate mean from list of sampleMeans
+    # estimate mean from list of sampleMeans after the boostrap
     m = np.mean(sampMean)
     return m
 
