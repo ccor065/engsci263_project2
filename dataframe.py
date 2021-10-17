@@ -4,13 +4,13 @@ import numpy as np
 '''
 ## This file creates a data frame where each row represents a different store
 ## The attributes obtained are:
-    Type            - Countdown, SuperValue, FreshChoice
-    Location        - General area where the store is located in
-    Store           - Store name
-    Lat             - latitude of store
-    Long            - Longitude of store
-    Mon...Sat       - Mean demand of pallets per day (rounded up)
-    Region          - General region the store occupys.
+    Type                - Countdown, SuperValue, FreshChoice
+    Location            - General area where the store is located in
+    Store               - Store name
+    Lat                 - latitude of store
+    Long                - Longitude of store
+    Weekday/Saturday    - Mean demand of pallets per day (rounded up)
+    Region              - General region the store occupys.
 NOTE: Daily demands do not include sunday as no deliverys are done on sundays.
 '''
 
@@ -18,18 +18,13 @@ NOTE: Daily demands do not include sunday as no deliverys are done on sundays.
 locations  = pd.read_csv("assignment_resources/WoolworthsLocations.csv")
 # Load average demnd per day for store 
 demand = pd.read_csv("assignment_resources/MeanDemandperDayCombined.csv")
-print(demand.head())
+# Get specfic columns only 
 demand = demand[["Weekday","Saturday", "Store"]]
-# region data REDACTED, now using alogrithm to sort
-# #region = pd.read_csv("assignment_resources/supermarket_regions.csv")
-
 dc = locations[locations["Store"] == "Distribution Centre Auckland"]
 dc.to_csv("dc.csv")
 
 ## Merge data
 stores_df = pd.merge(locations, demand, how = 'inner', on ='Store')
-
-#stores_df = pd.merge(stores_df, region, how = 'inner', on ='Store')
 
 '''
 Regional Partitioning
@@ -64,11 +59,10 @@ for i in range(len(stores_df.Store)):
 
 stores_df["Region"] = region_add
 '''Uncomment to see head'''
-print(stores_df)
+# print(stores_df.head())
 '''Uncomment to check for null values'''
-stores_df.isnull().any()
-# Save to csv file.
+# stores_df.isnull().any()
 
 # Save to file
-stores_df.to_csv("stores_df.csv", index=False)
+stores_df.to_csv("dataframe_csv/stores_df.csv", index=False)
 

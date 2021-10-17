@@ -1,0 +1,66 @@
+Type,Location,Store,Lat,Long,Weekday,Saturday,Region
+Countdown,Airport,Countdown Airport,-36.99736985,174.7888823,8,5,South Region
+Countdown,Auckland City,Countdown Auckland City,-36.84496186,174.77311919999997,9,4,Central Region
+Countdown,Aviemore Drive,Countdown Aviemore Drive,-36.89887827,174.9065699,8,4,East Region
+Countdown,Birkenhead,Countdown Birkenhead,-36.81111802,174.72487759999999,9,5,North Region
+Countdown,Blockhouse Bay,Countdown Blockhouse Bay,-36.92291876,174.70235209999998,8,3,Central Region
+Countdown,Botany Downs,Countdown Botany Downs,-36.92972626,174.9110718,9,4,East Region
+Countdown,Browns Bay,Countdown Browns Bay,-36.71714479,174.74727719999998,9,5,North Region
+Countdown,Glenfield,Countdown Glenfield,-36.78148813,174.72342619999998,8,5,North Region
+Countdown,Greenlane,Countdown Greenlane,-36.88916156,174.79350369999997,9,4,Central Region
+Countdown,Grey Lynn,Countdown Grey Lynn,-36.85144346,174.73187190000002,9,3,Central Region
+Countdown,Grey Lynn Central,Countdown Grey Lynn Central,-36.86311836,174.73856669999998,9,6,Central Region
+Countdown,Hauraki Corner,Countdown Hauraki Corner,-36.79667981,174.7781249,8,5,North Region
+Countdown,Henderson,Countdown Henderson,-36.88089456,174.63322769999996,9,5,West Region
+Countdown,Highland Park,Countdown Highland Park,-36.89933061,174.9084309,8,3,East Region
+Countdown,Hobsonville,Countdown Hobsonville,-36.79748845,174.6487257,9,6,West Region
+Countdown,Howick,Countdown Howick,-36.89585201,174.9335377,10,4,East Region
+Countdown,Kelston,Countdown Kelston,-36.90955497,174.6638042,9,4,West Region
+Countdown,Lincoln Road,Countdown Lincoln Road,-36.8568778,174.63251259999998,9,5,West Region
+Countdown,Lynfield,Countdown Lynfield,-36.92514077,174.7239957,9,4,Central Region
+Countdown,Lynmall,Countdown Lynmall,-36.90687152,174.6850146,8,4,West Region
+Countdown,Mairangi Bay,Countdown Mairangi Bay,-36.73941255,174.7540551,10,4,North Region
+Countdown,Mangere East,Countdown Mangere East,-36.9657908,174.825346,9,4,South Region
+Countdown,Mangere Mall,Countdown Mangere Mall,-36.96987802,174.80112019999999,8,4,South Region
+Countdown,Manukau,Countdown Manukau,-36.98676855,174.88481480000002,8,6,South Region
+Countdown,Manukau Mall,Countdown Manukau Mall,-36.99174967,174.8831931,9,4,South Region
+Countdown,Manurewa,Countdown Manurewa,-37.01734442,174.86510969999998,9,4,South Region
+Countdown,Meadowbank,Countdown Meadowbank,-36.87610706,174.8289359,9,5,East Region
+Countdown,Meadowlands,Countdown Meadowlands,-36.9132518,174.929465,9,3,East Region
+Countdown,Milford,Countdown Milford,-36.77197217,174.76661769999998,9,4,North Region
+Countdown,Mt Eden,Countdown Mt Eden,-36.87718131,174.7523352,8,5,Central Region
+Countdown,Mt Roskill,Countdown Mt Roskill,-36.90203359,174.7356996,9,5,Central Region
+Countdown,Mt Wellington,Countdown Mt Wellington,-36.9093147,174.837989,9,4,East Region
+Countdown,Newmarket,Countdown Newmarket,-36.8705446,174.7754093,8,4,Central Region
+Countdown,Northcote,Countdown Northcote,-36.80035237,174.74553380000003,8,5,North Region
+Countdown,Northwest,Countdown Northwest,-36.81879206,174.6129291,9,4,West Region
+Countdown,Onehunga,Countdown Onehunga,-36.92249969,174.78380239999998,8,4,Central Region
+Countdown,Pakuranga,Countdown Pakuranga,-36.91284146,174.8714299,8,4,East Region
+Countdown,Papakura,Countdown Papakura,-37.06390487,174.9447236,8,5,Southern Most Region
+Countdown,Papatoetoe,Countdown Papatoetoe,-36.97039494,174.862111,10,3,South Region
+Countdown,Ponsonby,Countdown Ponsonby,-36.8584399,174.74913859999998,10,4,Central Region
+Countdown,Pt Chevalier,Countdown Pt Chevalier,-36.86957431,174.7105595,9,5,Central Region
+Countdown,Roselands,Countdown Roselands,-37.05894779999999,174.9414297,9,5,Southern Most Region
+Countdown,St Johns,Countdown St Johns,-36.87888192,174.8548393,8,4,East Region
+Countdown,St Lukes,Countdown St Lukes,-36.88336862,174.7347459,8,3,Central Region
+Countdown,Sunnynook,Countdown Sunnynook,-36.75907026,174.74069409999998,9,4,North Region
+Countdown,Sylvia Park,Countdown Sylvia Park,-36.91713855,174.84182019999997,9,4,East Region
+Countdown,Takanini,Countdown Takanini,-37.04764284,174.9279243,9,5,Southern Most Region
+Countdown,Takapuna,Countdown Takapuna,-36.79125414,174.76620559999998,9,3,North Region
+Countdown,Te Atatu,Countdown Te Atatu,-36.84209292,174.65423810000001,8,4,West Region
+Countdown,Te Atatu South,Countdown Te Atatu South,-36.86472278,174.64762919999998,8,4,West Region
+Countdown,Three Kings,Countdown Three Kings,-36.90796057,174.7559072,10,4,Central Region
+Countdown,Victoria Street West,Countdown Victoria Street West,-36.84853355,174.76485119999998,10,4,Central Region
+Countdown,Westgate,Countdown Westgate,-36.82092949,174.61464640000003,9,6,West Region
+Countdown Metro,Albert Street,Countdown Metro Albert Street,-36.84350157,174.76586619999998,5,0,Central Region
+Countdown Metro,Halsey Street,Countdown Metro Halsey Street,-36.84358106,174.75780659999998,4,0,Central Region
+FreshChoice,Glen Eden,FreshChoice Glen Eden,-36.91087436,174.6545496,5,0,West Region
+FreshChoice,Half Moon Bay,FreshChoice Half Moon Bay,-36.88106607,174.9002827,5,0,East Region
+FreshChoice,Mangere Bridge,FreshChoice Mangere Bridge,-36.94250829,174.7869875,5,0,South Region
+FreshChoice,Otahuhu,FreshChoice Otahuhu,-36.94480584,174.8431184,5,0,East Region
+FreshChoice,Ranui,FreshChoice Ranui,-36.86353948,174.6015834,5,0,West Region
+SuperValue,Avondale,SuperValue Avondale,-36.89776863,174.69741000000002,5,0,West Region
+SuperValue,Flatbush,SuperValue Flatbush,-36.97676671,174.8972267,5,0,South Region
+SuperValue,Palomino,SuperValue Palomino,-36.88287566,174.6161793,6,0,West Region
+SuperValue,Papakura,SuperValue Papakura,-37.06606311,174.9556975,5,0,Southern Most Region
+SuperValue,Titirangi,SuperValue Titirangi,-36.93739048,174.65729840000003,5,0,West Region

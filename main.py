@@ -1,14 +1,12 @@
 from pulp import *
 import pandas as pd
 import numpy as np
-from pulp.constants import LpMinimize
 from collections import Counter
 import openrouteservice as ors
 import folium
 from scipy import stats
 import matplotlib.pyplot as plt
-from random import randint
-import random
+from  random import randint
 ORSkey = '5b3ce3597851110001cf6248324acec39fa94080ac19d056286d0ccb'
 
 
@@ -107,174 +105,54 @@ def mapStores():
         map.save("maps/%s_map.html"%name.split()[0])
         
     return
-# Generate routes, their durations and their costs
-def generateRoutes():
-    """
-    This function generates sub-routes within a given region and checks the feasiblity of a sub-route based
-    of truck capacities based on the mean daily demands of each store in the sub-route.
-    ------------------------------------------------------------
-    INPUTS:
-        stores_df: pandas df
-                Dataframe containing infromation on all the stores.
-        region_names:    array of strings
-               contains the names of each region
-    -------------------------------------------------------------
-    RETURNS:
-        saturday_routes, weekday_routes: pandas df 
-               contains feasilbe routes, what region the route is in and the cost associated with it.
-    -------------------------------------------------------------
-    NOTE: Region names should be exactly the same as the names in the 'region' column of df  
-    """
-    print("generating routes...")
-       ## Read in store data
-    stores_df = pd.read_csv('stores_df.csv')
-    region_names = np.array(["Central Region","South Region","North Region","East Region","West Region","Southern Most Region"])
-    # Number of stores visited per route min / max
-    min = 1
-    max = 4+1 #actually 4
-    # intialise lists that store valid sub-routes per day
-    weekday_routes = []
-    wkday_regions = []
-    saturday_routes = []
-    sat_regions = []
+# File readinf functions
+def readInSatDF():
+    '''
+    This function reads in a csv file containing the data for saturday feasible routes
+    ---------------------------------------------------------------------------------
+    Returns:
+            df: pandas dataframe
+                dataframe containing, feasible routes, their costs and the region the 
+                route is in
+    '''
+    df = pd.read_csv("dataframe_csv/saturday_df.csv")
+    routes = df["Route"]
+    for i in range(len(df)):
+        route = routes[i]
+        route = route.replace('[','')
+        route = route.replace(']','')
+        route = route.replace("'",'')
+        route = route.split(',')
+        route = [ele.strip() for ele in route]
+        
+        df.at[i, "Route"] = route
 
-    # generates sub-routes per day
-    
-    for regionType in region_names:
-        region = stores_df[stores_df.loc[:]["Region"] == regionType]
-        region_stores = np.array(region.Store) 
-        ## Loop through number of stores per sub-route
-        """ WEEK DAY ROUTES"""
-        for i in range (min, max):
-            # get every possible combintaion of stores based on how many are in each route.
-            for subset in itertools.combinations(region_stores, i):
-                # initalise counters, these count demands for routes.
-                demandOfRoute =0
-                # cycle through each store in the sub-route and sum their demands.
-                for node in subset:
-                    # add to counter based on day
-                    store = region[region.Store == node]
-                    demandOfRoute += store.Weekday.values[0] 
-                # Check freasblity of specfic route
-                if demandOfRoute <= 26:
-                    weekday_routes.append(subset)
-                    wkday_regions.append(regionType)
 
-        #Generate saturdays
-        satC_stores = []
-        # Add stores to list
-        for store in region_stores:
-            z = region[region.Store == store]
-            if z.Saturday.values[0] != 0:
-                satC_stores.append(store)
-        #Generate sub-routes say way as week-day
-        for i in range (min,max):
-            for subset in itertools.combinations(satC_stores, i):
-                demandOfSatRoute = 0 #Initalse demand counter
-                for node in subset:
-                    store = region[region.Store == node]
-                    demandOfSatRoute += store.Saturday.values[0]
-                #Check feaislblity
-                if demandOfSatRoute <= 26:
-                    saturday_routes.append(subset)
-                    sat_regions.append(regionType)
+    return df
+def readInWeekDF():
+    '''
+    This function reads in a csv file containing the data for weekday feasible routes
+    ---------------------------------------------------------------------------------
+    Returns:
+            df: pandas dataframe
+                dataframe containing, feasible routes, their costs and the region the 
+                route is in
+    '''
+    df = pd.read_csv("dataframe_csv/weekday_df.csv")
+    routes = df["Route"]
+    for i in range(len(df)):
+        route = routes[i]
+        route = route.replace('[','')
+        route = route.replace(']','')
+        route = route.replace("'",'')
+        route = route.split(',')
+        route = [ele.strip() for ele in route]
+        
+        df.at[i,"Route"] = route
 
-    
-    print("generating routes complete.")
-    # Construct data frames for return.
-    saturday_routes =[list(route) for  route in saturday_routes]
-    weekday_routes =[list(route) for  route in weekday_routes]
-    saturday_routes = pd.DataFrame({"Route":saturday_routes,"Cost":getCosts(stores_df,saturday_routes, "Saturday"), "Region":sat_regions})
-    weekday_routes = pd.DataFrame({"Route":weekday_routes, "Cost":getCosts(stores_df, weekday_routes, "Weekday"),"Region":wkday_regions})
-    print("generating cost of routes complete.")
-    print("Saving data frames to csv..")
-    saturday_routes.to_csv("saturday_df.csv", index=False)
-    weekday_routes.to_csv("weekday_df.csv", index=False)
-    print("Saved sucessfully")
-    return  
-def getDurations(stores_df, route_set, day):
-    """
-    This function calculates the time taken of a set of valid routes
-    -------------------------------------------------------
-    Inputs :
-            stores_df: pandas df
-            Dataframe containing onfromation on all the stores.
-            route_set: list of tuples
-            List of all the vild routes for a given day
-            day: str
-            corresponding day to set of routes 
-    --------------------------------------------------------
-    Returns: 
-        duration_set: list
-        Correspoding list of the duration of each route.
-    ----------------------------------------------------
-    NOTE: Indexes will match in the return so no further manipulation should be nesissary,
-        Each route should start and finish at the disrubtion centre.
-        day should be indentical to the row name i.e Monday = valid, monday = invalid.
+    return df
 
-    """
-    durations = pd.read_csv('assignment_resources/WoolworthsTravelDurations.csv')
-    # initalise
-    cost_set =[]
-    # All routes start and end here
-    dc = ['Distribution Centre Auckland']
-    # Loop through every route in the set
-    duration_set = []
-    for route in route_set:
-        route = dc + route +dc
-        duration= 0  # Initalise duration 
-        cost =0     # Initalise cost to append to set
-        # Loop through to get total duration of route
-        for i in range(len(route)-1):
-            currentStore = route[i]
-            nextStore = route[i+1]
-            row = durations.loc[durations['Store'] == currentStore]
-            duration += row[nextStore].values[0]
-            # add unpacking time for each pallet at each store (EXCLD. distribtion centre)
-            if i >0:
-                row = stores_df.loc[stores_df['Store'] == currentStore]
-                nPallets = row[day].values[0]
-                duration += 450* nPallets
-        #return in duration in mins
-        duration_set.append(duration/60)
-    return duration_set
-def getCosts(stores_df, route_set, day):
-    """
-    This function calculates the asocciated costs of a set of valid routes
-    -------------------------------------------------------
-    Inputs :
-            stores_df: pandas df
-            Dataframe containing onfromation on all the stores.
-            route_set: list of tuples
-            List of all the vild routes for a given day
-            day: str
-            corresponding day to set of routes 
-    --------------------------------------------------------
-    Returns: 
-        cost_set: list
-        Correspoding list of the cost of each route in routes sets
-    ----------------------------------------------------
-    NOTE: Indexes will match in the return so no further manipulation should be nesissary,
-        Each route should start and finish at the disrubtion centre.
-        day should be indentical to the row name i.e Saturday = valid, saturday = invalid.
-    """
-    print("generating cost of %s routes..."%day)
-    durations = getDurations(stores_df, route_set, day)
-    cost_set =[]
-    for duration in durations:
-        # less than four hours normal rates apply
-        if duration <= 240:
-            cost = duration*(225/60) #cost per min
-        # greater than 4 hour trip then costs are extra
-        if duration > 240:
-            cost = 240*(225/60)
-            extraTime = duration - 240
-            cost += extraTime * (275/60)
-        cost_set.append(cost)
-    print("generating cost of %s routes complete."%day)
-    return cost_set
-
-## Formulate and solve linear prog
+## Linear programme solver and helper function.
 def solve(day_df, stores, day):
     """
     This function generates an optimal soltion for a given day
@@ -286,6 +164,13 @@ def solve(day_df, stores, day):
                 Every store that must be visted on a given day
         day:    String
                 name of the day that is being solved
+    -------------------------------
+    Returns:
+        value(prob.objective): float
+                                optimal cost of solution
+        optimalRoutes: pandas dataframe
+                        contains optimal routes, their individual costs and 
+                        the region that the route is in.
     """
     # Create the 'prob' varibale to store all of the equations
     print("solving %s...."%day)
@@ -331,10 +216,11 @@ def solve(day_df, stores, day):
     print("Total Cost = ", value(prob.objective))
     # return objective value and the optimal routes
     return  value(prob.objective), optimalRoutes
-def construct_matrix(day_df,storeSeries): # Consruct adjacency matrix for solver
+def construct_matrix(day_df,storeSeries): 
 
     """
-    This function constructs a matrix of ones and zeros correlating to whether a store is visted in a specifc route
+    This function constructs an ajacency matrix of ones and zeros correlating to 
+    whether a store is visted in a specifc route
     ---------------------------------------------------------------
     INPUT:
         day_df: pandas data frame
@@ -367,6 +253,21 @@ def construct_matrix(day_df,storeSeries): # Consruct adjacency matrix for solver
 ## Simulate with uncertainty functions
 ## Bootstrapping distribution for demand
 def bootstrap(mean, sd):
+    """
+    This function generates a demand of a store using bootstrapping.
+    -----------------------------------------------
+    Input:
+        mean: float
+            mean value of the demand for a given store
+        sd: float
+            that standard deviation of demand at a store
+    -----------------------------------------------
+    Returns:
+        m: float
+            mean value of the bootstrap 
+    ----------------------------------------
+    NOTE: Assuming normal distribution of demands to generate bootstrap
+    """
     # generate normal distribution from the mean and standard deviation for a given day, simulates population distribution
     randMeans = np.random.normal(loc = mean, scale = sd, size = 1000)
     # bootstrap 1000 samples 
@@ -381,8 +282,20 @@ def bootstrap(mean, sd):
     m = np.mean(sampMean)
     return m
 
-def generateDemandsSat(stores_df,saturday_stores):
-    sat_demands = stores_df[stores_df["Saturday"] != 0]
+def generateDemandsSat(saturday_stores):
+    """
+    This function generates a set of demands for saturday stores.
+    ---------------------------------------
+    Inputs:
+        saturday_stores: list
+                        stores that recive deliveries on saturdays
+    ----------------------------------------
+    Returns:
+        sat_stores: pandas dataframe
+                    dataframe containing the stores and their generated demands
+    """
+    demand_data = pd.read_csv("assignment_resources/DemandMeanSD.csv")
+    sat_demands = demand_data[demand_data["WeekendMu"] != 0]
     demands = []
     for i in range(len(saturday_stores)):
         mu = sat_demands.iloc[i]["WeekendMu"]
@@ -391,8 +304,20 @@ def generateDemandsSat(stores_df,saturday_stores):
     sat_stores = pd.DataFrame({'Store':saturday_stores, 'Demand':demands})
     return sat_stores
 def generateDemandsWeek(weekday_stores):
+    """
+    This function generates a set of demands for weekday stores.
+    ---------------------------------------
+    Inputs:
+        weekday_stores: list
+                        stores that recive deliveries on weekdays (all)
+    ----------------------------------------
+    Returns:
+        weekday_stores: pandas dataframe
+                    dataframe containing the stores and their generated demands
+    """
     # generate demand data frames
     demand_data = pd.read_csv("assignment_resources/DemandMeanSD.csv")
+
     demands = []
     for i in range(65):
         mu = demand_data.iloc[i]["WeekdayMu"]
@@ -418,10 +343,9 @@ def getDurationsVariance(store_demands, route_set):
         duration_set: list
         Correspoding list of the duration of each route.
     ----------------------------------------------------
-    NOTE: Indexes will match in the return so no further manipulation should be nesissary,
+    NOTE: 1. Indexes will match in the return so no further manipulation should be nesissary,
         Each route should start and finish at the disrubtion centre.
-
-
+        2. Duration times are normally distrobuted.
     """
     durations = pd.read_csv('assignment_resources/WoolworthsTravelDurations.csv')
     # initalise
@@ -486,15 +410,20 @@ def getCostsVariance(store_demands, route_set):
     return cost_set
 def solveExtra(day_df, stores):
     """
-    This function generates an optimal soltion for a given day
+    This function generates an optimal soltion for re-routing 'overflow' stores
     -----------------------------
     Inputs: 
         day_df: pandas data frame
                 Stores the routes and the costs associated with each route
         stores: array-like (or pd series)
                 Every store that must be visted on a given day
-        day:    String
-                name of the day that is being solved
+    ------------------------------
+    Returns:
+        cost: float
+            total cost of re routing the extra stores
+        optimal routes: list
+                lists of optimal routes generated from 'overlflow' stores.
+
     """
     # Create the 'prob' varibale to store all of the equations
     prob = LpProblem("Extra_Routing", LpMinimize)
@@ -533,6 +462,21 @@ def solveExtra(day_df, stores):
     return  value(prob.objective), optimalRoutes
 
 def generateExtraRoutes(extraStores_df):
+    """
+    This function generates routes based on the 'overflow' stores where their simulated demands
+    cause the total demand of a route to exceed a trucks capacity. These generated routes are
+    then solved using a linear programme to optimise cost.
+    ---------------------------------------------------
+    Inputs: 
+        extraStores_df: pandas df
+                    dataframe containing the 'overflow' stores, and their simulated demands.
+    -----------------------------------------------
+    Returns:
+        cost: float
+            total cost of re routing the extra stores
+        optimal routes: list
+                lists of optimal routes generated from 'overlflow' stores.
+    """
     routes = []
     stores = extraStores_df["Store"]
     for i in range (1, len(stores)):
@@ -602,7 +546,7 @@ def simulateSat(stores_df, route_df, stores, n):
     optimal_costs =np.zeros(n)
     for i in range(n):
         # Generate demand for stores on the pert-beta distrubution
-        sat_demands = generateDemandsSat(stores_df, stores) 
+        sat_demands = generateDemandsSat( stores) 
         #Check validity of  routes with the new demands
         extra_stores = []
         extra_storesDemand = []
@@ -637,57 +581,27 @@ def simulateSat(stores_df, route_df, stores, n):
         costs = getCostsVariance(sat_demands, routes) 
         optimal_costs[i] = (sum(costs) + extraStores_cost)
     return optimal_costs, extraStores_list
-def readInSatDF():
-    df = pd.read_csv("saturday_df.csv")
-    routes = df["Route"]
-    for i in range(len(df)):
-        route = routes[i]
-        route = route.replace('[','')
-        route = route.replace(']','')
-        route = route.replace("'",'')
-        route = route.split(',')
-        route = [ele.strip() for ele in route]
-        
-        df.at[i, "Route"] = route
 
-
-    return df
-def readInWeekDF():
-    df = pd.read_csv("weekday_df.csv")
-    routes = df["Route"]
-    for i in range(len(df)):
-        route = routes[i]
-        route = route.replace('[','')
-        route = route.replace(']','')
-        route = route.replace("'",'')
-        route = route.split(',')
-        route = [ele.strip() for ele in route]
-        
-        df.at[i,"Route"] = route
-
-    return df
 if __name__ == "__main__":
-    """  # Generate sets of feaisble routes for saturday and weekdays"""
-    # generateRoutes()
 
-    ## Read in store data
-    stores_df = pd.read_csv('stores_df.csv')
+    # read in individual data frames containing feasible route info.
+    sat_df = readInSatDF()
+    week_df = readInWeekDF()
+
+    # Read in store data
+    stores_df = pd.read_csv('dataframe_csv/stores_df.csv')
     # Generate lists of stores for week-day deliveries
     weekday_stores = stores_df['Store']
     # List of stores that recive deliveries on saturdays
     saturday_stores = (stores_df.loc[stores_df["Saturday"] != 0, ["Store"]])["Store"]
    
-
-
-    sat_df = readInSatDF()
-    week_df = readInWeekDF()
-    
+    # Solve saturday and sunday to obtain optimal cost and the optimal route set.
     satCost, satRoutes = solve(sat_df, saturday_stores, "Saturday")
     weekCost, weekRoutes = solve(week_df, weekday_stores, "Weekdays")
 
 
-    mapByRegion(satRoutes, stores_df, "Saturday")
-    mapByRegion(weekRoutes, stores_df, "Weekday")
+    # mapByRegion(satRoutes, stores_df, "Saturday")
+    # mapByRegion(weekRoutes, stores_df, "Weekday")
     n = 10
     lwr = int(0.025 * n)
     uper = int(0.975 * n)
