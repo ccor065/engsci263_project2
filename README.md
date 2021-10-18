@@ -10,7 +10,6 @@ Project 2: Trent Wong, Charlotte Cordwell, Ashley Tolentino  & Jacob Kim.
             - runs simulations with vairance in demands and traffic and does 
                a statistical analysis on this.
             - maps regions and optimal routes and saves to html file (find these in \maps, \route_maps)
-- generate_routes.py
             - generates feasible sub-routes within a given region. 
             - Generates dataframe for wkdays aand satdays, conatining the routes, costs and regions
             - Dataframes are saved to files to reduce run-time.

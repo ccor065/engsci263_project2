@@ -36,24 +36,31 @@ def mapByRegion(solutions,stores_df,  day):
     
    
     j = 0
+    m = folium.Map(location = list(reversed(dc_coords[0])), zoom_start=12)
+    folium.Marker(list(reversed(dc_coords[0])), popup= "Distribution Centre Auckland", icon = folium.Icon(color = 'black', icon = "glyphicon-asterisk")).add_to(m)
     for region in region_names:
         region_routes =(solutions.loc[solutions["Region"] == region, ["Route"]])
         region_routes = region_routes["Route"]
         map = folium.Map(location = list(reversed(dc_coords[0])), zoom_start=12)
-        folium.Marker(list(reversed(dc_coords[0])), popup= "DC", icon = folium.Icon(color = 'black', icon = "glyphicon-asterisk")).add_to(map)
+        folium.Marker(list(reversed(dc_coords[0])), popup= "Distribution Centre Auckland", icon = folium.Icon(color = 'black', icon = "glyphicon-asterisk")).add_to(map)
+
         k =0
+        
         for route in region_routes:
             route = ['Distribution Centre Auckland'] + route + ['Distribution Centre Auckland']
             locations = stores_df[stores_df['Store'].isin(route)]
             coords = dc_coords + (locations[['Long', 'Lat']]).to_numpy().tolist() + dc_coords
             colorA =  ('#%06X' % randint(0, 0xFFFFFF))
             for i in range(1, len(route)-1):
-                folium.Marker(list(reversed(coords[i])), popup= str(route[i]), icon = folium.Icon(color = iconCol, icon = "glyphicon-shopping-cart")).add_to(map)
+                folium.CircleMarker(list(reversed(coords[i])), popup= route[i], radius = 10, color = 'black', fill =True, fill_color =colorA, fill_opacity = 0.4, weight = 2 ).add_to(map)
+                folium.CircleMarker(list(reversed(coords[i])), popup= route[i], radius = 10, color ='black', fill =True, fill_color = colorA, fill_opacity = 0.4, weight = 2).add_to(m)
             line = client.directions(coordinates = [coord for coord in coords], profile ='driving-hgv', format ='geojson', validate = False)
             folium.PolyLine(locations = [list(reversed(coord)) for coord in line['features'][0]['geometry']['coordinates']], color =colorA, weight = 5 , opacity = 1).add_to(map)
+            folium.PolyLine(locations = [list(reversed(coord)) for coord in line['features'][0]['geometry']['coordinates']], color =colorA, weight = 5 , opacity = 1).add_to(m)
             map.save("route_maps/%s/%s_map.html"%(day, region))
             k+=1
         j+=1
+    m.save("route_maps/%s/%s_map.html"%(day, day))
 
     
     print("map generation complete")
@@ -201,6 +208,157 @@ def getWeekOptimal():
     f = open('WeekdaysObjectiveValue.txt', 'r')
     objVal = float((f.readline()))
     return df, objVal
+## Route generation functions
+def getDurations(stores_df, route_set, day):
+    """
+    This function calculates the time taken of a set of valid routes
+    -------------------------------------------------------
+    Inputs :
+            stores_df: pandas df
+            Dataframe containing onfromation on all the stores.
+            route_set: list of tuples
+            List of all the vild routes for a given day
+            day: str
+            corresponding day to set of routes 
+    --------------------------------------------------------
+    Returns: 
+        duration_set: list
+        Correspoding list of the duration of each route.
+    ----------------------------------------------------
+    NOTE: Indexes will match in the return so no further manipulation should be nesissary,
+        Each route should start and finish at the disrubtion centre.
+        day should be indentical to the row name i.e Monday = valid, monday = invalid.
+
+    """
+    durations = pd.read_csv('assignment_resources/WoolworthsTravelDurations.csv')
+    # initalise
+    cost_set =[]
+    # All routes start and end here
+    dc = ['Distribution Centre Auckland']
+    # Loop through every route in the set
+    duration_set = []
+    for route in route_set:
+        route = dc + route +dc
+        duration= 0  # Initalise duration 
+        cost =0     # Initalise cost to append to set
+        # Loop through to get total duration of route
+        for i in range(len(route)-1):
+            currentStore = route[i]
+            nextStore = route[i+1]
+            row = durations.loc[durations['Store'] == currentStore]
+            duration += row[nextStore].values[0]
+            # add unpacking time for each pallet at each store (EXCLD. distribtion centre)
+            if i >0:
+                row = stores_df.loc[stores_df['Store'] == currentStore]
+                nPallets = row[day].values[0]
+                duration += 450* nPallets
+        #return in duration in mins
+        duration_set.append(duration/60)
+    return duration_set
+def getCosts(stores_df, route_set, day):
+    """
+    This function calculates the asocciated costs of a set of valid routes
+    -------------------------------------------------------
+    Inputs :
+            stores_df: pandas df
+            Dataframe containing onfromation on all the stores.
+            route_set: list of tuples
+            List of all the vild routes for a given day
+            day: str
+            corresponding day to set of routes 
+    --------------------------------------------------------
+    Returns: 
+        cost_set: list
+        Correspoding list of the cost of each route in routes sets
+    ----------------------------------------------------
+    NOTE: Indexes will match in the return so no further manipulation should be nesissary,
+        Each route should start and finish at the disrubtion centre.
+        day should be indentical to the row name i.e Saturday = valid, saturday = invalid.
+    """
+    print("generating cost of %s routes..."%day)
+    durations = getDurations(stores_df, route_set, day)
+    cost_set =[]
+    for duration in durations:
+        # less than four hours normal rates apply
+        if duration <= 240:
+            cost = duration*(225/60) #cost per min
+        # greater than 4 hour trip then costs are extra
+        if duration > 240:
+            cost = 240*(225/60)
+            extraTime = duration - 240
+            cost += extraTime * (275/60)
+        cost_set.append(cost)
+    print("generating cost of %s routes complete."%day)
+    return cost_set
+def generateRoutes(stores_df):
+    """
+    This function generates sub-routes within a given region and checks the feasiblity of a sub-route based
+    of truck capacities based on the mean daily demands of each store in the sub-route. It then saves a dataframe
+    which contains these feasible routes, their asocciated cost and what region it is in.
+    """
+    print("Generating routes...")
+    region_names = np.array(["Central Region","South Region","North Region","East Region","West Region","Southern Most Region"])
+    
+    # Number of stores visited per route min / max
+    min = 1
+    max = 4+1 #actually 4
+    # intialise lists that store valid sub-routes per day
+    weekday_routes = []
+    wkday_regions = []
+    saturday_routes = []
+    sat_regions = []
+
+    # generates sub-routes per day
+
+    for regionType in region_names:
+        region = stores_df[stores_df.loc[:]["Region"] == regionType]
+        region_stores = np.array(region.Store) 
+        ## Loop through number of stores per sub-route
+        """ WEEK DAY ROUTES"""
+        for i in range (min, max):
+            # get every possible combintaion of stores based on how many are in each route.
+            for subset in itertools.combinations(region_stores, i):
+                # initalise counters, these count demands for routes.
+                demandOfRoute =0
+                # cycle through each store in the sub-route and sum their demands.
+                for node in subset:
+                    # add to counter based on day
+                    store = region[region.Store == node]
+                    demandOfRoute += store.Weekday.values[0] 
+                # Check freasblity of specfic route
+                if demandOfRoute <= 26:
+                    weekday_routes.append(subset)
+                    wkday_regions.append(regionType)
+
+        #Generate saturdays
+        satC_stores = []
+        # Add stores to list
+        for store in region_stores:
+            z = region[region.Store == store]
+            if z.Saturday.values[0] != 0:
+                satC_stores.append(store)
+        #Generate sub-routes say way as week-day
+        for i in range (min,max):
+            for subset in itertools.combinations(satC_stores, i):
+                demandOfSatRoute = 0 #Initalse demand counter
+                for node in subset:
+                    store = region[region.Store == node]
+                    demandOfSatRoute += store.Saturday.values[0]
+                #Check feaislblity
+                if demandOfSatRoute <= 26:
+                    saturday_routes.append(subset)
+                    sat_regions.append(regionType)
+
+
+    print("generating routes complete.")
+    # Construct data frames for return.
+    saturday_routes =[list(route) for  route in saturday_routes]
+    weekday_routes =[list(route) for  route in weekday_routes]
+    saturday_routes = pd.DataFrame({"Route":saturday_routes,"Cost":getCosts(stores_df,saturday_routes, "Saturday"), "Region":sat_regions})
+    weekday_routes = pd.DataFrame({"Route":weekday_routes, "Cost":getCosts(stores_df, weekday_routes, "Weekday"),"Region":wkday_regions})
+    print("generating cost of routes complete.")
+    print("Saving data frames to csv..")
+    return weekday_routes, saturday_routes
 ## Linear programme solver and helper function.
 def solve(day_df, stores, day):
     """
@@ -239,8 +397,9 @@ def solve(day_df, stores, day):
     #S/T onstraints
     # Each Store should be visited once and only once
     aMatrix = construct_matrix(day_df, stores)
+
     for i in range(len(aMatrix)):
-        prob+= lpSum([routes[k] * aMatrix[i][k] for k in range(len(routes))]) == 1, "%s"% stores[i]
+        prob+= lpSum([routes[k] * aMatrix[i][k] for k in range(len(routes))]) == 1, "%s"% stores.iloc[i]
 
     # Trucks constraint
     prob += lpSum([routes[i]  for i in range(len(day_df))]- xt) <= 60, "Trucks_constraint"
@@ -266,11 +425,8 @@ def solve(day_df, stores, day):
     # The optimised objective function valof Ingredients pue is printed to the screen    
     print("Total Cost = ", value(prob.objective))
     # return objective value and the optimal routes'
-    optimalRoutes.to_csv("dataframe_csv/%s_optimal.csv"%day)
     optimalCost = value(prob.objective)
-    with open('%sObjectiveValue.txt'%day, 'w') as f:
-        f.write(str(optimalCost))
-    return  
+    return  optimalRoutes, optimalCost
 def construct_matrix(day_df,storeSeries): 
 
     """
@@ -371,9 +527,10 @@ def generateDemandsWeek(weekday_stores, demand_data):
                     dataframe containing the stores and their generated demands
     """
 
-
+    demand_data = demand_data[demand_data["Store"].isin(weekday_stores)]
+ 
     demands = []
-    for i in range(65):
+    for i in range(len(weekday_stores)):
         mu = demand_data.iloc[i]["WeekdayMu"]
         sigma =  demand_data.iloc[i]["WeekdaySd"]
         demand = bootstrap(mu, sigma)
@@ -551,6 +708,8 @@ def generateExtraRoutes(extraStores_df):
     cost, optimalRoutes = solveExtra(routes_df, stores)
 
     return cost, optimalRoutes
+
+## Simulation functions
 def simulateWeek(route_df, stores,demand_data, n):
     prior_routes = route_df["Route"]
     optimal_costs =np.zeros(n)
@@ -592,13 +751,13 @@ def simulateWeek(route_df, stores,demand_data, n):
         optimal_costs[i]= (sum(costs) + extraStores_cost)
         
     return optimal_costs, extraStores_list
-def runWeekdaySimulation(weekRoutes, weekday_stores,n):
+def runWeekdaySimulation(weekRoutes, weekday_stores,n, text):
     demand_data = pd.read_csv("assignment_resources/DemandMeanSD.csv")
     p = Pool(8)     #Simulate using parellel processing
     n = n        # number of simulations (>10)
     lwr = int(0.025 * n) #entral interval lower bound
     uper = int(0.975 * n) #central interval upper bound
-    print("Simulating Weekdays (this takes about 2.5 mins)...")
+    print("Simulating %s (this takes about 2.5 mins)..." %text)
     t0 = time()
     inputs = [(weekRoutes, weekday_stores, demand_data, int(n/8))]*8
     weekData = p.starmap(simulateWeek, inputs)
@@ -611,7 +770,7 @@ def runWeekdaySimulation(weekRoutes, weekday_stores,n):
     weekSimulatedCosts.sort()
     print("")
     print("=========================================================")
-    print("WEEKDAY RESULTS:")
+    print("%s RESULTS:" %text)
     print("=========================================================")
     print("Central 95%% Interval: Lwr: %.3f - Upper: %.3f"%(weekSimulatedCosts[lwr],weekSimulatedCosts[uper]))
     print("Average Cost: $%f"%np.mean(weekSimulatedCosts))
@@ -625,14 +784,14 @@ def runWeekdaySimulation(weekRoutes, weekday_stores,n):
     print("Simulation run time:                         %.2fs"%(t1-t0))
     print("")
     plt.hist(weekSimulatedCosts, density=True, histtype='bar', alpha=0.2)
-    plt.title("Cost distribution for Weekdays for 1000 Simulations")
+    plt.title("Cost distribution for %s for 1000 Simulations"%text)
     plt.axvline(weekSimulatedCosts[lwr], linestyle='dashed', color='red')
     plt.axvline( weekSimulatedCosts[uper], linestyle='dashed', color='red')
     
 
     plt.ylabel("Occurance")
     plt.xlabel("Cost")
-    plt.savefig('weekday_sim_distribution ',dpi=300)
+    plt.savefig('%s_sim_distribution '%text,dpi=300)
     print("Close graph to run saturday simulation.")
     plt.show()
 
@@ -681,8 +840,8 @@ def simulateSat(route_df, stores, demand_data, n):
         costs = getCostsVariance(sat_demands, routes) 
         optimal_costs[i] = (sum(costs) + extraStores_cost)
     return optimal_costs, extraStores_list
-def runSaturdaySimulation(satRoutes,saturday_stores, n):
-    print("Simulating Saturdays (this takes about 2 mins)...")
+def runSaturdaySimulation(satRoutes,saturday_stores, n, text):
+    print("Simulating %s (this takes about 2 mins)..."%text)
     demand_data = pd.read_csv("assignment_resources/DemandMeanSD.csv")
     p = Pool(8)     #Simulate using parellel processing
     n = n        # number of simulations (>10)
@@ -700,7 +859,7 @@ def runSaturdaySimulation(satRoutes,saturday_stores, n):
     satSimulatedCosts.sort()
     print("")
     print("=========================================================")
-    print("SATURDAY RESULTS:")
+    print("%s RESULTS:"%text)
     print("=========================================================")
     print("Central 95%% Interval: Lwr: %.3f - Upper: %.3f"%(satSimulatedCosts[lwr],satSimulatedCosts[uper]))
     print("Average Cost: $%f" %np.mean(satSimulatedCosts))
@@ -722,106 +881,84 @@ def runSaturdaySimulation(satRoutes,saturday_stores, n):
     plt.axvline(x = satSimulatedCosts[lwr], linestyle='dashed', color='red')
     plt.axvline(x = satSimulatedCosts[uper], linestyle='dashed', color='red')
 
-    plt.title("Cost distribution for Saturdays for 1000 Simulations")
+    plt.title("Cost distribution for %s for 1000 Simulations"%text)
     plt.ylabel("Occurance")
     plt.xlabel("Cost")
-    plt.savefig('saturday_sim_distribution ',dpi=300)
-    print("Close graph to run store removal simulation.")
+    plt.savefig('%s_sim_distribution '%text,dpi=300)
+    print("Close graph to run next")
     plt.show()
     return
 if __name__ == "__main__":
-
-
-
     # Read in store data
     stores_df = pd.read_csv('dataframe_csv/stores_df.csv')
+
+    """ Uncomment to generate routes"""
+    # weekday_routes, saturday_routes  = generateRoutes(stores_df)
+    # saturday_routes.to_csv("dataframe_csv/saturday_df.csv", index=False)
+    # weekday_routes.to_csv("dataframe_csv/weekday_df.csv", index=False)
+    # print("Saved sucessfully")
+
     # Generate lists of stores for week-day deliveries
     weekday_stores = stores_df['Store']
     # List of stores that recive deliveries on saturdays
     saturday_stores = (stores_df.loc[stores_df["Saturday"] != 0, ["Store"]])["Store"]
-   
-    """  Unocmment saturday and sunday to obtain optimal cost and the optimal route set."""
-    # # read in individual data frames containing feasible route info.
+
+    """  Unocmment to obtain optimal cost and the optimal route set."""
+    # read in individual data frames containing feasible route info.
     # sat_df = readInSatDF()
     # week_df = readInWeekDF()
-    # solve(sat_df, saturday_stores, "Saturday")
-    # solve(week_df, weekday_stores, "Weekdays")
+    # #Get sat soln and save to file
+    # satRoutes, satCost = solve(sat_df, saturday_stores, "Saturday")
+    # satRoutes.to_csv("dataframe_csv/Saturday_optimal.csv")
+    
+    # with open('SaturdayObjectiveValue.txt', 'w') as f:
+    #     f.write(str(satCost))
+    # #Get week soln and save to file
+    # weekRoutes, weekCost = solve(week_df, weekday_stores, "Weekdays")
+    # weekRoutes.to_csv("dataframe_csv/Weekdays_optimal.csv")
+    
+    # with open('WeekdatsyObjectiveValue.txt', 'w') as f:
+    #     f.write(str(weekCost))
 
-    # Obtain optimal routes data frames for each day and the objective value.
-    satRoutes, satCost = getSatOptimal()
-    weekRoutes, weekCost, = getWeekOptimal()
+    """# Obtain optimal routes data frames for each day and the objective value."""
+    # satRoutes, satCost = getSatOptimal()
+    # weekRoutes, weekCost, = getWeekOptimal()
 
     """ Uncomment to run mapping for optimal routes"""
     # mapByRegion(satRoutes, stores_df, "Saturday")
     # mapByRegion(weekRoutes, stores_df, "Weekday")
     
-    """ Simulation"""
-    runWeekdaySimulation(weekRoutes, weekday_stores,1000)
+    """ Uncomment to run Simulation"""
+    # runWeekdaySimulation(weekRoutes, weekday_stores,1000, "Weekday")
+    # runSaturdaySimulation(satRoutes, saturday_stores, 1000, "Saturday")
+
+    """ Investigation of dropping stores"""
+
+    dropped_stores = ["Countdown Highland Park","Countdown Northwest", "Countdown Roselands" ]
+    merged_stores = ["Countdown Aviemore","Countdown Westgate", "Countdown Papakura" ]
+
+    # Merge dropped stores onto merged stores
+    droppedStores_df= stores_df[~stores_df['Store'].isin(dropped_stores)]
+
+    droppedStores_df["index"] = [i for i in range(62)]
+
+    droppedStores_df.set_index(["index"])
+    weekday_stores = droppedStores_df['Store']
+    # List of stores that recive deliveries on saturdays
+    saturday_stores = (droppedStores_df.loc[droppedStores_df["Saturday"] != 0, ["Store"]])["Store"]
+    #Generate routes
+    weekdayR, saturdayR  = generateRoutes(droppedStores_df)
+
+    # Solve
+    satRoutes, satCost  = solve(saturdayR, saturday_stores, "Saturday")
+    weekRoutes, weekCosts = solve(weekdayR, weekday_stores, "Weekdays")
+
+    # simulate droppped stores
+    runWeekdaySimulation(weekRoutes, weekday_stores,  1000, "Weekday_Removal")
+    runSaturdaySimulation(satRoutes, saturday_stores, 1000, "Saturday_Removal")
+
+
     
-    runSaturdaySimulation(satRoutes, saturday_stores, 1000)
-    # demand_data = pd.read_csv("assignment_resources/DemandMeanSD.csv")
-    # p = Pool(4)     #Simulate using parellel processing
-    # n = 1000        # number of simulations (>10)
-    # lwr = int(0.025 * n) #entral interval lower bound
-    # uper = int(0.975 * n) #central interval upper bound
-   
-
-
-    # print("Simulating Saturdays (this takes about 2 mins)...")
-    # inputs = [(satRoutes,saturday_stores,demand_data,10)]*int(n/10)
-    # t0 = time()
-    # weekData = p.starmap(simulateSat, inputs)
-    # t1 = time()
-    # satSimulatedCosts = []
-    # satExtraStores = []
-    # for tup in weekData:
-    #     satSimulatedCosts.extend([*tup[0]])
-    #     satExtraStores.extend([*tup[1]])
-    # satSimulatedCosts.sort()
-    # print("")
-    # print("=========================================================")
-    # print("SATURDAY RESULTS:")
-    # print("=========================================================")
-    # print("Central 95%% Interval: Lwr: %.3f - Upper: %.3f"%(satSimulatedCosts[lwr],satSimulatedCosts[uper]))
-    # print("Average Cost: $%f" %np.mean(satSimulatedCosts))
-
-    # if len(satExtraStores) == 0:
-    #     print("=========================================================")
-    #     print("No extra routes were required in any simulation.")
-    #     print("=========================================================")
-    # else:
-    #     satExtraStores = Counter(satExtraStores)
-    #     print("=========================================================")
-    #     print("STORE                                  FREQUENCY DROPPED")
-    #     print("=========================================================")
-    #     for store in satExtraStores:
-    #         print("%s:"%store,+(35- len(store))*" " + "%d"% satExtraStores[store])
-    #     print("=========================================================")
-    # print("Simulation run time:                         %.2fs"%(t1-t0))
-
-
-    # """ Simulation plotting"""
-    # plt.hist(weekSimulatedCosts, density=True, histtype='bar', alpha=0.2)
-    # plt.title("Cost distribution for Weekdays for 1000 Simulations")
-    # plt.axvline(weekSimulatedCosts[lwr], linestyle='dashed', color='red')
-    # plt.axvline( weekSimulatedCosts[uper], linestyle='dashed', color='red')
-    
-
-    # plt.ylabel("Occurance")
-    # plt.xlabel("Cost")
-    # plt.savefig('weekday_sim_distribution ',dpi=300)
-    # plt.show()
-    
-    # plt.hist(satSimulatedCosts, density=True, histtype='bar', alpha=0.2)
-    # plt.axvline(x = satSimulatedCosts[lwr], linestyle='dashed', color='red')
-    # plt.axvline(x = satSimulatedCosts[uper], linestyle='dashed', color='red')
-
-    # plt.title("Cost distribution for Saturdays for 1000 Simulations")
-    # plt.ylabel("Occurance")
-    # plt.xlabel("Cost")
-    # plt.savefig('saturday_sim_distribution ',dpi=300)
-    # plt.show()
-
 
     
 
