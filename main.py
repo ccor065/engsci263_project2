@@ -9,6 +9,7 @@ from scipy import stats
 import matplotlib.pyplot as plt
 from  random import randint
 from multiprocessing import Pool
+from time import time
 ORSkey = '5b3ce3597851110001cf6248324acec39fa94080ac19d056286d0ccb'
 
 
@@ -323,20 +324,20 @@ def bootstrap(mean, sd):
     NOTE: Assuming normal distribution of demands to generate bootstrap
     """
     # generate normal distribution from the mean and standard deviation for a given day, simulates population distribution
-    randMeans = np.random.normal(loc = mean, scale = sd, size = 1000)
+    randDemands = np.random.normal(loc = mean, scale = sd, size = 100)
     # bootstrap 1000 samples 
-    sampMean = []
+    demandMeans = []
     for i in range(100):
         # takes sample of size 50 from population
-        sampleTaken = np.random.choice(randMeans, replace = True, size = 50)
+        sampleTaken = np.random.choice(randDemands, replace = True, size = 50)
         # calculates mean of sample
-        sampAvg = np.mean(sampleTaken)
-        sampMean.append(sampAvg)
+        averageDemand = np.mean(sampleTaken)
+        demandMeans.append(averageDemand)
     # estimate mean from list of sampleMeans after the boostrap
-    m = np.mean(sampMean)
-    return m
+    demand = np.mean(demandMeans)
+    return demand
 
-def generateDemandsSat(saturday_stores):
+def generateDemandsSat(saturday_stores, demand_data):
     """
     This function generates a set of demands for saturday stores.
     ---------------------------------------
@@ -348,7 +349,7 @@ def generateDemandsSat(saturday_stores):
         sat_stores: pandas dataframe
                     dataframe containing the stores and their generated demands
     """
-    demand_data = pd.read_csv("assignment_resources/DemandMeanSD.csv")
+    
     sat_demands = demand_data[demand_data["WeekendMu"] != 0]
     demands = []
     for i in range(len(saturday_stores)):
@@ -357,7 +358,7 @@ def generateDemandsSat(saturday_stores):
         demands.append(round(bootstrap(mu,sigma)))
     sat_stores = pd.DataFrame({'Store':saturday_stores, 'Demand':demands})
     return sat_stores
-def generateDemandsWeek(weekday_stores):
+def generateDemandsWeek(weekday_stores, demand_data):
     """
     This function generates a set of demands for weekday stores.
     ---------------------------------------
@@ -369,8 +370,7 @@ def generateDemandsWeek(weekday_stores):
         weekday_stores: pandas dataframe
                     dataframe containing the stores and their generated demands
     """
-    # generate demand data frames
-    demand_data = pd.read_csv("assignment_resources/DemandMeanSD.csv")
+
 
     demands = []
     for i in range(65):
@@ -552,17 +552,16 @@ def generateExtraRoutes(extraStores_df):
 
     return cost, optimalRoutes
 
-def simulateWeek(route_df, stores, n):
+def simulateWeek(route_df, stores,demand_data, n):
     prior_routes = route_df["Route"]
     optimal_costs =np.zeros(n)
     extraStores_list = []
     for i in range(n):
 
-        # Generate emand for stores on the pert-beta distrubution
-        week_demands = generateDemandsWeek(stores)
+        # Generate demands fo all stores
+        week_demands = generateDemandsWeek(stores,demand_data)
         
-        # print(i)
-        #Check validity of  routes with the new demands
+        """Check validity of routes with the new demands"""
         extra_stores = []
         extra_storesDemand = []
         routes = []
@@ -594,13 +593,14 @@ def simulateWeek(route_df, stores, n):
         optimal_costs[i]= (sum(costs) + extraStores_cost)
         
     return optimal_costs, extraStores_list
-def simulateSat(route_df, stores, n):
+def simulateSat(route_df, stores, demand_data, n):
+    
     prior_routes = route_df["Route"]
     extraStores_list = []
     optimal_costs =np.zeros(n)
     for i in range(n):
         # Generate demand for stores on the pert-beta distrubution
-        sat_demands = generateDemandsSat( stores) 
+        sat_demands = generateDemandsSat(stores, demand_data) 
         #Check validity of  routes with the new demands
         extra_stores = []
         extra_storesDemand = []
@@ -638,9 +638,7 @@ def simulateSat(route_df, stores, n):
 
 if __name__ == "__main__":
 
-    # read in individual data frames containing feasible route info.
-    sat_df = readInSatDF()
-    week_df = readInWeekDF()
+
 
     # Read in store data
     stores_df = pd.read_csv('dataframe_csv/stores_df.csv')
@@ -650,31 +648,39 @@ if __name__ == "__main__":
     saturday_stores = (stores_df.loc[stores_df["Saturday"] != 0, ["Store"]])["Store"]
    
     """  Unocmment saturday and sunday to obtain optimal cost and the optimal route set."""
+    # # read in individual data frames containing feasible route info.
+    # sat_df = readInSatDF()
+    # week_df = readInWeekDF()
     # solve(sat_df, saturday_stores, "Saturday")
     # solve(week_df, weekday_stores, "Weekdays")
 
     # Obtain optimal routes data frames for each day and the objective value.
     satRoutes, satCost = getSatOptimal()
     weekRoutes, weekCost, = getWeekOptimal()
+    
     """ Uncomment to run mapping for optimal routes"""
     # mapByRegion(satRoutes, stores_df, "Saturday")
     # mapByRegion(weekRoutes, stores_df, "Weekday")
     
     """ Simulation"""
+    demand_data = pd.read_csv("assignment_resources/DemandMeanSD.csv")
     p = Pool(4)     #Simulate using parellel processing
-
-    n =20
-    lwr = int(0.025 * n)
-    uper = int(0.975 * n)
-    print("Weekday simulation...")
-    inputs = [(weekRoutes, weekday_stores, 10)]*2
+    n = 1000        # number of simulations (>10)
+    lwr = int(0.025 * n) #entral interval lower bound
+    uper = int(0.975 * n) #central interval upper bound
+    print("Simulating Weekdays (this takes about 2.5 mins)...")
+    t0 = time()
+    inputs = [(weekRoutes, weekday_stores, demand_data, int(n/8))]*8
     weekData = p.starmap(simulateWeek, inputs)
+    t1 = time()
     weekSimulatedCosts = []
     weekExtraStores = []
     for tup in weekData:
         weekSimulatedCosts.extend([*tup[0]])
         weekExtraStores.extend([*tup[1]])
     weekSimulatedCosts.sort()
+    print(weekExtraStores)
+
     print("")
     print("=========================================================")
     print("WEEKDAY RESULTS:")
@@ -688,12 +694,15 @@ if __name__ == "__main__":
     for store in weekExtraStores:
         print("%s:"%store,+(45- len(store))*" " + "%d"% weekExtraStores[store])
     print("=========================================================")
+    print("Simulation run time:                         %.2fs"%(t1-t0))
     print("")
 
 
-    print("Saturday simulation...")
-    inputs = [(satRoutes,saturday_stores, 10)]*2
+    print("Simulating Saturdays (this takes about 2 mins)...")
+    inputs = [(satRoutes,saturday_stores,demand_data,10)]*int(n/10)
+    t0 = time()
     weekData = p.starmap(simulateSat, inputs)
+    t1 = time()
     satSimulatedCosts = []
     satExtraStores = []
     for tup in weekData:
@@ -719,31 +728,29 @@ if __name__ == "__main__":
         for store in satExtraStores:
             print("%s:"%store,+(35- len(store))*" " + "%d"% satExtraStores[store])
         print("=========================================================")
+    print("Simulation run time:                         %.2fs"%(t1-t0))
 
 
 
-    # plt.hist(week_costs, density=True, histtype='bar', alpha=0.2)
-    # plt.title("Cost distribution for Weekdays for 1000 Simulations")
-    # plt.axvline(week_costs[lwr], linestyle='dashed', color='red')
-    # plt.axvline( week_costs[uper], linestyle='dashed', color='red')
+    plt.hist(weekSimulatedCosts, density=True, histtype='bar', alpha=0.2)
+    plt.title("Cost distribution for Weekdays for 1000 Simulations")
+    plt.axvline(weekSimulatedCosts[lwr], linestyle='dashed', color='red')
+    plt.axvline( weekSimulatedCosts[uper], linestyle='dashed', color='red')
     
 
-    # plt.ylabel("Occurance")
-    # plt.xlabel("Cost")
-    # plt.savefig('weekday_sim_distribution ',dpi=300)
-    # plt.show()
-    # plt.hist(sat_costs, density=True, histtype='bar', alpha=0.2)
-    # plt.axvline(x = sat_costs[lwr], linestyle='dashed', color='red')
-    # plt.axvline(x = sat_costs[uper], linestyle='dashed', color='red')
+    plt.ylabel("Occurance")
+    plt.xlabel("Cost")
+    plt.savefig('weekday_sim_distribution ',dpi=300)
+    plt.show()
+    plt.hist(satSimulatedCosts, density=True, histtype='bar', alpha=0.2)
+    plt.axvline(x = satSimulatedCosts[lwr], linestyle='dashed', color='red')
+    plt.axvline(x = satSimulatedCosts[uper], linestyle='dashed', color='red')
 
-    # plt.title("Cost distribution for Saturdays for 1000 Simulations")
-    # plt.ylabel("Occurance")
-    # plt.xlabel("Cost")
-    # plt.savefig('saturday_sim_distribution ',dpi=300)
-    # plt.show()
-
-    # satRoutes.to_csv("sat_soln.csv")
-    # weekRoutes.to_csv("weekday_soln.csv")
+    plt.title("Cost distribution for Saturdays for 1000 Simulations")
+    plt.ylabel("Occurance")
+    plt.xlabel("Cost")
+    plt.savefig('saturday_sim_distribution ',dpi=300)
+    plt.show()
 
 
     
