@@ -917,7 +917,7 @@ if __name__ == "__main__":
     # weekRoutes, weekCost = solve(week_df, weekday_stores, "Weekdays")
     # weekRoutes.to_csv("dataframe_csv/Weekdays_optimal.csv")
     
-    # with open('WeekdatsyObjectiveValue.txt', 'w') as f:
+    # with open('WeekdaysObjectiveValue.txt', 'w') as f:
     #     f.write(str(weekCost))
 
     """# Obtain optimal routes data frames for each day and the objective value."""
@@ -934,28 +934,28 @@ if __name__ == "__main__":
 
     """ Investigation of dropping stores"""
 
-    dropped_stores = ["Countdown Highland Park","Countdown Northwest", "Countdown Roselands" ]
-    merged_stores = ["Countdown Aviemore","Countdown Westgate", "Countdown Papakura" ]
+    # dropped_stores = ["Countdown Highland Park","Countdown Northwest", "Countdown Roselands" ]
+    # merged_stores = ["Countdown Aviemore","Countdown Westgate", "Countdown Papakura" ]
 
-    # Merge dropped stores onto merged stores
-    droppedStores_df= stores_df[~stores_df['Store'].isin(dropped_stores)]
+    # # Merge dropped stores onto merged stores
+    # droppedStores_df= stores_df[~stores_df['Store'].isin(dropped_stores)]
 
-    droppedStores_df["index"] = [i for i in range(62)]
+    # droppedStores_df["index"] = [i for i in range(62)]
 
-    droppedStores_df.set_index(["index"])
-    weekday_stores = droppedStores_df['Store']
-    # List of stores that recive deliveries on saturdays
-    saturday_stores = (droppedStores_df.loc[droppedStores_df["Saturday"] != 0, ["Store"]])["Store"]
-    #Generate routes
-    weekdayR, saturdayR  = generateRoutes(droppedStores_df)
+    # droppedStores_df.set_index(["index"])
+    # weekday_stores = droppedStores_df['Store']
+    # # List of stores that recive deliveries on saturdays
+    # saturday_stores = (droppedStores_df.loc[droppedStores_df["Saturday"] != 0, ["Store"]])["Store"]
+    # #Generate routes
+    # weekdayR, saturdayR  = generateRoutes(droppedStores_df)
 
-    # Solve
-    satRoutes, satCost  = solve(saturdayR, saturday_stores, "Saturday")
-    weekRoutes, weekCosts = solve(weekdayR, weekday_stores, "Weekdays")
+    # # Solve
+    # satRoutes, satCost  = solve(saturdayR, saturday_stores, "Saturday")
+    # weekRoutes, weekCosts = solve(weekdayR, weekday_stores, "Weekdays")
 
-    # simulate droppped stores
-    runWeekdaySimulation(weekRoutes, weekday_stores,  1000, "Weekday_Removal")
-    runSaturdaySimulation(satRoutes, saturday_stores, 1000, "Saturday_Removal")
+    # # simulate droppped stores
+    # runWeekdaySimulation(weekRoutes, weekday_stores,  1000, "Weekday_Removal")
+    # runSaturdaySimulation(satRoutes, saturday_stores, 1000, "Saturday_Removal")
 
 
     
